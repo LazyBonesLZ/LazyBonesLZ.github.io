@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http:47.244.151.224/</link>
+    <link>http://47.244.151.224/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Apr 2019 16:15:13 +0800</lastBuildDate>
     
-	<atom:link href="http:47.244.151.224/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://47.244.151.224/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Second</title>
-      <link>http:47.244.151.224/post/second/</link>
+      <link>http://47.244.151.224/post/second/</link>
       <pubDate>Mon, 22 Apr 2019 16:15:13 +0800</pubDate>
       
-      <guid>http:47.244.151.224/post/second/</guid>
+      <guid>http://47.244.151.224/post/second/</guid>
       <description> sdfdsfd睡醒了十多个合理的开发工具来看的舒服啥地方老师的发生地发发牢骚发了收到了飞机脸上的肌肤立刻撒娇多放辣椒水淀粉  </description>
     </item>
     
