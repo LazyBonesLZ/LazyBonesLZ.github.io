@@ -4,14 +4,19 @@
   
   <url>
     <loc>http://47.244.151.224/</loc>
-    <lastmod>2019-04-22T16:15:13+08:00</lastmod>
+    <lastmod>2019-04-24T10:13:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://47.244.151.224/post/</loc>
-    <lastmod>2019-04-22T16:15:13+08:00</lastmod>
+    <lastmod>2019-04-24T10:13:13+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://47.244.151.224/post/third/</loc>
+    <lastmod>2019-04-24T10:13:13+08:00</lastmod>
   </url>
   
   <url>
