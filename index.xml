@@ -6,10 +6,19 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Apr 2019 10:13:13 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 17:59:39 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.harddone.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Welcome</title>
+      <link>http://blog.harddone.com/post/welcome/</link>
+      <pubDate>Thu, 25 Apr 2019 17:59:39 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/post/welcome/</guid>
+      <description> 欢迎来的测试网站！ </description>
+    </item>
     
     <item>
       <title>Third</title>
