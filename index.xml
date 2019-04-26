@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>TJL的博客</title>
     <link>http://blog.harddone.com/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on TJL的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-CN</language>
     <lastBuildDate>Thu, 25 Apr 2019 17:59:39 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.harddone.com/index.xml" rel="self" type="application/rss+xml" />
@@ -26,7 +26,8 @@
       <pubDate>Wed, 24 Apr 2019 10:13:13 +0800</pubDate>
       
       <guid>http://blog.harddone.com/post/third/</guid>
-      <description>测试第三篇博客是不是生效了？ 哈哈哈啊哈的辅导书辅导书辅导书饭撒地方都是负担绘声绘色</description>
+      <description>测试第三篇博客是不是生效了？ 哈哈哈啊哈的辅导书辅导书辅导书饭撒地方都是负担绘声绘色
+tags= &amp;lsquo;sgng&amp;rsquo;</description>
     </item>
     
     <item>
@@ -36,6 +37,15 @@
       
       <guid>http://blog.harddone.com/post/second/</guid>
       <description> sdfdsfd睡醒了十多个合理的开发工具来看的舒服啥地方老师的发生地发发牢骚发了收到了飞机脸上的肌肤立刻撒娇多放辣椒水淀粉  </description>
+    </item>
+    
+    <item>
+      <title>归档</title>
+      <link>http://blog.harddone.com/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.harddone.com/archives/</guid>
+      <description></description>
     </item>
     
   </channel>

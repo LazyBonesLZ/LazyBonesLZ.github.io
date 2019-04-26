@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Hugo Site</title>
+    <title>Posts on TJL的博客</title>
     <link>http://blog.harddone.com/post/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
+    <description>Recent content in Posts on TJL的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-CN</language>
     <lastBuildDate>Thu, 25 Apr 2019 17:59:39 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.harddone.com/post/index.xml" rel="self" type="application/rss+xml" />
@@ -26,7 +26,8 @@
       <pubDate>Wed, 24 Apr 2019 10:13:13 +0800</pubDate>
       
       <guid>http://blog.harddone.com/post/third/</guid>
-      <description>测试第三篇博客是不是生效了？ 哈哈哈啊哈的辅导书辅导书辅导书饭撒地方都是负担绘声绘色</description>
+      <description>测试第三篇博客是不是生效了？ 哈哈哈啊哈的辅导书辅导书辅导书饭撒地方都是负担绘声绘色
+tags= &amp;lsquo;sgng&amp;rsquo;</description>
     </item>
     
     <item>
