@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on ColofulDark Blog</title>
+    <link>http://blog.harddone.com/about/</link>
+    <description>Recent content in Abouts on ColofulDark Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 26 Apr 2019 14:59:41 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.harddone.com/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://blog.harddone.com/about/about/</link>
+      <pubDate>Fri, 26 Apr 2019 14:59:41 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/about/about/</guid>
+      <description>No fill now!</description>
+    </item>
+    
+  </channel>
+</rss>

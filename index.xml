@@ -6,10 +6,28 @@
     <description>Recent content on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 25 Apr 2019 17:59:39 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 14:59:41 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.harddone.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>http://blog.harddone.com/about/about/</link>
+      <pubDate>Fri, 26 Apr 2019 14:59:41 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/about/about/</guid>
+      <description>No fill now!</description>
+    </item>
+    
+    <item>
+      <title>Books</title>
+      <link>http://blog.harddone.com/books/books/</link>
+      <pubDate>Fri, 26 Apr 2019 14:59:31 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/books/books/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Welcome</title>
