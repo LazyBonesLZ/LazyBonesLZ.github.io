@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三） | ColofulDark Blog</title>
+    <meta property="og:title" content="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三） - ColofulDark Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-04-25T11:13:24&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-04-25T11:13:24&#43;08:00">
+        
+    <meta name="Keywords" content="ColofulDark,java,android,博客,python">
+    <meta name="description" content="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）">
+        
+    <meta name="author" content="ColofulDark">
+    <meta property="og:url" content="http://blog.harddone.com/post/hugo_nginx_3/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://blog.harddone.com/">
+                        ColofulDark Blog
+                    </a>
+                
+                <p class="description">专注于Android、Java、Kotlin、移动互联网</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://blog.harddone.com/">首页</a>
+                    
+                    <a  href="http://blog.harddone.com/books/" title="新书">新书</a>
+                    
+                    <a  href="http://blog.harddone.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://blog.harddone.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年4月25日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://blog.harddone.com/categories/Web">Web</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="前篇提要">前篇提要</h1>
+
+<p>在上一篇中，我们主要介绍了服务器的环境安装。在本文中，我们将就具体的操作步骤加以说明并截图展示。</p>
+
+<h1 id="利用-hugo-生成静态网站">利用 Hugo 生成静态网站</h1>
+
+<h2 id="1-创建项目目录">1. 创建项目目录</h2>
+
+<p>在您本地合适的目录下创建一个空文件夹，命名为<code>BlogTest</code>, 为了方便之后的命令行演示，我们假设刚才创建的目录完整路径为：</p>
+
+<pre><code>/xxx/xxx/xxx/BlogTest
+</code></pre>
+
+<h2 id="2-新建网站">2. 新建网站</h2>
+
+<ul>
+<li>打开终端执行Hugo命令，新建一个网站：</li>
+</ul>
+
+<pre><code>hugo new site /xxx/xxx/xxx/BlogTest
+</code></pre>
+
+<ul>
+<li>然后进入新建的网站目录,准备后续的命令操作。</li>
+</ul>
+
+<pre><code>cd /xxx/xxx/xxx/BlogTest
+</code></pre>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/6174818-9e836e723e83bb7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hugo_1_10.png" /></p>
+
+<ul>
+<li><p>打开刚才创建的目录，我们可以发现，hugo已经自动帮我们生成了很多文件，这些就是跟创建网站相关的资源。执行完<code>hugo new site xxx</code>命令其实是没有<code>public</code>文件夹，该目录是之后生成静态网站资源用以发布时产生的。
+<img src="https://upload-images.jianshu.io/upload_images/6174818-9ec874da155b70c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hugo_1_11.png" /></p></li>
+
+<li><p>接下来，依次执行下列命令行，详细解释参考注释。</p></li>
+</ul>
+
+<pre><code># git 初始化
+git init
+
+# 将主题ananke作为外链加入的本地仓库
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+
+# 修改hugo 配置文件，应用刚才下载的博客主题
+echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
+
+# 将public 作为外链加入到本地仓库，请注意换成你自己在GitHub所持创建的仓库地址
+git submodule add -b master https://github.com/LazyBonesLZ/LazyBonesLZ.github.io.git public
+
+# 本地仓库跟你创建的网站源码GitHub仓库关联
+git remote add origin https://github.comazyBonesLZ/BlogTest.git
+
+# 添加你的第一篇博客
+hugo new post/firstblog.md
+# 创建的第一篇博客在content/post目录下，用熟悉的编辑工具打开该目录下的firstblog.md
+open content/post
+</code></pre>
+
+<ul>
+<li><p>编辑你的第一篇博客内容，跟普通的markdown风格文件操作一样。需要注意的地方如示例截图所示：
+<img src="https://upload-images.jianshu.io/upload_images/6174818-450e80114b6c7c4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hugo_1_12.png" /></p></li>
+
+<li><p>保存文本内容后，然后执行hugo提供的调试命令查看效果，检查博客文档效果是否生效：</p></li>
+</ul>
+
+<pre><code>hugo server -D
+
+# 然后在浏览器访问 
+http://localhost:1313/
+</code></pre>
+
+<h2 id="3-正式生成用以发布的网站文件">3.正式生成用以发布的网站文件</h2>
+
+<p>上一步中的 <code>hugo server -D</code> 是用以调试的命令，不会在<code>public</code>目录下生成文件。要生成用以发布的文件，我们需要先配置好hugo 配置文件。
+* 打开<code>config.toml</code>文件</p>
+
+<pre><code># 如果已有域名，配置成指向服务器的域名，否则直接配置为服务器的IP
+baseURL = &quot;http://blog.harddone.com/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;My New Hugo Site&quot;
+#  设置博客主题，如果以后要更改，直接改变该值设置
+theme = &quot;ananke&quot;
+</code></pre>
+
+<ul>
+<li>配置发布脚本
+在完成Hugo网站配置文件后，直接执行<code>hugo</code>命令就可以生成<code>public</code> 文件夹下的静态网站资源内容。直接发布到服务器就完成了一个静态网站的部署。</li>
+</ul>
+
+<p>记得我们在第一篇提到，public下的内容会被push到GitHub做一个备份，然后服务器通过git 来抓取完成博客的更新。所以为了操作方便，我们把这一系列的操作写成可执行脚本，自动化。</p>
+
+<pre><code>  # cd  到项目根目录
+  cd xx/xx/BlogTest
+  # 新建脚本文件 deploy.sh
+  vim deploy.sh
+</code></pre>
+
+<p>保存以下脚本内容：</p>
+
+<pre><code>      echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+      # Build the project.
+      hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+      # Go To Public folder
+      cd public
+      # Add changes to git.
+      git add .
+
+      # Commit changes.
+      msg=&quot;rebuilding site `date`&quot;
+      if [ $# -eq 1 ]
+      then msg=&quot;$1&quot;
+      fi
+      git commit -m &quot;$msg&quot;
+
+      # Push source and build repos.
+      git push origin master
+
+      # Come Back up to the Project Root
+      cd ..
+
+</code></pre>
+
+<p>然后在更新博客后，直接在终端执行:</p>
+
+<pre><code>./deploy.sh &quot;这里填写提交git的log&quot;
+</code></pre>
+
+<p>是不是感觉简单明了了？到目前为止，我们还只是完成了将本地网站的源码和要发布的网站资源自动push到GitHub仓库。</p>
+
+<p>接下来，服务器还需要一些配置，才能达到我们在第一篇文章中设置的目标：自动化部署。</p>
+
+<h1 id="服务器配置">服务器配置</h1>
+
+<h2 id="1-网站根目录">1. 网站根目录</h2>
+
+<pre><code>#  创建网站根目录
+mkdir blog2
+
+# cd 到目录blog2
+cd blog2
+
+# git 初始化
+git init 
+git remote add origin https://github.com/LazyBonesLZ/LazyBonesLZ.github.io.git
+
+# 从 Github第一次抓取
+git pull origin master
+</code></pre>
+
+<h2 id="2-webhook服务">2.webhook服务</h2>
+
+<p>利用Github提供的webhook功能，我们需要在服务器端启动一个webhook的服务，用以监听来自<code>LazyBonesLZ.github.io</code>仓库的push event。每当收到这样的消息，我们就可以在服务器执行脚本，从该仓库抓取最新资源，达到博客内容实时更新的目的。</p>
+
+<h3 id="2-1-创建webhook目录-创建脚本git-pull-sh">2.1 创建webhook目录,创建脚本git_pull.sh</h3>
+
+<pre><code>#创建目录
+mkdir webhook
+#进入目录
+cd webhook
+# 创建脚本
+vim git_pull.sh
+
+</code></pre>
+
+<p>在脚本中保存以下内容：</p>
+
+<pre><code>cd /root/blog2
+git pull origin master
+exit 0
+</code></pre>
+
+<h3 id="2-2-github-webhook-js脚本">2.2 github_webhook.js脚本</h3>
+
+<ul>
+<li>我们需要用到nodejs来监听来自GitHub的消息，需要用到中间件 <a href="https://github.com/rvagg/github-webhook-handler">github_webhook_handler</a>, 我们使用npm 来安装：
+<code>
+npm install github_webhook_handler
+</code></li>
+<li>新建<code>github_webhook.js</code>脚本
+该脚本主要参考<a href="https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/">https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/</a>，但是我们用到是GitHub仓库而非Gitlab,所以做了细微改动。</li>
+</ul>
+
+<pre><code>    vim github_webhook.js
+</code></pre>
+
+<p>写入以下脚本内容：</p>
+
+<pre><code>  var http = require('http')
+  var exec = require('child_process').exec
+  var createHandler = require('github-webhook-handler')
+  var handler = createHandler({ path: '/webhook', secret: 'myxxxxx' })
+
+  http.createServer(function (req, res) {
+  handler(req, res, function (err) {
+      res.statusCode = 404
+      res.end('no such location')
+    })
+  }).listen(7777)
+
+  handler.on('push', function (event) {
+      let currentTime = new Date();
+      console.log('\n--&gt; ' + currentTime.toLocaleString());
+      console.log('Received a push event for %s to %s', event.payload.repository.name, event.payload.ref);
+      exec('sh ./webhook/git_pull.sh', function (error, stdout, stderr) {
+          if(error) {
+              console.error('error:\n' + error);
+              return;
+          }
+          console.log('stdout:\n' + stdout);
+          console.log('stderr:\n' + stderr);
+      });
+  })
+</code></pre>
+
+<p>这个脚本利用的是Node.js的<code>child_process</code>模块来执行<code>shell</code>脚本。上面的<code>path: '/webhook'</code>你可以任意设置，<code>secret_key</code>验证为<code>myxxxxx</code>。我们在购买服务器的时候，安全组配置时添加了7777端口，所以端口用的是7777，你可以随意设置，总之不要过于明显，但是<strong>要记得在阿里云控制台安全组添加端口</strong>。这样下来最终的监听地址就是<code>http://0.0.0.0:7777/webhook</code>了，<code>0.0.0.0</code>表示该http服务监听本机的所有ip上收到的请求，说白了就是<code>0.0.0.0</code>可以换成服务器的ip或者指向服务器的所有域名。拿我自己的服务器作例子就是<code>http://blog.harddone.com:7777/webhook</code>。
+* ###pm2启动脚本
+我们用pm2来启动：<code>pm2 start github-webhook.js</code>，使用<code>pm2 startup</code>命令来设置脚本开机启动。pm2的更多高级用法还请查看<a href="http://pm2.keymetrics.io/docs/usage/quick-start/">文档</a>。</p>
+
+<h1 id="3-nginx配置更新">3. Nginx配置更新</h1>
+
+<p>再次重申，本人菜鸟。对于nginx不甚了解。接下来给出所有的相关配置。更高级的玩儿法请自行深入。
+* default.conf</p>
+
+<pre><code>vim /etc/nginx/conf.d/default.conf
+</code></pre>
+
+<pre><code>#
+# The default server
+#
+
+server {
+#    listen       80 default_server;
+#   listen       [::]:80 default_server;
+  listen       80;
+  server_name  _;
+    root         /usr/share/nginx/html;
+
+    # Load configuration files for the default server block.
+    include /etc/nginx/default.d/*.conf;
+
+    location / {
+
+    }
+
+    error_page 404 /404.html;
+        location = /40x.html {
+    }
+
+    error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+    }
+
+}
+
+</code></pre>
+
+<ul>
+<li>blog.conf
+新建blog.conf,重新指定nginx 根目录，否则网站很可能出现404.</li>
+</ul>
+
+<pre><code>cd /etc/nginx/conf.d/
+vim blog.conf
+</code></pre>
+
+<pre><code>server {
+#    listen       80 default_server;
+#   listen       [::]:80 default_server;
+    listen     80;
+    server_name  blog.harddone.com;
+    root         /root/blog2; # 重新指定根目录
+
+    # Load configuration files for the default server block.
+    # include /etc/nginx/default.d/*.conf;
+
+    location / {
+       index index.html index.htm index.php;
+       autoindex on;
+    }
+
+    # NodeJS 将 Web 服务跑在了 7777 端口，我们可以用 Nginx 反向代理到 80 端口
+    location /webhook { 
+      alias /root/webhook;
+      proxy_pass http://127.0.0.1:7777;  
+    }
+    error_page 404 /404.html;
+        location = /40x.html {
+    }
+
+    error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+    }
+
+}
+</code></pre>
+
+<ul>
+<li>403 Forbidden
+由于我的启动用户和nginx工作用户不一致。
+解决方案：参考<a href="https://blog.csdn.net/reblue520/article/details/52799500">https://blog.csdn.net/reblue520/article/details/52799500</a></li>
+</ul>
+
+<pre><code>vim /etc/nginx/nginx.conf
+</code></pre>
+
+<pre><code>#user nginx;  #将nginx改为root
+user root;
+</code></pre>
+
+<ul>
+<li>重启Nginx
+<code>
+/etc/init.d/nginx restart
+</code>
+然后在浏览器输入<code>http://blog.harddone.com</code>验证服务是否正常。如果可以看到我们的网站示例，
+恭喜，服务器端验证无误。</li>
+</ul>
+
+<h1 id="4-github配置">4. Github配置</h1>
+
+<p>到目前为止，我们已经完成了90%的工作。但是，我们还不能简单的完成自动化部署。为啥呢？因为Github的webhook功能还没激活呢。</p>
+
+<p>登录Github,进入<code>LazyBonesLZ.github.io</code>仓库，点击<code>Setting</code>
+   <img src="https://upload-images.jianshu.io/upload_images/6174818-e4006dbc137bcb31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hugo_1_13.png" /></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/6174818-ce1e30f0be9a18b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hugo_1_14.png" /></p>
+
+<p>注意事项：</p>
+
+<pre><code>第2步：'webhook'即 ‘github_webhook.js’ 中配置的path
+第3步：必须选择‘application/json’,否则不起作用
+第4步：‘Secret’即 ‘github_webhook.js’中配置的‘ secret_key’
+一定要和脚本中设置一致，否则，你懂的！
+</code></pre>
+
+<p>好了，到目前为止，配置工作都已完成。
+剩下的只是我们日常的简单操作了，如果我们某天又心血来潮，想写篇博客消遣消遣，该怎么做呢？
+辛苦这么久的配置，就是为了这个时刻。</p>
+
+<pre><code>cd /xxx/xxx/BlogTest
+hugo new post/MySecondBlog.md
+# 呃～～编辑博客：想用什么编辑工具都可以， Markdown语法
+# 编辑完了？嗯！
+./deploy.sh
+# 执行完后，不出意外的话，服务器已经已经更新了！ 完美！
+
+# ------------------ 
+# 这样就完了？ ～～
+# nooooo~~
+# 细心的你肯定已经发现，我们的脚本只是把网站相关的东西push到了xxx.github.io这个仓库
+# 源码还没提交备份呢？！！！
+git add .
+git commit -m '备注：要提交源码啊！'
+git push -u origin master
+# ALL DONE, 这下服务器也更新了，github源码也提交了，新更新的内容也备份到另一个github仓库。
+#再也不怕了。
+</code></pre>
+
+<h1 id="总结一下">总结一下</h1>
+
+<p>你肯定发现，其实我们根本就不用这么麻烦的，人家github pages就可以搭建博客的啊。为啥还要费这劲？
+～～，敲黑板！刚开始的时候就说了，这是一次冲动和闲来无事的蛋疼。。。就这！</p>
+
+<p>后期计划：</p>
+
+<ul>
+<li>? 找个好看的网站主题吧？</li>
+<li>？把新赶的几篇稿子搬到自己的网站吧？</li>
+<li>？加个广告吧？！</li>
+<li>？加个https吧？！</li>
+<li>还是看时间吧！！！</li>
+</ul>
+
+<p>感谢：</p>
+
+<ul>
+<li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
+<li><a href="https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/">https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/</a></li>
+<li><a href="https://www.lovelucy.info/auto-deploy-website-by-webhooks-of-github-and-gitlab.html">https://www.lovelucy.info/auto-deploy-website-by-webhooks-of-github-and-gitlab.html</a></li>
+<li><a href="https://blog.csdn.net/hanshileiai/article/details/54571028">https://blog.csdn.net/hanshileiai/article/details/54571028</a></li>
+<li><a href="https://tecadmin.net/install-latest-nodejs-and-npm-on-centos/">https://tecadmin.net/install-latest-nodejs-and-npm-on-centos/</a></li>
+<li><a href="https://blog.csdn.net/reblue520/article/details/52799500">https://blog.csdn.net/reblue520/article/details/52799500</a></li>
+<li><a href="https://github.com/SixQuant/gitlab-webhook-handler/blob/master/gitlab-webhook-handler.js">https://github.com/SixQuant/gitlab-webhook-handler/blob/master/gitlab-webhook-handler.js</a></li>
+<li><a href="https://github.com/rvagg/github-webhook-handler">https://github.com/rvagg/github-webhook-handler</a></li>
+</ul>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/hugo_nginx_2/">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）</a></li>
+        
+        <li><a href="/post/hugo_nginx_1/">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（一）</a></li>
+        
+        <li><a href="/post/kotlin_custom_btn/">Kotlin 自定义带点击效果的Button</a></li>
+        
+        <li><a href="/post/python_adb/">Python执行Android adb 命令</a></li>
+        
+        <li><a href="/post/lua_override/">Lua 方法重载</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://blog.harddone.com/tags/Web">Web</a></li>
+                                
+                                <li><a href="http://blog.harddone.com/tags/Nginx">Nginx</a></li>
+                                
+                                <li><a href="http://blog.harddone.com/tags/CentOS">CentOS</a></li>
+                                
+                                <li><a href="http://blog.harddone.com/tags/Github">Github</a></li>
+                                
+                                <li><a href="http://blog.harddone.com/tags/Webhook">Webhook</a></li>
+                                
+                                <li><a href="http://blog.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2">自动部署</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= ""
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://blog.harddone.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.harddone.com/post/hugo_nginx_3/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/hugo_nginx_2/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/hugo_nginx_1/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（一）">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（一）</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/kotlin_custom_btn/" title="Kotlin 自定义带点击效果的Button">Kotlin 自定义带点击效果的Button</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/python_adb/" title="Python执行Android adb 命令">Python执行Android adb 命令</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/lua_override/" title="Lua 方法重载">Lua 方法重载</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/unit_call_android_arr/" title="Unity调用Android参数为数组的方法">Unity调用Android参数为数组的方法</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=lpl70fmt" title="领取￥1888阿里云产品通用代金券" target="_blank" style="color:red">
+                
+                    领取￥1888阿里云产品通用代金券
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=lpl70fmt" title="领取￥1888阿里云产品通用代金券" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB17qJhXpzqK1RjSZFvXXcB7VXa-200-126.jpg">
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=lpl70fmt" title="领取￥1888阿里云产品通用代金券" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB1aDXhXpzqK1RjSZFvXXcB7VXa-259-194.jpg">
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.harddone.com/categories/Android/">Android(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/categories/Lua/">Lua(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/categories/Python/">Python(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/categories/Web/">Web(3)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://blog.harddone.com/tags/Android/">Android</a>
+    
+    <a href="http://blog.harddone.com/tags/Array-Params/">Array-Params</a>
+    
+    <a href="http://blog.harddone.com/tags/CentOS/">CentOS</a>
+    
+    <a href="http://blog.harddone.com/tags/Github/">Github</a>
+    
+    <a href="http://blog.harddone.com/tags/Kotlin/">Kotlin</a>
+    
+    <a href="http://blog.harddone.com/tags/Method/">Method</a>
+    
+    <a href="http://blog.harddone.com/tags/Nginx/">Nginx</a>
+    
+    <a href="http://blog.harddone.com/tags/Python/">Python</a>
+    
+    <a href="http://blog.harddone.com/tags/Unity/">Unity</a>
+    
+    <a href="http://blog.harddone.com/tags/Web/">Web</a>
+    
+    <a href="http://blog.harddone.com/tags/Webhook/">Webhook</a>
+    
+    <a href="http://blog.harddone.com/tags/adb/">adb</a>
+    
+    <a href="http://blog.harddone.com/tags/lua/">lua</a>
+    
+    <a href="http://blog.harddone.com/tags/override/">override</a>
+    
+    <a href="http://blog.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
+    
+    <a href="http://blog.harddone.com/tags/%E6%95%B0%E7%BB%84/">数组</a>
+    
+    <a href="http://blog.harddone.com/tags/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/">方法重载</a>
+    
+    <a href="http://blog.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">自动部署</a>
+    
+    <a href="http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button/">自定义Button</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://blog.coderzh.com/" title="CoderZh Blog">CoderZh Blog</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.suntabu.com/" title="Suntabu Blog">Suntabu Blog</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://www.schunlee.ml/" title="巽&#39;s 部落格">巽&#39;s 部落格</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://blog.harddone.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://blog.harddone.com/">ColofulDark Blog By ColofulDark</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on ColofulDark Blog</title>
+    <link>http://blog.harddone.com/categories/Android/</link>
+    <description>Recent content in Android on ColofulDark Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 19 Apr 2019 11:10:07 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.harddone.com/categories/Android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kotlin 自定义带点击效果的Button</title>
+      <link>http://blog.harddone.com/post/kotlin_custom_btn/</link>
+      <pubDate>Fri, 19 Apr 2019 11:10:07 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/post/kotlin_custom_btn/</guid>
+      <description>MainButton 自定义button，可以在xml中设置点击效果，但是如果每个button都要按下效果的话，重复添加xml文件烦不胜烦，所以自定义一个MainButton,设置好Button的颜色后，按下效果是对其背景色加深处理，达到点击的效果，感觉世界一下清爽了许多。 效果预览 使用说明 添加依赖 implemention</description>
+    </item>
+    
+    <item>
+      <title>Unity调用Android参数为数组的方法</title>
+      <link>http://blog.harddone.com/post/unit_call_android_arr/</link>
+      <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/post/unit_call_android_arr/</guid>
+      <description>Unity开发过程中，如果要调用Android端的java方法，恰巧该方法的参数是可变参数或者数组，使用unity的AndroidJavaObject提供的call方法直接传递c#数组，是需要对数组参数做一下处理。举例说明： java方法如下： public void addList(String... values){ } unity c#调用时，需要把传入的参</description>
+    </item>
+    
+  </channel>
+</rss>
