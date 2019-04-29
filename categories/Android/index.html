@@ -126,6 +126,98 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://blog.harddone.com/post/seekbar_issue/">自定义seekbar遇到的问题</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月7日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://blog.harddone.com/categories/Android">Android</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                项目需要自定义seekbar样式，记录一下这个过程中的问题和解决方案。 UI设计样式如图：宽度填满父view 在实现的过程中出现过一些问题： 1.thumb在滑动的过程中，出现了压缩 2.thumb在起点和终点只显示来一半 3.seekbar宽度并未填充满父view,而是在左右两侧保留了默……
+                                <p class="readmore"><a href="http://blog.harddone.com/post/seekbar_issue/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://blog.harddone.com/post/android_https_issue/">Android https 突然提示证书验证失败</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年8月13日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://blog.harddone.com/categories/Android">Android</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                项目中一直有https的请求，没有用到第三方的SDK,都是使用HttpUrlConnec tion去实现的请求。一直相安无事，突然测试人员报告说出现证书验证问题。网上各种查看资料解决，方案无非是加入自定义证书到工程或者是用信任所有证书的方式解决。但是，我们并没有用到自定义证书，如果……
+                                <p class="readmore"><a href="http://blog.harddone.com/post/android_https_issue/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://blog.harddone.com/post/nexus_private_maven/">填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年7月12日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://blog.harddone.com/categories/Android">Android</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                很多时候，Android Studio中所创建的工程，会依赖一个或多个Module。Module 生成的AAR库，可以上传到maven或者私服Nexus作为公用的SDK。Gradle子工程之间通过 compile/implementation project(&rdquo;:XXX&rdquo;)这种方式依赖是非常便利的，但是这……
+                                <p class="readmore"><a href="http://blog.harddone.com/post/nexus_private_maven/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://blog.harddone.com/post/gp_billing/">Google play billing Alpha / Beta 测试</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年7月11日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://blog.harddone.com/categories/Android">Android</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                本文假设你已经集成Google play billing SDK ，根据google官方提供的文档说明，提供了几种验证应用内购买逻辑的方式。 本文记录的是alpha或beta测试的一些操作细节。供参考。 ！！！！！前方多图预警！！！！！！ 一 前提 1.已注册Google play console账号； 2.已注册Google账号……
+                                <p class="readmore"><a href="http://blog.harddone.com/post/gp_billing/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://blog.harddone.com/post/unit_call_android_arr/">Unity调用Android参数为数组的方法</a>
                                 </h1>
                             </header>
@@ -143,6 +235,52 @@
                             <div class="post-content">
                                 Unity开发过程中，如果要调用Android端的java方法，恰巧该方法的参数是可变参数或者数组，使用unity的AndroidJavaObject提供的call方法直接传递c#数组，是需要对数组参数做一下处理。举例说明： java方法如下： public void addList(String... values){ } unity c#调用时，需要把传入的参……
                                 <p class="readmore"><a href="http://blog.harddone.com/post/unit_call_android_arr/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://blog.harddone.com/post/mac_as_jdk/">Mac OS Andriod Studio:Gradle 3.3 requires Java 7 or later to run.You are currently using Java 6</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2017年11月12日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://blog.harddone.com/categories/Android">Android</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                1.project structure设置界面中设置jdk路径是jdk1.7或以上的版本:File-&gt;Project Structure-&gt;SDK Location 2.修改AS置默认的jdk版本。 (如果是jdk1.8版本的话还需要修改/Application/Android Studio/Contents/info.plist) 如何找到该路径？ Android Studio.app -&gt; 右键 -&gt; 显示包内容 修改前： &lt;key&gt;JVMVersion&lt;/key&gt; &lt;string&gt;1.6*,1.7+&lt;/string&gt; 修改后： &lt;key&gt;JVMVersion&lt;/key&gt;……
+                                <p class="readmore"><a href="http://blog.harddone.com/post/mac_as_jdk/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://blog.harddone.com/post/zxing/">Android:Zbar 解码、ZXing 管理相机的补充（Zbar支持64位）</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2015年9月24日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://blog.harddone.com/categories/Android">Android</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                一. 前言 最近公司项目用到了扫描的功能，参考网上的博文解决大部分的问题（http://blog.csdn.net/b2259909/article/details/43273231（对原文作者表示感谢）），但是后来APK在客户的64位设备上运行时，出现了崩溃的问题，联调时因为参考上……
+                                <p class="readmore"><a href="http://blog.harddone.com/post/zxing/">阅读全文</a></p>
                             </div>
                         </article>
                     
@@ -199,7 +337,15 @@
     </li>
     
     <li>
-        <a href="http://blog.harddone.com/post/unit_call_android_arr/" title="Unity调用Android参数为数组的方法">Unity调用Android参数为数组的方法</a>
+        <a href="http://blog.harddone.com/post/seekbar_issue/" title="自定义seekbar遇到的问题">自定义seekbar遇到的问题</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/android_https_issue/" title="Android https 突然提示证书验证失败">Android https 突然提示证书验证失败</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/nexus_private_maven/" title="填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven">填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven</a>
     </li>
     
 </ul>
@@ -243,7 +389,7 @@
 <ul class="widget-list">
     
     <li>
-        <a href="http://blog.harddone.com/categories/Android/">Android(3)</a>
+        <a href="http://blog.harddone.com/categories/Android/">Android(9)</a>
     </li>
     
     <li>
@@ -265,31 +411,61 @@
         <h3 class="widget-title">标签</h3>
 <div class="tagcloud">
     
+    <a href="http://blog.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata-Test</a>
+    
     <a href="http://blog.harddone.com/tags/Android/">Android</a>
+    
+    <a href="http://blog.harddone.com/tags/Android-Studio/">Android-Studio</a>
     
     <a href="http://blog.harddone.com/tags/Android-Studio3.3.2/">Android-Studio3.3.2</a>
     
     <a href="http://blog.harddone.com/tags/Array-Params/">Array-Params</a>
     
+    <a href="http://blog.harddone.com/tags/Billing/">Billing</a>
+    
     <a href="http://blog.harddone.com/tags/CentOS/">CentOS</a>
+    
+    <a href="http://blog.harddone.com/tags/GP/">GP</a>
     
     <a href="http://blog.harddone.com/tags/Github/">Github</a>
     
+    <a href="http://blog.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
+    
+    <a href="http://blog.harddone.com/tags/Https/">Https</a>
+    
+    <a href="http://blog.harddone.com/tags/IAP/">IAP</a>
+    
+    <a href="http://blog.harddone.com/tags/JDK1.8/">JDK1.8</a>
+    
     <a href="http://blog.harddone.com/tags/Kotlin/">Kotlin</a>
+    
+    <a href="http://blog.harddone.com/tags/Mac/">Mac</a>
     
     <a href="http://blog.harddone.com/tags/Method/">Method</a>
     
+    <a href="http://blog.harddone.com/tags/Multiple-Module-Dependencies/">Multiple-Module-Dependencies</a>
+    
+    <a href="http://blog.harddone.com/tags/Nexus/">Nexus</a>
+    
     <a href="http://blog.harddone.com/tags/Nginx/">Nginx</a>
+    
+    <a href="http://blog.harddone.com/tags/Private-Maven/">Private-Maven</a>
     
     <a href="http://blog.harddone.com/tags/Push-to-JCenter/">Push-to-JCenter</a>
     
     <a href="http://blog.harddone.com/tags/Python/">Python</a>
+    
+    <a href="http://blog.harddone.com/tags/Seekbar/">Seekbar</a>
     
     <a href="http://blog.harddone.com/tags/Unity/">Unity</a>
     
     <a href="http://blog.harddone.com/tags/Web/">Web</a>
     
     <a href="http://blog.harddone.com/tags/Webhook/">Webhook</a>
+    
+    <a href="http://blog.harddone.com/tags/ZXing/">ZXing</a>
+    
+    <a href="http://blog.harddone.com/tags/Zbar/">Zbar</a>
     
     <a href="http://blog.harddone.com/tags/adb/">adb</a>
     
@@ -299,6 +475,8 @@
     
     <a href="http://blog.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
+    <a href="http://blog.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/">扫描解码</a>
+    
     <a href="http://blog.harddone.com/tags/%E6%95%B0%E7%BB%84/">数组</a>
     
     <a href="http://blog.harddone.com/tags/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/">方法重载</a>
@@ -306,6 +484,10 @@
     <a href="http://blog.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">自动部署</a>
     
     <a href="http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button/">自定义Button</a>
+    
+    <a href="http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1/">自定义进度条</a>
+    
+    <a href="http://blog.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/">证书验证失败</a>
     
 </div>
     </section>

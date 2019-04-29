@@ -134,7 +134,7 @@
 <li><p>接下来，依次执行下列命令行，详细解释参考注释。</p></li>
 </ul>
 
-<pre><code># git 初始化
+<pre><code class="language-shell"># git 初始化
 git init
 
 # 将主题ananke作为外链加入的本地仓库
@@ -162,7 +162,7 @@ open content/post
 <li><p>保存文本内容后，然后执行hugo提供的调试命令查看效果，检查博客文档效果是否生效：</p></li>
 </ul>
 
-<pre><code>hugo server -D
+<pre><code class="language-shell">hugo server -D
 
 # 然后在浏览器访问 
 http://localhost:1313/
@@ -188,7 +188,7 @@ theme = &quot;ananke&quot;
 
 <p>记得我们在第一篇提到，public下的内容会被push到GitHub做一个备份，然后服务器通过git 来抓取完成博客的更新。所以为了操作方便，我们把这一系列的操作写成可执行脚本，自动化。</p>
 
-<pre><code>  # cd  到项目根目录
+<pre><code class="language-shell">  # cd  到项目根目录
   cd xx/xx/BlogTest
   # 新建脚本文件 deploy.sh
   vim deploy.sh
@@ -196,7 +196,7 @@ theme = &quot;ananke&quot;
 
 <p>保存以下脚本内容：</p>
 
-<pre><code>      echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+<pre><code class="language-shell">      echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
 
       # Build the project.
       hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
@@ -234,7 +234,7 @@ theme = &quot;ananke&quot;
 
 <h2 id="1-网站根目录">1. 网站根目录</h2>
 
-<pre><code>#  创建网站根目录
+<pre><code class="language-shell">#  创建网站根目录
 mkdir blog2
 
 # cd 到目录blog2
@@ -254,7 +254,7 @@ git pull origin master
 
 <h3 id="2-1-创建webhook目录-创建脚本git-pull-sh">2.1 创建webhook目录,创建脚本git_pull.sh</h3>
 
-<pre><code>#创建目录
+<pre><code class="language-shell">#创建目录
 mkdir webhook
 #进入目录
 cd webhook
@@ -265,7 +265,7 @@ vim git_pull.sh
 
 <p>在脚本中保存以下内容：</p>
 
-<pre><code>cd /root/blog2
+<pre><code class="language-shell">cd /root/blog2
 git pull origin master
 exit 0
 </code></pre>
@@ -286,7 +286,7 @@ npm install github_webhook_handler
 
 <p>写入以下脚本内容：</p>
 
-<pre><code>  var http = require('http')
+<pre><code class="language-shell">  var http = require('http')
   var exec = require('child_process').exec
   var createHandler = require('github-webhook-handler')
   var handler = createHandler({ path: '/webhook', secret: 'myxxxxx' })
@@ -325,7 +325,7 @@ npm install github_webhook_handler
 <pre><code>vim /etc/nginx/conf.d/default.conf
 </code></pre>
 
-<pre><code>#
+<pre><code class="language-shell">#
 # The default server
 #
 
@@ -364,7 +364,7 @@ server {
 vim blog.conf
 </code></pre>
 
-<pre><code>server {
+<pre><code class="language-shell">server {
 #    listen       80 default_server;
 #   listen       [::]:80 default_server;
     listen     80;
@@ -428,7 +428,7 @@ user root;
 
 <p>注意事项：</p>
 
-<pre><code>第2步：'webhook'即 ‘github_webhook.js’ 中配置的path
+<pre><code class="language-shell">第2步：'webhook'即 ‘github_webhook.js’ 中配置的path
 第3步：必须选择‘application/json’,否则不起作用
 第4步：‘Secret’即 ‘github_webhook.js’中配置的‘ secret_key’
 一定要和脚本中设置一致，否则，你懂的！
@@ -438,7 +438,7 @@ user root;
 剩下的只是我们日常的简单操作了，如果我们某天又心血来潮，想写篇博客消遣消遣，该怎么做呢？
 辛苦这么久的配置，就是为了这个时刻。</p>
 
-<pre><code>cd /xxx/xxx/BlogTest
+<pre><code class="language-shell">cd /xxx/xxx/BlogTest
 hugo new post/MySecondBlog.md
 # 呃～～编辑博客：想用什么编辑工具都可以， Markdown语法
 # 编辑完了？嗯！
@@ -590,7 +590,15 @@ git push -u origin master
     </li>
     
     <li>
-        <a href="http://blog.harddone.com/post/unit_call_android_arr/" title="Unity调用Android参数为数组的方法">Unity调用Android参数为数组的方法</a>
+        <a href="http://blog.harddone.com/post/seekbar_issue/" title="自定义seekbar遇到的问题">自定义seekbar遇到的问题</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/android_https_issue/" title="Android https 突然提示证书验证失败">Android https 突然提示证书验证失败</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.harddone.com/post/nexus_private_maven/" title="填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven">填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven</a>
     </li>
     
 </ul>
@@ -634,7 +642,7 @@ git push -u origin master
 <ul class="widget-list">
     
     <li>
-        <a href="http://blog.harddone.com/categories/Android/">Android(3)</a>
+        <a href="http://blog.harddone.com/categories/Android/">Android(9)</a>
     </li>
     
     <li>
@@ -656,31 +664,61 @@ git push -u origin master
         <h3 class="widget-title">标签</h3>
 <div class="tagcloud">
     
+    <a href="http://blog.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata-Test</a>
+    
     <a href="http://blog.harddone.com/tags/Android/">Android</a>
+    
+    <a href="http://blog.harddone.com/tags/Android-Studio/">Android-Studio</a>
     
     <a href="http://blog.harddone.com/tags/Android-Studio3.3.2/">Android-Studio3.3.2</a>
     
     <a href="http://blog.harddone.com/tags/Array-Params/">Array-Params</a>
     
+    <a href="http://blog.harddone.com/tags/Billing/">Billing</a>
+    
     <a href="http://blog.harddone.com/tags/CentOS/">CentOS</a>
+    
+    <a href="http://blog.harddone.com/tags/GP/">GP</a>
     
     <a href="http://blog.harddone.com/tags/Github/">Github</a>
     
+    <a href="http://blog.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
+    
+    <a href="http://blog.harddone.com/tags/Https/">Https</a>
+    
+    <a href="http://blog.harddone.com/tags/IAP/">IAP</a>
+    
+    <a href="http://blog.harddone.com/tags/JDK1.8/">JDK1.8</a>
+    
     <a href="http://blog.harddone.com/tags/Kotlin/">Kotlin</a>
+    
+    <a href="http://blog.harddone.com/tags/Mac/">Mac</a>
     
     <a href="http://blog.harddone.com/tags/Method/">Method</a>
     
+    <a href="http://blog.harddone.com/tags/Multiple-Module-Dependencies/">Multiple-Module-Dependencies</a>
+    
+    <a href="http://blog.harddone.com/tags/Nexus/">Nexus</a>
+    
     <a href="http://blog.harddone.com/tags/Nginx/">Nginx</a>
+    
+    <a href="http://blog.harddone.com/tags/Private-Maven/">Private-Maven</a>
     
     <a href="http://blog.harddone.com/tags/Push-to-JCenter/">Push-to-JCenter</a>
     
     <a href="http://blog.harddone.com/tags/Python/">Python</a>
+    
+    <a href="http://blog.harddone.com/tags/Seekbar/">Seekbar</a>
     
     <a href="http://blog.harddone.com/tags/Unity/">Unity</a>
     
     <a href="http://blog.harddone.com/tags/Web/">Web</a>
     
     <a href="http://blog.harddone.com/tags/Webhook/">Webhook</a>
+    
+    <a href="http://blog.harddone.com/tags/ZXing/">ZXing</a>
+    
+    <a href="http://blog.harddone.com/tags/Zbar/">Zbar</a>
     
     <a href="http://blog.harddone.com/tags/adb/">adb</a>
     
@@ -690,6 +728,8 @@ git push -u origin master
     
     <a href="http://blog.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
+    <a href="http://blog.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/">扫描解码</a>
+    
     <a href="http://blog.harddone.com/tags/%E6%95%B0%E7%BB%84/">数组</a>
     
     <a href="http://blog.harddone.com/tags/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/">方法重载</a>
@@ -697,6 +737,10 @@ git push -u origin master
     <a href="http://blog.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">自动部署</a>
     
     <a href="http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button/">自定义Button</a>
+    
+    <a href="http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1/">自定义进度条</a>
+    
+    <a href="http://blog.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/">证书验证失败</a>
     
 </div>
     </section>
