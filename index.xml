@@ -30,30 +30,14 @@
     </item>
     
     <item>
-      <title>Welcome</title>
-      <link>http://blog.harddone.com/post/welcome/</link>
-      <pubDate>Thu, 25 Apr 2019 17:59:39 +0800</pubDate>
+      <title>Lua 方法重载</title>
+      <link>http://blog.harddone.com/post/lua_override/</link>
+      <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/welcome/</guid>
-      <description> 欢迎来的测试网站！ </description>
-    </item>
-    
-    <item>
-      <title>Third</title>
-      <link>http://blog.harddone.com/post/third/</link>
-      <pubDate>Wed, 24 Apr 2019 10:13:13 +0800</pubDate>
-      
-      <guid>http://blog.harddone.com/post/third/</guid>
-      <description>测试第三篇博客是不是生效了？ 哈哈哈啊哈的辅导书辅导书辅导书饭撒地方都是负担绘声绘色</description>
-    </item>
-    
-    <item>
-      <title>Second</title>
-      <link>http://blog.harddone.com/post/second/</link>
-      <pubDate>Mon, 22 Apr 2019 16:15:13 +0800</pubDate>
-      
-      <guid>http://blog.harddone.com/post/second/</guid>
-      <description> sdfdsfd睡醒了十多个合理的开发工具来看的舒服啥地方老师的发生地发发牢骚发了收到了飞机脸上的肌肤立刻撒娇多放辣椒水淀粉  </description>
+      <guid>http://blog.harddone.com/post/lua_override/</guid>
+      <description>最近在更新一个Lua项目中，很多地方调用了同一个方法，想在不改动调用逻辑的情况下，如何不执行原来的方法逻辑，而执行新的方法逻辑呢？ 我们可以直接重载该方法，但是前提是必须在第一次调用该方法前就完成了重载。
+请注意这种方式的前提：一定是要在该方法第一次被调用前完成你的重载，否则无效。  举例说明： ads_plugin_manager是一个全局对象，在其类文件中已经实现了方法showBanner的逻辑，项目中许多直接调用ads_plugin_manager:showBanner()。现在我想不改动任何调用该方法地方的代码。怎么操作？
+ 创建lua文件：OverrideAdsPluginManager.lua  ads_lua_manager.showBanner = function(...) --override start -- 请注意，如果方法实现需要访问类的其他方法或者变量，都可以通过ads_lua_manager.xxx的方式直接调用 -- override end end   尽早引用OverrideAdsPluginManager.lua  require &amp;quot;libii/common/OverrideShowBanner&amp;quot;  </description>
     </item>
     
     <item>
