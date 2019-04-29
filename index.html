@@ -72,7 +72,7 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="http://blog.harddone.com/post/python_adb/" title="Python_adb" >Python_adb</a>
+                                    <a href="http://blog.harddone.com/post/python_adb/" title="Python执行Android adb 命令" >Python执行Android adb 命令</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
@@ -89,7 +89,7 @@
                             <div class="post-content">
                                 说明 本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令：
 //example cmd = 'adb shell' os.system(cmd)  1.uninstall_clean_app.py 根据app bundle id 卸载应用，并且删除该应用在sdcard目录下生成的文件夹等。当前脚本中所删除的目录是写死的，可以根据需要自己修改。
-#!/usr/bin/python import subprocess import os, sys import getopt BASE_DIR = os.path.dirname(os.path.dirname(__file__)) if __name__ == '__main__': &quot;&quot;&quot; change commands and add shell&quot;&quot;&quot; tag = '' try: opt, args = getopt.getopt(sys.argv[1:], &quot;ht:&quot;, ['pkg', 'help']) for op, value in opt: if op in (&quot;-t&quot;, &quot;--pkg&quot;): tag = value if op in (&quot;-h&quot;, &quot;--help&quot;): print &quot;Usage: main_app_clean.py -t APP_PKG_NAME&quot; print &quot;Options:&quot; print &quot; -t APP_PKG_NAME should be a bundle id !&quot; print &quot;&quot; print &quot;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&quot; print &quot;&quot; sys.exit() except getopt.GetoptError: print &quot;Error: Could not find the args.&quot; print &quot;Usage: main_app_clean.py -t APP_PKG_NAME&quot; print &quot;Options:&quot; print &quot; -t APP_PKG_NAME should be a bundle id !&quot; print &quot;&quot; print &quot;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&quot; print &quot;&quot; sys.exit() if tag == '': print &quot;you should input a bundle id !……
+#!/usr/bin/python import subprocess import os, sys import getopt BASE_DIR = os.path.dirname(os.path.dirname(__file__)) if __name__ == '__main__': &quot;&quot;&quot; change commands and add shell&quot;&quot;&quot; tag = '' try: opt, args = getopt.getopt(sys.argv[1:], &quot;ht:&quot;, ['pkg', 'help']) for op, value in opt: if op in (&quot;-t&quot;, &quot;--pkg&quot;): tag = value if op in (&quot;-h&quot;, &quot;--help&quot;): print &quot;Usage: main_app_clean.py -t APP_PKG_NAME&quot; print &quot;Options:&quot; print &quot; -t APP_PKG_NAME should be a bundle id !……
                             </div>
                             <p class="readmore"><a href="http://blog.harddone.com/post/python_adb/">阅读全文</a></p>
                         </article>
@@ -144,7 +144,7 @@
 <ul class="widget-list">
     
     <li>
-        <a href="http://blog.harddone.com/post/python_adb/" title="Python_adb">Python_adb</a>
+        <a href="http://blog.harddone.com/post/python_adb/" title="Python执行Android adb 命令">Python执行Android adb 命令</a>
     </li>
     
     <li>
