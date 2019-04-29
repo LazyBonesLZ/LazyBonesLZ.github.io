@@ -79,6 +79,13 @@
                                 2019年4月18日
                             </date>
                             
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://blog.harddone.com/categories/lua">Lua</a></span>
+                                
+                            </div>
+                            
                             <div class="post-content">
                                 最近在更新一个Lua项目中，很多地方调用了同一个方法，想在不改动调用逻辑的情况下，如何不执行原来的方法逻辑，而执行新的方法逻辑呢？ 我们可以直接重载该方法，但是前提是必须在第一次调用该方法前就完成了重载。
 请注意这种方式的前提：一定是要在该方法第一次被调用前完成你的重载，否则无效。  举例说明： ads_plugin_manager是一个全局对象，在其类文件中已经实现了方法showBanner的逻辑，项目中许多直接调用ads_plugin_manager:showBanner()。现在我想不改动任何调用该方法地方的代码。怎么操作？
@@ -155,12 +162,22 @@
         <h3 class="widget-title">分类</h3>
 <ul class="widget-list">
     
+    <li>
+        <a href="http://blog.harddone.com/categories/lua/">lua(1)</a>
+    </li>
+    
 </ul>
     </section>
 
     <section class="widget">
         <h3 class="widget-title">标签</h3>
 <div class="tagcloud">
+    
+    <a href="http://blog.harddone.com/tags/lua/">lua</a>
+    
+    <a href="http://blog.harddone.com/tags/override/">override</a>
+    
+    <a href="http://blog.harddone.com/tags/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/">方法重载</a>
     
 </div>
     </section>
