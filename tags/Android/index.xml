@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Android Studio3.3.2 发布Kotlin项目到Jcenter</title>
+      <link>http://blog.harddone.com/post/as_push_kotlin_jcenter/</link>
+      <pubDate>Wed, 17 Apr 2019 11:42:49 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/post/as_push_kotlin_jcenter/</guid>
+      <description>概述 纸上得来终觉浅。 一直以为发布AAR到jcenter是非常简单的事，跟发布到私有服务器nexus应该没太多差别。没想到自己动手做过才知道千万道坑。 本文将记录在Android Studio 3.3.2下，如何上传用kotlin开发的aar到jcenter服务器以及遇到的问题。参考来自这篇博文，</description>
+    </item>
+    
+    <item>
       <title>Unity调用Android参数为数组的方法</title>
       <link>http://blog.harddone.com/post/unit_call_android_arr/</link>
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>

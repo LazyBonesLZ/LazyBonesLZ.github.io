@@ -7,27 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Kotlin 自定义带点击效果的Button | ColofulDark Blog</title>
-    <meta property="og:title" content="Kotlin 自定义带点击效果的Button - ColofulDark Blog">
+    <title>Android Studio3.3.2 | ColofulDark Blog</title>
+    <meta property="og:title" content="Android Studio3.3.2 - ColofulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-04-19T11:10:07&#43;08:00">
-        
-        
-    <meta property="article:modified_time" content="2019-04-19T11:10:07&#43;08:00">
         
     <meta name="Keywords" content="ColofulDark,java,android,博客,python">
-    <meta name="description" content="Kotlin 自定义带点击效果的Button">
+    <meta name="description" content="Android Studio3.3.2">
         
     <meta name="author" content="ColofulDark">
-    <meta property="og:url" content="http://blog.harddone.com/post/kotlin_custom_btn/">
+    <meta property="og:url" content="http://blog.harddone.com/tags/Android-Studio3.3.2/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
-        <link rel="stylesheet" href="/css/prism.css">
-    
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="http://blog.harddone.com/tags/Android-Studio3.3.2/index.xml" title="ColofulDark Blog" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -36,6 +31,7 @@
     
     
 </head>
+
 
 <body>
 <header id="header" class="clearfix">
@@ -51,7 +47,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://blog.harddone.com/">首页</a>
+                    <a class="" href="http://blog.harddone.com/">首页</a>
                     
                     <a  href="http://blog.harddone.com/books/" title="新书">新书</a>
                     
@@ -72,219 +68,48 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Kotlin 自定义带点击效果的Button</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            2019年4月19日
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://blog.harddone.com/categories/Android">Android</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            
-
-<h3 id="mainbutton">MainButton</h3>
-
-<p>自定义button，可以在xml中设置点击效果，但是如果每个button都要按下效果的话，重复添加xml文件烦不胜烦，所以自定义一个MainButton,设置好Button的颜色后，按下效果是对其背景色加深处理，达到点击的效果，感觉世界一下清爽了许多。</p>
-
-<h3 id="效果预览">效果预览</h3>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/6174818-d351a2e0dfc91129.gif?imageMogr2/auto-orient/strip" alt="show.gif" /></p>
-
-<h3 id="使用说明">使用说明</h3>
-
-<ul>
-<li>添加依赖</li>
-</ul>
-
-<pre><code>implemention 'com.lazy.sdk:customviews:0.0.1'
-</code></pre>
-
-<ul>
-<li>示例</li>
-</ul>
-
-<pre><code>    &lt;androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView android:layout_width=&quot;wrap_content&quot;
-                  android:layout_height=&quot;wrap_content&quot;
-                  app:layout_constraintLeft_toLeftOf=&quot;parent&quot;
-                  app:layout_constraintTop_toTopOf=&quot;parent&quot;
-                  app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
-                  android:layout_marginLeft=&quot;20dp&quot;
-                  android:text=&quot;带图标的矩形：\n文本右下角对齐&quot;/&gt;
-        &lt;com.lazy.customviews.MainButton
-                android:id=&quot;@+id/btnRect&quot;
-                android:layout_width=&quot;108dp&quot;
-                android:layout_height=&quot;108dp&quot;
-                app:mainBtnBgColor=&quot;#FFDE6D&quot;
-                app:mainBtnIcon=&quot;@mipmap/ic_launcher&quot;
-                app:mainBtnIconRate=&quot;4.0&quot;
-                app:mainBtnRadius=&quot;0dp&quot;
-                app:mainBtnText=&quot;矩形&quot;
-                app:mainBtnTextSize=&quot;15sp&quot;
-                app:mainBtnTextColor=&quot;@android:color/holo_red_dark&quot;
-                app:mainBtnTextAlign=&quot;right_bottom&quot;
-                app:layout_constraintRight_toRightOf=&quot;parent&quot;
-                app:layout_constraintLeft_toLeftOf=&quot;parent&quot;
-                app:layout_constraintTop_toTopOf=&quot;parent&quot;
-                android:layout_marginStart=&quot;10dp&quot;
-                android:layout_marginLeft=&quot;10dp&quot;
-                android:layout_marginTop=&quot;10dp&quot;/&gt;
-    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
-   
-</code></pre>
-
-<ul>
-<li><p>自定义参数说明</p>
-
-<ul>
-<li>app:mainBtnBgColor</li>
-</ul></li>
-</ul>
-
-<pre><code>  按钮背景色：#FFDE6D 或@color/colorRed
-</code></pre>
-
-<ul>
-<li>app:mainBtnIcon</li>
-</ul>
-
-<pre><code>  按钮图标：&quot;@mipmap/ic_launcher&quot;，如果不需要，不设置该参数
-</code></pre>
-
-<ul>
-<li>app:mainBtnIconRate</li>
-</ul>
-
-<pre><code>  按钮图标比例：float型，表示图标占整个按钮的几分之几，4.0 表示 1/4.0
-</code></pre>
-
-<ul>
-<li>app:mainBtnRadius</li>
-</ul>
-
-<pre><code>  按钮圆角弧度：单位dp
-</code></pre>
-
-<ul>
-<li>app:mainBtnText</li>
-</ul>
-
-<pre><code>  按钮title
-</code></pre>
-
-<ul>
-<li>app:mainBtnTextSize</li>
-</ul>
-
-<pre><code>  按钮title字体大小：单位sp
-</code></pre>
-
-<ul>
-<li>app:mainBtnTextColor</li>
-</ul>
-
-<pre><code>  按钮文本颜色：#FFDE6D 或者 @android:color/red
-</code></pre>
-
-<ul>
-<li>app:mainBtnTextAlign</li>
-</ul>
-
-<pre><code>  按钮文本对齐方式：
-  left_bottom: 左下角对齐
-  bottom：底部居中对齐
-  right_bottom: 右下角对齐
-  center: 居中，在没有icon的情况设置该值 
-</code></pre>
-
-<ul>
-<li>注意事项</li>
-</ul>
-
-<p>MainButton点击效果是对背景色做颜色加深处理，为了响应touch事件，需要设置OnClickListener才能生效。
-  * Kotlin</p>
-
-<pre><code>  btnRect.setOnClickListener{
-  
-  }
-</code></pre>
-
-<ul>
-<li><a href="https://github.com/LazyBonesLZ/LazySDK.git">Github 源码</a></li>
-</ul>
-
-                        </div>
-
-                        
-
-
-                        
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="/post/as_push_kotlin_jcenter/">Android Studio3.3.2 发布Kotlin项目到Jcenter</a></li>
-        
-        <li><a href="/post/unit_call_android_arr/">Unity调用Android参数为数组的方法</a></li>
-        
-        <li><a href="/post/python_adb/">Python执行Android adb 命令</a></li>
-        
-        <li><a href="/post/lua_override/">Lua 方法重载</a></li>
-        
-        <li><a href="/archives/">归档</a></li>
-        
-    </ul>
-</div>
-
-
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://blog.harddone.com/tags/Android">Android</a></li>
-                                
-                                <li><a href="http://blog.harddone.com/tags/Kotlin">Kotlin</a></li>
-                                
-                                <li><a href="http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button">自定义Button</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
                     
-    
+                    <h3 class="archive-title">
+                        包含标签
+                        <span class="keyword">Android Studio3.3.2</span>
+                        的文章
+                    </h3>
+                    
 
-    
-    
-    <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= ""
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-      </script>
-    </div>
-    
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://blog.harddone.com/post/as_push_kotlin_jcenter/">Android Studio3.3.2 发布Kotlin项目到Jcenter</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月17日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://blog.harddone.com/categories/Android">Android</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                概述 纸上得来终觉浅。 一直以为发布AAR到jcenter是非常简单的事，跟发布到私有服务器nexus应该没太多差别。没想到自己动手做过才知道千万道坑。 本文将记录在Android Studio 3.3.2下，如何上传用kotlin开发的aar到jcenter服务器以及遇到的问题。参考来自这篇博文，……
+                                <p class="readmore"><a href="http://blog.harddone.com/post/as_push_kotlin_jcenter/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+
+                    
+
+
+
+
+
                 </div>
             </div>
+
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -480,28 +305,13 @@
 </footer>
 
 
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
 
 
 
 <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
 
 
 
