@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Lua 方法重载 | ColofulDark Blog</title>
-    <meta property="og:title" content="Lua 方法重载 - ColofulDark Blog">
+    <title>Python_adb | ColofulDark Blog</title>
+    <meta property="og:title" content="Python_adb - ColofulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-04-18T10:01:05&#43;08:00">
+    <meta property="article:published_time" content="2019-04-29T10:12:15&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-04-18T10:01:05&#43;08:00">
+    <meta property="article:modified_time" content="2019-04-29T10:12:15&#43;08:00">
         
     <meta name="Keywords" content="ColofulDark,java,android,博客,python">
-    <meta name="description" content="Lua 方法重载">
+    <meta name="description" content="Python_adb">
         
     <meta name="author" content="ColofulDark">
-    <meta property="og:url" content="http://blog.harddone.com/post/lua_override/">
+    <meta property="og:url" content="http://blog.harddone.com/post/python_adb/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -74,16 +74,16 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">Lua 方法重载</h1>
+                            <h1 class="post-title">Python_adb</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年4月18日
+                            2019年4月29日
                         </date>
                         
                         <div class="post-meta">
                             <span>|</span>
                             
-                                <span class="meta-category"><a href="http://blog.harddone.com/categories/lua">Lua</a></span>
+                                <span class="meta-category"><a href="http://blog.harddone.com/categories/python">Python</a></span>
                             
                         </div>
                         
@@ -94,31 +94,189 @@
                         
                         
                         <div class="post-content">
-                            <p>最近在更新一个Lua项目中，很多地方调用了同一个方法，想在不改动调用逻辑的情况下，如何不执行原来的方法逻辑，而执行新的方法逻辑呢？
-我们可以直接重载该方法，但是前提是必须在<strong>第一次调用</strong>该方法前就完成了重载。</p>
+                            
 
-<pre><code>请注意这种方式的前提：一定是要在该方法第一次被调用前完成你的重载，否则无效。
+<h1 id="说明">说明</h1>
+
+<p>本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令：</p>
+
+<pre><code>//example
+cmd = 'adb shell' 
+os.system(cmd)
 </code></pre>
 
-<p>举例说明： ads_plugin_manager是一个全局对象，在其类文件中已经实现了方法showBanner的逻辑，项目中许多直接调用ads_plugin_manager:showBanner()。现在我想不改动任何调用该方法地方的代码。怎么操作？</p>
+<h1 id="1-uninstall-clean-app-py">1.<code>uninstall_clean_app.py</code></h1>
+
+<p>根据app bundle id 卸载应用，并且删除该应用在sdcard目录下生成的文件夹等。当前脚本中所删除的目录是写死的，可以根据需要自己修改。</p>
+
+<pre><code>#!/usr/bin/python
+import subprocess
+import os, sys
+import getopt
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+
+if __name__ == '__main__':
+
+	&quot;&quot;&quot; change commands and add shell&quot;&quot;&quot;
+
+	tag = ''
+
+	try:
+		opt, args = getopt.getopt(sys.argv[1:], &quot;ht:&quot;, ['pkg', 'help'])
+		for op, value in opt:
+			if op in (&quot;-t&quot;, &quot;--pkg&quot;):
+				tag = value
+			if op in (&quot;-h&quot;, &quot;--help&quot;):
+				print &quot;Usage: main_app_clean.py -t APP_PKG_NAME&quot;
+				print &quot;Options:&quot;
+				print &quot;  -t  APP_PKG_NAME should be a bundle id !&quot;
+				print &quot;&quot;
+				print &quot;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&quot;
+				print &quot;&quot;
+				sys.exit()
+	except getopt.GetoptError:  
+            print &quot;Error: Could not find the args.&quot;
+            print &quot;Usage: main_app_clean.py -t APP_PKG_NAME&quot;
+    	    print &quot;Options:&quot;
+    	    print &quot;  -t  APP_PKG_NAME should be a bundle id !&quot;
+    	    print &quot;&quot;
+    	    print &quot;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&quot;
+    	    print &quot;&quot;
+    	    sys.exit()
+
+	
+	if tag == '':
+		print &quot;you should input a bundle id  !&quot;
+		exit()
+	pkg = tag
+
+	print ''
+	print '1) uninstalling ' + pkg +' ...'
+	unInstallCmd = 'adb uninstall  ' + pkg 
+	os.system(unInstallCmd)
+
+	print ''
+	print '2) cleaning the cached file...'
+	cleanCmd1 = 'adb shell rm -fR /sdcard/.DataBackupTest'
+	os.system(cleanCmd1)
+	cleanCmd2 = 'adb shell rm -fR /sdcard/.DataBackup'
+	os.system(cleanCmd2)
+	print ''
+	print '	All done !^_^!'
+	print ''
+
+	exit()
+
+</code></pre>
 
 <ul>
-<li>创建lua文件：OverrideAdsPluginManager.lua</li>
+<li><p>使用方法</p>
+
+<ul>
+<li>下载脚本到指定目录</li>
+<li>打开terminal，执行cd命令到脚本所在目录</li>
+<li>执行python命令 <code>python ./uninstall_clean_app.py -t com.xxx.app</code></li>
 </ul>
 
-<pre><code>ads_lua_manager.showBanner = function(...)
---override start
--- 请注意，如果方法实现需要访问类的其他方法或者变量，都可以通过ads_lua_manager.xxx的方式直接调用
--- override end
-end
+<p><img src="https://upload-images.jianshu.io/upload_images/6174818-f6c015ef98358a93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="01.png" /></p></li>
+</ul>
+
+<h1 id="2-obb-push-py">2.<code>obb_push.py</code></h1>
+
+<p>该脚本作用是根据传入的obb文件完整路径，解析出app bundle id,然后将obb文件push到android设备上，减少出错机会和烦人的拷贝工作，执行该脚本可有快速完成。</p>
+
+<pre><code>#!/usr/bin/python
+import subprocess
+import os, sys
+import getopt
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+
+if __name__ == '__main__':
+
+	&quot;&quot;&quot; change commands and add shell&quot;&quot;&quot;
+
+	tag = ''
+
+	try:
+		opt, args = getopt.getopt(sys.argv[1:], &quot;ht:&quot;, ['tag', 'help'])
+		for op, value in opt:
+			if op in (&quot;-t&quot;, &quot;--tag&quot;):
+				tag = value
+			if op in (&quot;-h&quot;, &quot;--help&quot;):
+				print &quot;Usage: obb_push.py -t TAG_NAME&quot;
+				print &quot;Options:&quot;
+				print &quot;  -t  TAG_NAME.Choose what you want to use tag, should be a obb file path !&quot;
+				print &quot;&quot;
+				print &quot;Sample : ./obb_push.py -t &lt;obb file path&gt;&quot;
+				print &quot;&quot;
+				sys.exit()
+	except getopt.GetoptError:  
+            print &quot;Error: Could not find the args.&quot;
+            print &quot;Usage: obb_push.py -t TAG_NAME&quot;
+    	    print &quot;Options:&quot;
+    	    print &quot;  -t  TAG_NAME.Choose what you want to use tag, should be a obb file path !&quot;
+    	    print &quot;&quot;
+    	    print &quot;Sample : ./obb_push.py -t &lt;obb file path&gt;&quot;
+    	    print &quot;&quot;
+    	    sys.exit()
+
+	
+	if tag == '':
+		print &quot;you should input a obb file\'s path !&quot;
+		exit()
+
+	print '======to get package name=======&gt;'
+	obbFilePath = tag
+	if obbFilePath == '':
+		print 'you should input a obb file\'s path !'
+		exit()
+	obbSubDirs = obbFilePath.split('/')
+	# index  = len(obbSubDirs) - 1
+	obbFileName = obbSubDirs[-1]
+	print '&gt;&gt;&gt;obbFileName = ' + obbFileName
+	if obbFileName == '' or obbFileName.find('.obb') == -1:
+		print 'can not find a obb file in the path !'
+		exit()
+	
+	tmpPackageName = obbFileName.split('.')
+	print  tmpPackageName
+	packageName = ''
+	# for com in tmpPackageName[2:-2]:
+	# 	print com
+	# 	if com == tmpPackageName[-2]:
+	# 	 	packageName += com
+	# 	else:
+	# 	 	packageName += com + &quot;.&quot; 
+	packageName = '.'.join(tmpPackageName[2:-1])
+	print '&gt;&gt;&gt;package name = ' + packageName
+
+
+	print '=======adb shell mkdir ========&gt;'
+	obbDestPath = 'sdcard/Android/obb/' + packageName
+	subDir = ''
+	subDirs = obbDestPath.split('/')
+	for dir in subDirs:
+	 	subDir += '/' + dir
+	 	# print subDir 
+	 	os.system('adb shell mkdir ' + subDir)
+
+	print '=======adb push obb file to device ========&gt;'
+	pushCmd = 'adb push ' + obbFilePath.replace(' ','\\ ')+ ' /' + obbDestPath + '/' 
+	# print pushCmd
+	os.system(pushCmd)
+
+	exit()
 </code></pre>
 
 <ul>
-<li>尽早引用OverrideAdsPluginManager.lua</li>
+<li>使用方法同上，最后执行命令 <code>python ./obb_push.py -t &lt;obb file path&gt;</code></li>
 </ul>
 
-<pre><code>require &quot;libii/common/OverrideShowBanner&quot;
-</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/6174818-ac29ee1f2a26a142.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="02.png" /></p>
 
                         </div>
 
@@ -131,6 +289,12 @@ end
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/about/about/">About</a></li>
+        
+        <li><a href="/books/books/">Books</a></li>
+        
+        <li><a href="/post/lua_override/">Lua 方法重载</a></li>
+        
         <li><a href="/archives/">归档</a></li>
         
     </ul>
@@ -141,11 +305,9 @@ end
                             
                             <ul class="clearfix">
                                 
-                                <li><a href="http://blog.harddone.com/tags/lua">lua</a></li>
+                                <li><a href="http://blog.harddone.com/tags/python">Python</a></li>
                                 
-                                <li><a href="http://blog.harddone.com/tags/override">override</a></li>
-                                
-                                <li><a href="http://blog.harddone.com/tags/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD">方法重载</a></li>
+                                <li><a href="http://blog.harddone.com/tags/adb">adb</a></li>
                                 
                             </ul>
                             
