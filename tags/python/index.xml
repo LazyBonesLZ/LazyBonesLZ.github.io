@@ -6,7 +6,7 @@
     <description>Recent content in Python on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 29 Apr 2019 10:12:15 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Apr 2019 10:12:15 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.harddone.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Python_adb</title>
       <link>http://blog.harddone.com/post/python_adb/</link>
-      <pubDate>Mon, 29 Apr 2019 10:12:15 +0800</pubDate>
+      <pubDate>Thu, 18 Apr 2019 10:12:15 +0800</pubDate>
       
       <guid>http://blog.harddone.com/post/python_adb/</guid>
       <description>说明 本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令：
