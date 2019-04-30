@@ -3,36 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://blog.harddone.com/about/about/</loc>
-    <lastmod>2019-04-26T14:59:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.harddone.com/about/</loc>
-    <lastmod>2019-04-26T14:59:41+08:00</lastmod>
+    <loc>http://blog.harddone.com/categories/</loc>
+    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.harddone.com/</loc>
-    <lastmod>2019-04-26T14:59:41+08:00</lastmod>
+    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.harddone.com/books/</loc>
-    <lastmod>2019-04-26T14:59:31+08:00</lastmod>
+    <loc>http://blog.harddone.com/categories/Git/</loc>
+    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.harddone.com/books/books/</loc>
-    <lastmod>2019-04-26T14:59:31+08:00</lastmod>
+    <loc>http://blog.harddone.com/post/</loc>
+    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.harddone.com/categories/</loc>
-    <lastmod>2019-04-25T11:13:24+08:00</lastmod>
+    <loc>http://blog.harddone.com/tags/</loc>
+    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.harddone.com/tags/git/</loc>
+    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.harddone.com/post/git_untrack_dir/</loc>
+    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/</loc>
+    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.harddone.com/tags/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/</loc>
+    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -60,31 +79,19 @@
   </url>
   
   <url>
-    <loc>http://blog.harddone.com/post/</loc>
-    <lastmod>2019-04-25T11:13:24+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.harddone.com/tags/</loc>
-    <lastmod>2019-04-25T11:13:24+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.harddone.com/tags/Web/</loc>
-    <lastmod>2019-04-25T11:13:24+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.harddone.com/categories/Web/</loc>
-    <lastmod>2019-04-25T11:13:24+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.harddone.com/tags/Webhook/</loc>
+    <lastmod>2019-04-25T11:13:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.harddone.com/tags/Website/</loc>
+    <lastmod>2019-04-25T11:13:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.harddone.com/categories/Website/</loc>
     <lastmod>2019-04-25T11:13:24+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -98,6 +105,12 @@
   <url>
     <loc>http://blog.harddone.com/post/hugo_nginx_2/</loc>
     <lastmod>2019-04-25T05:13:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.harddone.com/tags/Web/</loc>
+    <lastmod>2019-04-25T05:13:24+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

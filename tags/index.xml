@@ -6,10 +6,37 @@
     <description>Recent content in Tags on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 25 Apr 2019 11:13:24 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Apr 2019 14:33:57 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.harddone.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git</title>
+      <link>http://blog.harddone.com/tags/git/</link>
+      <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>取消跟踪</title>
+      <link>http://blog.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/</link>
+      <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>文件目录</title>
+      <link>http://blog.harddone.com/tags/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/tags/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>CentOS</title>
@@ -39,15 +66,6 @@
     </item>
     
     <item>
-      <title>Web</title>
-      <link>http://blog.harddone.com/tags/Web/</link>
-      <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
-      
-      <guid>http://blog.harddone.com/tags/Web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Webhook</title>
       <link>http://blog.harddone.com/tags/Webhook/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
@@ -57,11 +75,29 @@
     </item>
     
     <item>
+      <title>Website</title>
+      <link>http://blog.harddone.com/tags/Website/</link>
+      <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/tags/Website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>自动部署</title>
       <link>http://blog.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
       <guid>http://blog.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>http://blog.harddone.com/tags/Web/</link>
+      <pubDate>Thu, 25 Apr 2019 05:13:24 +0800</pubDate>
+      
+      <guid>http://blog.harddone.com/tags/Web/</guid>
       <description></description>
     </item>
     
