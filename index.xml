@@ -21,6 +21,24 @@
     </item>
     
     <item>
+      <title>Books</title>
+      <link>http://www.harddone.com/books/</link>
+      <pubDate>Tue, 30 Apr 2019 09:13:02 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://www.harddone.com/about/</link>
+      <pubDate>Tue, 30 Apr 2019 09:12:48 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）</title>
       <link>http://www.harddone.com/post/hugo_nginx_3/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
