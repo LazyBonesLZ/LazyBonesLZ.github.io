@@ -2,156 +2,156 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ColofulDark Blog</title>
-    <link>http://blog.harddone.com/</link>
+    <link>http://www.harddone.com/</link>
     <description>Recent content on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 30 Apr 2019 14:33:57 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.harddone.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.harddone.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>git 取消跟踪文件目录</title>
-      <link>http://blog.harddone.com/post/git_untrack_dir/</link>
+      <link>http://www.harddone.com/post/git_untrack_dir/</link>
       <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/git_untrack_dir/</guid>
+      <guid>http://www.harddone.com/post/git_untrack_dir/</guid>
       <description>如果文件和目录已经被提交到git仓库，是可以通过git 命令来取消文件和目录的跟踪。 我们常用的sourcetree也提供了该功能，如果是某目录下已经有文件被提交过了，那么就不能再改工具中直接对文件夹取消跟踪，只能对显示有更改的文件一个一个取消，UI操作还要等刷新，费时费力。 为了防止</description>
     </item>
     
     <item>
       <title>Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）</title>
-      <link>http://blog.harddone.com/post/hugo_nginx_3/</link>
+      <link>http://www.harddone.com/post/hugo_nginx_3/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/hugo_nginx_3/</guid>
+      <guid>http://www.harddone.com/post/hugo_nginx_3/</guid>
       <description>前篇提要 在上一篇中，我们主要介绍了服务器的环境安装。在本文中，我们将就具体的操作步骤加以说明并截图展示。 利用 Hugo 生成静态网站 1. 创建项目目录 在您本地合适的目录下创建一个空文件夹，命名为BlogTest, 为了方便之后的命令行演示，我们假设刚才创建的目录完整路径为： /xxx/xxx/xxx/BlogTest 2. 新建网站 打开终端执</description>
     </item>
     
     <item>
       <title>Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）</title>
-      <link>http://blog.harddone.com/post/hugo_nginx_2/</link>
+      <link>http://www.harddone.com/post/hugo_nginx_2/</link>
       <pubDate>Thu, 25 Apr 2019 05:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/hugo_nginx_2/</guid>
+      <guid>http://www.harddone.com/post/hugo_nginx_2/</guid>
       <description>前篇提要 在上一篇文章，我们详细记录了如何购买阿里云服务器的步骤和搭建博客网站的部分准备工作。本文将继续记录安装服务器环境的步骤。 服务器软件环境安装 1. 安装git sudo yum install git 2. 安装Nginx Nginx是一个高性能的web服务器软件。它是一个比apache更灵活和轻量级的程序。 第一步 - 安装</description>
     </item>
     
     <item>
       <title>Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（一）</title>
-      <link>http://blog.harddone.com/post/hugo_nginx_1/</link>
+      <link>http://www.harddone.com/post/hugo_nginx_1/</link>
       <pubDate>Wed, 24 Apr 2019 11:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/hugo_nginx_1/</guid>
+      <guid>http://www.harddone.com/post/hugo_nginx_1/</guid>
       <description>概述 最近心血来潮想捣腾一下服务器方面的东西，一冲动在阿里云买了一台小小云服务器(HongKong)(推荐链接)（5年，算下来真是比买一个国外的VPS划算得太多，关键是响应速度超级完美，看图），想来搭个博文网站练（zhuang)练(zhuang)手(bi)，也是不错的。 既然练练手，</description>
     </item>
     
     <item>
       <title>Kotlin 自定义带点击效果的Button</title>
-      <link>http://blog.harddone.com/post/kotlin_custom_btn/</link>
+      <link>http://www.harddone.com/post/kotlin_custom_btn/</link>
       <pubDate>Fri, 19 Apr 2019 11:10:07 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/kotlin_custom_btn/</guid>
+      <guid>http://www.harddone.com/post/kotlin_custom_btn/</guid>
       <description>MainButton 自定义button，可以在xml中设置点击效果，但是如果每个button都要按下效果的话，重复添加xml文件烦不胜烦，所以自定义一个MainButton,设置好Button的颜色后，按下效果是对其背景色加深处理，达到点击的效果，感觉世界一下清爽了许多。 效果预览 使用说明 添加依赖 implemention</description>
     </item>
     
     <item>
       <title>Python执行Android adb 命令</title>
-      <link>http://blog.harddone.com/post/python_adb/</link>
+      <link>http://www.harddone.com/post/python_adb/</link>
       <pubDate>Thu, 18 Apr 2019 10:12:15 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/python_adb/</guid>
+      <guid>http://www.harddone.com/post/python_adb/</guid>
       <description>说明 本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令： //example cmd = &#39;adb shell&#39; os.system(cmd) 1.uninstall_clean_app.py 根据app bundle id 卸载应用，并且删除该应用在sdcard目录下生成的文件夹等。当前脚本中所删除的目录是写死</description>
     </item>
     
     <item>
       <title>Lua 方法重载</title>
-      <link>http://blog.harddone.com/post/lua_override/</link>
+      <link>http://www.harddone.com/post/lua_override/</link>
       <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/lua_override/</guid>
+      <guid>http://www.harddone.com/post/lua_override/</guid>
       <description>最近在更新一个Lua项目中，很多地方调用了同一个方法，想在不改动调用逻辑的情况下，如何不执行原来的方法逻辑，而执行新的方法逻辑呢？ 我们可以直接重载该方法，但是前提是必须在第一次调用该方法前就完成了重载。 请注意这种方式的前提：一定是要在该方法第一次被调用前完成你的重载，否则无效。 举</description>
     </item>
     
     <item>
       <title>Android Studio3.3.2 发布Kotlin项目到Jcenter</title>
-      <link>http://blog.harddone.com/post/as_push_kotlin_jcenter/</link>
+      <link>http://www.harddone.com/post/as_push_kotlin_jcenter/</link>
       <pubDate>Wed, 17 Apr 2019 11:42:49 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/as_push_kotlin_jcenter/</guid>
+      <guid>http://www.harddone.com/post/as_push_kotlin_jcenter/</guid>
       <description>概述 纸上得来终觉浅。 一直以为发布AAR到jcenter是非常简单的事，跟发布到私有服务器nexus应该没太多差别。没想到自己动手做过才知道千万道坑。 本文将记录在Android Studio 3.3.2下，如何上传用kotlin开发的aar到jcenter服务器以及遇到的问题。参考来自这篇博文，</description>
     </item>
     
     <item>
       <title>自定义seekbar遇到的问题</title>
-      <link>http://blog.harddone.com/post/seekbar_issue/</link>
+      <link>http://www.harddone.com/post/seekbar_issue/</link>
       <pubDate>Wed, 07 Nov 2018 15:00:47 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/seekbar_issue/</guid>
+      <guid>http://www.harddone.com/post/seekbar_issue/</guid>
       <description>项目需要自定义seekbar样式，记录一下这个过程中的问题和解决方案。 UI设计样式如图：宽度填满父view 在实现的过程中出现过一些问题： 1.thumb在滑动的过程中，出现了压缩 2.thumb在起点和终点只显示来一半 3.seekbar宽度并未填充满父view,而是在左右两侧保留了默</description>
     </item>
     
     <item>
       <title>Android https 突然提示证书验证失败</title>
-      <link>http://blog.harddone.com/post/android_https_issue/</link>
+      <link>http://www.harddone.com/post/android_https_issue/</link>
       <pubDate>Mon, 13 Aug 2018 16:14:33 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/android_https_issue/</guid>
+      <guid>http://www.harddone.com/post/android_https_issue/</guid>
       <description>项目中一直有https的请求，没有用到第三方的SDK,都是使用HttpUrlConnec tion去实现的请求。一直相安无事，突然测试人员报告说出现证书验证问题。网上各种查看资料解决，方案无非是加入自定义证书到工程或者是用信任所有证书的方式解决。但是，我们并没有用到自定义证书，如果</description>
     </item>
     
     <item>
       <title>填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven</title>
-      <link>http://blog.harddone.com/post/nexus_private_maven/</link>
+      <link>http://www.harddone.com/post/nexus_private_maven/</link>
       <pubDate>Thu, 12 Jul 2018 14:35:36 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/nexus_private_maven/</guid>
+      <guid>http://www.harddone.com/post/nexus_private_maven/</guid>
       <description>很多时候，Android Studio中所创建的工程，会依赖一个或多个Module。Module 生成的AAR库，可以上传到maven或者私服Nexus作为公用的SDK。Gradle子工程之间通过 compile/implementation project(&amp;rdquo;:XXX&amp;rdquo;)这种方式依赖是非常便利的，但是这</description>
     </item>
     
     <item>
       <title>Google play billing Alpha / Beta 测试</title>
-      <link>http://blog.harddone.com/post/gp_billing/</link>
+      <link>http://www.harddone.com/post/gp_billing/</link>
       <pubDate>Wed, 11 Jul 2018 15:29:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/gp_billing/</guid>
+      <guid>http://www.harddone.com/post/gp_billing/</guid>
       <description>本文假设你已经集成Google play billing SDK ，根据google官方提供的文档说明，提供了几种验证应用内购买逻辑的方式。 本文记录的是alpha或beta测试的一些操作细节。供参考。 ！！！！！前方多图预警！！！！！！ 一 前提 1.已注册Google play console账号； 2.已注册Google账号</description>
     </item>
     
     <item>
       <title>Unity调用Android参数为数组的方法</title>
-      <link>http://blog.harddone.com/post/unit_call_android_arr/</link>
+      <link>http://www.harddone.com/post/unit_call_android_arr/</link>
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/unit_call_android_arr/</guid>
+      <guid>http://www.harddone.com/post/unit_call_android_arr/</guid>
       <description>Unity开发过程中，如果要调用Android端的java方法，恰巧该方法的参数是可变参数或者数组，使用unity的AndroidJavaObject提供的call方法直接传递c#数组，是需要对数组参数做一下处理。举例说明： java方法如下： public void addList(String... values){ } unity c#调用时，需要把传入的参</description>
     </item>
     
     <item>
       <title>Mac OS Andriod Studio:Gradle 3.3 requires Java 7 or later to run.You are currently using Java 6</title>
-      <link>http://blog.harddone.com/post/mac_as_jdk/</link>
+      <link>http://www.harddone.com/post/mac_as_jdk/</link>
       <pubDate>Sun, 12 Nov 2017 16:45:46 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/mac_as_jdk/</guid>
+      <guid>http://www.harddone.com/post/mac_as_jdk/</guid>
       <description>1.project structure设置界面中设置jdk路径是jdk1.7或以上的版本:File-&amp;gt;Project Structure-&amp;gt;SDK Location 2.修改AS置默认的jdk版本。 (如果是jdk1.8版本的话还需要修改/Application/Android Studio/Contents/info.plist) 如何找到该路径？ Android Studio.app -&amp;gt; 右键 -&amp;gt; 显示包内容 修改前： &amp;lt;key&amp;gt;JVMVersion&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;1.6*,1.7+&amp;lt;/string&amp;gt; 修改后： &amp;lt;key&amp;gt;JVMVersion&amp;lt;/key&amp;gt;</description>
     </item>
     
     <item>
       <title>Android:Zbar 解码、ZXing 管理相机的补充（Zbar支持64位）</title>
-      <link>http://blog.harddone.com/post/zxing/</link>
+      <link>http://www.harddone.com/post/zxing/</link>
       <pubDate>Thu, 24 Sep 2015 16:22:52 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/post/zxing/</guid>
+      <guid>http://www.harddone.com/post/zxing/</guid>
       <description>一. 前言 最近公司项目用到了扫描的功能，参考网上的博文解决大部分的问题（http://blog.csdn.net/b2259909/article/details/43273231（对原文作者表示感谢）），但是后来APK在客户的64位设备上运行时，出现了崩溃的问题，联调时因为参考上</description>
     </item>
     
     <item>
       <title>归档</title>
-      <link>http://blog.harddone.com/archives/</link>
+      <link>http://www.harddone.com/archives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.harddone.com/archives/</guid>
+      <guid>http://www.harddone.com/archives/</guid>
       <description></description>
     </item>
     

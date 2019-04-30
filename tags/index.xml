@@ -2,399 +2,399 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ColofulDark Blog</title>
-    <link>http://blog.harddone.com/tags/</link>
+    <link>http://www.harddone.com/tags/</link>
     <description>Recent content in Tags on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 30 Apr 2019 14:33:57 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.harddone.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.harddone.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>git</title>
-      <link>http://blog.harddone.com/tags/git/</link>
+      <link>http://www.harddone.com/tags/git/</link>
       <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/git/</guid>
+      <guid>http://www.harddone.com/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>取消跟踪</title>
-      <link>http://blog.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/</link>
+      <link>http://www.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/</link>
       <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/</guid>
+      <guid>http://www.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>文件目录</title>
-      <link>http://blog.harddone.com/tags/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/</link>
+      <link>http://www.harddone.com/tags/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/</link>
       <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/</guid>
+      <guid>http://www.harddone.com/tags/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CentOS</title>
-      <link>http://blog.harddone.com/tags/CentOS/</link>
+      <link>http://www.harddone.com/tags/CentOS/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/CentOS/</guid>
+      <guid>http://www.harddone.com/tags/CentOS/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>http://blog.harddone.com/tags/Github/</link>
+      <link>http://www.harddone.com/tags/Github/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Github/</guid>
+      <guid>http://www.harddone.com/tags/Github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nginx</title>
-      <link>http://blog.harddone.com/tags/Nginx/</link>
+      <link>http://www.harddone.com/tags/Nginx/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Nginx/</guid>
+      <guid>http://www.harddone.com/tags/Nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webhook</title>
-      <link>http://blog.harddone.com/tags/Webhook/</link>
+      <link>http://www.harddone.com/tags/Webhook/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Webhook/</guid>
+      <guid>http://www.harddone.com/tags/Webhook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Website</title>
-      <link>http://blog.harddone.com/tags/Website/</link>
+      <link>http://www.harddone.com/tags/Website/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Website/</guid>
+      <guid>http://www.harddone.com/tags/Website/</guid>
       <description></description>
     </item>
     
     <item>
       <title>自动部署</title>
-      <link>http://blog.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link>
+      <link>http://www.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
+      <guid>http://www.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web</title>
-      <link>http://blog.harddone.com/tags/Web/</link>
+      <link>http://www.harddone.com/tags/Web/</link>
       <pubDate>Thu, 25 Apr 2019 05:13:24 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Web/</guid>
+      <guid>http://www.harddone.com/tags/Web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android</title>
-      <link>http://blog.harddone.com/tags/Android/</link>
+      <link>http://www.harddone.com/tags/Android/</link>
       <pubDate>Fri, 19 Apr 2019 11:10:07 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Android/</guid>
+      <guid>http://www.harddone.com/tags/Android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kotlin</title>
-      <link>http://blog.harddone.com/tags/Kotlin/</link>
+      <link>http://www.harddone.com/tags/Kotlin/</link>
       <pubDate>Fri, 19 Apr 2019 11:10:07 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Kotlin/</guid>
+      <guid>http://www.harddone.com/tags/Kotlin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>自定义Button</title>
-      <link>http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button/</link>
+      <link>http://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button/</link>
       <pubDate>Fri, 19 Apr 2019 11:10:07 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button/</guid>
+      <guid>http://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>http://blog.harddone.com/tags/Python/</link>
+      <link>http://www.harddone.com/tags/Python/</link>
       <pubDate>Thu, 18 Apr 2019 10:12:15 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Python/</guid>
+      <guid>http://www.harddone.com/tags/Python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>adb</title>
-      <link>http://blog.harddone.com/tags/adb/</link>
+      <link>http://www.harddone.com/tags/adb/</link>
       <pubDate>Thu, 18 Apr 2019 10:12:15 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/adb/</guid>
+      <guid>http://www.harddone.com/tags/adb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lua</title>
-      <link>http://blog.harddone.com/tags/lua/</link>
+      <link>http://www.harddone.com/tags/lua/</link>
       <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/lua/</guid>
+      <guid>http://www.harddone.com/tags/lua/</guid>
       <description></description>
     </item>
     
     <item>
       <title>override</title>
-      <link>http://blog.harddone.com/tags/override/</link>
+      <link>http://www.harddone.com/tags/override/</link>
       <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/override/</guid>
+      <guid>http://www.harddone.com/tags/override/</guid>
       <description></description>
     </item>
     
     <item>
       <title>方法重载</title>
-      <link>http://blog.harddone.com/tags/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/</link>
+      <link>http://www.harddone.com/tags/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/</link>
       <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/</guid>
+      <guid>http://www.harddone.com/tags/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android Studio3.3.2</title>
-      <link>http://blog.harddone.com/tags/Android-Studio3.3.2/</link>
+      <link>http://www.harddone.com/tags/Android-Studio3.3.2/</link>
       <pubDate>Wed, 17 Apr 2019 11:42:49 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Android-Studio3.3.2/</guid>
+      <guid>http://www.harddone.com/tags/Android-Studio3.3.2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Push to JCenter</title>
-      <link>http://blog.harddone.com/tags/Push-to-JCenter/</link>
+      <link>http://www.harddone.com/tags/Push-to-JCenter/</link>
       <pubDate>Wed, 17 Apr 2019 11:42:49 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Push-to-JCenter/</guid>
+      <guid>http://www.harddone.com/tags/Push-to-JCenter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Seekbar</title>
-      <link>http://blog.harddone.com/tags/Seekbar/</link>
+      <link>http://www.harddone.com/tags/Seekbar/</link>
       <pubDate>Wed, 07 Nov 2018 15:00:47 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Seekbar/</guid>
+      <guid>http://www.harddone.com/tags/Seekbar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>自定义进度条</title>
-      <link>http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1/</link>
+      <link>http://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1/</link>
       <pubDate>Wed, 07 Nov 2018 15:00:47 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
+      <guid>http://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Https</title>
-      <link>http://blog.harddone.com/tags/Https/</link>
+      <link>http://www.harddone.com/tags/Https/</link>
       <pubDate>Mon, 13 Aug 2018 16:14:33 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Https/</guid>
+      <guid>http://www.harddone.com/tags/Https/</guid>
       <description></description>
     </item>
     
     <item>
       <title>证书验证失败</title>
-      <link>http://blog.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</link>
+      <link>http://www.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</link>
       <pubDate>Mon, 13 Aug 2018 16:14:33 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</guid>
+      <guid>http://www.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multiple Module Dependencies</title>
-      <link>http://blog.harddone.com/tags/Multiple-Module-Dependencies/</link>
+      <link>http://www.harddone.com/tags/Multiple-Module-Dependencies/</link>
       <pubDate>Thu, 12 Jul 2018 14:35:36 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Multiple-Module-Dependencies/</guid>
+      <guid>http://www.harddone.com/tags/Multiple-Module-Dependencies/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nexus</title>
-      <link>http://blog.harddone.com/tags/Nexus/</link>
+      <link>http://www.harddone.com/tags/Nexus/</link>
       <pubDate>Thu, 12 Jul 2018 14:35:36 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Nexus/</guid>
+      <guid>http://www.harddone.com/tags/Nexus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Private Maven</title>
-      <link>http://blog.harddone.com/tags/Private-Maven/</link>
+      <link>http://www.harddone.com/tags/Private-Maven/</link>
       <pubDate>Thu, 12 Jul 2018 14:35:36 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Private-Maven/</guid>
+      <guid>http://www.harddone.com/tags/Private-Maven/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Alpha/Bata Test</title>
-      <link>http://blog.harddone.com/tags/Alpha/Bata-Test/</link>
+      <link>http://www.harddone.com/tags/Alpha/Bata-Test/</link>
       <pubDate>Wed, 11 Jul 2018 15:29:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Alpha/Bata-Test/</guid>
+      <guid>http://www.harddone.com/tags/Alpha/Bata-Test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Billing</title>
-      <link>http://blog.harddone.com/tags/Billing/</link>
+      <link>http://www.harddone.com/tags/Billing/</link>
       <pubDate>Wed, 11 Jul 2018 15:29:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Billing/</guid>
+      <guid>http://www.harddone.com/tags/Billing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GP</title>
-      <link>http://blog.harddone.com/tags/GP/</link>
+      <link>http://www.harddone.com/tags/GP/</link>
       <pubDate>Wed, 11 Jul 2018 15:29:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/GP/</guid>
+      <guid>http://www.harddone.com/tags/GP/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IAP</title>
-      <link>http://blog.harddone.com/tags/IAP/</link>
+      <link>http://www.harddone.com/tags/IAP/</link>
       <pubDate>Wed, 11 Jul 2018 15:29:05 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/IAP/</guid>
+      <guid>http://www.harddone.com/tags/IAP/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Array Params</title>
-      <link>http://blog.harddone.com/tags/Array-Params/</link>
+      <link>http://www.harddone.com/tags/Array-Params/</link>
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Array-Params/</guid>
+      <guid>http://www.harddone.com/tags/Array-Params/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Method</title>
-      <link>http://blog.harddone.com/tags/Method/</link>
+      <link>http://www.harddone.com/tags/Method/</link>
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Method/</guid>
+      <guid>http://www.harddone.com/tags/Method/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unity</title>
-      <link>http://blog.harddone.com/tags/Unity/</link>
+      <link>http://www.harddone.com/tags/Unity/</link>
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Unity/</guid>
+      <guid>http://www.harddone.com/tags/Unity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>参数</title>
-      <link>http://blog.harddone.com/tags/%E5%8F%82%E6%95%B0/</link>
+      <link>http://www.harddone.com/tags/%E5%8F%82%E6%95%B0/</link>
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E5%8F%82%E6%95%B0/</guid>
+      <guid>http://www.harddone.com/tags/%E5%8F%82%E6%95%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>数组</title>
-      <link>http://blog.harddone.com/tags/%E6%95%B0%E7%BB%84/</link>
+      <link>http://www.harddone.com/tags/%E6%95%B0%E7%BB%84/</link>
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E6%95%B0%E7%BB%84/</guid>
+      <guid>http://www.harddone.com/tags/%E6%95%B0%E7%BB%84/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android Studio</title>
-      <link>http://blog.harddone.com/tags/Android-Studio/</link>
+      <link>http://www.harddone.com/tags/Android-Studio/</link>
       <pubDate>Sun, 12 Nov 2017 16:45:46 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Android-Studio/</guid>
+      <guid>http://www.harddone.com/tags/Android-Studio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gradle3.3</title>
-      <link>http://blog.harddone.com/tags/Gradle3.3/</link>
+      <link>http://www.harddone.com/tags/Gradle3.3/</link>
       <pubDate>Sun, 12 Nov 2017 16:45:46 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Gradle3.3/</guid>
+      <guid>http://www.harddone.com/tags/Gradle3.3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JDK1.8</title>
-      <link>http://blog.harddone.com/tags/JDK1.8/</link>
+      <link>http://www.harddone.com/tags/JDK1.8/</link>
       <pubDate>Sun, 12 Nov 2017 16:45:46 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/JDK1.8/</guid>
+      <guid>http://www.harddone.com/tags/JDK1.8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mac</title>
-      <link>http://blog.harddone.com/tags/Mac/</link>
+      <link>http://www.harddone.com/tags/Mac/</link>
       <pubDate>Sun, 12 Nov 2017 16:45:46 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Mac/</guid>
+      <guid>http://www.harddone.com/tags/Mac/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ZXing</title>
-      <link>http://blog.harddone.com/tags/ZXing/</link>
+      <link>http://www.harddone.com/tags/ZXing/</link>
       <pubDate>Thu, 24 Sep 2015 16:22:52 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/ZXing/</guid>
+      <guid>http://www.harddone.com/tags/ZXing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Zbar</title>
-      <link>http://blog.harddone.com/tags/Zbar/</link>
+      <link>http://www.harddone.com/tags/Zbar/</link>
       <pubDate>Thu, 24 Sep 2015 16:22:52 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/Zbar/</guid>
+      <guid>http://www.harddone.com/tags/Zbar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>扫描解码</title>
-      <link>http://blog.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/</link>
+      <link>http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/</link>
       <pubDate>Thu, 24 Sep 2015 16:22:52 +0800</pubDate>
       
-      <guid>http://blog.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/</guid>
+      <guid>http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/</guid>
       <description></description>
     </item>
     
