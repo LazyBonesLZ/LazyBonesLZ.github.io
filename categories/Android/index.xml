@@ -6,10 +6,21 @@
     <description>Recent content in Android on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 May 2019 15:03:34 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 11:02:03 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/categories/Android/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Google IAP 遇到无法购买时检查方法</title>
+      <link>http://www.harddone.com/post/gp_issue/</link>
+      <pubDate>Mon, 13 May 2019 11:02:03 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/gp_issue/</guid>
+      <description>&lt;p&gt;Google IAP一直是项目测试组的噩梦。各种莫名其妙的无法购买，每当项目已更新，涉及IAP的测试都会要去梳理一遍代码逻辑，结果大多数情况都是非代码逻辑导致。&lt;/p&gt;
+
+&lt;p&gt;所以，把遇到的问题做一个梳理，备忘，或许可以帮到别人。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Android Studio: compileDebugJavaWithJavac issue</title>

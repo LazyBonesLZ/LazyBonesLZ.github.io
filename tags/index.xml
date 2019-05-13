@@ -6,10 +6,28 @@
     <description>Recent content in Tags on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 May 2019 15:03:34 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 11:02:03 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>google iap</title>
+      <link>http://www.harddone.com/tags/google-iap/</link>
+      <pubDate>Mon, 13 May 2019 11:02:03 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/google-iap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>无法购买</title>
+      <link>http://www.harddone.com/tags/%E6%97%A0%E6%B3%95%E8%B4%AD%E4%B9%B0/</link>
+      <pubDate>Mon, 13 May 2019 11:02:03 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/%E6%97%A0%E6%B3%95%E8%B4%AD%E4%B9%B0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>compileDebugJavaWithJavac</title>
