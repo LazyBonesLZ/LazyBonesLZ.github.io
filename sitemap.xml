@@ -4,37 +4,60 @@
   
   <url>
     <loc>http://www.harddone.com/categories/Android/</loc>
-    <lastmod>2019-05-13T11:02:03+08:00</lastmod>
+    <lastmod>2019-06-14T16:27:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/Android-Studio/</loc>
+    <lastmod>2019-06-14T16:27:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.harddone.com/categories/</loc>
-    <lastmod>2019-05-13T11:02:03+08:00</lastmod>
+    <lastmod>2019-06-14T16:27:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.harddone.com/</loc>
-    <lastmod>2019-05-13T11:02:03+08:00</lastmod>
+    <lastmod>2019-06-14T16:27:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/No-toolchains-found/</loc>
+    <lastmod>2019-06-14T16:27:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/post/as_notoolchain_found/</loc>
+    <lastmod>2019-06-14T16:27:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/post/</loc>
+    <lastmod>2019-06-14T16:27:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/</loc>
+    <lastmod>2019-06-14T16:27:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/mips64el-linux-android/</loc>
+    <lastmod>2019-06-14T16:27:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.harddone.com/post/gp_issue/</loc>
     <lastmod>2019-05-13T11:02:03+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.harddone.com/post/</loc>
-    <lastmod>2019-05-13T11:02:03+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.harddone.com/tags/</loc>
-    <lastmod>2019-05-13T11:02:03+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -378,12 +401,6 @@
   <url>
     <loc>http://www.harddone.com/tags/%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2018-07-11T01:59:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.harddone.com/tags/Android-Studio/</loc>
-    <lastmod>2017-11-12T16:45:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   

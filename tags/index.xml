@@ -6,10 +6,37 @@
     <description>Recent content in Tags on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 13 May 2019 11:02:03 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Jun 2019 16:27:33 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android Studio</title>
+      <link>http://www.harddone.com/tags/Android-Studio/</link>
+      <pubDate>Fri, 14 Jun 2019 16:27:33 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/Android-Studio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>No toolchains found</title>
+      <link>http://www.harddone.com/tags/No-toolchains-found/</link>
+      <pubDate>Fri, 14 Jun 2019 16:27:33 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/No-toolchains-found/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mips64el-linux-android</title>
+      <link>http://www.harddone.com/tags/mips64el-linux-android/</link>
+      <pubDate>Fri, 14 Jun 2019 16:27:33 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/mips64el-linux-android/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>google iap</title>
@@ -368,15 +395,6 @@
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
       
       <guid>http://www.harddone.com/tags/%E6%95%B0%E7%BB%84/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Android Studio</title>
-      <link>http://www.harddone.com/tags/Android-Studio/</link>
-      <pubDate>Sun, 12 Nov 2017 16:45:46 +0800</pubDate>
-      
-      <guid>http://www.harddone.com/tags/Android-Studio/</guid>
       <description></description>
     </item>
     
