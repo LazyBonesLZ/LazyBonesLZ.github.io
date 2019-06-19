@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on ColofulDark Blog</title>
-    <link>http://www.harddone.com/categories/python/</link>
-    <description>Recent content in python on ColofulDark Blog</description>
+    <title>Python on ColofulDark Blog</title>
+    <link>http://www.harddone.com/categories/Python/</link>
+    <description>Recent content in Python on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 18 Apr 2019 10:12:15 +0800</lastBuildDate>
     
-	<atom:link href="http://www.harddone.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.harddone.com/categories/Python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
