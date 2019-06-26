@@ -6,10 +6,19 @@
     <description>Recent content in Posts on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 14 Jun 2019 16:54:06 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jun 2019 15:21:15 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>最新版Vysor pro Mac Chrome插件破解</title>
+      <link>http://www.harddone.com/post/vysor_break/</link>
+      <pubDate>Wed, 26 Jun 2019 15:21:15 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/vysor_break/</guid>
+      <description>声明： 本文仅作学习研究，请勿用做商业用途,请支持正版。侵删！！！ Vysor vysor是什么？官方描述翻译过来是：Vysor把你的Android界面投影到一个窗口上，你可以通过这个窗口用鼠标操作Android手机并把画面实时呈现给用户，当然，你也可以通过手指触摸手机去操作软件，它也能够把画</description>
+    </item>
     
     <item>
       <title>进一步减小Unity项目的apk大小</title>
