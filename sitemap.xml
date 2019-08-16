@@ -3,13 +3,54 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.harddone.com/tags/Android/</loc>
-    <lastmod>2019-08-08T09:15:12+08:00</lastmod>
+    <loc>http://www.harddone.com/categories/Android/</loc>
+    <lastmod>2019-08-16T10:59:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Android/</loc>
+    <loc>http://www.harddone.com/categories/</loc>
+    <lastmod>2019-08-16T10:59:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/</loc>
+    <lastmod>2019-08-16T10:59:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/Copy-File/</loc>
+    <lastmod>2019-08-16T10:59:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/Gradle/</loc>
+    <lastmod>2019-08-16T10:59:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/post/gradle_copy_file/</loc>
+    <lastmod>2019-08-16T10:59:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/post/</loc>
+    <lastmod>2019-08-16T10:59:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/</loc>
+    <lastmod>2019-08-16T10:59:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/Android/</loc>
     <lastmod>2019-08-08T09:15:12+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -20,31 +61,7 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/</loc>
-    <lastmod>2019-08-08T09:15:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.harddone.com/</loc>
-    <lastmod>2019-08-08T09:15:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.harddone.com/post/</loc>
-    <lastmod>2019-08-08T09:15:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://www.harddone.com/tags/Screen-Overlay-Deteched/</loc>
-    <lastmod>2019-08-08T09:15:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.harddone.com/tags/</loc>
     <lastmod>2019-08-08T09:15:12+08:00</lastmod>
     <priority>0</priority>
   </url>
