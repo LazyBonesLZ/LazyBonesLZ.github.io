@@ -6,10 +6,82 @@
     <description>Recent content in Tags on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 16 Aug 2019 10:59:48 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Sep 2019 16:57:37 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>adb</title>
+      <link>http://www.harddone.com/tags/adb/</link>
+      <pubDate>Wed, 18 Sep 2019 16:57:37 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/adb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gradle</title>
+      <link>http://www.harddone.com/tags/gradle/</link>
+      <pubDate>Wed, 18 Sep 2019 16:57:37 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/gradle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android Studio 3.5</title>
+      <link>http://www.harddone.com/tags/Android-Studio-3.5/</link>
+      <pubDate>Wed, 18 Sep 2019 16:41:39 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/Android-Studio-3.5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Invoke-customs</title>
+      <link>http://www.harddone.com/tags/Invoke-customs/</link>
+      <pubDate>Wed, 18 Sep 2019 16:41:39 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/Invoke-customs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firebase</title>
+      <link>http://www.harddone.com/tags/Firebase/</link>
+      <pubDate>Wed, 18 Sep 2019 14:55:36 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/Firebase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>In-App Messaging not working</title>
+      <link>http://www.harddone.com/tags/In-App-Messaging-not-working/</link>
+      <pubDate>Wed, 18 Sep 2019 14:55:36 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/In-App-Messaging-not-working/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nexus</title>
+      <link>http://www.harddone.com/tags/Nexus/</link>
+      <pubDate>Wed, 18 Sep 2019 13:57:06 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/Nexus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>手动上传</title>
+      <link>http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0/</link>
+      <pubDate>Wed, 18 Sep 2019 13:57:06 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Copy File</title>
@@ -291,15 +363,6 @@
     </item>
     
     <item>
-      <title>adb</title>
-      <link>http://www.harddone.com/tags/adb/</link>
-      <pubDate>Thu, 18 Apr 2019 10:12:15 +0800</pubDate>
-      
-      <guid>http://www.harddone.com/tags/adb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Lua</title>
       <link>http://www.harddone.com/tags/Lua/</link>
       <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
@@ -386,15 +449,6 @@
       <pubDate>Thu, 12 Jul 2018 14:35:36 +0800</pubDate>
       
       <guid>http://www.harddone.com/tags/Multiple-Module-Dependencies/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nexus</title>
-      <link>http://www.harddone.com/tags/Nexus/</link>
-      <pubDate>Thu, 12 Jul 2018 14:35:36 +0800</pubDate>
-      
-      <guid>http://www.harddone.com/tags/Nexus/</guid>
       <description></description>
     </item>
     

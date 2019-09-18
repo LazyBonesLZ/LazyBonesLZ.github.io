@@ -77,6 +77,98 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://www.harddone.com/post/gradle-run-adb/" title="Gradle Run Adb" >Gradle Run Adb</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年9月18日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://www.harddone.com/categories/Android">Android</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                之前写过一篇关于python执行adb命令的文章,主要功能是在设备上创建文件夹，然后向创建的目录下上传文件。业务需求是上传obb文件到设备上，但是执行该python脚本，需要传入太多的参数：obb路径，app package name, 以及版本号等等。参数过多导致使用不便，且时间久了自己也就忘了。 所以，……
+                            </div>
+                            <p class="readmore"><a href="http://www.harddone.com/post/gradle-run-adb/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://www.harddone.com/post/min-api-26-bug/" title="Invoke-customs are only supported starting with android 0 --min-api 26" >Invoke-customs are only supported starting with android 0 --min-api 26</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年9月18日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://www.harddone.com/categories/Android">Android</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Android Studio升级到3.5，工程在编译时出现错误： Invoke-customs are only supported starting with android 0 --min-api 26 解决方案： android{ //... compileOptions { sourceCompatibility JavaVersion.VERSION_1_8 targetCompatibility JavaVersion.VERSION_1_8 } //... } JavaVersion请根据您开发环境中实际的版本设置。 参考链接： https://stackoverflow.com/questions/49891730/invoke-customs-are-only-supported-starting-with-android-0-min-api-26……
+                            </div>
+                            <p class="readmore"><a href="http://www.harddone.com/post/min-api-26-bug/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://www.harddone.com/post/FIAM_triggerEvent/" title="Firebase In-App Messaging:triggerEvent not working" >Firebase In-App Messaging:triggerEvent not working</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年9月18日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://www.harddone.com/categories/Android">Android</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                什么是Firebase In-App Messaging？ 官方解释： Firebase In-App Messaging helps you engage your app&rsquo;s active users by sending them targeted, contextual messages that encourage them to use key app features. For example, you could send an in-app message to get users to subscribe, watch a video, complete a level, or buy an item. You can customize messages as cards, banners, modals, or images, and set up triggers so that they appear exactly when they&rsquo;d benefit your users most. Use Firebase In-App Messaging to encourage exploration and discovery: highlight a sale or coupon in your ecommerce app, give clues or tips in your game, or prompt a like or share in your social media app. 集成 Firebase In-App Messaging……
+                            </div>
+                            <p class="readmore"><a href="http://www.harddone.com/post/FIAM_triggerEvent/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:手动上传AAR" >Nexus:手动上传AAR</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年9月18日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://www.harddone.com/categories/Android">Android</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Nexus作为公司内部或个人的SDK私有仓库，不仅可以通过gradle脚本上传生成的aar格式SDK,以便在android studio中快速集成，还可以手动上传一些单个的aar文件。 比如，如果遇到这样的使用场景：第三方的SDK,并没有上传到jcenter 或maven仓库，但是给开……
+                            </div>
+                            <p class="readmore"><a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://www.harddone.com/post/gradle_copy_file/" title="Gradle Copy File" >Gradle Copy File</a>
                                 </h1>
                             </header>
@@ -214,98 +306,6 @@
                             <p class="readmore"><a href="http://www.harddone.com/post/gp_issue/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://www.harddone.com/post/gradle_javadoc/" title="Android Studio: compileDebugJavaWithJavac issue" >Android Studio: compileDebugJavaWithJavac issue</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年5月10日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Android">Android</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                <p>Android Studio编译，运行遇到  <code>Execution failed for task ':customviews:compileDebugJavaWithJavac'</code>, 一大堆的错误log，却找不到问题所在，无从下手。</p>……
-                            </div>
-                            <p class="readmore"><a href="http://www.harddone.com/post/gradle_javadoc/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://www.harddone.com/post/git_untrack_dir/" title="git 取消跟踪文件目录" >git 取消跟踪文件目录</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年4月30日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Git">Git</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                如果文件和目录已经被提交到git仓库，是可以通过git 命令来取消文件和目录的跟踪。 我们常用的sourcetree也提供了该功能，如果是某目录下已经有文件被提交过了，那么就不能再改工具中直接对文件夹取消跟踪，只能对显示有更改的文件一个一个取消，UI操作还要等刷新，费时费力。 为了防止……
-                            </div>
-                            <p class="readmore"><a href="http://www.harddone.com/post/git_untrack_dir/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://www.harddone.com/post/hugo_nginx_3/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）" >Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年4月25日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Website">Website</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                前篇提要 在上一篇中，我们主要介绍了服务器的环境安装。在本文中，我们将就具体的操作步骤加以说明并截图展示。 利用 Hugo 生成静态网站 1. 创建项目目录 在您本地合适的目录下创建一个空文件夹，命名为BlogTest, 为了方便之后的命令行演示，我们假设刚才创建的目录完整路径为： /xxx/xxx/xxx/BlogTest 2. 新建网站 打开终端执……
-                            </div>
-                            <p class="readmore"><a href="http://www.harddone.com/post/hugo_nginx_3/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://www.harddone.com/post/hugo_nginx_2/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）" >Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年4月25日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Website">Website</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                前篇提要 在上一篇文章，我们详细记录了如何购买阿里云服务器的步骤和搭建博客网站的部分准备工作。本文将继续记录安装服务器环境的步骤。 服务器软件环境安装 1. 安装git sudo yum install git 2. 安装Nginx Nginx是一个高性能的web服务器软件。它是一个比apache更灵活和轻量级的程序。 第一步 - 安装……
-                            </div>
-                            <p class="readmore"><a href="http://www.harddone.com/post/hugo_nginx_2/">阅读全文</a></p>
-                        </article>
-                    
             
                     
 
@@ -355,6 +355,22 @@
 <ul class="widget-list">
     
     <li>
+        <a href="http://www.harddone.com/post/gradle-run-adb/" title="Gradle Run Adb">Gradle Run Adb</a>
+    </li>
+    
+    <li>
+        <a href="http://www.harddone.com/post/min-api-26-bug/" title="Invoke-customs are only supported starting with android 0 --min-api 26">Invoke-customs are only supported starting with android 0 --min-api 26</a>
+    </li>
+    
+    <li>
+        <a href="http://www.harddone.com/post/FIAM_triggerEvent/" title="Firebase In-App Messaging:triggerEvent not working">Firebase In-App Messaging:triggerEvent not working</a>
+    </li>
+    
+    <li>
+        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:手动上传AAR">Nexus:手动上传AAR</a>
+    </li>
+    
+    <li>
         <a href="http://www.harddone.com/post/gradle_copy_file/" title="Gradle Copy File">Gradle Copy File</a>
     </li>
     
@@ -376,22 +392,6 @@
     
     <li>
         <a href="http://www.harddone.com/post/gp_issue/" title="Google IAP 遇到无法购买时检查方法">Google IAP 遇到无法购买时检查方法</a>
-    </li>
-    
-    <li>
-        <a href="http://www.harddone.com/post/gradle_javadoc/" title="Android Studio: compileDebugJavaWithJavac issue">Android Studio: compileDebugJavaWithJavac issue</a>
-    </li>
-    
-    <li>
-        <a href="http://www.harddone.com/post/git_untrack_dir/" title="git 取消跟踪文件目录">git 取消跟踪文件目录</a>
-    </li>
-    
-    <li>
-        <a href="http://www.harddone.com/post/hugo_nginx_3/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）</a>
-    </li>
-    
-    <li>
-        <a href="http://www.harddone.com/post/hugo_nginx_2/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）</a>
     </li>
     
 </ul>
@@ -435,7 +435,7 @@
 <ul class="widget-list">
     
     <li>
-        <a href="http://www.harddone.com/categories/Android/">Android(15)</a>
+        <a href="http://www.harddone.com/categories/Android/">Android(19)</a>
     </li>
     
     <li>
@@ -471,6 +471,8 @@
     
     <a href="http://www.harddone.com/tags/Android-Studio/">Android-Studio</a>
     
+    <a href="http://www.harddone.com/tags/Android-Studio-3.5/">Android-Studio-3.5</a>
+    
     <a href="http://www.harddone.com/tags/Android-Studio3.3.2/">Android-Studio3.3.2</a>
     
     <a href="http://www.harddone.com/tags/Apk%E5%A4%A7%E5%B0%8F/">Apk大小</a>
@@ -485,6 +487,8 @@
     
     <a href="http://www.harddone.com/tags/Copy-File/">Copy-File</a>
     
+    <a href="http://www.harddone.com/tags/Firebase/">Firebase</a>
+    
     <a href="http://www.harddone.com/tags/GP/">GP</a>
     
     <a href="http://www.harddone.com/tags/Github/">Github</a>
@@ -496,6 +500,10 @@
     <a href="http://www.harddone.com/tags/Https/">Https</a>
     
     <a href="http://www.harddone.com/tags/IAP/">IAP</a>
+    
+    <a href="http://www.harddone.com/tags/In-App-Messaging-not-working/">In-App-Messaging-not-working</a>
+    
+    <a href="http://www.harddone.com/tags/Invoke-customs/">Invoke-customs</a>
     
     <a href="http://www.harddone.com/tags/JDK1.8/">JDK1.8</a>
     
@@ -551,6 +559,8 @@
     
     <a href="http://www.harddone.com/tags/google-iap/">google-iap</a>
     
+    <a href="http://www.harddone.com/tags/gradle/">gradle</a>
+    
     <a href="http://www.harddone.com/tags/mips64el-linux-android/">mips64el-linux-android</a>
     
     <a href="http://www.harddone.com/tags/override/">override</a>
@@ -560,6 +570,8 @@
     <a href="http://www.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/">取消跟踪</a>
     
     <a href="http://www.harddone.com/tags/%E5%B1%8F%E5%B9%95%E9%87%8D%E5%8F%A0%E5%B1%82%E6%A3%80%E6%B5%8B/">屏幕重叠层检测</a>
+    
+    <a href="http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0/">手动上传</a>
     
     <a href="http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/">扫描解码</a>
     

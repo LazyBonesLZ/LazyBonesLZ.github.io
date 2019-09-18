@@ -6,10 +6,19 @@
     <description>Recent content in adb on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 18 Apr 2019 10:12:15 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Sep 2019 16:57:37 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/tags/adb/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gradle Run Adb</title>
+      <link>http://www.harddone.com/post/gradle-run-adb/</link>
+      <pubDate>Wed, 18 Sep 2019 16:57:37 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/gradle-run-adb/</guid>
+      <description>之前写过一篇关于python执行adb命令的文章,主要功能是在设备上创建文件夹，然后向创建的目录下上传文件。业务需求是上传obb文件到设备上，但是执行该python脚本，需要传入太多的参数：obb路径，app package name, 以及版本号等等。参数过多导致使用不便，且时间久了自己也就忘了。 所以，</description>
+    </item>
     
     <item>
       <title>Python执行Android adb 命令</title>

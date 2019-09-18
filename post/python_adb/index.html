@@ -205,64 +205,97 @@ if __name__ == '__main__':
 
 	&quot;&quot;&quot; change commands and add shell&quot;&quot;&quot;
 
-	tag = ''
-
+	path = ''
+	package = ''
+	obbVersion = ''
+# see: https://blog.csdn.net/chengxuyuanyonghu/article/details/54972854
 	try:
-		opt, args = getopt.getopt(sys.argv[1:], &quot;ht:&quot;, ['tag', 'help'])
+		opt, args = getopt.getopt(sys.argv[1:], &quot;hf:p:v:&quot;, ['file=', 'package=','obbVersion=','help'])
 		for op, value in opt:
-			if op in (&quot;-t&quot;, &quot;--tag&quot;):
-				tag = value
+			if op in (&quot;-f&quot;, &quot;--file&quot;):
+				path = value
+			if op in (&quot;-p&quot;, &quot;--package&quot;):
+				package = value
+			if op in (&quot;-v&quot;, &quot;--obbVersion&quot;):
+				obbVersion = value
 			if op in (&quot;-h&quot;, &quot;--help&quot;):
-				print &quot;Usage: obb_push.py -t TAG_NAME&quot;
+				print &quot;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&quot;
 				print &quot;Options:&quot;
-				print &quot;  -t  TAG_NAME.Choose what you want to use tag, should be a obb file path !&quot;
+				print &quot;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&quot;
 				print &quot;&quot;
-				print &quot;Sample : ./obb_push.py -t &lt;obb file path&gt;&quot;
+				print &quot;OR: &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &quot;
+				print &quot;&quot;
+				print &quot;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&quot;
+				print &quot;&quot;
+				print &quot;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&quot;
 				print &quot;&quot;
 				sys.exit()
+		
+
 	except getopt.GetoptError:  
-            print &quot;Error: Could not find the args.&quot;
-            print &quot;Usage: obb_push.py -t TAG_NAME&quot;
-    	    print &quot;Options:&quot;
-    	    print &quot;  -t  TAG_NAME.Choose what you want to use tag, should be a obb file path !&quot;
-    	    print &quot;&quot;
-    	    print &quot;Sample : ./obb_push.py -t &lt;obb file path&gt;&quot;
-    	    print &quot;&quot;
-    	    sys.exit()
+           print &quot;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&quot;
+           print &quot;Options:&quot;
+           print &quot;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&quot;
+           print &quot;OR:&quot;
+           print &quot; &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &quot;
+           print &quot;&quot;
+           print &quot;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&quot;
+           print &quot;&quot;
+           print &quot;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&quot;
+           print &quot;&quot;
+           sys.exit()
 
 	
-	if tag == '':
+	if path == '':
 		print &quot;you should input a obb file\'s path !&quot;
 		exit()
 
-	print '======to get package name=======&gt;'
-	obbFilePath = tag
+	print '\n'
+	print '||--------------------------------------------------------------||'
+	print '\n'
+	print 'NOTICE:'
+	print 'obb file name rule: [main.bundleVersionCode.bundleID.obb]'
+	print '\n'
+	print '||--------------------------------------------------------------||'
+	print '\n'
+
+	print 'Start to copy obb file &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; '
+	print '  (1)===============&gt; parsing obb file name:'
+	obbFilePath = path
 	if obbFilePath == '':
 		print 'you should input a obb file\'s path !'
 		exit()
 	obbSubDirs = obbFilePath.split('/')
 	# index  = len(obbSubDirs) - 1
 	obbFileName = obbSubDirs[-1]
-	print '&gt;&gt;&gt;obbFileName = ' + obbFileName
+	print obbFileName
 	if obbFileName == '' or obbFileName.find('.obb') == -1:
 		print 'can not find a obb file in the path !'
 		exit()
 	
-	tmpPackageName = obbFileName.split('.')
-	print  tmpPackageName
-	packageName = ''
+	# tmpPackageName = obbFileName.split('.')
+	# print  '  (2)===================&gt; parsing result: ' 
+	# print tmpPackageName
+	print '\n'
+
+
+	# packageName = ''
 	# for com in tmpPackageName[2:-2]:
 	# 	print com
 	# 	if com == tmpPackageName[-2]:
 	# 	 	packageName += com
 	# 	else:
 	# 	 	packageName += com + &quot;.&quot; 
-	packageName = '.'.join(tmpPackageName[2:-1])
-	print '&gt;&gt;&gt;package name = ' + packageName
+	# packageName = '.'.join(tmpPackageName[2:-1])
+	# print '    get package name = ' + packageName
+	print '    get package name = ' + package
 
+    #os.system('adb shell mount -o remount -o rw /system')
+    
 
-	print '=======adb shell mkdir ========&gt;'
-	obbDestPath = 'sdcard/Android/obb/' + packageName
+	print '\n'
+	print '  (3)===============&gt; adb shell mkdir :'
+	obbDestPath = 'sdcard/Android/obb/' + package
 	subDir = ''
 	subDirs = obbDestPath.split('/')
 	for dir in subDirs:
@@ -270,19 +303,34 @@ if __name__ == '__main__':
 	 	# print subDir 
 	 	os.system('adb shell mkdir ' + subDir)
 
-	print '=======adb push obb file to device ========&gt;'
+	print '\n'
+	print '  (4)===============&gt; adb push obb file to device :'
 	pushCmd = 'adb push ' + obbFilePath.replace(' ','\\ ')+ ' /' + obbDestPath + '/' 
 	# print pushCmd
 	os.system(pushCmd)
 
+	print '\n'
+	print '  (5)===============&gt; adb push rename obb file:'
+	newObbFileName = &quot;main.&quot;+ obbVersion+&quot;.&quot; + package + &quot;.obb&quot;
+	oldFileFullPath = '/' + obbDestPath + '/' + obbFileName 
+	newFileFullPath = '/' + obbDestPath + '/' + newObbFileName
+	print '  old:' + oldFileFullPath
+	reameCmd = 'adb shell mv ' + oldFileFullPath + &quot; &quot; + newFileFullPath
+	os.system(reameCmd)
+	print '  new:' + newFileFullPath
+	print '\n'
+	print '  (6)===============&gt; Completed!!!'
+	print '\n'
 	exit()
 </code></pre>
 
 <ul>
-<li>使用方法同上，最后执行命令 <code>python ./obb_push.py -t &lt;obb file path&gt;</code></li>
+<li>使用方法同上，最后执行命令 :</li>
 </ul>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/6174818-ac29ee1f2a26a142.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="02.png" /></p>
+<pre><code> python &lt;/path/obb_push.py&gt; -p &lt;app package name &gt; -f &lt;/path/of/obbfile&gt; -v &lt;app version code&gt;
+ 
+</code></pre>
 
                         </div>
 
@@ -353,6 +401,22 @@ if __name__ == '__main__':
 <ul class="widget-list">
     
     <li>
+        <a href="http://www.harddone.com/post/gradle-run-adb/" title="Gradle Run Adb">Gradle Run Adb</a>
+    </li>
+    
+    <li>
+        <a href="http://www.harddone.com/post/min-api-26-bug/" title="Invoke-customs are only supported starting with android 0 --min-api 26">Invoke-customs are only supported starting with android 0 --min-api 26</a>
+    </li>
+    
+    <li>
+        <a href="http://www.harddone.com/post/FIAM_triggerEvent/" title="Firebase In-App Messaging:triggerEvent not working">Firebase In-App Messaging:triggerEvent not working</a>
+    </li>
+    
+    <li>
+        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:手动上传AAR">Nexus:手动上传AAR</a>
+    </li>
+    
+    <li>
         <a href="http://www.harddone.com/post/gradle_copy_file/" title="Gradle Copy File">Gradle Copy File</a>
     </li>
     
@@ -374,22 +438,6 @@ if __name__ == '__main__':
     
     <li>
         <a href="http://www.harddone.com/post/gp_issue/" title="Google IAP 遇到无法购买时检查方法">Google IAP 遇到无法购买时检查方法</a>
-    </li>
-    
-    <li>
-        <a href="http://www.harddone.com/post/gradle_javadoc/" title="Android Studio: compileDebugJavaWithJavac issue">Android Studio: compileDebugJavaWithJavac issue</a>
-    </li>
-    
-    <li>
-        <a href="http://www.harddone.com/post/git_untrack_dir/" title="git 取消跟踪文件目录">git 取消跟踪文件目录</a>
-    </li>
-    
-    <li>
-        <a href="http://www.harddone.com/post/hugo_nginx_3/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）</a>
-    </li>
-    
-    <li>
-        <a href="http://www.harddone.com/post/hugo_nginx_2/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）</a>
     </li>
     
 </ul>
@@ -433,7 +481,7 @@ if __name__ == '__main__':
 <ul class="widget-list">
     
     <li>
-        <a href="http://www.harddone.com/categories/Android/">Android(15)</a>
+        <a href="http://www.harddone.com/categories/Android/">Android(19)</a>
     </li>
     
     <li>
@@ -469,6 +517,8 @@ if __name__ == '__main__':
     
     <a href="http://www.harddone.com/tags/Android-Studio/">Android-Studio</a>
     
+    <a href="http://www.harddone.com/tags/Android-Studio-3.5/">Android-Studio-3.5</a>
+    
     <a href="http://www.harddone.com/tags/Android-Studio3.3.2/">Android-Studio3.3.2</a>
     
     <a href="http://www.harddone.com/tags/Apk%E5%A4%A7%E5%B0%8F/">Apk大小</a>
@@ -483,6 +533,8 @@ if __name__ == '__main__':
     
     <a href="http://www.harddone.com/tags/Copy-File/">Copy-File</a>
     
+    <a href="http://www.harddone.com/tags/Firebase/">Firebase</a>
+    
     <a href="http://www.harddone.com/tags/GP/">GP</a>
     
     <a href="http://www.harddone.com/tags/Github/">Github</a>
@@ -494,6 +546,10 @@ if __name__ == '__main__':
     <a href="http://www.harddone.com/tags/Https/">Https</a>
     
     <a href="http://www.harddone.com/tags/IAP/">IAP</a>
+    
+    <a href="http://www.harddone.com/tags/In-App-Messaging-not-working/">In-App-Messaging-not-working</a>
+    
+    <a href="http://www.harddone.com/tags/Invoke-customs/">Invoke-customs</a>
     
     <a href="http://www.harddone.com/tags/JDK1.8/">JDK1.8</a>
     
@@ -549,6 +605,8 @@ if __name__ == '__main__':
     
     <a href="http://www.harddone.com/tags/google-iap/">google-iap</a>
     
+    <a href="http://www.harddone.com/tags/gradle/">gradle</a>
+    
     <a href="http://www.harddone.com/tags/mips64el-linux-android/">mips64el-linux-android</a>
     
     <a href="http://www.harddone.com/tags/override/">override</a>
@@ -558,6 +616,8 @@ if __name__ == '__main__':
     <a href="http://www.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/">取消跟踪</a>
     
     <a href="http://www.harddone.com/tags/%E5%B1%8F%E5%B9%95%E9%87%8D%E5%8F%A0%E5%B1%82%E6%A3%80%E6%B5%8B/">屏幕重叠层检测</a>
+    
+    <a href="http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0/">手动上传</a>
     
     <a href="http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/">扫描解码</a>
     

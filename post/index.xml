@@ -6,10 +6,46 @@
     <description>Recent content in Posts on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 16 Aug 2019 10:59:48 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Sep 2019 16:57:37 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gradle Run Adb</title>
+      <link>http://www.harddone.com/post/gradle-run-adb/</link>
+      <pubDate>Wed, 18 Sep 2019 16:57:37 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/gradle-run-adb/</guid>
+      <description>之前写过一篇关于python执行adb命令的文章,主要功能是在设备上创建文件夹，然后向创建的目录下上传文件。业务需求是上传obb文件到设备上，但是执行该python脚本，需要传入太多的参数：obb路径，app package name, 以及版本号等等。参数过多导致使用不便，且时间久了自己也就忘了。 所以，</description>
+    </item>
+    
+    <item>
+      <title>Invoke-customs are only supported starting with android 0 --min-api 26</title>
+      <link>http://www.harddone.com/post/min-api-26-bug/</link>
+      <pubDate>Wed, 18 Sep 2019 16:41:39 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/min-api-26-bug/</guid>
+      <description>Android Studio升级到3.5，工程在编译时出现错误： Invoke-customs are only supported starting with android 0 --min-api 26 解决方案： android{ //... compileOptions { sourceCompatibility JavaVersion.VERSION_1_8 targetCompatibility JavaVersion.VERSION_1_8 } //... } JavaVersion请根据您开发环境中实际的版本设置。 参考链接： https://stackoverflow.com/questions/49891730/invoke-customs-are-only-supported-starting-with-android-0-min-api-26</description>
+    </item>
+    
+    <item>
+      <title>Firebase In-App Messaging:triggerEvent not working</title>
+      <link>http://www.harddone.com/post/FIAM_triggerEvent/</link>
+      <pubDate>Wed, 18 Sep 2019 14:55:36 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/FIAM_triggerEvent/</guid>
+      <description>什么是Firebase In-App Messaging？ 官方解释： Firebase In-App Messaging helps you engage your app&amp;rsquo;s active users by sending them targeted, contextual messages that encourage them to use key app features. For example, you could send an in-app message to get users to subscribe, watch a video, complete a level, or buy an item. You can customize messages as cards, banners, modals, or images, and set up triggers so that they appear exactly when they&amp;rsquo;d benefit your users most. Use Firebase In-App Messaging to encourage exploration and discovery: highlight a sale or coupon in your ecommerce app, give clues or tips in your game, or prompt a like or share in your social media app. 集成 Firebase In-App Messaging</description>
+    </item>
+    
+    <item>
+      <title>Nexus:手动上传AAR</title>
+      <link>http://www.harddone.com/post/3rd_part_aar_to_nexus/</link>
+      <pubDate>Wed, 18 Sep 2019 13:57:06 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/3rd_part_aar_to_nexus/</guid>
+      <description>Nexus作为公司内部或个人的SDK私有仓库，不仅可以通过gradle脚本上传生成的aar格式SDK,以便在android studio中快速集成，还可以手动上传一些单个的aar文件。 比如，如果遇到这样的使用场景：第三方的SDK,并没有上传到jcenter 或maven仓库，但是给开</description>
+    </item>
     
     <item>
       <title>Gradle Copy File</title>
