@@ -6,10 +6,19 @@
     <description>Recent content in Posts on ColofulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 18 Sep 2019 16:57:37 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2019 15:34:44 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Placeholders In Library Module</title>
+      <link>http://www.harddone.com/post/placeholders_in_submodule/</link>
+      <pubDate>Tue, 24 Sep 2019 15:34:44 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/placeholders_in_submodule/</guid>
+      <description>Android Studio 工程有多个module组成，相互工程依赖。最常见的方式是app moudule 依赖于 library module。如果所依赖的library module 最终还会作为一个公共SDK供其他项目使用的话，而内部用到的一些又需要根据具体项目配置的不同值时，就需要在library moudule的AndroidManifes</description>
+    </item>
     
     <item>
       <title>Gradle Run Adb</title>

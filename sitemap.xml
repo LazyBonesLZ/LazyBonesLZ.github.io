@@ -4,37 +4,60 @@
   
   <url>
     <loc>http://www.harddone.com/categories/Android/</loc>
-    <lastmod>2019-09-18T16:57:37+08:00</lastmod>
+    <lastmod>2019-09-24T15:34:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.harddone.com/categories/</loc>
-    <lastmod>2019-09-18T16:57:37+08:00</lastmod>
+    <lastmod>2019-09-24T15:34:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.harddone.com/</loc>
-    <lastmod>2019-09-18T16:57:37+08:00</lastmod>
+    <lastmod>2019-09-24T15:34:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/Library-module/</loc>
+    <lastmod>2019-09-24T15:34:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/Main-module/</loc>
+    <lastmod>2019-09-24T15:34:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/Placeholders/</loc>
+    <lastmod>2019-09-24T15:34:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/post/placeholders_in_submodule/</loc>
+    <lastmod>2019-09-24T15:34:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/post/</loc>
+    <lastmod>2019-09-24T15:34:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/</loc>
+    <lastmod>2019-09-24T15:34:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.harddone.com/post/gradle-run-adb/</loc>
     <lastmod>2019-09-18T16:57:37+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.harddone.com/post/</loc>
-    <lastmod>2019-09-18T16:57:37+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.harddone.com/tags/</loc>
-    <lastmod>2019-09-18T16:57:37+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -318,13 +341,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Website/</loc>
+    <loc>http://www.harddone.com/categories/Website/</loc>
     <lastmod>2019-04-25T11:13:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Website/</loc>
+    <loc>http://www.harddone.com/tags/Website/</loc>
     <lastmod>2019-04-25T11:13:24+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -369,13 +392,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Python/</loc>
+    <loc>http://www.harddone.com/categories/Python/</loc>
     <lastmod>2019-04-18T10:12:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Python/</loc>
+    <loc>http://www.harddone.com/tags/Python/</loc>
     <lastmod>2019-04-18T10:12:15+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -386,13 +409,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Lua/</loc>
+    <loc>http://www.harddone.com/categories/Lua/</loc>
     <lastmod>2019-04-18T10:01:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Lua/</loc>
+    <loc>http://www.harddone.com/tags/Lua/</loc>
     <lastmod>2019-04-18T10:01:05+08:00</lastmod>
     <priority>0</priority>
   </url>
