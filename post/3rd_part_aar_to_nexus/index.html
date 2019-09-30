@@ -100,7 +100,9 @@
                         
                         
                         <div class="post-content">
-                            <p>Nexus作为公司内部或个人的SDK私有仓库，不仅可以通过gradle脚本上传生成的aar格式SDK,以便在android studio中快速集成，还可以手动上传一些单个的aar文件。
+                            
+
+<p>Nexus作为公司内部或个人的SDK私有仓库，不仅可以通过gradle脚本上传生成的aar格式SDK,以便在android studio中快速集成，还可以手动上传一些单个的aar文件。
 比如，如果遇到这样的使用场景：第三方的SDK,并没有上传到jcenter 或maven仓库，但是给开发者提供了下载链接。直接将aar内置在工程中也可以，但是如果工程有多个module的话，这种直接内置的方式就不太友好。所以，我们可以将其上传到nexus,然后像集成jcenter或maven仓库的sdk一样，在工程的dependices中直接使用。</p>
 
 <p>管理员登录nexus,创建仓库：</p>
@@ -120,7 +122,40 @@
 <p><img src="/img/09_nexus_aar_upload/05.jpg" alt="" /></p>
 
 <p>Android Studio 集成
-如果按照上图所示的方式样集成的话，android studio是无法编译通过的，会提示找不到相应的文件，正确的使用方式是在版本号之后加上“@aar”: implementation ‘com.ssc.libs:Cocos2dxSingleTouch:1.0.0@aar’</p>
+如果按照上图所示的方式样集成的话，android studio是无法编译通过的，会提示找不到相应的文件，正确的使用方式是在版本号之后加上“@aar”:</p>
+
+<pre><code>implementation ‘com.ssc.libs:Cocos2dxSingleTouch:1.0.0@aar’
+</code></pre>
+
+<hr />
+
+<h2 id="english-doc">English Doc</h2>
+
+<p>As a private or private SDK for the company, Nexus can not only upload the generated aar format SDK through the gradle script, but also integrate it quickly in android studio. You can also manually upload some individual aar files.
+For example, if you encounter such a usage scenario: the third-party SDK is not uploaded to the jcenter or maven repository, but the developer is provided with a download link. It is also possible to build aar directly into the project, but if the project has multiple modules, this direct built-in approach is less friendly. So, we can upload it to nexus and use it directly in the engineering dependices, just like the sdk that integrates jcenter or maven repositories.</p>
+
+<p>The administrator logs in to nexus and creates a repository:</p>
+
+<p><img src="/img/09_nexus_aar_upload/01.jpg" alt="" /></p>
+
+<p>Upload AAR</p>
+
+<p><img src="/img/09_nexus_aar_upload/02.jpg" alt="" /></p>
+
+<p><img src="/img/09_nexus_aar_upload/03.jpg" alt="" /></p>
+
+<p>Check if the upload was successful:</p>
+
+<p><img src="/img/09_nexus_aar_upload/04.jpg" alt="" /></p>
+
+<p><img src="/img/09_nexus_aar_upload/05.jpg" alt="" /></p>
+
+<p>Integrate in Android Studio:</p>
+
+<p>If you integrate according to the way shown in the figure above, android studio can&rsquo;t compile and pass, you will be prompted to find the corresponding file. The correct way to use it is to add &ldquo;@aar&rdquo; after the version number:</p>
+
+<pre><code>implementation 'com.ssc .libs:Cocos2dxSingleTouch:1.0.0@aar'
+</code></pre>
 
                         </div>
 
@@ -154,6 +189,8 @@
                                 <li><a href="http://www.harddone.com/tags/Nexus">Nexus</a></li>
                                 
                                 <li><a href="http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0">手动上传</a></li>
+                                
+                                <li><a href="http://www.harddone.com/tags/upload-AARmanually">upload AARmanually</a></li>
                                 
                             </ul>
                             
@@ -319,6 +356,8 @@
     
     <a href="http://www.harddone.com/tags/CentOS/">CentOS</a>
     
+    <a href="http://www.harddone.com/tags/Certificate-verification-failed/">Certificate-verification-failed</a>
+    
     <a href="http://www.harddone.com/tags/Chrome-Extension/">Chrome-Extension</a>
     
     <a href="http://www.harddone.com/tags/Copy-File/">Copy-File</a>
@@ -406,6 +445,8 @@
     <a href="http://www.harddone.com/tags/mips64el-linux-android/">mips64el-linux-android</a>
     
     <a href="http://www.harddone.com/tags/override/">override</a>
+    
+    <a href="http://www.harddone.com/tags/upload-AARmanually/">upload-AARmanually</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     

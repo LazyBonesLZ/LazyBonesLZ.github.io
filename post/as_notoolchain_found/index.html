@@ -126,6 +126,37 @@
 
 <p>作为开发经验简单记录一下。最根本的原因应该是本地的ndk-bundle中toolchain安装不全导致。。。详细的分析和解决方案：<a href="https://medium.com/@ivancse.58/how-to-resolve-no-toolchains-found-in-the-ndk-toolchains-folder-for-abi-with-prefix-b37086380193">点我吧！！</a></p>
 
+<hr />
+
+<p>English Doc</p>
+
+<hr />
+
+<p>Recently, the demand for new projects may use the scanning and reading function of the ID card. I will study the OCR interface provided by Baidu in advance, and download the official demo to import Android Studio and report an error:</p>
+
+<pre><code> No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android
+</code></pre>
+
+<p>Suddenly it was forced. What is wrong with this? In the absence of the start, I had to open Google Dafa.</p>
+
+<p>Because the locally installed AS version is 3.2, but the Baidu demo is configured with gradle 2.2.3.</p>
+
+<pre><code class="language-shell">  dependencies {
+      classpath 'com.android.tools.build:gradle:2.2.3'
+
+  }
+</code></pre>
+
+<p>The most straightforward solution is to change to gradle3.2.1</p>
+
+<pre><code class="language-shell">  dependencies {
+      classpath 'com.android.tools.build:gradle:3.2.1'
+
+  }
+</code></pre>
+
+<p>Simply record as a development experience. The most fundamental reason should be caused by the incomplete installation of the toolchain in the local ndk-bundle&hellip; Detailed analysis and solutions：<a href="https://medium.com/@ivancse.58/how-to-resolve-no-toolchains-found-in-the-ndk-toolchains-folder-for-abi-with-prefix-b37086380193">Click me!!</a></p>
+
                         </div>
 
                         
@@ -325,6 +356,8 @@
     
     <a href="http://www.harddone.com/tags/CentOS/">CentOS</a>
     
+    <a href="http://www.harddone.com/tags/Certificate-verification-failed/">Certificate-verification-failed</a>
+    
     <a href="http://www.harddone.com/tags/Chrome-Extension/">Chrome-Extension</a>
     
     <a href="http://www.harddone.com/tags/Copy-File/">Copy-File</a>
@@ -412,6 +445,8 @@
     <a href="http://www.harddone.com/tags/mips64el-linux-android/">mips64el-linux-android</a>
     
     <a href="http://www.harddone.com/tags/override/">override</a>
+    
+    <a href="http://www.harddone.com/tags/upload-AARmanually/">upload-AARmanually</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
