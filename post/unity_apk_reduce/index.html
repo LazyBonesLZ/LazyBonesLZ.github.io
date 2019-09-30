@@ -132,6 +132,40 @@
 
 <p>本文仅记录而已，解释不对的地方请鄙视。希望能对您减小apk时有所帮助。</p>
 
+<hr />
+
+<h2 id="english-doc">English DOC</h2>
+
+<h1 id="background">background</h1>
+
+<p>Due to my non-professional game developers, this article does not discuss how to professionally deal with game resources and project configuration to reduce the size of the installation package. Just record how to reduce the apk when packaging.</p>
+
+<p>Unity project, Lua develops subgame logic. How to use Lua development in Unity does not expand the instructions, I will not. The background of the problem is that the boss asked us to publish the sub-app developed by Lua as a separate application, so the title is actually changed to &ldquo;How does the Unity-lua project further reduce the apk size?&rdquo;</p>
+
+<p>Students who are familiar with this type of development should know that lua logic can run smoothly, and the game scene should have a good assetbundle resource. This is the key to how we can further reduce the size when packaging apk. If there are multiple scenes in the project, when exporting the Android studio project in the untiy editor, you only need to export the first scene. In this way, the remaining game scenes do not need to be repeatedly compiled into resources, and can be loaded directly from the assetbundle through lua logic.</p>
+
+<h1 id="for-example">for example</h1>
+
+<p>Project A has only two scenarios: LaunchScene and MainScene; To successfully publish the lua project, the first startup scenario needs to complete the loading of all assetbundle and lua resources and the display of the loaded animation, so the first scene must be exported; The loading of the scene is controlled by the logic of lua after that, and the resources are of course obtained from the pre-loaded assetbundle.</p>
+
+<p>If we export, we have checked all the scenes:</p>
+
+<p><img src="/img/06_unity_apk/01.png" alt="" /></p>
+
+<p>By decompressing apk we can see:</p>
+
+<p><img src="/img/06_unity_apk/02.png" alt="" /></p>
+
+<p><code>level0</code> and <code>level1</code> correspond to two scenes respectively, corresponding to <code>sharedassets0.assets</code> and <code>sharedassets1.assets</code> files. The screenshots are stored in the form of <code>sharedassetsXXX.assets.splitXXX</code>. These are unity. The resources associated with the scene are very large. The impact on the size of the apk is very obvious.</p>
+
+<p>When we don&rsquo;t check the MainScene export,</p>
+
+<p><img src="/img/06_unity_apk/03.png" alt="" /></p>
+
+<p>Unzip the files with the names <code>sharedassets1.asstes.splitXXX</code> and <code>level1</code>, and the apk is reduced by nearly 15M.</p>
+
+<p>This article only records, please explain the wrong place. I hope it will help you reduce your apk.</p>
+
                         </div>
 
                         
