@@ -347,13 +347,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Website/</loc>
+    <loc>http://www.harddone.com/categories/Website/</loc>
     <lastmod>2019-04-25T11:13:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Website/</loc>
+    <loc>http://www.harddone.com/tags/Website/</loc>
     <lastmod>2019-04-25T11:13:24+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -398,13 +398,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Python/</loc>
+    <loc>http://www.harddone.com/categories/Python/</loc>
     <lastmod>2019-04-18T10:12:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Python/</loc>
+    <loc>http://www.harddone.com/tags/Python/</loc>
     <lastmod>2019-04-18T10:12:15+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -415,13 +415,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Lua/</loc>
+    <loc>http://www.harddone.com/categories/Lua/</loc>
     <lastmod>2019-04-18T10:01:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Lua/</loc>
+    <loc>http://www.harddone.com/tags/Lua/</loc>
     <lastmod>2019-04-18T10:01:05+08:00</lastmod>
     <priority>0</priority>
   </url>
