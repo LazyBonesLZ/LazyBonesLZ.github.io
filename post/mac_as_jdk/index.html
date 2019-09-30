@@ -100,7 +100,9 @@
                         
                         
                         <div class="post-content">
-                            <p>1.project structure设置界面中设置jdk路径是jdk1.7或以上的版本:<code>File-&gt;Project Structure-&gt;SDK Location</code></p>
+                            
+
+<p>1.project structure设置界面中设置jdk路径是jdk1.7或以上的版本:<code>File-&gt;Project Structure-&gt;SDK Location</code></p>
 
 <p><img src="/img/05_mac_jdk/01.png" alt="" /></p>
 
@@ -117,8 +119,37 @@
 
 <p>修改后：</p>
 
-<pre><code>&lt;key&gt;JVMVersion&lt;/key&gt; &lt;string&gt;1.8.0_121&lt;/string&gt; 
+<pre><code>&lt;key&gt;JVMVersion&lt;/key&gt; &lt;string&gt;1.8.0_121&lt;/string&gt;
 #（这里的版本号根据实际安装的jdk版本来修改）
+</code></pre>
+
+<hr />
+
+<h2 id="english-doc">English DOC</h2>
+
+<ol>
+<li>The project structure setting interface sets the jdk path to be jdk1.7 or above: <code>File-&gt;Project Structure-&gt;SDK Location</code></li>
+</ol>
+
+<p><img src="/img/05_mac_jdk/01.png" alt="" /></p>
+
+<ol>
+<li>Modify the default jdk version of AS.
+(If it is a jdk1.8 version, you need to modify <code>/Application/Android Studio/Contents/info.plist</code>)</li>
+</ol>
+
+<p>How to find the path? <code>Android Studio.app -&gt; Right click -&gt; Show package contents</code></p>
+
+<p>before fixing:</p>
+
+<pre><code>&lt;key&gt;JVMVersion&lt;/key&gt; &lt;string&gt;1.6*,1.7+&lt;/string&gt;
+
+</code></pre>
+
+<p>After modification:</p>
+
+<pre><code>&lt;key&gt;JVMVersion&lt;/key&gt; &lt;string&gt;1.8.0_121&lt;/string&gt;
+#(The version number here is modified according to the actual installed jdk version)
 </code></pre>
 
                         </div>

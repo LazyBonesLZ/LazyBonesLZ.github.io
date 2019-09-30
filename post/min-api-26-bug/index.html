@@ -116,10 +116,37 @@
     }
  	//...
  	}
- 
+
 </code></pre>
 
 <p>JavaVersion请根据您开发环境中实际的版本设置。</p>
+
+<hr />
+
+<p>English DOC</p>
+
+<hr />
+
+<p>Android Studio upgrade to 3.5, the project has an error during compilation:
+ 
+  ```
+  Invoke-customs are only supported starting with android 0 &ndash;min-api 26</p>
+
+<p>  <code>
+  solution:
+ 
+ </code>shell
+  Android{
+  //&hellip;
+  compileOptions {
+         sourceCompatibility JavaVersion.VERSION_1_8
+         targetCompatibility JavaVersion.VERSION_1_8
+     }
+  //&hellip;
+  }
+ 
+  ```
+  JavaVersion is based on the actual version settings in your development environment.</p>
 
 <p>参考链接：
  <a href="https://stackoverflow.com/questions/49891730/invoke-customs-are-only-supported-starting-with-android-0-min-api-26">https://stackoverflow.com/questions/49891730/invoke-customs-are-only-supported-starting-with-android-0-min-api-26</a></p>
