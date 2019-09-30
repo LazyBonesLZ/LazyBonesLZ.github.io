@@ -131,11 +131,11 @@
 <pre><code>cd /xxx/xxx/xxx/BlogTest
 </code></pre>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/6174818-9e836e723e83bb7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hugo_1_10.png" /></p>
+<p><img src="/img/10_hugo_server/09.png" alt="hugo_1_10.png" /></p>
 
 <ul>
 <li><p>打开刚才创建的目录，我们可以发现，hugo已经自动帮我们生成了很多文件，这些就是跟创建网站相关的资源。执行完<code>hugo new site xxx</code>命令其实是没有<code>public</code>文件夹，该目录是之后生成静态网站资源用以发布时产生的。
-<img src="https://upload-images.jianshu.io/upload_images/6174818-9ec874da155b70c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hugo_1_11.png" /></p></li>
+<img src="/img/10_hugo_server/10.png" alt="hugo_1_11.png" /></p></li>
 
 <li><p>接下来，依次执行下列命令行，详细解释参考注释。</p></li>
 </ul>
@@ -163,14 +163,14 @@ open content/post
 
 <ul>
 <li><p>编辑你的第一篇博客内容，跟普通的markdown风格文件操作一样。需要注意的地方如示例截图所示：
-<img src="https://upload-images.jianshu.io/upload_images/6174818-450e80114b6c7c4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hugo_1_12.png" /></p></li>
+<img src="/img/10_hugo_server/11.png" alt="hugo_1_12.png" /></p></li>
 
 <li><p>保存文本内容后，然后执行hugo提供的调试命令查看效果，检查博客文档效果是否生效：</p></li>
 </ul>
 
 <pre><code class="language-shell">hugo server -D
 
-# 然后在浏览器访问 
+# 然后在浏览器访问
 http://localhost:1313/
 </code></pre>
 
@@ -247,7 +247,7 @@ mkdir blog2
 cd blog2
 
 # git 初始化
-git init 
+git init
 git remote add origin https://github.com/LazyBonesLZ/LazyBonesLZ.github.io.git
 
 # 从 Github第一次抓取
@@ -386,7 +386,7 @@ vim blog.conf
     }
 
     # NodeJS 将 Web 服务跑在了 7777 端口，我们可以用 Nginx 反向代理到 80 端口
-    location /webhook { 
+    location /webhook {
       alias /root/webhook;
       proxy_pass http://127.0.0.1:7777;  
     }
@@ -451,7 +451,7 @@ hugo new post/MySecondBlog.md
 ./deploy.sh
 # 执行完后，不出意外的话，服务器已经已经更新了！ 完美！
 
-# ------------------ 
+# ------------------
 # 这样就完了？ ～～
 # nooooo~~
 # 细心的你肯定已经发现，我们的脚本只是把网站相关的东西push到了xxx.github.io这个仓库
