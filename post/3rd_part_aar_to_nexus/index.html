@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Nexus:手动上传AAR | ColorfulDark Blog</title>
-    <meta property="og:title" content="Nexus:手动上传AAR - ColorfulDark Blog">
+    <title>Nexus:Upload AAR files manully | ColorfulDark Blog</title>
+    <meta property="og:title" content="Nexus:Upload AAR files manully - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
     <meta property="article:published_time" content="2019-09-18T13:57:06&#43;08:00">
@@ -17,7 +17,7 @@
     <meta property="article:modified_time" content="2019-09-18T13:57:06&#43;08:00">
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
-    <meta name="description" content="Nexus:手动上传AAR">
+    <meta name="description" content="Nexus:Upload AAR files manully">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/3rd_part_aar_to_nexus/">
@@ -32,6 +32,7 @@
 
     
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-5294048051542592",
@@ -55,15 +56,15 @@
                         ColorfulDark Blog
                     </a>
                 
-                <p class="description">专注于Android、Java、Kotlin、移动互联网</p>
+                <p class="description">Focus on Android,Java,Kotlin and Mobile Internet</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">首页</a>
+                    <a class="current" href="http://www.harddone.com/">Home</a>
                     
-                    <a  href="http://www.harddone.com/archives/" title="归档">归档</a>
+                    <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
-                    <a  href="http://www.harddone.com/about/" title="关于">关于</a>
+                    <a  href="http://www.harddone.com/about/" title="About">About</a>
                     
                 </nav>
             </div>
@@ -73,6 +74,11 @@
 
 
 <div id="body">
+  
+  <amp-auto-ads type="adsense"
+    data-ad-client="ca-pub-5294048051542592">
+  </amp-auto-ads>
+  
     <div class="container">
         <div class="col-group">
 
@@ -80,10 +86,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">Nexus:手动上传AAR</h1>
+                            <h1 class="post-title">Nexus:Upload AAR files manully</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年9月18日
+                            2019-9-18
                         </date>
                         
                         <div class="post-meta">
@@ -95,12 +101,39 @@
                         
                         
                         <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
                         </div>
                         
                         
                         <div class="post-content">
-                            
+                            <p>As a private or private SDK for the company, Nexus can not only upload the generated aar format SDK through the gradle script, but also integrate it quickly in android studio. You can also manually upload some individual aar files.</p>
+
+<p>For example, if you encounter such a usage scenario: the third-party SDK is not uploaded to the jcenter or maven repository, but the developer is provided with a download link. It is also possible to build aar directly into the project, but if the project has multiple modules, this direct built-in approach is less friendly. So, we can upload it to nexus and use it directly in the engineering dependices, just like the sdk that integrates jcenter or maven repositories.</p>
+
+<p>The administrator logs in to nexus and creates a repository:</p>
+
+<p><img src="/img/09_nexus_aar_upload/01.jpg" alt="" /></p>
+
+<p>Upload AAR</p>
+
+<p><img src="/img/09_nexus_aar_upload/02.jpg" alt="" /></p>
+
+<p><img src="/img/09_nexus_aar_upload/03.jpg" alt="" /></p>
+
+<p>Check if the upload was successful:</p>
+
+<p><img src="/img/09_nexus_aar_upload/04.jpg" alt="" /></p>
+
+<p><img src="/img/09_nexus_aar_upload/05.jpg" alt="" /></p>
+
+<p>Integrate in Android Studio:</p>
+
+<p>If you integrate according to the way shown in the figure above, android studio can&rsquo;t compile and pass, you will be prompted to find the corresponding file. The correct way to use it is to add &ldquo;@aar&rdquo; after the version number:</p>
+
+<pre><code>implementation 'com.ssc .libs:Cocos2dxSingleTouch:1.0.0@aar'
+</code></pre>
+
+<h2 id="中文">===中文===</h2>
 
 <p>Nexus作为公司内部或个人的SDK私有仓库，不仅可以通过gradle脚本上传生成的aar格式SDK,以便在android studio中快速集成，还可以手动上传一些单个的aar文件。
 比如，如果遇到这样的使用场景：第三方的SDK,并没有上传到jcenter 或maven仓库，但是给开发者提供了下载链接。直接将aar内置在工程中也可以，但是如果工程有多个module的话，这种直接内置的方式就不太友好。所以，我们可以将其上传到nexus,然后像集成jcenter或maven仓库的sdk一样，在工程的dependices中直接使用。</p>
@@ -126,37 +159,6 @@
 
 <pre><code>implementation ‘com.ssc.libs:Cocos2dxSingleTouch:1.0.0@aar’
 </code></pre>
-
-<hr />
-
-<h2 id="english-doc">English Doc</h2>
-
-<p>As a private or private SDK for the company, Nexus can not only upload the generated aar format SDK through the gradle script, but also integrate it quickly in android studio. You can also manually upload some individual aar files.
-For example, if you encounter such a usage scenario: the third-party SDK is not uploaded to the jcenter or maven repository, but the developer is provided with a download link. It is also possible to build aar directly into the project, but if the project has multiple modules, this direct built-in approach is less friendly. So, we can upload it to nexus and use it directly in the engineering dependices, just like the sdk that integrates jcenter or maven repositories.</p>
-
-<p>The administrator logs in to nexus and creates a repository:</p>
-
-<p><img src="/img/09_nexus_aar_upload/01.jpg" alt="" /></p>
-
-<p>Upload AAR</p>
-
-<p><img src="/img/09_nexus_aar_upload/02.jpg" alt="" /></p>
-
-<p><img src="/img/09_nexus_aar_upload/03.jpg" alt="" /></p>
-
-<p>Check if the upload was successful:</p>
-
-<p><img src="/img/09_nexus_aar_upload/04.jpg" alt="" /></p>
-
-<p><img src="/img/09_nexus_aar_upload/05.jpg" alt="" /></p>
-
-<p>Integrate in Android Studio:</p>
-
-<p>If you integrate according to the way shown in the figure above, android studio can&rsquo;t compile and pass, you will be prompted to find the corresponding file. The correct way to use it is to add &ldquo;@aar&rdquo; after the version number:</p>
-
-<pre><code>implementation 'com.ssc .libs:Cocos2dxSingleTouch:1.0.0@aar'
-</code></pre>
-
                         </div>
 
                         
@@ -172,11 +174,11 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
         
         <li><a href="/post/gradle_copy_file/">Gradle Copy File</a></li>
         
-        <li><a href="/post/screenoverlay/">Android Unity游戏弹出“屏幕重叠层检测”错误</a></li>
+        <li><a href="/post/screenoverlay/">Android Unity Game Popups “Screen Overlay Deteched</a></li>
         
         <li><a href="/post/vysor_break/">最新版Vysor pro Mac Chrome插件破解</a></li>
         
-        <li><a href="/post/unity_apk_reduce/">进一步减小Unity项目的apk大小</a></li>
+        <li><a href="/post/unity_apk_reduce/">How to reduce the apk size of Unity Game</a></li>
         
     </ul>
 </div>
@@ -188,9 +190,7 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
                                 
                                 <li><a href="http://www.harddone.com/tags/Nexus">Nexus</a></li>
                                 
-                                <li><a href="http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0">手动上传</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/upload-AARmanually">upload AARmanually</a></li>
+                                <li><a href="http://www.harddone.com/tags/upload-AAR-manually">upload AAR manually</a></li>
                                 
                             </ul>
                             
@@ -222,9 +222,9 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Recent articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -244,7 +244,7 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:手动上传AAR">Nexus:手动上传AAR</a>
+        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:Upload AAR files manully">Nexus:Upload AAR files manully</a>
     </li>
     
     <li>
@@ -252,7 +252,7 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity游戏弹出“屏幕重叠层检测”错误">Android Unity游戏弹出“屏幕重叠层检测”错误</a>
+        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity Game Popups “Screen Overlay Deteched">Android Unity Game Popups “Screen Overlay Deteched</a>
     </li>
     
     <li>
@@ -260,7 +260,7 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="进一步减小Unity项目的apk大小">进一步减小Unity项目的apk大小</a>
+        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="How to reduce the apk size of Unity Game">How to reduce the apk size of Unity Game</a>
     </li>
     
     <li>
@@ -268,6 +268,7 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
     </li>
     
 </ul>
+
     </section>
 
     
@@ -304,7 +305,7 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
 
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title">Categories</h3>
 <ul class="widget-list">
     
     <li>
@@ -332,10 +333,11 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
     </li>
     
 </ul>
+
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title">Tags</h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata-Test</a>
@@ -446,15 +448,13 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
     
     <a href="http://www.harddone.com/tags/override/">override</a>
     
-    <a href="http://www.harddone.com/tags/upload-AARmanually/">upload-AARmanually</a>
+    <a href="http://www.harddone.com/tags/upload-AAR-manually/">upload-AAR-manually</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/">取消跟踪</a>
     
     <a href="http://www.harddone.com/tags/%E5%B1%8F%E5%B9%95%E9%87%8D%E5%8F%A0%E5%B1%82%E6%A3%80%E6%B5%8B/">屏幕重叠层检测</a>
-    
-    <a href="http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0/">手动上传</a>
     
     <a href="http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/">扫描解码</a>
     
@@ -479,11 +479,12 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
     <a href="http://www.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/">证书验证失败</a>
     
 </div>
+
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -502,13 +503,15 @@ For example, if you encounter such a usage scenario: the third-party SDK is not 
 </section>
 
 
+
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Others</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
+
         </div>
     </div>
 </div>

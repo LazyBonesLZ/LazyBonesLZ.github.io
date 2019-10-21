@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>git 取消跟踪文件目录 | ColorfulDark Blog</title>
-    <meta property="og:title" content="git 取消跟踪文件目录 - ColorfulDark Blog">
+    <title>git : remove directories tracked | ColorfulDark Blog</title>
+    <meta property="og:title" content="git : remove directories tracked - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
     <meta property="article:published_time" content="2019-04-30T14:33:57&#43;08:00">
@@ -17,7 +17,7 @@
     <meta property="article:modified_time" content="2019-04-30T14:33:57&#43;08:00">
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
-    <meta name="description" content="git 取消跟踪文件目录">
+    <meta name="description" content="git : remove directories tracked">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/git_untrack_dir/">
@@ -32,6 +32,7 @@
 
     
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-5294048051542592",
@@ -55,15 +56,15 @@
                         ColorfulDark Blog
                     </a>
                 
-                <p class="description">专注于Android、Java、Kotlin、移动互联网</p>
+                <p class="description">Focus on Android,Java,Kotlin and Mobile Internet</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">首页</a>
+                    <a class="current" href="http://www.harddone.com/">Home</a>
                     
-                    <a  href="http://www.harddone.com/archives/" title="归档">归档</a>
+                    <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
-                    <a  href="http://www.harddone.com/about/" title="关于">关于</a>
+                    <a  href="http://www.harddone.com/about/" title="About">About</a>
                     
                 </nav>
             </div>
@@ -73,6 +74,11 @@
 
 
 <div id="body">
+  
+  <amp-auto-ads type="adsense"
+    data-ad-client="ca-pub-5294048051542592">
+  </amp-auto-ads>
+  
     <div class="container">
         <div class="col-group">
 
@@ -80,10 +86,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">git 取消跟踪文件目录</h1>
+                            <h1 class="post-title">git : remove directories tracked</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年4月30日
+                            2019-4-30
                         </date>
                         
                         <div class="post-meta">
@@ -95,12 +101,33 @@
                         
                         
                         <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
                         </div>
                         
                         
                         <div class="post-content">
-                            
+                            <p>If files and directories have already been submitted to the git repository, you can use the git command to untrack files and directories.</p>
+
+<p>Our commonly used sourcetree also provides this function. If there is already a file submitted in a directory, then you can&rsquo;t change the folder directly in the tool. You can only cancel the file with the changed one. UI The operation has to wait for the refresh, which is time consuming and laborious.</p>
+
+<p>To prevent misuse, first list the files that need to be tracked:</p>
+
+<pre><code>Git rm -r -n --cached &lt;file or dir&gt;
+
+# -r indicates recursion
+# -n means not deleting first, just listing files
+
+</code></pre>
+
+<p>After confirming the error, cancel the trace file or directory:</p>
+
+<pre><code>Git rm -r --cached &lt;file or dir&gt;
+</code></pre>
+
+<p>Add the canceled file or directory to <code>.gitignore</code>,
+Then submit all the changes to the repository.</p>
+
+<h2 id="中文">===中文===</h2>
 
 <p>如果文件和目录已经被提交到git仓库，是可以通过git 命令来取消文件和目录的跟踪。</p>
 
@@ -122,32 +149,6 @@
 
 <p>将已经取消的文件或目录加到 <code>.gitignore</code>,
 然后将所有的改动提交仓库。</p>
-
-<hr />
-
-<h2 id="english-doc">English DOC</h2>
-
-<p>If files and directories have already been submitted to the git repository, you can use the git command to untrack files and directories.</p>
-
-<p>Our commonly used sourcetree also provides this function. If there is already a file submitted in a directory, then you can&rsquo;t change the folder directly in the tool. You can only cancel the file with the changed one. UI The operation has to wait for the refresh, which is time consuming and laborious.</p>
-
-<p>To prevent misuse, first list the files that need to be tracked:</p>
-
-<pre><code>Git rm -r -n --cached &lt;file or dir&gt;
-
-# -r indicates recursion
-# -n means not deleting first, just listing files
-
-</code></pre>
-
-<p>After confirming the error, cancel the trace file or directory:</p>
-
-<pre><code>Git rm -r --cached &lt;file or dir&gt;
-</code></pre>
-
-<p>Add the canceled file or directory to <code>.gitignore</code>,
-Then submit all the changes to the repository.</p>
-
                         </div>
 
                         
@@ -213,9 +214,9 @@ Then submit all the changes to the repository.</p>
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Recent articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -235,7 +236,7 @@ Then submit all the changes to the repository.</p>
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:手动上传AAR">Nexus:手动上传AAR</a>
+        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:Upload AAR files manully">Nexus:Upload AAR files manully</a>
     </li>
     
     <li>
@@ -243,7 +244,7 @@ Then submit all the changes to the repository.</p>
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity游戏弹出“屏幕重叠层检测”错误">Android Unity游戏弹出“屏幕重叠层检测”错误</a>
+        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity Game Popups “Screen Overlay Deteched">Android Unity Game Popups “Screen Overlay Deteched</a>
     </li>
     
     <li>
@@ -251,7 +252,7 @@ Then submit all the changes to the repository.</p>
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="进一步减小Unity项目的apk大小">进一步减小Unity项目的apk大小</a>
+        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="How to reduce the apk size of Unity Game">How to reduce the apk size of Unity Game</a>
     </li>
     
     <li>
@@ -259,6 +260,7 @@ Then submit all the changes to the repository.</p>
     </li>
     
 </ul>
+
     </section>
 
     
@@ -295,7 +297,7 @@ Then submit all the changes to the repository.</p>
 
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title">Categories</h3>
 <ul class="widget-list">
     
     <li>
@@ -323,10 +325,11 @@ Then submit all the changes to the repository.</p>
     </li>
     
 </ul>
+
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title">Tags</h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata-Test</a>
@@ -437,15 +440,13 @@ Then submit all the changes to the repository.</p>
     
     <a href="http://www.harddone.com/tags/override/">override</a>
     
-    <a href="http://www.harddone.com/tags/upload-AARmanually/">upload-AARmanually</a>
+    <a href="http://www.harddone.com/tags/upload-AAR-manually/">upload-AAR-manually</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/">取消跟踪</a>
     
     <a href="http://www.harddone.com/tags/%E5%B1%8F%E5%B9%95%E9%87%8D%E5%8F%A0%E5%B1%82%E6%A3%80%E6%B5%8B/">屏幕重叠层检测</a>
-    
-    <a href="http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0/">手动上传</a>
     
     <a href="http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/">扫描解码</a>
     
@@ -470,11 +471,12 @@ Then submit all the changes to the repository.</p>
     <a href="http://www.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/">证书验证失败</a>
     
 </div>
+
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -493,13 +495,15 @@ Then submit all the changes to the repository.</p>
 </section>
 
 
+
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Others</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
+
         </div>
     </div>
 </div>

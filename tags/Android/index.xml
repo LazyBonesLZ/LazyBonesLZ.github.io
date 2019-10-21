@@ -12,12 +12,13 @@
     
     
     <item>
-      <title>Android Unity游戏弹出“屏幕重叠层检测”错误</title>
+      <title>Android Unity Game Popups “Screen Overlay Deteched</title>
       <link>http://www.harddone.com/post/screenoverlay/</link>
       <pubDate>Thu, 08 Aug 2019 09:15:12 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/screenoverlay/</guid>
-      <description>闲话少说，直接来看问题。 在三星平板T710设备上，系统版本为Android 6.0.1。Unity引擎开发的游戏在申请Android危险权限时，会弹出“屏幕重叠层检测”的提示对话框。如图所示： 遇到这种毫无头绪的情况都是直接开启Google大法。按照网上最多的说法都是根据提示，去Se</description>
+      <description>&lt;p&gt;Gossip less, talk directly to the problem.
+On the Samsung Tablet T710 device, the system version is Android 6.0.1. The game developed by the Unity engine will pop up a &amp;ldquo;screen overlay detection&amp;rdquo; prompt dialog when applying for Android dangerous permissions.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -30,12 +31,16 @@
     </item>
     
     <item>
-      <title>Android Studio3.3.2 发布Kotlin项目到Jcenter</title>
+      <title>Android Studio 3.3.2: Release Kotlin project to Jcenter</title>
       <link>http://www.harddone.com/post/as_push_kotlin_jcenter/</link>
       <pubDate>Wed, 17 Apr 2019 11:42:49 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/as_push_kotlin_jcenter/</guid>
-      <description>概述 纸上得来终觉浅。 一直以为发布AAR到jcenter是非常简单的事，跟发布到私有服务器nexus应该没太多差别。没想到自己动手做过才知道千万道坑。 本文将记录在Android Studio 3.3.2下，如何上传用kotlin开发的aar到jcenter服务器以及遇到的问题。参考来自这篇博文，</description>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;The paper is finally light.&lt;/p&gt;
+
+&lt;p&gt;I always thought that publishing AAR to jcenter is very simple, and it should be no different from publishing to a private server nexus. I didn’t expect to know how many pits I had when I did it myself.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,12 +53,12 @@
     </item>
     
     <item>
-      <title>Android https 突然提示证书验证失败</title>
+      <title>Android https: Certificate verification failed</title>
       <link>http://www.harddone.com/post/android_https_issue/</link>
       <pubDate>Mon, 13 Aug 2018 16:14:33 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/android_https_issue/</guid>
-      <description>项目中一直有https的请求，没有用到第三方的SDK,都是使用HttpUrlConnec tion去实现的请求。一直相安无事，突然测试人员报告说出现证书验证问题。网上各种查看资料解决，方案无非是加入自定义证书到工程或者是用信任所有证书的方式解决。但是，我们并没有用到自定义证书，如果</description>
+      <description>&lt;p&gt;There are always https requests in the project, and no third-party SDKs are used. The requests are implemented using HttpUrlConnec tion. It has been safe and sound, and suddenly the tester reported that there was a certificate verification problem. All kinds of viewing materials on the Internet are solved.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -75,12 +80,12 @@
     </item>
     
     <item>
-      <title>Unity调用Android参数为数组的方法</title>
+      <title>Unity Call Android native method with array parameters</title>
       <link>http://www.harddone.com/post/unit_call_android_arr/</link>
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/unit_call_android_arr/</guid>
-      <description>Unity开发过程中，如果要调用Android端的java方法，恰巧该方法的参数是可变参数或者数组，使用unity的AndroidJavaObject提供的call方法直接传递c#数组，是需要对数组参数做一下处理。举例说明： java方法如下： public void addList(String... values){ } unity c#调用时，需要把传入的参</description>
+      <description>&lt;p&gt;In the Unity development process, if you want to call the java method of the Android side, the parameters of the method are variable parameters or arrays. The call method provided by the AndroidJavaObject of unity directly passes the c# array. It is necessary to do some processing on the array parameters.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,7 +94,9 @@
       <pubDate>Sun, 12 Nov 2017 16:45:46 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/mac_as_jdk/</guid>
-      <description>1.project structure设置界面中设置jdk路径是jdk1.7或以上的版本:File-&amp;gt;Project Structure-&amp;gt;SDK Location 2.修改AS置默认的jdk版本。 (如果是jdk1.8版本的话还需要修改/Application/Android Studio/Contents/info.plist) 如何找到该路径？ Android Studio.app -&amp;gt; 右键 -&amp;gt; 显示包内容 修改前： &amp;lt;key&amp;gt;JVMVersion&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;1.6*,1.7+&amp;lt;/string&amp;gt; 修改后： &amp;lt;key&amp;gt;JVMVersion&amp;lt;/key&amp;gt;</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;The project structure setting interface sets the jdk path to be jdk1.7 or above: &lt;code&gt;File-&amp;gt;Project Structure-&amp;gt;SDK Location&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>

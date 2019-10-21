@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Android Studio3.3.2 发布Kotlin项目到Jcenter | ColorfulDark Blog</title>
-    <meta property="og:title" content="Android Studio3.3.2 发布Kotlin项目到Jcenter - ColorfulDark Blog">
+    <title>Android Studio 3.3.2: Release Kotlin project to Jcenter | ColorfulDark Blog</title>
+    <meta property="og:title" content="Android Studio 3.3.2: Release Kotlin project to Jcenter - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
     <meta property="article:published_time" content="2019-04-17T11:42:49&#43;08:00">
@@ -17,7 +17,7 @@
     <meta property="article:modified_time" content="2019-04-17T11:42:49&#43;08:00">
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
-    <meta name="description" content="Android Studio3.3.2 发布Kotlin项目到Jcenter">
+    <meta name="description" content="Android Studio 3.3.2: Release Kotlin project to Jcenter">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/as_push_kotlin_jcenter/">
@@ -32,6 +32,7 @@
 
     
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-5294048051542592",
@@ -55,15 +56,15 @@
                         ColorfulDark Blog
                     </a>
                 
-                <p class="description">专注于Android、Java、Kotlin、移动互联网</p>
+                <p class="description">Focus on Android,Java,Kotlin and Mobile Internet</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">首页</a>
+                    <a class="current" href="http://www.harddone.com/">Home</a>
                     
-                    <a  href="http://www.harddone.com/archives/" title="归档">归档</a>
+                    <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
-                    <a  href="http://www.harddone.com/about/" title="关于">关于</a>
+                    <a  href="http://www.harddone.com/about/" title="About">About</a>
                     
                 </nav>
             </div>
@@ -73,6 +74,11 @@
 
 
 <div id="body">
+  
+  <amp-auto-ads type="adsense"
+    data-ad-client="ca-pub-5294048051542592">
+  </amp-auto-ads>
+  
     <div class="container">
         <div class="col-group">
 
@@ -80,10 +86,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">Android Studio3.3.2 发布Kotlin项目到Jcenter</h1>
+                            <h1 class="post-title">Android Studio 3.3.2: Release Kotlin project to Jcenter</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年4月17日
+                            2019-4-17
                         </date>
                         
                         <div class="post-meta">
@@ -95,12 +101,280 @@
                         
                         
                         <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
                         </div>
                         
                         
                         <div class="post-content">
-                            
+                            <h1 id="overview">Overview</h1>
+
+<p>The paper is finally light.</p>
+
+<p>I always thought that publishing AAR to jcenter is very simple, and it should be no different from publishing to a private server nexus. I didn’t expect to know how many pits I had when I did it myself.</p>
+
+<p>This article will be recorded in Android Studio 3.3.2, how to upload aar to jcenter server developed with kotlin and the problems encountered. The reference is from <a href="https://www.open-open.com/lib/view/open1435109824278.html">this blog post</a>, which is very well written and introduces many basic concepts and release steps in detail.</p>
+
+<h1 id="register-jcenter-personal-account">Register Jcenter Personal Account</h1>
+
+<p>Please note here, <a href="https://bintray.com">Bintray&rsquo;s official website</a>, please select &ldquo;For an Open Source Account&rdquo;, <a href="https://bintray.com/signup/oss">Registered Account</a>.</p>
+
+<p><img src="/img/01_jcenter/01.png" alt="" /></p>
+
+<h1 id="create-repository-and-package">create Repository and Package</h1>
+
+<p>Take the project of this test as an example. I want to release a test Android SDK on Jcenter. The custom name is LazySDK. Currently, the SDK only contains one Sub-SDK package: customviews. This package is mainly used to package some daily projects. Commonly used views. So I can create a repository in Bintray and name it LazySDK, then create another package in the repository as customviews.</p>
+
+<ul>
+<li>Step 1: Create Reprository:</li>
+</ul>
+
+<p><img src="/img/01_jcenter/02.png" alt="" />
+Click &ldquo;Add New Repository&rdquo;</p>
+
+<p><img src="/img/01_jcenter/03.png" alt="" />
+Enter the warehouse name, <code>Type</code>select &ldquo;Maven&rdquo;</p>
+
+<ul>
+<li>Step 2: Create a Package</li>
+</ul>
+
+<p>Go to the reprository &ldquo;LazySDK&rdquo; created in the first step, create a new package, and then fill in the basic information such as Package name and save it:</p>
+
+<p><img src="/img/01_jcenter/04.png" alt="" /></p>
+
+<p>Click on &ldquo;Add New Package&rdquo;</p>
+
+<p><img src="/img/01_jcenter/05.png" alt="" /></p>
+
+<p>Supplement the required fields selected in the full screenshot, no other information</p>
+
+<h1 id="configure-android-studio-project">Configure Android Studio project</h1>
+
+<p>Make sure there are no errors in the project before preparing for configuration. Take this test as an example: a LazySDK project is created locally, Kotlin is the development language, and the project depends on Module:customviews.</p>
+
+<p><img src="/img/01_jcenter/06.png" alt="" /></p>
+
+<p>The first step: configure the upload script</p>
+
+<p>(1) Configure dependencies in the project build.gradle file:</p>
+
+<pre><code class="language-shell">Dependencies {
+
+    Classpath 'com.android.tools.build:gradle:3.3.2'
+
+    Classpath &quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;
+
+    Classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+
+    Classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
+    Classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18'
+
+}
+</code></pre>
+
+<p>(2) Created in the project directory: <a href="https://github.com/LazyBonesLZ/LazySDK/blob/master/jcenter_push.gradle">jcenter_push.gradle</a></p>
+
+<p>(3) Reference jcenter_push.gradle in library moudle builde.gradle, first configure the variable value needed by jcenter_push.gradle in ext. The purpose of this is to use the multiple modules in the future. Build.gradle defines the repository name and other information related to itself, and then share a jcenter_push.gradle. (unverified)</p>
+
+<pre><code class="language-shell">Ext {
+
+    bintrayRepo = 'LazySDK'
+
+    bintrayName = 'customviews'
+
+    publishedGroupId = 'com.lazy.sdk'
+
+    libraryName = 'customviews'
+
+    Artifact = 'customviews'
+
+    libraryDescription = 'Custom vies on Android'
+
+    siteUrl = 'https://github.com/LazyBonesLZ/LazySDK.git'
+
+    gitUrl = 'https://github.com/LazyBonesLZ/LazySDK.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'lazyboneslz'
+
+    developerName = 'TJL'
+
+    developerEmail = 'lazybonestjl@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+
+    allLicenses = [&quot;Apache-2.0&quot;]
+
+}
+
+Apply from: '../jcenter_push.gradle'
+
+</code></pre>
+
+<h1 id="install-upload">install &amp; upload</h1>
+
+<p>(1) Execute <code>./gradlew install</code> to verify if there is a problem. If all goes well, you will see Build Successful.</p>
+
+<p>(2) Then execute: <code>./gradlew bintrayUpload</code>, if all goes well, you will see Build Successful</p>
+
+<h1 id="add-to-jcenter">Add to Jcenter</h1>
+
+<p>So far, the uploaded SDK has not been officially released to Jcenter, only in your own Bintray Maven repository. You can use the repository url in the project&rsquo;s <code>build.gradle</code>.</p>
+
+<pre><code class="language-shell">Repositories {
+
+     Maven{
+
+        Url 'https://dl.bintray.com/lazyboneslz/LazySDK/'
+
+      }
+
+        Google()
+
+        Jcenter()
+
+}
+</code></pre>
+
+<p>Then add <code>dependencies</code> in app build.gradle</p>
+
+<pre><code class="language-shell">Implementation com.lazy.sdk:customviews:0.0.1'
+</code></pre>
+
+<p>This way of referencing by configuring the repository url is not the best way. We can&rsquo;t have 10 repositories, just configure 10 URLs? So, you need to send sdk to the Jcenter server so that we don&rsquo;t have to configure a custom repository url.</p>
+
+<p><img src="/img/01_jcenter/07.png" alt="" /></p>
+
+<p>Click &ldquo;Add to JCenter&rdquo; directly
+ Then just click on &ldquo;Send&rdquo; and you don&rsquo;t have to fill in any information.
+<img src="/img/01_jcenter/08.png" alt="" /></p>
+
+<p>Click send
+Then wait for the JCenter review, which usually takes a few hours. I sent it around 12 o&rsquo;clock on the first day, but I didn&rsquo;t see it through the afternoon. The next day, I found that I have passed the work. I can directly reference the SDK uploaded by JCenter without configuring a custom repository url.
+<img src="/img/01_jcenter/09.png" alt="" /></p>
+
+<p>After the review is approved, you will see that the icon has changed.
+#<a href="https://github.com/LazyBonesLZ/LazySDK">Github source</a></p>
+
+<h1 id="marks">Marks</h1>
+
+<p>This test did not automatically synchronize the content to maven central as in the blog post referenced, so GPG-related information was not configured.</p>
+
+<p>==================================================</p>
+
+<h1 id="encountered-problems">encountered problems</h1>
+
+<ol>
+<li>Javadoc generation failed. Generated Javadoc options file (useful for troubleshooting): &lsquo;xxx/javadoc/javadoc.options&rsquo;:</li>
+</ol>
+
+<p>This project is developed by kotlin and is configured as follows in the configuration:</p>
+
+<p>(1) Configure <code>dependencies</code> in the project build.gradle file:</p>
+
+<pre><code class="language-shell">Dependencies {
+
+   ........
+
+    Classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18'
+
+}
+</code></pre>
+
+<p>(2) Add in <code>jcenter_push.gradle</code>:</p>
+
+<pre><code class="language-shell">If (project.hasProperty(&quot;kotlin&quot;)) {//Kotlin libraries
+
+    Task sourcesJar(type: Jar) {
+
+       Classifier = 'sources'
+
+        From android.sourceSets.main.java.srcDirs
+
+}
+
+Task javadoc(type: Javadoc,dependsOn: dokka) {
+
+}
+
+}else if (project.hasProperty(&quot;android&quot;)) {// Android libraries
+
+    Task sourcesJar(type: Jar) {
+
+Classifier = 'sources'
+
+        From android.sourceSets.main.java.srcDirs
+
+}
+
+Task javadoc(type: Javadoc) {
+
+Source = android.sourceSets.main.java.srcDirs
+
+Classpath +=project.files(android.getBootClasspath().join(File.pathSeparator))
+
+}
+
+}else {// Java libraries
+
+    Task sourcesJar(type: Jar,dependsOn: classes) {
+
+Classifier = 'sources'
+
+        fromsourceSets.main.allSource
+
+    }
+
+}
+
+/ / Solve kotlin javadoc.options wrong
+
+Dokka {
+
+outputFormat = 'html'
+
+    outputDirectory =&quot;$buildDir/javadoc&quot;
+
+}
+</code></pre>
+
+<p>2 . Unable to upload files: Maven group, artifact or version defined in the pom file do not match the file path &lsquo;xx/xxxxx.pom&rsquo;</p>
+
+<p>This error has plagued me for a long time. I have various researches on the Internet. I found that most of the modules in the project must be the same as the artifactid. After I changed the instructions to the same, the problem still exists. I can&rsquo;t think of Qi. Finally, go to <a href="https://github.com/bintray/gradle-bintray-plugin">https://github.com/bintray/gradle-bintray-plugin</a> to check and explain, and have not found any special attention. Later, I carefully compared the gradle of the official demo and found that it also declared the value of the group. I did the script in the blog post, but there was no related statement for the group. Finally, I added it and uploaded it perfectly.</p>
+
+<pre><code class="language-shell">Version = libraryVersion
+
+
+//important, if null, will issue: Maven group, artifact or version not match ...
+
+Group = publishedGroupId
+</code></pre>
+
+<ol>
+<li>Before the JCenter audit is passed, the configuration repository url fails to reference sdk. The reason is that the configured URL is incorrect. You cannot directly copy the Bintray repository address.</li>
+</ol>
+
+<pre><code class="language-shell">    Maven{
+
+       Url 'https://bintray.com/lazyboneslz/LazySDK/customviews'
+
+    }
+</code></pre>
+
+<p>The correct address is:</p>
+
+<pre><code class="language-shell">Maven{
+
+       Url 'https://dl.bintray.com/lazyboneslz/LazySDK/customviews'
+
+    }
+</code></pre>
+
+<h2 id="中文">===中文===</h2>
 
 <h1 id="概述">概述</h1>
 
@@ -369,279 +643,6 @@ group = publishedGroupId
 
     }
 </code></pre>
-
-<hr />
-
-<h2 id="english-doc">English DOC</h2>
-
-<h1 id="overview">Overview</h1>
-
-<p>The paper is finally light.</p>
-
-<p>I always thought that publishing AAR to jcenter is very simple, and it should be no different from publishing to a private server nexus. I didn’t expect to know how many pits I had when I did it myself.</p>
-
-<p>This article will be recorded in Android Studio 3.3.2, how to upload aar to jcenter server developed with kotlin and the problems encountered. The reference is from <a href="https://www.open-open.com/lib/view/open1435109824278.html">this blog post</a>, which is very well written and introduces many basic concepts and release steps in detail.</p>
-
-<h1 id="register-jcenter-personal-account">Register Jcenter Personal Account</h1>
-
-<p>Please note here, <a href="https://bintray.com">Bintray&rsquo;s official website</a>, please select &ldquo;For an Open Source Account&rdquo;, <a href="https://bintray.com/signup/oss">Registered Account</a>.</p>
-
-<p><img src="/img/01_jcenter/01.png" alt="" /></p>
-
-<h1 id="create-repository-and-package">create Repository and Package</h1>
-
-<p>Take the project of this test as an example. I want to release a test Android SDK on Jcenter. The custom name is LazySDK. Currently, the SDK only contains one Sub-SDK package: customviews. This package is mainly used to package some daily projects. Commonly used views. So I can create a repository in Bintray and name it LazySDK, then create another package in the repository as customviews.</p>
-
-<ul>
-<li>Step 1: Create Reprository:</li>
-</ul>
-
-<p><img src="/img/01_jcenter/02.png" alt="" />
-Click &ldquo;Add New Repository&rdquo;</p>
-
-<p><img src="/img/01_jcenter/03.png" alt="" />
-Enter the warehouse name, <code>Type</code>select &ldquo;Maven&rdquo;</p>
-
-<ul>
-<li>Step 2: Create a Package</li>
-</ul>
-
-<p>Go to the reprository &ldquo;LazySDK&rdquo; created in the first step, create a new package, and then fill in the basic information such as Package name and save it:</p>
-
-<p><img src="/img/01_jcenter/04.png" alt="" /></p>
-
-<p>Click on &ldquo;Add New Package&rdquo;</p>
-
-<p><img src="/img/01_jcenter/05.png" alt="" /></p>
-
-<p>Supplement the required fields selected in the full screenshot, no other information</p>
-
-<h1 id="configure-android-studio-project">Configure Android Studio project</h1>
-
-<p>Make sure there are no errors in the project before preparing for configuration. Take this test as an example: a LazySDK project is created locally, Kotlin is the development language, and the project depends on Module:customviews.</p>
-
-<p><img src="/img/01_jcenter/06.png" alt="" /></p>
-
-<p>The first step: configure the upload script</p>
-
-<p>(1) Configure dependencies in the project build.gradle file:</p>
-
-<pre><code class="language-shell">Dependencies {
-
-    Classpath 'com.android.tools.build:gradle:3.3.2'
-
-    Classpath &quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;
-
-    Classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-
-    Classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-
-    Classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18'
-
-}
-</code></pre>
-
-<p>(2) Created in the project directory: <a href="https://github.com/LazyBonesLZ/LazySDK/blob/master/jcenter_push.gradle">jcenter_push.gradle</a></p>
-
-<p>(3) Reference jcenter_push.gradle in library moudle builde.gradle, first configure the variable value needed by jcenter_push.gradle in ext. The purpose of this is to use the multiple modules in the future. Build.gradle defines the repository name and other information related to itself, and then share a jcenter_push.gradle. (unverified)</p>
-
-<pre><code class="language-shell">Ext {
-
-    bintrayRepo = 'LazySDK'
-
-    bintrayName = 'customviews'
-
-    publishedGroupId = 'com.lazy.sdk'
-
-    libraryName = 'customviews'
-
-    Artifact = 'customviews'
-
-    libraryDescription = 'Custom vies on Android'
-
-    siteUrl = 'https://github.com/LazyBonesLZ/LazySDK.git'
-
-    gitUrl = 'https://github.com/LazyBonesLZ/LazySDK.git'
-
-    libraryVersion = '0.0.1'
-
-    developerId = 'lazyboneslz'
-
-    developerName = 'TJL'
-
-    developerEmail = 'lazybonestjl@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-
-    allLicenses = [&quot;Apache-2.0&quot;]
-
-}
-
-Apply from: '../jcenter_push.gradle'
-
-</code></pre>
-
-<h1 id="install-upload">install &amp; upload</h1>
-
-<p>(1) Execute <code>./gradlew install</code> to verify if there is a problem. If all goes well, you will see Build Successful.</p>
-
-<p>(2) Then execute: <code>./gradlew bintrayUpload</code>, if all goes well, you will see Build Successful</p>
-
-<h1 id="add-to-jcenter">Add to Jcenter</h1>
-
-<p>So far, the uploaded SDK has not been officially released to Jcenter, only in your own Bintray Maven repository. You can use the repository url in the project&rsquo;s <code>build.gradle</code>.</p>
-
-<pre><code class="language-shell">Repositories {
-
-     Maven{
-
-        Url 'https://dl.bintray.com/lazyboneslz/LazySDK/'
-
-      }
-
-        Google()
-
-        Jcenter()
-
-}
-</code></pre>
-
-<p>Then add <code>dependencies</code> in app build.gradle</p>
-
-<pre><code class="language-shell">Implementation com.lazy.sdk:customviews:0.0.1'
-</code></pre>
-
-<p>This way of referencing by configuring the repository url is not the best way. We can&rsquo;t have 10 repositories, just configure 10 URLs? So, you need to send sdk to the Jcenter server so that we don&rsquo;t have to configure a custom repository url.</p>
-
-<p><img src="/img/01_jcenter/07.png" alt="" /></p>
-
-<p>Click &ldquo;Add to JCenter&rdquo; directly
- Then just click on &ldquo;Send&rdquo; and you don&rsquo;t have to fill in any information.
-<img src="/img/01_jcenter/08.png" alt="" /></p>
-
-<p>Click send
-Then wait for the JCenter review, which usually takes a few hours. I sent it around 12 o&rsquo;clock on the first day, but I didn&rsquo;t see it through the afternoon. The next day, I found that I have passed the work. I can directly reference the SDK uploaded by JCenter without configuring a custom repository url.
-<img src="/img/01_jcenter/09.png" alt="" /></p>
-
-<p>After the review is approved, you will see that the icon has changed.
-#<a href="https://github.com/LazyBonesLZ/LazySDK">Github source</a></p>
-
-<h1 id="marks">Marks</h1>
-
-<p>This test did not automatically synchronize the content to maven central as in the blog post referenced, so GPG-related information was not configured.</p>
-
-<p>==================================================</p>
-
-<h1 id="encountered-problems">encountered problems</h1>
-
-<ol>
-<li>Javadoc generation failed. Generated Javadoc options file (useful for troubleshooting): &lsquo;xxx/javadoc/javadoc.options&rsquo;:</li>
-</ol>
-
-<p>This project is developed by kotlin and is configured as follows in the configuration:</p>
-
-<p>(1) Configure <code>dependencies</code> in the project build.gradle file:</p>
-
-<pre><code class="language-shell">Dependencies {
-
-   ........
-
-    Classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18'
-
-}
-</code></pre>
-
-<p>(2) Add in <code>jcenter_push.gradle</code>:</p>
-
-<pre><code class="language-shell">If (project.hasProperty(&quot;kotlin&quot;)) {//Kotlin libraries
-
-    Task sourcesJar(type: Jar) {
-
-       Classifier = 'sources'
-
-        From android.sourceSets.main.java.srcDirs
-
-}
-
-Task javadoc(type: Javadoc,dependsOn: dokka) {
-
-}
-
-}else if (project.hasProperty(&quot;android&quot;)) {// Android libraries
-
-    Task sourcesJar(type: Jar) {
-
-Classifier = 'sources'
-
-        From android.sourceSets.main.java.srcDirs
-
-}
-
-Task javadoc(type: Javadoc) {
-
-Source = android.sourceSets.main.java.srcDirs
-
-Classpath +=project.files(android.getBootClasspath().join(File.pathSeparator))
-
-}
-
-}else {// Java libraries
-
-    Task sourcesJar(type: Jar,dependsOn: classes) {
-
-Classifier = 'sources'
-
-        fromsourceSets.main.allSource
-
-    }
-
-}
-
-/ / Solve kotlin javadoc.options wrong
-
-Dokka {
-
-outputFormat = 'html'
-
-    outputDirectory =&quot;$buildDir/javadoc&quot;
-
-}
-</code></pre>
-
-<p>2 . Unable to upload files: Maven group, artifact or version defined in the pom file do not match the file path &lsquo;xx/xxxxx.pom&rsquo;</p>
-
-<p>This error has plagued me for a long time. I have various researches on the Internet. I found that most of the modules in the project must be the same as the artifactid. After I changed the instructions to the same, the problem still exists. I can&rsquo;t think of Qi. Finally, go to <a href="https://github.com/bintray/gradle-bintray-plugin">https://github.com/bintray/gradle-bintray-plugin</a> to check and explain, and have not found any special attention. Later, I carefully compared the gradle of the official demo and found that it also declared the value of the group. I did the script in the blog post, but there was no related statement for the group. Finally, I added it and uploaded it perfectly.</p>
-
-<pre><code class="language-shell">Version = libraryVersion
-
-
-//important, if null, will issue: Maven group, artifact or version not match ...
-
-Group = publishedGroupId
-</code></pre>
-
-<ol>
-<li>Before the JCenter audit is passed, the configuration repository url fails to reference sdk. The reason is that the configured URL is incorrect. You cannot directly copy the Bintray repository address.</li>
-</ol>
-
-<pre><code class="language-shell">    Maven{
-
-       Url 'https://bintray.com/lazyboneslz/LazySDK/customviews'
-
-    }
-</code></pre>
-
-<p>The correct address is:</p>
-
-<pre><code class="language-shell">Maven{
-
-       Url 'https://dl.bintray.com/lazyboneslz/LazySDK/customviews'
-
-    }
-</code></pre>
-
                         </div>
 
                         
@@ -655,13 +656,13 @@ Group = publishedGroupId
         
         <li><a href="/post/seekbar_issue/">自定义seekbar遇到的问题</a></li>
         
-        <li><a href="/post/android_https_issue/">Android https 突然提示证书验证失败</a></li>
+        <li><a href="/post/android_https_issue/">Android https: Certificate verification failed</a></li>
         
         <li><a href="/post/nexus_private_maven/">填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven</a></li>
         
         <li><a href="/post/gp_billing/">Google play billing Alpha / Beta 测试</a></li>
         
-        <li><a href="/post/unit_call_android_arr/">Unity调用Android参数为数组的方法</a></li>
+        <li><a href="/post/unit_call_android_arr/">Unity Call Android native method with array parameters</a></li>
         
     </ul>
 </div>
@@ -709,9 +710,9 @@ Group = publishedGroupId
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Recent articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -731,7 +732,7 @@ Group = publishedGroupId
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:手动上传AAR">Nexus:手动上传AAR</a>
+        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:Upload AAR files manully">Nexus:Upload AAR files manully</a>
     </li>
     
     <li>
@@ -739,7 +740,7 @@ Group = publishedGroupId
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity游戏弹出“屏幕重叠层检测”错误">Android Unity游戏弹出“屏幕重叠层检测”错误</a>
+        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity Game Popups “Screen Overlay Deteched">Android Unity Game Popups “Screen Overlay Deteched</a>
     </li>
     
     <li>
@@ -747,7 +748,7 @@ Group = publishedGroupId
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="进一步减小Unity项目的apk大小">进一步减小Unity项目的apk大小</a>
+        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="How to reduce the apk size of Unity Game">How to reduce the apk size of Unity Game</a>
     </li>
     
     <li>
@@ -755,6 +756,7 @@ Group = publishedGroupId
     </li>
     
 </ul>
+
     </section>
 
     
@@ -791,7 +793,7 @@ Group = publishedGroupId
 
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title">Categories</h3>
 <ul class="widget-list">
     
     <li>
@@ -819,10 +821,11 @@ Group = publishedGroupId
     </li>
     
 </ul>
+
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title">Tags</h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata-Test</a>
@@ -933,15 +936,13 @@ Group = publishedGroupId
     
     <a href="http://www.harddone.com/tags/override/">override</a>
     
-    <a href="http://www.harddone.com/tags/upload-AARmanually/">upload-AARmanually</a>
+    <a href="http://www.harddone.com/tags/upload-AAR-manually/">upload-AAR-manually</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/">取消跟踪</a>
     
     <a href="http://www.harddone.com/tags/%E5%B1%8F%E5%B9%95%E9%87%8D%E5%8F%A0%E5%B1%82%E6%A3%80%E6%B5%8B/">屏幕重叠层检测</a>
-    
-    <a href="http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0/">手动上传</a>
     
     <a href="http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/">扫描解码</a>
     
@@ -966,11 +967,12 @@ Group = publishedGroupId
     <a href="http://www.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/">证书验证失败</a>
     
 </div>
+
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -989,13 +991,15 @@ Group = publishedGroupId
 </section>
 
 
+
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Others</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
+
         </div>
     </div>
 </div>

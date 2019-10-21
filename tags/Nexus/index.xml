@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Nexus:手动上传AAR</title>
+      <title>Nexus:Upload AAR files manully</title>
       <link>http://www.harddone.com/post/3rd_part_aar_to_nexus/</link>
       <pubDate>Wed, 18 Sep 2019 13:57:06 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/3rd_part_aar_to_nexus/</guid>
-      <description>Nexus作为公司内部或个人的SDK私有仓库，不仅可以通过gradle脚本上传生成的aar格式SDK,以便在android studio中快速集成，还可以手动上传一些单个的aar文件。 比如，如果遇到这样的使用场景：第三方的SDK,并没有上传到jcenter 或maven仓库，但是给开</description>
+      <description>&lt;p&gt;As a private or private SDK for the company, Nexus can not only upload the generated aar format SDK through the gradle script, but also integrate it quickly in android studio. You can also manually upload some individual aar files.&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>git 取消跟踪文件目录</title>
+      <title>git : remove directories tracked</title>
       <link>http://www.harddone.com/post/git_untrack_dir/</link>
       <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/git_untrack_dir/</guid>
-      <description>如果文件和目录已经被提交到git仓库，是可以通过git 命令来取消文件和目录的跟踪。 我们常用的sourcetree也提供了该功能，如果是某目录下已经有文件被提交过了，那么就不能再改工具中直接对文件夹取消跟踪，只能对显示有更改的文件一个一个取消，UI操作还要等刷新，费时费力。 为了防止</description>
+      <description>&lt;p&gt;If files and directories have already been submitted to the git repository, you can use the git command to untrack files and directories.&lt;/p&gt;</description>
     </item>
     
   </channel>

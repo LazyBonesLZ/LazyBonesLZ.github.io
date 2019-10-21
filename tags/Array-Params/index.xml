@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Unity调用Android参数为数组的方法</title>
+      <title>Unity Call Android native method with array parameters</title>
       <link>http://www.harddone.com/post/unit_call_android_arr/</link>
       <pubDate>Wed, 11 Jul 2018 01:59:34 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/unit_call_android_arr/</guid>
-      <description>Unity开发过程中，如果要调用Android端的java方法，恰巧该方法的参数是可变参数或者数组，使用unity的AndroidJavaObject提供的call方法直接传递c#数组，是需要对数组参数做一下处理。举例说明： java方法如下： public void addList(String... values){ } unity c#调用时，需要把传入的参</description>
+      <description>&lt;p&gt;In the Unity development process, if you want to call the java method of the Android side, the parameters of the method are variable parameters or arrays. The call method provided by the AndroidJavaObject of unity directly passes the c# array. It is necessary to do some processing on the array parameters.&lt;/p&gt;</description>
     </item>
     
   </channel>

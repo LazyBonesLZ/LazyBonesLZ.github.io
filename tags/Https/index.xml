@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Android https 突然提示证书验证失败</title>
+      <title>Android https: Certificate verification failed</title>
       <link>http://www.harddone.com/post/android_https_issue/</link>
       <pubDate>Mon, 13 Aug 2018 16:14:33 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/android_https_issue/</guid>
-      <description>项目中一直有https的请求，没有用到第三方的SDK,都是使用HttpUrlConnec tion去实现的请求。一直相安无事，突然测试人员报告说出现证书验证问题。网上各种查看资料解决，方案无非是加入自定义证书到工程或者是用信任所有证书的方式解决。但是，我们并没有用到自定义证书，如果</description>
+      <description>&lt;p&gt;There are always https requests in the project, and no third-party SDKs are used. The requests are implemented using HttpUrlConnec tion. It has been safe and sound, and suddenly the tester reported that there was a certificate verification problem. All kinds of viewing materials on the Internet are solved.&lt;/p&gt;</description>
     </item>
     
   </channel>

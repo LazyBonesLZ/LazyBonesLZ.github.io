@@ -21,12 +21,16 @@
     </item>
     
     <item>
-      <title>Android Studio3.3.2 发布Kotlin项目到Jcenter</title>
+      <title>Android Studio 3.3.2: Release Kotlin project to Jcenter</title>
       <link>http://www.harddone.com/post/as_push_kotlin_jcenter/</link>
       <pubDate>Wed, 17 Apr 2019 11:42:49 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/as_push_kotlin_jcenter/</guid>
-      <description>概述 纸上得来终觉浅。 一直以为发布AAR到jcenter是非常简单的事，跟发布到私有服务器nexus应该没太多差别。没想到自己动手做过才知道千万道坑。 本文将记录在Android Studio 3.3.2下，如何上传用kotlin开发的aar到jcenter服务器以及遇到的问题。参考来自这篇博文，</description>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;The paper is finally light.&lt;/p&gt;
+
+&lt;p&gt;I always thought that publishing AAR to jcenter is very simple, and it should be no different from publishing to a private server nexus. I didn’t expect to know how many pits I had when I did it myself.&lt;/p&gt;</description>
     </item>
     
   </channel>

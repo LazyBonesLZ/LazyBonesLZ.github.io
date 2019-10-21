@@ -32,6 +32,7 @@
 
     
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-5294048051542592",
@@ -55,15 +56,15 @@
                         ColorfulDark Blog
                     </a>
                 
-                <p class="description">专注于Android、Java、Kotlin、移动互联网</p>
+                <p class="description">Focus on Android,Java,Kotlin and Mobile Internet</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">首页</a>
+                    <a class="current" href="http://www.harddone.com/">Home</a>
                     
-                    <a  href="http://www.harddone.com/archives/" title="归档">归档</a>
+                    <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
-                    <a  href="http://www.harddone.com/about/" title="关于">关于</a>
+                    <a  href="http://www.harddone.com/about/" title="About">About</a>
                     
                 </nav>
             </div>
@@ -73,6 +74,11 @@
 
 
 <div id="body">
+  
+  <amp-auto-ads type="adsense"
+    data-ad-client="ca-pub-5294048051542592">
+  </amp-auto-ads>
+  
     <div class="container">
         <div class="col-group">
 
@@ -83,7 +89,7 @@
                             <h1 class="post-title">Firebase In-App Messaging:triggerEvent not working</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年9月18日
+                            2019-9-18
                         </date>
                         
                         <div class="post-meta">
@@ -95,12 +101,134 @@
                         
                         
                         <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
                         </div>
                         
                         
                         <div class="post-content">
-                            
+                            <h4 id="what-is-firebase-in-app-messaging">What is Firebase In-App Messaging?</h4>
+
+<p>Official explanation:</p>
+
+<blockquote>
+<p>Firebase In-App Messaging helps you engage your app&rsquo;s active users by sending them targeted, contextual messages that encourage them to use key app features. For example, you could send an in-app message to get users to subscribe, watch a video, Complete a level, or buy an item. You can customize messages as cards, banners, modals, or images, and set up triggers so that they appear exactly when they&rsquo;d benefit your users most.
+Use Firebase In-App Messaging to encourage exploration and discovery: highlight a sale or coupon in your ecommerce app, give clues or tips in your game, or prompt a like or share in your social media app.</p>
+</blockquote>
+
+<h4 id="integration-firebase-in-app-messaging">Integration Firebase In-App Messaging</h4>
+
+<p>It&rsquo;s amazing, it only needs to integrate sdk according to the official documentation, almost zero code.</p>
+
+<pre><code class="language-shell">Dependencies {
+    // ...
+
+    // Add the In-App Messaging and Analytics dependencies:
+    Implementation 'com.google.firebase:firebase-inappmessaging-display:19.0.0'
+    Implementation 'com.google.firebase:firebase-analytics:17.2.0'
+
+    // Check that Firebase core is up-to-date:
+    Implementation 'com.google.firebase:firebase-core:17.2.0'
+}
+</code></pre>
+
+<p>After the preparation is completed, the specific implementation is based on our business needs. After comparing the default implementations such as firebase event triggering, we decide to implement it by the <code>triggerEvent</code> method provided by it. Because we used the Bata version of the test process, we found that if you use the default firebase event: such as <code>on_foreground</code>, etc. to trigger In-App Messaging, many behaviors are uncontrollable.</p>
+
+<p>However, a large number of test phenomena indicate that In-App Messaging could not be triggered when the app was first launched, although debug debugging has successfully called <code>triggerEvent</code>:</p>
+
+<pre><code class="language-shell">Public void inAppMsgTriggerEvent(String triggerEvent){
+        If (TextUtils.isEmpty(triggerEvent)) {
+            Log.e(TAG,&quot;Trigger event can NOT be NULL&quot;);
+            Return;
+        }
+        registerFIAMListeners();
+        FirebaseInAppMessaging.getInstance().triggerEvent(triggerEvent);
+    }
+
+</code></pre>
+
+<h4 id="analysis">analysis:</h4>
+
+<p>In the initial stage, we thought it might be that sdk is still in beta and not very stable. However, after the app is resumed, it can trigger In-App Messaging very well. With a certain rule, you can&rsquo;t simply blame the sdk bug. Is there a problem with the code of our test demo? In Logcat, the <code>FIAM</code> keyword is used to filter and analyze the log output of In-App Messaging. After the app starts to enter MainAcitiy, it has the following output:
+&gt;I/FIAM.Headless: Removing display event listener
+I/FIAM.Headless: Removing display event listener</p>
+
+<p>It has not been normal to remove some kind of event listener twice in succession. Go to the source to see if you can find the relevant ones.</p>
+
+<p>With Andorid Studio, in the <code>Project</code> mode, expand <code>External Libraries</code> and find the In-App Messaging SDK. Find the following method in <code>FirebaseInAppMessaging.class</code>:</p>
+
+<pre><code class="language-shell">@Keep
+    @KeepForSdk
+    Public void clearDisplayListener() {
+        Logging.logi(&quot;Removing display event listener&quot;);
+        This.listener = Maybe.empty();
+    }
+</code></pre>
+
+<p>Then after a human flesh search, find the call to <code>clearDisplayListener()</code> in <code>FirebaseInAppMessagingDisplay.class</code>.</p>
+
+<pre><code class="language-shell"> @Keep
+    Public void onActivityPaused(Activity activity) {
+        this.headlessInAppMessaging.clearDisplayListener();
+        this.imageLoader.cancelTag(activity.getClass());
+        this.removeDisplayedFiam(activity);
+        super.onActivityPaused(activity);
+    }
+
+    @Keep
+    Public void onActivityDestroyed(Activity activity) {
+        this.headlessInAppMessaging.clearDisplayListener();
+        this.imageLoader.cancelTag(activity.getClass());
+        this.removeDisplayedFiam(activity);
+        super.onActivityDestroyed(activity);
+    }
+
+
+</code></pre>
+
+<p>At this point, although we don&rsquo;t know the specific logic in the SDK, we can determine that the call to the method is related to the Activity lifecycle method in the app.</p>
+
+<p>Then first go to the demo project, view the declarations in the AndroidManifest.xml of each Activity, jump the situation. Found that the demo start activity is not MainActivity, but <code>WelcomeActivity</code>, in the <code>onCreate</code> method jump immediately after calling the <code>finish ()</code> method.</p>
+
+<pre><code class="language-shell"> @Override
+    Protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        TLog.e(TAG,&quot;activity on create call------&quot;);
+        Boolean bTestAds = AdsTools.isTestAds(this);
+        If (bTestAds){
+            Intent intent = new Intent(this,AdsUnitIDActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(this,NativeActivity.class);
+            startActivity(intent);
+        }
+
+       Finish();
+    }
+
+</code></pre>
+
+<p>This is what caused the strange log mentioned earlier to output twice. The last two solutions:</p>
+
+<ul>
+<li>Comment out the <code>finish()</code> call directly;</li>
+<li>Declare MainActivity as the launcher Activity.</li>
+</ul>
+
+<p>But why directly call the <code>finish()</code> method to close the previous Activity, In-App Messaging will start the <code>triggerEvent</code> invalidation every time the App starts, is it back to the conclusion that there is a problem inside the SDK? ? Waiting for the official explanation&hellip;</p>
+
+<h3 id="update-2019-10-18">Update 2019-10-18</h3>
+
+<p>Email from Google support:
+&gt;Hi Tang,</p>
+
+<blockquote>
+<p>I appreciate your feedback so I&rsquo;ve filed a feature request to make in-app messaging persists even after an activity is finished. I can&rsquo;t guarantee any details as of this time. For now, I would suggest to keep an eye on our release notes for any Firebase related updates</p>
+
+<p>Regards,
+Richard</p>
+</blockquote>
+
+<h2 id="中文">===中文===</h2>
 
 <h4 id="什么是firebase-in-app-messaging">什么是Firebase In-App Messaging？</h4>
 
@@ -211,121 +339,6 @@ I/FIAM.Headless: Removing display event listener</p>
 </ul>
 
 <p>但是为什么直接调用<code>finish()</code>方法关闭掉前一个Activity后，In-App Messaging在App每次启动，就会出现<code>triggerEvent</code>失效的情况，是不是又回到了SDK内部有问题的结论了呢？等待官方解释。。。</p>
-
-<hr />
-
-<h2 id="english-doc">English DOC</h2>
-
-<h4 id="what-is-firebase-in-app-messaging">What is Firebase In-App Messaging?</h4>
-
-<p>Official explanation:</p>
-
-<blockquote>
-<p>Firebase In-App Messaging helps you engage your app&rsquo;s active users by sending them targeted, contextual messages that encourage them to use key app features. For example, you could send an in-app message to get users to subscribe, watch a video, Complete a level, or buy an item. You can customize messages as cards, banners, modals, or images, and set up triggers so that they appear exactly when they&rsquo;d benefit your users most.
-Use Firebase In-App Messaging to encourage exploration and discovery: highlight a sale or coupon in your ecommerce app, give clues or tips in your game, or prompt a like or share in your social media app.</p>
-</blockquote>
-
-<h4 id="integration-firebase-in-app-messaging">Integration Firebase In-App Messaging</h4>
-
-<p>It&rsquo;s amazing, it only needs to integrate sdk according to the official documentation, almost zero code.</p>
-
-<pre><code class="language-shell">Dependencies {
-    // ...
-
-    // Add the In-App Messaging and Analytics dependencies:
-    Implementation 'com.google.firebase:firebase-inappmessaging-display:19.0.0'
-    Implementation 'com.google.firebase:firebase-analytics:17.2.0'
-
-    // Check that Firebase core is up-to-date:
-    Implementation 'com.google.firebase:firebase-core:17.2.0'
-}
-</code></pre>
-
-<p>After the preparation is completed, the specific implementation is based on our business needs. After comparing the default implementations such as firebase event triggering, we decide to implement it by the <code>triggerEvent</code> method provided by it. Because we used the Bata version of the test process, we found that if you use the default firebase event: such as <code>on_foreground</code>, etc. to trigger In-App Messaging, many behaviors are uncontrollable.</p>
-
-<p>However, a large number of test phenomena indicate that In-App Messaging could not be triggered when the app was first launched, although debug debugging has successfully called <code>triggerEvent</code>:</p>
-
-<pre><code class="language-shell">Public void inAppMsgTriggerEvent(String triggerEvent){
-        If (TextUtils.isEmpty(triggerEvent)) {
-            Log.e(TAG,&quot;Trigger event can NOT be NULL&quot;);
-            Return;
-        }
-        registerFIAMListeners();
-        FirebaseInAppMessaging.getInstance().triggerEvent(triggerEvent);
-    }
-
-</code></pre>
-
-<h4 id="analysis">analysis:</h4>
-
-<p>In the initial stage, we thought it might be that sdk is still in beta and not very stable. However, after the app is resumed, it can trigger In-App Messaging very well. With a certain rule, you can&rsquo;t simply blame the sdk bug. Is there a problem with the code of our test demo? In Logcat, the <code>FIAM</code> keyword is used to filter and analyze the log output of In-App Messaging. After the app starts to enter MainAcitiy, it has the following output:
-&gt;I/FIAM.Headless: Removing display event listener
-I/FIAM.Headless: Removing display event listener</p>
-
-<p>It has not been normal to remove some kind of event listener twice in succession. Go to the source to see if you can find the relevant ones.</p>
-
-<p>With Andorid Studio, in the <code>Project</code> mode, expand <code>External Libraries</code> and find the In-App Messaging SDK. Find the following method in <code>FirebaseInAppMessaging.class</code>:</p>
-
-<pre><code class="language-shell">@Keep
-    @KeepForSdk
-    Public void clearDisplayListener() {
-        Logging.logi(&quot;Removing display event listener&quot;);
-        This.listener = Maybe.empty();
-    }
-</code></pre>
-
-<p>Then after a human flesh search, find the call to <code>clearDisplayListener()</code> in <code>FirebaseInAppMessagingDisplay.class</code>.</p>
-
-<pre><code class="language-shell"> @Keep
-    Public void onActivityPaused(Activity activity) {
-        this.headlessInAppMessaging.clearDisplayListener();
-        this.imageLoader.cancelTag(activity.getClass());
-        this.removeDisplayedFiam(activity);
-        super.onActivityPaused(activity);
-    }
-
-    @Keep
-    Public void onActivityDestroyed(Activity activity) {
-        this.headlessInAppMessaging.clearDisplayListener();
-        this.imageLoader.cancelTag(activity.getClass());
-        this.removeDisplayedFiam(activity);
-        super.onActivityDestroyed(activity);
-    }
-
-
-</code></pre>
-
-<p>At this point, although we don&rsquo;t know the specific logic in the SDK, we can determine that the call to the method is related to the Activity lifecycle method in the app.</p>
-
-<p>Then first go to the demo project, view the declarations in the AndroidManifest.xml of each Activity, jump the situation. Found that the demo start activity is not MainActivity, but <code>WelcomeActivity</code>, in the <code>onCreate</code> method jump immediately after calling the <code>finish ()</code> method.</p>
-
-<pre><code class="language-shell"> @Override
-    Protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        TLog.e(TAG,&quot;activity on create call------&quot;);
-        Boolean bTestAds = AdsTools.isTestAds(this);
-        If (bTestAds){
-            Intent intent = new Intent(this,AdsUnitIDActivity.class);
-            startActivity(intent);
-        }else {
-            Intent intent = new Intent(this,NativeActivity.class);
-            startActivity(intent);
-        }
-
-       Finish();
-    }
-
-</code></pre>
-
-<p>This is what caused the strange log mentioned earlier to output twice. The last two solutions:</p>
-
-<ul>
-<li>Comment out the <code>finish()</code> call directly;</li>
-<li>Declare MainActivity as the launcher Activity.</li>
-</ul>
-
-<p>But why directly call the <code>finish()</code> method to close the previous Activity, In-App Messaging will start the <code>triggerEvent</code> invalidation every time the App starts, is it back to the conclusion that there is a problem inside the SDK? ? Waiting for the official explanation&hellip;</p>
-
                         </div>
 
                         
@@ -337,15 +350,15 @@ I/FIAM.Headless: Removing display event listener</p>
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/post/3rd_part_aar_to_nexus/">Nexus:手动上传AAR</a></li>
+        <li><a href="/post/3rd_part_aar_to_nexus/">Nexus:Upload AAR files manully</a></li>
         
         <li><a href="/post/gradle_copy_file/">Gradle Copy File</a></li>
         
-        <li><a href="/post/screenoverlay/">Android Unity游戏弹出“屏幕重叠层检测”错误</a></li>
+        <li><a href="/post/screenoverlay/">Android Unity Game Popups “Screen Overlay Deteched</a></li>
         
         <li><a href="/post/vysor_break/">最新版Vysor pro Mac Chrome插件破解</a></li>
         
-        <li><a href="/post/unity_apk_reduce/">进一步减小Unity项目的apk大小</a></li>
+        <li><a href="/post/unity_apk_reduce/">How to reduce the apk size of Unity Game</a></li>
         
     </ul>
 </div>
@@ -389,9 +402,9 @@ I/FIAM.Headless: Removing display event listener</p>
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Recent articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -411,7 +424,7 @@ I/FIAM.Headless: Removing display event listener</p>
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:手动上传AAR">Nexus:手动上传AAR</a>
+        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:Upload AAR files manully">Nexus:Upload AAR files manully</a>
     </li>
     
     <li>
@@ -419,7 +432,7 @@ I/FIAM.Headless: Removing display event listener</p>
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity游戏弹出“屏幕重叠层检测”错误">Android Unity游戏弹出“屏幕重叠层检测”错误</a>
+        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity Game Popups “Screen Overlay Deteched">Android Unity Game Popups “Screen Overlay Deteched</a>
     </li>
     
     <li>
@@ -427,7 +440,7 @@ I/FIAM.Headless: Removing display event listener</p>
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="进一步减小Unity项目的apk大小">进一步减小Unity项目的apk大小</a>
+        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="How to reduce the apk size of Unity Game">How to reduce the apk size of Unity Game</a>
     </li>
     
     <li>
@@ -435,6 +448,7 @@ I/FIAM.Headless: Removing display event listener</p>
     </li>
     
 </ul>
+
     </section>
 
     
@@ -471,7 +485,7 @@ I/FIAM.Headless: Removing display event listener</p>
 
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title">Categories</h3>
 <ul class="widget-list">
     
     <li>
@@ -499,10 +513,11 @@ I/FIAM.Headless: Removing display event listener</p>
     </li>
     
 </ul>
+
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title">Tags</h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata-Test</a>
@@ -613,15 +628,13 @@ I/FIAM.Headless: Removing display event listener</p>
     
     <a href="http://www.harddone.com/tags/override/">override</a>
     
-    <a href="http://www.harddone.com/tags/upload-AARmanually/">upload-AARmanually</a>
+    <a href="http://www.harddone.com/tags/upload-AAR-manually/">upload-AAR-manually</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/">取消跟踪</a>
     
     <a href="http://www.harddone.com/tags/%E5%B1%8F%E5%B9%95%E9%87%8D%E5%8F%A0%E5%B1%82%E6%A3%80%E6%B5%8B/">屏幕重叠层检测</a>
-    
-    <a href="http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0/">手动上传</a>
     
     <a href="http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/">扫描解码</a>
     
@@ -646,11 +659,12 @@ I/FIAM.Headless: Removing display event listener</p>
     <a href="http://www.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/">证书验证失败</a>
     
 </div>
+
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -669,13 +683,15 @@ I/FIAM.Headless: Removing display event listener</p>
 </section>
 
 
+
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Others</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
+
         </div>
     </div>
 </div>

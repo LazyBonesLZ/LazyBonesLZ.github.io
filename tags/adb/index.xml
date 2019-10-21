@@ -17,7 +17,7 @@
       <pubDate>Wed, 18 Sep 2019 16:57:37 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/gradle-run-adb/</guid>
-      <description>之前写过一篇关于python执行adb命令的文章,主要功能是在设备上创建文件夹，然后向创建的目录下上传文件。业务需求是上传obb文件到设备上，但是执行该python脚本，需要传入太多的参数：obb路径，app package name, 以及版本号等等。参数过多导致使用不便，且时间久了自己也就忘了。 所以，</description>
+      <description>&lt;p&gt;I wrote an article about &lt;a href=&#34;https://www.harddone.com/post/python_adb/&#34;&gt;python executing the adb command&lt;/a&gt;. The main function is to create a folder on the device and then upload the file to the created directory. The business requirement is to upload the obb file to the device, but to execute the python script, you need to pass in too many parameters: obb path, app package name, and version number. Too many parameters lead to inconvenience, and you forget it for a long time.&lt;/p&gt;</description>
     </item>
     
     <item>

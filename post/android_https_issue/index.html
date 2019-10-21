@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Android https 突然提示证书验证失败 | ColorfulDark Blog</title>
-    <meta property="og:title" content="Android https 突然提示证书验证失败 - ColorfulDark Blog">
+    <title>Android https: Certificate verification failed | ColorfulDark Blog</title>
+    <meta property="og:title" content="Android https: Certificate verification failed - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
     <meta property="article:published_time" content="2018-08-13T16:14:33&#43;08:00">
@@ -17,7 +17,7 @@
     <meta property="article:modified_time" content="2018-08-13T16:14:33&#43;08:00">
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
-    <meta name="description" content="Android https 突然提示证书验证失败">
+    <meta name="description" content="Android https: Certificate verification failed">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/android_https_issue/">
@@ -32,6 +32,7 @@
 
     
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-5294048051542592",
@@ -55,15 +56,15 @@
                         ColorfulDark Blog
                     </a>
                 
-                <p class="description">专注于Android、Java、Kotlin、移动互联网</p>
+                <p class="description">Focus on Android,Java,Kotlin and Mobile Internet</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">首页</a>
+                    <a class="current" href="http://www.harddone.com/">Home</a>
                     
-                    <a  href="http://www.harddone.com/archives/" title="归档">归档</a>
+                    <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
-                    <a  href="http://www.harddone.com/about/" title="关于">关于</a>
+                    <a  href="http://www.harddone.com/about/" title="About">About</a>
                     
                 </nav>
             </div>
@@ -73,6 +74,11 @@
 
 
 <div id="body">
+  
+  <amp-auto-ads type="adsense"
+    data-ad-client="ca-pub-5294048051542592">
+  </amp-auto-ads>
+  
     <div class="container">
         <div class="col-group">
 
@@ -80,10 +86,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">Android https 突然提示证书验证失败</h1>
+                            <h1 class="post-title">Android https: Certificate verification failed</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2018年8月13日
+                            2018-8-13
                         </date>
                         
                         <div class="post-meta">
@@ -95,47 +101,14 @@
                         
                         
                         <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
                         </div>
                         
                         
                         <div class="post-content">
-                            
+                            <p>There are always https requests in the project, and no third-party SDKs are used. The requests are implemented using HttpUrlConnec tion. It has been safe and sound, and suddenly the tester reported that there was a certificate verification problem. All kinds of viewing materials on the Internet are solved.</p>
 
-<p>    项目中一直有https的请求，没有用到第三方的SDK,都是使用HttpUrlConnec tion去实现的请求。一直相安无事，突然测试人员报告说出现证书验证问题。网上各种查看资料解决，方案无非是加入自定义证书到工程或者是用信任所有证书的方式解决。但是，我们并没有用到自定义证书，如果用信任所有证书的方式，对于自身app的安全又无法保障了。</p>
-
-<p>仔细分析每次https请求的异常log,提示证书不可用：</p>
-
-<pre><code class="language-shell">W/System.err: javax.net.ssl.SSLHandshakeException: Chain validation failed
-W/System.err:     at com.android.org.conscrypt.OpenSSLSocketImpl.startHandshake(OpenSSLSocketImpl.java:368)
-W/System.err:     at com.android.okhttp.Connection.connectTls(Connection.java:1510)
-W/System.err:     at com.android.okhttp.Connection.connectSocket(Connection.java:1458)
-W/System.err:     at com.android.okhttp.Connection.connect(Connection.java:1413)
-W/System.err:     at com.android.okhttp.Connection.connectAndSetOwner(Connection.java:1700)
-W/System.err:     at com.android.okhttp.OkHttpClient$1.connectAndSetOwner(OkHttpClient.java:133)
-W/System.err:     at com.android.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:466)
-W/System.err:     at com.android.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:371)
-W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:503)
-W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:438)
-W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:567)
-W/System.err:     at com.android.okhttp.internal.huc.DelegatingHttpsURLConnection.getResponseCode(DelegatingHttpsURLConnection.java:105)
-W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java)
-
-</code></pre>
-
-<p>是否跟证书的有效期限有关系呢?</p>
-
-<p>果然，去查看系统的时间设置是否正常，发现原来测试人员由于测试需要，改变了系统的日期和时间的设置。</p>
-
-<p>解决方案：</p>
-
-<p>修改系统时间，打开“自动设置日期和时间”开关，让系统时间恢复当前正常时间。</p>
-
-<hr />
-
-<h2 id="english-doc">English Doc</h2>
-
-<p>There are always https requests in the project, and no third-party SDKs are used. The requests are implemented using HttpUrlConnec tion. It has been safe and sound, and suddenly the tester reported that there was a certificate verification problem. All kinds of viewing materials on the Internet are solved. The solution is to add a custom certificate to the project or to solve all the problems by trusting all the certificates. However, we did not use a custom certificate. If we trust all the certificates, the security of our own app cannot be guaranteed.</p>
+<p>The solution is to add a custom certificate to the project or to solve all the problems by trusting all the certificates. However, we did not use a custom certificate. If we trust all the certificates, the security of our own app cannot be guaranteed.</p>
 
 <p>Carefully analyze the exception log for each https request, indicating that the certificate is not available:</p>
 
@@ -164,6 +137,36 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
 
 <p>Modify the system time, turn on the &ldquo;automatically set date and time&rdquo; switch, and let the system time return to the current normal time.</p>
 
+<h2 id="中文">===中文===</h2>
+
+<p>项目中一直有https的请求，没有用到第三方的SDK,都是使用HttpUrlConnec tion去实现的请求。一直相安无事，突然测试人员报告说出现证书验证问题。网上各种查看资料解决，方案无非是加入自定义证书到工程或者是用信任所有证书的方式解决。但是，我们并没有用到自定义证书，如果用信任所有证书的方式，对于自身app的安全又无法保障了。</p>
+
+<p>仔细分析每次https请求的异常log,提示证书不可用：</p>
+
+<pre><code class="language-shell">W/System.err: javax.net.ssl.SSLHandshakeException: Chain validation failed
+W/System.err:     at com.android.org.conscrypt.OpenSSLSocketImpl.startHandshake(OpenSSLSocketImpl.java:368)
+W/System.err:     at com.android.okhttp.Connection.connectTls(Connection.java:1510)
+W/System.err:     at com.android.okhttp.Connection.connectSocket(Connection.java:1458)
+W/System.err:     at com.android.okhttp.Connection.connect(Connection.java:1413)
+W/System.err:     at com.android.okhttp.Connection.connectAndSetOwner(Connection.java:1700)
+W/System.err:     at com.android.okhttp.OkHttpClient$1.connectAndSetOwner(OkHttpClient.java:133)
+W/System.err:     at com.android.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:466)
+W/System.err:     at com.android.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:371)
+W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:503)
+W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:438)
+W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:567)
+W/System.err:     at com.android.okhttp.internal.huc.DelegatingHttpsURLConnection.getResponseCode(DelegatingHttpsURLConnection.java:105)
+W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java)
+
+</code></pre>
+
+<p>是否跟证书的有效期限有关系呢?</p>
+
+<p>果然，去查看系统的时间设置是否正常，发现原来测试人员由于测试需要，改变了系统的日期和时间的设置。</p>
+
+<p>解决方案：</p>
+
+<p>修改系统时间，打开“自动设置日期和时间”开关，让系统时间恢复当前正常时间。</p>
                         </div>
 
                         
@@ -179,7 +182,7 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
         
         <li><a href="/post/gp_billing/">Google play billing Alpha / Beta 测试</a></li>
         
-        <li><a href="/post/unit_call_android_arr/">Unity调用Android参数为数组的方法</a></li>
+        <li><a href="/post/unit_call_android_arr/">Unity Call Android native method with array parameters</a></li>
         
         <li><a href="/post/mac_as_jdk/">Mac OS Andriod Studio:Gradle 3.3 requires Java 7 or later to run.You are currently using Java 6</a></li>
         
@@ -231,9 +234,9 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Recent articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -253,7 +256,7 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:手动上传AAR">Nexus:手动上传AAR</a>
+        <a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/" title="Nexus:Upload AAR files manully">Nexus:Upload AAR files manully</a>
     </li>
     
     <li>
@@ -261,7 +264,7 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity游戏弹出“屏幕重叠层检测”错误">Android Unity游戏弹出“屏幕重叠层检测”错误</a>
+        <a href="http://www.harddone.com/post/screenoverlay/" title="Android Unity Game Popups “Screen Overlay Deteched">Android Unity Game Popups “Screen Overlay Deteched</a>
     </li>
     
     <li>
@@ -269,7 +272,7 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
     </li>
     
     <li>
-        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="进一步减小Unity项目的apk大小">进一步减小Unity项目的apk大小</a>
+        <a href="http://www.harddone.com/post/unity_apk_reduce/" title="How to reduce the apk size of Unity Game">How to reduce the apk size of Unity Game</a>
     </li>
     
     <li>
@@ -277,6 +280,7 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
     </li>
     
 </ul>
+
     </section>
 
     
@@ -313,7 +317,7 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
 
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title">Categories</h3>
 <ul class="widget-list">
     
     <li>
@@ -341,10 +345,11 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
     </li>
     
 </ul>
+
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title">Tags</h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata-Test</a>
@@ -455,15 +460,13 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
     
     <a href="http://www.harddone.com/tags/override/">override</a>
     
-    <a href="http://www.harddone.com/tags/upload-AARmanually/">upload-AARmanually</a>
+    <a href="http://www.harddone.com/tags/upload-AAR-manually/">upload-AAR-manually</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
     <a href="http://www.harddone.com/tags/%E5%8F%96%E6%B6%88%E8%B7%9F%E8%B8%AA/">取消跟踪</a>
     
     <a href="http://www.harddone.com/tags/%E5%B1%8F%E5%B9%95%E9%87%8D%E5%8F%A0%E5%B1%82%E6%A3%80%E6%B5%8B/">屏幕重叠层检测</a>
-    
-    <a href="http://www.harddone.com/tags/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0/">手动上传</a>
     
     <a href="http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81/">扫描解码</a>
     
@@ -488,11 +491,12 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
     <a href="http://www.harddone.com/tags/%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/">证书验证失败</a>
     
 </div>
+
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -511,13 +515,15 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
 </section>
 
 
+
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Others</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
+
         </div>
     </div>
 </div>
