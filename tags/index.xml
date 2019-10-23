@@ -6,10 +6,28 @@
     <description>Recent content in Tags on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 24 Sep 2019 15:34:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 15:12:26 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android Studio 3.5</title>
+      <link>http://www.harddone.com/tags/Android-Studio-3.5/</link>
+      <pubDate>Wed, 23 Oct 2019 15:12:26 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/Android-Studio-3.5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Not find method classpath()</title>
+      <link>http://www.harddone.com/tags/Not-find-method-classpath/</link>
+      <pubDate>Wed, 23 Oct 2019 15:12:26 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/tags/Not-find-method-classpath/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Library module</title>
@@ -53,15 +71,6 @@
       <pubDate>Wed, 18 Sep 2019 16:57:37 +0800</pubDate>
       
       <guid>http://www.harddone.com/tags/gradle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Android Studio 3.5</title>
-      <link>http://www.harddone.com/tags/Android-Studio-3.5/</link>
-      <pubDate>Wed, 18 Sep 2019 16:41:39 +0800</pubDate>
-      
-      <guid>http://www.harddone.com/tags/Android-Studio-3.5/</guid>
       <description></description>
     </item>
     

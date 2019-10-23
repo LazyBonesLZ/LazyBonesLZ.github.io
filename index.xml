@@ -6,10 +6,19 @@
     <description>Recent content on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 24 Sep 2019 15:34:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 15:12:26 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android Studio: Could not find method classpath() for arguments</title>
+      <link>http://www.harddone.com/post/gradle_dsl/</link>
+      <pubDate>Wed, 23 Oct 2019 15:12:26 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/gradle_dsl/</guid>
+      <description>&lt;p&gt;Some misoperations lead to errors &lt;code&gt;Could not find method classpath()&lt;/code&gt; when complie an Android project.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Placeholders In Library Module</title>
