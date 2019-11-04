@@ -325,9 +325,12 @@ npm install github_webhook_handler
   })
 </code></pre>
 
-<p>这个脚本利用的是Node.js的<code>child_process</code>模块来执行<code>shell</code>脚本。上面的<code>path: '/webhook'</code>你可以任意设置，<code>secret_key</code>验证为<code>myxxxxx</code>。我们在购买服务器的时候，安全组配置时添加了7777端口，所以端口用的是7777，你可以随意设置，总之不要过于明显，但是<strong>要记得在阿里云控制台安全组添加端口</strong>。这样下来最终的监听地址就是<code>http://0.0.0.0:7777/webhook</code>了，<code>0.0.0.0</code>表示该http服务监听本机的所有ip上收到的请求，说白了就是<code>0.0.0.0</code>可以换成服务器的ip或者指向服务器的所有域名。拿我自己的服务器作例子就是<code>http://blog.harddone.com:7777/webhook</code>。
-* ###pm2启动脚本
-我们用pm2来启动：<code>pm2 start github-webhook.js</code>，使用<code>pm2 startup</code>命令来设置脚本开机启动。pm2的更多高级用法还请查看<a href="http://pm2.keymetrics.io/docs/usage/quick-start/">文档</a>。</p>
+<p>这个脚本利用的是Node.js的<code>child_process</code>模块来执行<code>shell</code>脚本。上面的<code>path: '/webhook'</code>你可以任意设置，<code>secret_key</code>验证为<code>myxxxxx</code>。我们在购买服务器的时候，安全组配置时添加了7777端口，所以端口用的是7777，你可以随意设置，总之不要过于明显，但是<strong>要记得在阿里云控制台安全组添加端口</strong>。这样下来最终的监听地址就是<code>http://0.0.0.0:7777/webhook</code>了，<code>0.0.0.0</code>表示该http服务监听本机的所有ip上收到的请求，说白了就是<code>0.0.0.0</code>可以换成服务器的ip或者指向服务器的所有域名。拿我自己的服务器作例子就是<code>http://blog.harddone.com:7777/webhook</code>。</p>
+
+<ul>
+<li>### pm2启动脚本
+我们用pm2来启动：<code>pm2 start github-webhook.js</code>，使用<code>pm2 startup</code>命令来设置脚本开机启动。pm2的更多高级用法还请查看<a href="http://pm2.keymetrics.io/docs/usage/quick-start/">文档</a>。</li>
+</ul>
 
 <h1 id="3-nginx配置更新">3. Nginx配置更新</h1>
 
