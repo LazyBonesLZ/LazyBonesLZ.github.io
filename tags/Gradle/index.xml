@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gradle on ColorfulDark Blog</title>
-    <link>http://www.harddone.com/tags/Gradle/</link>
-    <description>Recent content in Gradle on ColorfulDark Blog</description>
+    <title>gradle on ColorfulDark Blog</title>
+    <link>http://www.harddone.com/tags/gradle/</link>
+    <description>Recent content in gradle on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 16 Aug 2019 10:59:48 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Sep 2019 16:57:37 +0800</lastBuildDate>
     
-	<atom:link href="http://www.harddone.com/tags/Gradle/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.harddone.com/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Gradle Copy File</title>
-      <link>http://www.harddone.com/post/gradle_copy_file/</link>
-      <pubDate>Fri, 16 Aug 2019 10:59:48 +0800</pubDate>
+      <title>Gradle Run Adb</title>
+      <link>http://www.harddone.com/post/gradle-run-adb/</link>
+      <pubDate>Wed, 18 Sep 2019 16:57:37 +0800</pubDate>
       
-      <guid>http://www.harddone.com/post/gradle_copy_file/</guid>
-      <description>&lt;p&gt;Android Studio Before the Build project, if you want to copy some application configuration files to the assets directory, you can customize the task and execute it before the build.&lt;/p&gt;</description>
+      <guid>http://www.harddone.com/post/gradle-run-adb/</guid>
+      <description>&lt;p&gt;I wrote an article about &lt;a href=&#34;https://www.harddone.com/post/python_adb/&#34;&gt;python executing the adb command&lt;/a&gt;. The main function is to create a folder on the device and then upload the file to the created directory. The business requirement is to upload the obb file to the device, but to execute the python script, you need to pass in too many parameters: obb path, app package name, and version number. Too many parameters lead to inconvenience, and you forget it for a long time.&lt;/p&gt;</description>
     </item>
     
   </channel>
