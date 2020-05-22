@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.harddone.com/post/aabtool_for_mac/</loc>
+    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.harddone.com/post/android_ps/</loc>
     <lastmod>2020-04-23T16:00:24+08:00</lastmod>
   </url>
@@ -169,13 +174,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Android/</loc>
+    <loc>http://www.harddone.com/tags/Android/</loc>
     <lastmod>2020-04-23T16:00:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Android/</loc>
+    <loc>http://www.harddone.com/categories/Android/</loc>
     <lastmod>2020-04-23T16:00:24+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -195,6 +200,12 @@
   <url>
     <loc>http://www.harddone.com/tags/Android-Studio3.3.2/</loc>
     <lastmod>2019-04-17T11:42:49+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/Android-app-bundle-tool/</loc>
+    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -242,7 +253,7 @@
   
   <url>
     <loc>http://www.harddone.com/</loc>
-    <lastmod>2020-04-23T16:00:24+08:00</lastmod>
+    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -337,13 +348,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Lua/</loc>
+    <loc>http://www.harddone.com/tags/Lua/</loc>
     <lastmod>2019-04-18T10:01:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Lua/</loc>
+    <loc>http://www.harddone.com/categories/Lua/</loc>
     <lastmod>2019-04-18T10:01:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -404,7 +415,7 @@
   
   <url>
     <loc>http://www.harddone.com/post/</loc>
-    <lastmod>2020-04-23T16:00:24+08:00</lastmod>
+    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -421,14 +432,14 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Python/</loc>
+    <loc>http://www.harddone.com/tags/Python/</loc>
     <lastmod>2019-04-18T10:12:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Python/</loc>
-    <lastmod>2019-04-18T10:12:15+08:00</lastmod>
+    <loc>http://www.harddone.com/categories/Python/</loc>
+    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -451,13 +462,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Unity/</loc>
+    <loc>http://www.harddone.com/tags/Unity/</loc>
     <lastmod>2020-04-23T15:01:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Unity/</loc>
+    <loc>http://www.harddone.com/categories/Unity/</loc>
     <lastmod>2020-04-23T15:01:15+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -493,13 +504,13 @@
   </url>
   
   <url>
-    <loc>http://www.harddone.com/categories/Website/</loc>
+    <loc>http://www.harddone.com/tags/Website/</loc>
     <lastmod>2019-04-25T11:13:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.harddone.com/tags/Website/</loc>
+    <loc>http://www.harddone.com/categories/Website/</loc>
     <lastmod>2019-04-25T11:13:24+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -518,7 +529,7 @@
   
   <url>
     <loc>http://www.harddone.com/tags/adb/</loc>
-    <lastmod>2019-09-18T16:57:37+08:00</lastmod>
+    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -547,6 +558,12 @@
   </url>
   
   <url>
+    <loc>http://www.harddone.com/tags/java/</loc>
+    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.harddone.com/tags/mips64el-linux-android/</loc>
     <lastmod>2019-06-14T16:27:33+08:00</lastmod>
     <priority>0</priority>
@@ -555,6 +572,12 @@
   <url>
     <loc>http://www.harddone.com/tags/override/</loc>
     <lastmod>2019-04-18T10:01:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.harddone.com/tags/python/</loc>
+    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   

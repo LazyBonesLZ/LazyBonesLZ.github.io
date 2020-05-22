@@ -6,10 +6,19 @@
     <description>Recent content on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 23 Apr 2020 16:00:24 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate>
     
 	<atom:link href="http://www.harddone.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android app bundle tool for Mac</title>
+      <link>http://www.harddone.com/post/aabtool_for_mac/</link>
+      <pubDate>Fri, 22 May 2020 10:14:27 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/post/aabtool_for_mac/</guid>
+      <description>&lt;p&gt;As google says, you can use &lt;a href=&#34;https://developer.android.com/studio/command-line/bundletool&#34;&gt;&lt;code&gt;bundletool&lt;/code&gt;&lt;/a&gt; to test your app bundle locally. But the command line is not very convenient to use, so we developed this GUI application based on python.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Android ps查询进程线程信息</title>
