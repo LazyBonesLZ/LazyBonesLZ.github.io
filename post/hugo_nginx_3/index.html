@@ -286,12 +286,13 @@ exit 0
 <h3 id="2-2-github-webhook-js脚本">2.2 github_webhook.js脚本</h3>
 
 <ul>
-<li>我们需要用到nodejs来监听来自GitHub的消息，需要用到中间件 <a href="https://github.com/rvagg/github-webhook-handler">github_webhook_handler</a>, 我们使用npm 来安装：
-<code>
-npm install github-webhook-handler
-</code></li>
-<li>新建<code>github_webhook.js</code>脚本
-该脚本主要参考<a href="https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/">https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/</a>，但是我们用到是GitHub仓库而非Gitlab,所以做了细微改动。</li>
+<li><p>我们需要用到nodejs来监听来自GitHub的消息，需要用到中间件 <a href="https://github.com/rvagg/github-webhook-handler">github-webhook-handler</a>, 我们使用npm 来安装：</p>
+
+<pre><code>npm install github-webhook-handler
+</code></pre></li>
+
+<li><p>新建<code>github_webhook.js</code>脚本
+该脚本主要参考<a href="https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/">https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/</a>，但是我们用到是GitHub仓库而非Gitlab,所以做了细微改动。</p></li>
 </ul>
 
 <pre><code>    vim github_webhook.js
