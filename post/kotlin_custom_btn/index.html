@@ -111,37 +111,73 @@
 </code></pre><ul>
 <li>示例</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    &lt;androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-            android:layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>&gt;
-        &lt;TextView android:layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-                  android:layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-                  app:layout_constraintLeft_toLeftOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-                  app:layout_constraintTop_toTopOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-                  app:layout_constraintBottom_toBottomOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-                  android:layout_marginLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span>
-                  android:text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;带图标的矩形：\n文本右下角对齐&#34;</span>/&gt;
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    &lt;androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;match_parent&#34;</span>
+            android:layout_height<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;wrap_content&#34;</span>&gt;
+        &lt;TextView android:layout_width<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;wrap_content&#34;</span>
+                  android:layout_height<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;wrap_content&#34;</span>
+                  app:layout_constraintLeft_toLeftOf<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;parent&#34;</span>
+                  app:layout_constraintTop_toTopOf<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;parent&#34;</span>
+                  app:layout_constraintBottom_toBottomOf<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;parent&#34;</span>
+                  android:layout_marginLeft<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;20dp&#34;</span>
+                  android:text<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;带图标的矩形：\n文本右下角对齐&#34;</span>/&gt;
         &lt;com.lazy.customviews.MainButton
-                android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/btnRect&#34;</span>
-                android:layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;108dp&#34;</span>
-                android:layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;108dp&#34;</span>
-                app:mainBtnBgColor<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#FFDE6D&#34;</span>
-                app:mainBtnIcon<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher&#34;</span>
-                app:mainBtnIconRate<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4.0&#34;</span>
-                app:mainBtnRadius<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-                app:mainBtnText<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;矩形&#34;</span>
-                app:mainBtnTextSize<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;15sp&#34;</span>
-                app:mainBtnTextColor<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@android:color/holo_red_dark&#34;</span>
-                app:mainBtnTextAlign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right_bottom&#34;</span>
-                app:layout_constraintRight_toRightOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-                app:layout_constraintLeft_toLeftOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-                app:layout_constraintTop_toTopOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-                android:layout_marginStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10dp&#34;</span>
-                android:layout_marginLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10dp&#34;</span>
-                android:layout_marginTop<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10dp&#34;</span>/&gt;
+                android:id<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@+id/btnRect&#34;</span>
+                android:layout_width<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;108dp&#34;</span>
+                android:layout_height<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;108dp&#34;</span>
+                app:mainBtnBgColor<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;#FFDE6D&#34;</span>
+                app:mainBtnIcon<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@mipmap/ic_launcher&#34;</span>
+                app:mainBtnIconRate<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;4.0&#34;</span>
+                app:mainBtnRadius<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span>
+                app:mainBtnText<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;矩形&#34;</span>
+                app:mainBtnTextSize<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;15sp&#34;</span>
+                app:mainBtnTextColor<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@android:color/holo_red_dark&#34;</span>
+                app:mainBtnTextAlign<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;right_bottom&#34;</span>
+                app:layout_constraintRight_toRightOf<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;parent&#34;</span>
+                app:layout_constraintLeft_toLeftOf<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;parent&#34;</span>
+                app:layout_constraintTop_toTopOf<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;parent&#34;</span>
+                android:layout_marginStart<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;10dp&#34;</span>
+                android:layout_marginLeft<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;10dp&#34;</span>
+                android:layout_marginTop<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;10dp&#34;</span>/&gt;
     &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
 
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>
 <p>自定义参数说明</p>
 <ul>

@@ -105,24 +105,47 @@
 <li>不需要<code>python</code>环境</li>
 </ul>
 <p>想要实现<code>gradle task</code> 执行 <code>adb</code>, 可以通过执行<code>gradle</code>的 <code>Command Line</code>。参见<a href="https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Exec.html#org.gradle.api.tasks.Exec">Exec</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">task stopTomcat<span style="color:#f92672">(</span>type:Exec<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  workingDir <span style="color:#e6db74">&#39;../tomcat/bin&#39;</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">task stopTomcat<span style="color:#000;font-weight:bold">(</span>type:Exec<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+  workingDir <span style="color:#d14">&#39;../tomcat/bin&#39;</span>
 
   //on windows:
-  commandLine <span style="color:#e6db74">&#39;cmd&#39;</span>, <span style="color:#e6db74">&#39;/c&#39;</span>, <span style="color:#e6db74">&#39;stop.bat&#39;</span>
+  commandLine <span style="color:#d14">&#39;cmd&#39;</span>, <span style="color:#d14">&#39;/c&#39;</span>, <span style="color:#d14">&#39;stop.bat&#39;</span>
 
   //on linux
-  commandLine <span style="color:#e6db74">&#39;./stop.sh&#39;</span>
+  commandLine <span style="color:#d14">&#39;./stop.sh&#39;</span>
 
   //store the output instead of printing to the console:
-  standardOutput <span style="color:#f92672">=</span> new ByteArrayOutputStream<span style="color:#f92672">()</span>
+  <span style="color:#008080">standardOutput</span> <span style="color:#000;font-weight:bold">=</span> new ByteArrayOutputStream<span style="color:#000;font-weight:bold">()</span>
 
-  //extension method stopTomcat.output<span style="color:#f92672">()</span> can be used to obtain the output:
-  ext.output <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">return</span> standardOutput.toString<span style="color:#f92672">()</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>理论上，可以直接执行我们之前的<code>obb_push.py</code>脚本，但是在实际测试过程发现，python脚本里的逻辑其实是多任务的执行，简单的执行脚本根本无法得到正确的结果。所以，将该python脚本的任务分解为多个<code>gradle task</code>,分别执行对应的<code>adb</code>命令。</p>
+  //extension method stopTomcat.output<span style="color:#000;font-weight:bold">()</span> can be used to obtain the output:
+  ext.output <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000;font-weight:bold">return</span> standardOutput.toString<span style="color:#000;font-weight:bold">()</span>
+  <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>理论上，可以直接执行我们之前的<code>obb_push.py</code>脚本，但是在实际测试过程发现，python脚本里的逻辑其实是多任务的执行，简单的执行脚本根本无法得到正确的结果。所以，将该python脚本的任务分解为多个<code>gradle task</code>,分别执行对应的<code>adb</code>命令。</p>
 <p>所以，我们需要解决的问题如下：</p>
 <ul>
 <li>gradle 多任务执行</li>
@@ -131,86 +154,171 @@
 <li>gradle task 动态参数传入</li>
 </ul>
 <p>直接上脚本<code>copyobb.gradle</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/**
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/**
  * How to use task: pushObb?
  * 1. open a terminal in Android Studio;
  * 2. input the command:
- * ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
+ * ./gradlew -PobbPath<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
  *
- * <span style="color:#f92672">[[</span>For example<span style="color:#f92672">]]</span>:
- * ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/ColorfulDark/tmp/BSG0030/BSG0030.main.obb&#34;</span> pushObb
+ * <span style="color:#000;font-weight:bold">[[</span>For example<span style="color:#000;font-weight:bold">]]</span>:
+ * ./gradlew -PobbPath<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;/Users/ColorfulDark/tmp/BSG0030/BSG0030.main.obb&#34;</span> pushObb
  *
  *
  */
 
-task mkdirs<span style="color:#f92672">(</span>type:Exec<span style="color:#f92672">){</span>
-    workingDir <span style="color:#e6db74">&#39;./&#39;</span>
-    String packageName <span style="color:#f92672">=</span> project.AppBundleId
-    println <span style="color:#e6db74">&#39;get package name = &#39;</span> + packageName
+task mkdirs<span style="color:#000;font-weight:bold">(</span>type:Exec<span style="color:#000;font-weight:bold">){</span>
+    workingDir <span style="color:#d14">&#39;./&#39;</span>
+    String <span style="color:#008080">packageName</span> <span style="color:#000;font-weight:bold">=</span> project.AppBundleId
+    println <span style="color:#d14">&#39;get package name = &#39;</span> + packageName
 
-    println <span style="color:#e6db74">&#39;  (1)===============&gt;Preparing dirs...&#39;</span>
-    String obbDestPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sdcard/Android/obb/&#39;</span> + packageName
-    commandLine <span style="color:#e6db74">&#39;adb&#39;</span>, <span style="color:#e6db74">&#39;shell&#39;</span>, <span style="color:#e6db74">&#39;mkdir&#39;</span>,<span style="color:#e6db74">&#39;-p&#39;</span>, obbDestPath //递归创建文件夹
-<span style="color:#f92672">}</span>
+    println <span style="color:#d14">&#39;  (1)===============&gt;Preparing dirs...&#39;</span>
+    String <span style="color:#008080">obbDestPath</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;sdcard/Android/obb/&#39;</span> + packageName
+    commandLine <span style="color:#d14">&#39;adb&#39;</span>, <span style="color:#d14">&#39;shell&#39;</span>, <span style="color:#d14">&#39;mkdir&#39;</span>,<span style="color:#d14">&#39;-p&#39;</span>, obbDestPath //递归创建文件夹
+<span style="color:#000;font-weight:bold">}</span>
 
 //必须在设备上创建好目标路径之后，才能push file,所以利用dependsOn
-task pushObb<span style="color:#f92672">(</span>type: Exec,dependsOn:mkdirs<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    workingDir <span style="color:#e6db74">&#39;./&#39;</span>
-    String packageName <span style="color:#f92672">=</span> project.AppBundleId
-    String version <span style="color:#f92672">=</span> project.AppVersionCode
-    String obbFilePath <span style="color:#f92672">=</span> project.hasProperty<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;obbPath&#34;</span><span style="color:#f92672">)</span> ? obbPath : null
+task pushObb<span style="color:#000;font-weight:bold">(</span>type: Exec,dependsOn:mkdirs<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    workingDir <span style="color:#d14">&#39;./&#39;</span>
+    String <span style="color:#008080">packageName</span> <span style="color:#000;font-weight:bold">=</span> project.AppBundleId
+    String <span style="color:#008080">version</span> <span style="color:#000;font-weight:bold">=</span> project.AppVersionCode
+    String <span style="color:#008080">obbFilePath</span> <span style="color:#000;font-weight:bold">=</span> project.hasProperty<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;obbPath&#34;</span><span style="color:#000;font-weight:bold">)</span> ? obbPath : null
 
-    println <span style="color:#e6db74">&#39;  (2)===============&gt; parsing obb file name...&#39;</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>obbFilePath <span style="color:#f92672">==</span> null <span style="color:#f92672">||</span> obbFilePath <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        println <span style="color:#e6db74">&#39;you should input a obb file\&#39;</span>s path !<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">        return
-</span><span style="color:#e6db74">    }
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    String[] obbSubDirs = obbFilePath.split(&#39;</span>/<span style="color:#e6db74">&#39;)
-</span><span style="color:#e6db74">    String obbFileName = obbSubDirs[obbSubDirs.length - 1]
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    if (obbFileName == null || !obbFileName.contains(&#39;</span>.obb<span style="color:#e6db74">&#39;)) {
-</span><span style="color:#e6db74">        println &#39;</span>can not find a obb file in the path !<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">        return
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    } else
-</span><span style="color:#e6db74">        println &#34;  &#34; + obbFileName
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    println &#39;</span>  <span style="color:#f92672">(</span>3<span style="color:#f92672">)===============</span>&gt; adb push obb file to device...<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">    String obbDestPath = &#39;</span>sdcard/Android/obb/<span style="color:#e6db74">&#39; + packageName
-</span><span style="color:#e6db74">    commandLine &#39;</span>adb<span style="color:#e6db74">&#39;, &#39;</span>push<span style="color:#e6db74">&#39;, obbFilePath.replace(&#39;</span> <span style="color:#e6db74">&#39;, &#39;</span><span style="color:#ae81ff">\\</span> <span style="color:#e6db74">&#39;), &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">//必须等到上传完成之后，才能执行重命名任务
-</span><span style="color:#e6db74">    doLast {
-</span><span style="color:#e6db74">        exec {
-</span><span style="color:#e6db74">            println &#39;</span>  <span style="color:#f92672">(</span>4<span style="color:#f92672">)===============</span>&gt; adb rename obb file...<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">            String newObbFileName = &#34;main.&#34; + version + &#34;.&#34; + packageName + &#34;.obb&#34;
-</span><span style="color:#e6db74">            String oldFileFullPath = &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; + obbFileName
-</span><span style="color:#e6db74">            String newFileFullPath = &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; + newObbFileName
-</span><span style="color:#e6db74">            println &#39;</span>  old name:<span style="color:#e6db74">&#39; + oldFileFullPath
-</span><span style="color:#e6db74">            commandLine &#39;</span>adb<span style="color:#e6db74">&#39;, &#39;</span>shell<span style="color:#e6db74">&#39;, &#39;</span>mv<span style="color:#e6db74">&#39;, oldFileFullPath, newFileFullPath
-</span><span style="color:#e6db74">            println &#39;</span>  new name:<span style="color:#e6db74">&#39; + newFileFullPath
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">            println &#39;</span>  <span style="color:#f92672">(</span>5<span style="color:#f92672">)===============</span>&gt; Completed!!!<span style="color:#960050;background-color:#1e0010">&#39;</span>
-        <span style="color:#f92672">}</span>
+    println <span style="color:#d14">&#39;  (2)===============&gt; parsing obb file name...&#39;</span>
+    <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#008080">obbFilePath</span> <span style="color:#000;font-weight:bold">==</span> null <span style="color:#000;font-weight:bold">||</span> <span style="color:#008080">obbFilePath</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        println <span style="color:#d14">&#39;you should input a obb file\&#39;</span>s path !<span style="color:#d14">&#39;
+</span><span style="color:#d14">        return
+</span><span style="color:#d14">    }
+</span><span style="color:#d14">
+</span><span style="color:#d14">    String[] obbSubDirs = obbFilePath.split(&#39;</span>/<span style="color:#d14">&#39;)
+</span><span style="color:#d14">    String obbFileName = obbSubDirs[obbSubDirs.length - 1]
+</span><span style="color:#d14">
+</span><span style="color:#d14">    if (obbFileName == null || !obbFileName.contains(&#39;</span>.obb<span style="color:#d14">&#39;)) {
+</span><span style="color:#d14">        println &#39;</span>can not find a obb file in the path !<span style="color:#d14">&#39;
+</span><span style="color:#d14">        return
+</span><span style="color:#d14">
+</span><span style="color:#d14">    } else
+</span><span style="color:#d14">        println &#34;  &#34; + obbFileName
+</span><span style="color:#d14">
+</span><span style="color:#d14">    println &#39;</span>  <span style="color:#000;font-weight:bold">(</span>3<span style="color:#000;font-weight:bold">)===============</span>&gt; adb push obb file to device...<span style="color:#d14">&#39;
+</span><span style="color:#d14">    String obbDestPath = &#39;</span>sdcard/Android/obb/<span style="color:#d14">&#39; + packageName
+</span><span style="color:#d14">    commandLine &#39;</span>adb<span style="color:#d14">&#39;, &#39;</span>push<span style="color:#d14">&#39;, obbFilePath.replace(&#39;</span> <span style="color:#d14">&#39;, &#39;</span><span style="color:#d14">\\</span> <span style="color:#d14">&#39;), &#39;</span>/<span style="color:#d14">&#39; + obbDestPath + &#39;</span>/<span style="color:#d14">&#39;
+</span><span style="color:#d14">
+</span><span style="color:#d14">//必须等到上传完成之后，才能执行重命名任务
+</span><span style="color:#d14">    doLast {
+</span><span style="color:#d14">        exec {
+</span><span style="color:#d14">            println &#39;</span>  <span style="color:#000;font-weight:bold">(</span>4<span style="color:#000;font-weight:bold">)===============</span>&gt; adb rename obb file...<span style="color:#d14">&#39;
+</span><span style="color:#d14">            String newObbFileName = &#34;main.&#34; + version + &#34;.&#34; + packageName + &#34;.obb&#34;
+</span><span style="color:#d14">            String oldFileFullPath = &#39;</span>/<span style="color:#d14">&#39; + obbDestPath + &#39;</span>/<span style="color:#d14">&#39; + obbFileName
+</span><span style="color:#d14">            String newFileFullPath = &#39;</span>/<span style="color:#d14">&#39; + obbDestPath + &#39;</span>/<span style="color:#d14">&#39; + newObbFileName
+</span><span style="color:#d14">            println &#39;</span>  old name:<span style="color:#d14">&#39; + oldFileFullPath
+</span><span style="color:#d14">            commandLine &#39;</span>adb<span style="color:#d14">&#39;, &#39;</span>shell<span style="color:#d14">&#39;, &#39;</span>mv<span style="color:#d14">&#39;, oldFileFullPath, newFileFullPath
+</span><span style="color:#d14">            println &#39;</span>  new name:<span style="color:#d14">&#39; + newFileFullPath
+</span><span style="color:#d14">
+</span><span style="color:#d14">            println &#39;</span>  <span style="color:#000;font-weight:bold">(</span>5<span style="color:#000;font-weight:bold">)===============</span>&gt; Completed!!!<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>
+        <span style="color:#000;font-weight:bold">}</span>
 
 
-    <span style="color:#f92672">}</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
-<span style="color:#f92672">}</span>
+<span style="color:#000;font-weight:bold">}</span>
 
-</code></pre></div><h3 id="how-to-use-task-pushobb">How to use task: pushObb?</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="how-to-use-task-pushobb">How to use task: pushObb?</h3>
 <ul>
 <li>Add <code>apply from: 'copyobb.gradle'</code> in app level gradle.</li>
 <li>Open a terminal in Android Studio;</li>
 <li>Input the command and pass parameter with <code>-P</code>:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  ./gradlew -PobbPath<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
 
-  <span style="color:#f92672">[[</span>For example<span style="color:#f92672">]]</span>:
-  ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/ColorfulDark/tmp/BSG0030/BSG0030.main.obb&#34;</span> pushObb
+  <span style="color:#000;font-weight:bold">[[</span>For example<span style="color:#000;font-weight:bold">]]</span>:
+  ./gradlew -PobbPath<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;/Users/ColorfulDark/tmp/BSG0030/BSG0030.main.obb&#34;</span> pushObb
 
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
         </div>
 
         

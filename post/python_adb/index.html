@@ -99,72 +99,147 @@
         <div class="post-content">
             <h1 id="说明">说明</h1>
 <p>本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">//example
-cmd <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;adb shell&#39;</span> 
-os.system<span style="color:#f92672">(</span>cmd<span style="color:#f92672">)</span>
-</code></pre></div><h1 id="1uninstall_clean_apppy">1.<code>uninstall_clean_app.py</code></h1>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">//example
+<span style="color:#008080">cmd</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;adb shell&#39;</span> 
+os.system<span style="color:#000;font-weight:bold">(</span>cmd<span style="color:#000;font-weight:bold">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="1uninstall_clean_apppy">1.<code>uninstall_clean_app.py</code></h1>
 <p>根据app bundle id 卸载应用，并且删除该应用在sdcard目录下生成的文件夹等。当前脚本中所删除的目录是写死的，可以根据需要自己修改。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/usr/bin/python
-</span><span style="color:#75715e"></span>import subprocess
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#999;font-weight:bold;font-style:italic">#!/usr/bin/python
+</span><span style="color:#999;font-weight:bold;font-style:italic"></span>import subprocess
 import os, sys
 import getopt
 
-BASE_DIR <span style="color:#f92672">=</span> os.path.dirname<span style="color:#f92672">(</span>os.path.dirname<span style="color:#f92672">(</span>__file__<span style="color:#f92672">))</span>
+<span style="color:#008080">BASE_DIR</span> <span style="color:#000;font-weight:bold">=</span> os.path.dirname<span style="color:#000;font-weight:bold">(</span>os.path.dirname<span style="color:#000;font-weight:bold">(</span>__file__<span style="color:#000;font-weight:bold">))</span>
 
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+<span style="color:#000;font-weight:bold">if</span> <span style="color:#008080">__name__</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;__main__&#39;</span>:
 
-	<span style="color:#e6db74">&#34;&#34;&#34; change commands and add shell&#34;&#34;&#34;</span>
+	<span style="color:#d14">&#34;&#34;&#34; change commands and add shell&#34;&#34;&#34;</span>
 
-	tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+	<span style="color:#008080">tag</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;&#39;</span>
 
 	try:
-		opt, args <span style="color:#f92672">=</span> getopt.getopt<span style="color:#f92672">(</span>sys.argv<span style="color:#f92672">[</span>1:<span style="color:#f92672">]</span>, <span style="color:#e6db74">&#34;ht:&#34;</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;pkg&#39;</span>, <span style="color:#e6db74">&#39;help&#39;</span><span style="color:#f92672">])</span>
-		<span style="color:#66d9ef">for</span> op, value in opt:
-			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-t&#34;</span>, <span style="color:#e6db74">&#34;--pkg&#34;</span><span style="color:#f92672">)</span>:
-				tag <span style="color:#f92672">=</span> value
-			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-h&#34;</span>, <span style="color:#e6db74">&#34;--help&#34;</span><span style="color:#f92672">)</span>:
-				print <span style="color:#e6db74">&#34;Usage: main_app_clean.py -t APP_PKG_NAME&#34;</span>
-				print <span style="color:#e6db74">&#34;Options:&#34;</span>
-				print <span style="color:#e6db74">&#34;  -t  APP_PKG_NAME should be a bundle id !&#34;</span>
-				print <span style="color:#e6db74">&#34;&#34;</span>
-				print <span style="color:#e6db74">&#34;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&#34;</span>
-				print <span style="color:#e6db74">&#34;&#34;</span>
-				sys.exit<span style="color:#f92672">()</span>
+		opt, <span style="color:#008080">args</span> <span style="color:#000;font-weight:bold">=</span> getopt.getopt<span style="color:#000;font-weight:bold">(</span>sys.argv<span style="color:#000;font-weight:bold">[</span>1:<span style="color:#000;font-weight:bold">]</span>, <span style="color:#d14">&#34;ht:&#34;</span>, <span style="color:#000;font-weight:bold">[</span><span style="color:#d14">&#39;pkg&#39;</span>, <span style="color:#d14">&#39;help&#39;</span><span style="color:#000;font-weight:bold">])</span>
+		<span style="color:#000;font-weight:bold">for</span> op, value in opt:
+			<span style="color:#000;font-weight:bold">if</span> op in <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;-t&#34;</span>, <span style="color:#d14">&#34;--pkg&#34;</span><span style="color:#000;font-weight:bold">)</span>:
+				<span style="color:#008080">tag</span> <span style="color:#000;font-weight:bold">=</span> value
+			<span style="color:#000;font-weight:bold">if</span> op in <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;-h&#34;</span>, <span style="color:#d14">&#34;--help&#34;</span><span style="color:#000;font-weight:bold">)</span>:
+				print <span style="color:#d14">&#34;Usage: main_app_clean.py -t APP_PKG_NAME&#34;</span>
+				print <span style="color:#d14">&#34;Options:&#34;</span>
+				print <span style="color:#d14">&#34;  -t  APP_PKG_NAME should be a bundle id !&#34;</span>
+				print <span style="color:#d14">&#34;&#34;</span>
+				print <span style="color:#d14">&#34;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&#34;</span>
+				print <span style="color:#d14">&#34;&#34;</span>
+				sys.exit<span style="color:#000;font-weight:bold">()</span>
 	except getopt.GetoptError:  
-            print <span style="color:#e6db74">&#34;Error: Could not find the args.&#34;</span>
-            print <span style="color:#e6db74">&#34;Usage: main_app_clean.py -t APP_PKG_NAME&#34;</span>
-    	    print <span style="color:#e6db74">&#34;Options:&#34;</span>
-    	    print <span style="color:#e6db74">&#34;  -t  APP_PKG_NAME should be a bundle id !&#34;</span>
-    	    print <span style="color:#e6db74">&#34;&#34;</span>
-    	    print <span style="color:#e6db74">&#34;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&#34;</span>
-    	    print <span style="color:#e6db74">&#34;&#34;</span>
-    	    sys.exit<span style="color:#f92672">()</span>
+            print <span style="color:#d14">&#34;Error: Could not find the args.&#34;</span>
+            print <span style="color:#d14">&#34;Usage: main_app_clean.py -t APP_PKG_NAME&#34;</span>
+    	    print <span style="color:#d14">&#34;Options:&#34;</span>
+    	    print <span style="color:#d14">&#34;  -t  APP_PKG_NAME should be a bundle id !&#34;</span>
+    	    print <span style="color:#d14">&#34;&#34;</span>
+    	    print <span style="color:#d14">&#34;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&#34;</span>
+    	    print <span style="color:#d14">&#34;&#34;</span>
+    	    sys.exit<span style="color:#000;font-weight:bold">()</span>
 
 	
-	<span style="color:#66d9ef">if</span> tag <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>:
-		print <span style="color:#e6db74">&#34;you should input a bundle id  !&#34;</span>
-		exit<span style="color:#f92672">()</span>
-	pkg <span style="color:#f92672">=</span> tag
+	<span style="color:#000;font-weight:bold">if</span> <span style="color:#008080">tag</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;&#39;</span>:
+		print <span style="color:#d14">&#34;you should input a bundle id  !&#34;</span>
+		exit<span style="color:#000;font-weight:bold">()</span>
+	<span style="color:#008080">pkg</span> <span style="color:#000;font-weight:bold">=</span> tag
 
-	print <span style="color:#e6db74">&#39;&#39;</span>
-	print <span style="color:#e6db74">&#39;1) uninstalling &#39;</span> + pkg +<span style="color:#e6db74">&#39; ...&#39;</span>
-	unInstallCmd <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;adb uninstall  &#39;</span> + pkg 
-	os.system<span style="color:#f92672">(</span>unInstallCmd<span style="color:#f92672">)</span>
+	print <span style="color:#d14">&#39;&#39;</span>
+	print <span style="color:#d14">&#39;1) uninstalling &#39;</span> + pkg +<span style="color:#d14">&#39; ...&#39;</span>
+	<span style="color:#008080">unInstallCmd</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;adb uninstall  &#39;</span> + pkg 
+	os.system<span style="color:#000;font-weight:bold">(</span>unInstallCmd<span style="color:#000;font-weight:bold">)</span>
 
-	print <span style="color:#e6db74">&#39;&#39;</span>
-	print <span style="color:#e6db74">&#39;2) cleaning the cached file...&#39;</span>
-	cleanCmd1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;adb shell rm -fR /sdcard/.DataBackupTest&#39;</span>
-	os.system<span style="color:#f92672">(</span>cleanCmd1<span style="color:#f92672">)</span>
-	cleanCmd2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;adb shell rm -fR /sdcard/.DataBackup&#39;</span>
-	os.system<span style="color:#f92672">(</span>cleanCmd2<span style="color:#f92672">)</span>
-	print <span style="color:#e6db74">&#39;&#39;</span>
-	print <span style="color:#e6db74">&#39;	All done !^_^!&#39;</span>
-	print <span style="color:#e6db74">&#39;&#39;</span>
+	print <span style="color:#d14">&#39;&#39;</span>
+	print <span style="color:#d14">&#39;2) cleaning the cached file...&#39;</span>
+	<span style="color:#008080">cleanCmd1</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;adb shell rm -fR /sdcard/.DataBackupTest&#39;</span>
+	os.system<span style="color:#000;font-weight:bold">(</span>cleanCmd1<span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#008080">cleanCmd2</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;adb shell rm -fR /sdcard/.DataBackup&#39;</span>
+	os.system<span style="color:#000;font-weight:bold">(</span>cleanCmd2<span style="color:#000;font-weight:bold">)</span>
+	print <span style="color:#d14">&#39;&#39;</span>
+	print <span style="color:#d14">&#39;	All done !^_^!&#39;</span>
+	print <span style="color:#d14">&#39;&#39;</span>
 
-	exit<span style="color:#f92672">()</span>
+	exit<span style="color:#000;font-weight:bold">()</span>
 
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>
 <p>使用方法</p>
 <ul>
@@ -179,141 +254,284 @@ BASE_DIR <span style="color:#f92672">=</span> os.path.dirname<span style="color:
 </ul>
 <h1 id="2obb_pushpy">2.<code>obb_push.py</code></h1>
 <p>该脚本作用是根据传入的obb文件完整路径，解析出app bundle id,然后将obb文件push到android设备上，减少出错机会和烦人的拷贝工作，执行该脚本可有快速完成。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/usr/bin/python
-</span><span style="color:#75715e"></span>import subprocess
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#999;font-weight:bold;font-style:italic">#!/usr/bin/python
+</span><span style="color:#999;font-weight:bold;font-style:italic"></span>import subprocess
 import os, sys
 import getopt
 
-BASE_DIR <span style="color:#f92672">=</span> os.path.dirname<span style="color:#f92672">(</span>os.path.dirname<span style="color:#f92672">(</span>__file__<span style="color:#f92672">))</span>
+<span style="color:#008080">BASE_DIR</span> <span style="color:#000;font-weight:bold">=</span> os.path.dirname<span style="color:#000;font-weight:bold">(</span>os.path.dirname<span style="color:#000;font-weight:bold">(</span>__file__<span style="color:#000;font-weight:bold">))</span>
 
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+<span style="color:#000;font-weight:bold">if</span> <span style="color:#008080">__name__</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;__main__&#39;</span>:
 
-	<span style="color:#e6db74">&#34;&#34;&#34; change commands and add shell&#34;&#34;&#34;</span>
+	<span style="color:#d14">&#34;&#34;&#34; change commands and add shell&#34;&#34;&#34;</span>
 
-	path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-	package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-	obbVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-<span style="color:#75715e"># see: https://blog.csdn.net/chengxuyuanyonghu/article/details/54972854</span>
+	<span style="color:#008080">path</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;&#39;</span>
+	<span style="color:#008080">package</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;&#39;</span>
+	<span style="color:#008080">obbVersion</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;&#39;</span>
+<span style="color:#998;font-style:italic"># see: https://blog.csdn.net/chengxuyuanyonghu/article/details/54972854</span>
 	try:
-		opt, args <span style="color:#f92672">=</span> getopt.getopt<span style="color:#f92672">(</span>sys.argv<span style="color:#f92672">[</span>1:<span style="color:#f92672">]</span>, <span style="color:#e6db74">&#34;hf:p:v:&#34;</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;file=&#39;</span>, <span style="color:#e6db74">&#39;package=&#39;</span>,<span style="color:#e6db74">&#39;obbVersion=&#39;</span>,<span style="color:#e6db74">&#39;help&#39;</span><span style="color:#f92672">])</span>
-		<span style="color:#66d9ef">for</span> op, value in opt:
-			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-f&#34;</span>, <span style="color:#e6db74">&#34;--file&#34;</span><span style="color:#f92672">)</span>:
-				path <span style="color:#f92672">=</span> value
-			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-p&#34;</span>, <span style="color:#e6db74">&#34;--package&#34;</span><span style="color:#f92672">)</span>:
-				package <span style="color:#f92672">=</span> value
-			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-v&#34;</span>, <span style="color:#e6db74">&#34;--obbVersion&#34;</span><span style="color:#f92672">)</span>:
-				obbVersion <span style="color:#f92672">=</span> value
-			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-h&#34;</span>, <span style="color:#e6db74">&#34;--help&#34;</span><span style="color:#f92672">)</span>:
-				print <span style="color:#e6db74">&#34;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&#34;</span>
-				print <span style="color:#e6db74">&#34;Options:&#34;</span>
-				print <span style="color:#e6db74">&#34;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&#34;</span>
-				print <span style="color:#e6db74">&#34;&#34;</span>
-				print <span style="color:#e6db74">&#34;OR: &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &#34;</span>
-				print <span style="color:#e6db74">&#34;&#34;</span>
-				print <span style="color:#e6db74">&#34;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&#34;</span>
-				print <span style="color:#e6db74">&#34;&#34;</span>
-				print <span style="color:#e6db74">&#34;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&#34;</span>
-				print <span style="color:#e6db74">&#34;&#34;</span>
-				sys.exit<span style="color:#f92672">()</span>
+		opt, <span style="color:#008080">args</span> <span style="color:#000;font-weight:bold">=</span> getopt.getopt<span style="color:#000;font-weight:bold">(</span>sys.argv<span style="color:#000;font-weight:bold">[</span>1:<span style="color:#000;font-weight:bold">]</span>, <span style="color:#d14">&#34;hf:p:v:&#34;</span>, <span style="color:#000;font-weight:bold">[</span><span style="color:#d14">&#39;file=&#39;</span>, <span style="color:#d14">&#39;package=&#39;</span>,<span style="color:#d14">&#39;obbVersion=&#39;</span>,<span style="color:#d14">&#39;help&#39;</span><span style="color:#000;font-weight:bold">])</span>
+		<span style="color:#000;font-weight:bold">for</span> op, value in opt:
+			<span style="color:#000;font-weight:bold">if</span> op in <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;-f&#34;</span>, <span style="color:#d14">&#34;--file&#34;</span><span style="color:#000;font-weight:bold">)</span>:
+				<span style="color:#008080">path</span> <span style="color:#000;font-weight:bold">=</span> value
+			<span style="color:#000;font-weight:bold">if</span> op in <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;-p&#34;</span>, <span style="color:#d14">&#34;--package&#34;</span><span style="color:#000;font-weight:bold">)</span>:
+				<span style="color:#008080">package</span> <span style="color:#000;font-weight:bold">=</span> value
+			<span style="color:#000;font-weight:bold">if</span> op in <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;-v&#34;</span>, <span style="color:#d14">&#34;--obbVersion&#34;</span><span style="color:#000;font-weight:bold">)</span>:
+				<span style="color:#008080">obbVersion</span> <span style="color:#000;font-weight:bold">=</span> value
+			<span style="color:#000;font-weight:bold">if</span> op in <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;-h&#34;</span>, <span style="color:#d14">&#34;--help&#34;</span><span style="color:#000;font-weight:bold">)</span>:
+				print <span style="color:#d14">&#34;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&#34;</span>
+				print <span style="color:#d14">&#34;Options:&#34;</span>
+				print <span style="color:#d14">&#34;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&#34;</span>
+				print <span style="color:#d14">&#34;&#34;</span>
+				print <span style="color:#d14">&#34;OR: &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &#34;</span>
+				print <span style="color:#d14">&#34;&#34;</span>
+				print <span style="color:#d14">&#34;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&#34;</span>
+				print <span style="color:#d14">&#34;&#34;</span>
+				print <span style="color:#d14">&#34;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&#34;</span>
+				print <span style="color:#d14">&#34;&#34;</span>
+				sys.exit<span style="color:#000;font-weight:bold">()</span>
 		
 
 	except getopt.GetoptError:  
-           print <span style="color:#e6db74">&#34;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&#34;</span>
-           print <span style="color:#e6db74">&#34;Options:&#34;</span>
-           print <span style="color:#e6db74">&#34;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&#34;</span>
-           print <span style="color:#e6db74">&#34;OR:&#34;</span>
-           print <span style="color:#e6db74">&#34; &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &#34;</span>
-           print <span style="color:#e6db74">&#34;&#34;</span>
-           print <span style="color:#e6db74">&#34;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&#34;</span>
-           print <span style="color:#e6db74">&#34;&#34;</span>
-           print <span style="color:#e6db74">&#34;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&#34;</span>
-           print <span style="color:#e6db74">&#34;&#34;</span>
-           sys.exit<span style="color:#f92672">()</span>
+           print <span style="color:#d14">&#34;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&#34;</span>
+           print <span style="color:#d14">&#34;Options:&#34;</span>
+           print <span style="color:#d14">&#34;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&#34;</span>
+           print <span style="color:#d14">&#34;OR:&#34;</span>
+           print <span style="color:#d14">&#34; &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &#34;</span>
+           print <span style="color:#d14">&#34;&#34;</span>
+           print <span style="color:#d14">&#34;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&#34;</span>
+           print <span style="color:#d14">&#34;&#34;</span>
+           print <span style="color:#d14">&#34;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&#34;</span>
+           print <span style="color:#d14">&#34;&#34;</span>
+           sys.exit<span style="color:#000;font-weight:bold">()</span>
 
 	
-	<span style="color:#66d9ef">if</span> path <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>:
-		print <span style="color:#e6db74">&#34;you should input a obb file\&#39;s path !&#34;</span>
-		exit<span style="color:#f92672">()</span>
+	<span style="color:#000;font-weight:bold">if</span> <span style="color:#008080">path</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;&#39;</span>:
+		print <span style="color:#d14">&#34;you should input a obb file\&#39;s path !&#34;</span>
+		exit<span style="color:#000;font-weight:bold">()</span>
 
-	print <span style="color:#e6db74">&#39;\n&#39;</span>
-	print <span style="color:#e6db74">&#39;||--------------------------------------------------------------||&#39;</span>
-	print <span style="color:#e6db74">&#39;\n&#39;</span>
-	print <span style="color:#e6db74">&#39;NOTICE:&#39;</span>
-	print <span style="color:#e6db74">&#39;obb file name rule: [main.bundleVersionCode.bundleID.obb]&#39;</span>
-	print <span style="color:#e6db74">&#39;\n&#39;</span>
-	print <span style="color:#e6db74">&#39;||--------------------------------------------------------------||&#39;</span>
-	print <span style="color:#e6db74">&#39;\n&#39;</span>
+	print <span style="color:#d14">&#39;\n&#39;</span>
+	print <span style="color:#d14">&#39;||--------------------------------------------------------------||&#39;</span>
+	print <span style="color:#d14">&#39;\n&#39;</span>
+	print <span style="color:#d14">&#39;NOTICE:&#39;</span>
+	print <span style="color:#d14">&#39;obb file name rule: [main.bundleVersionCode.bundleID.obb]&#39;</span>
+	print <span style="color:#d14">&#39;\n&#39;</span>
+	print <span style="color:#d14">&#39;||--------------------------------------------------------------||&#39;</span>
+	print <span style="color:#d14">&#39;\n&#39;</span>
 
-	print <span style="color:#e6db74">&#39;Start to copy obb file &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; &#39;</span>
-	print <span style="color:#e6db74">&#39;  (1)===============&gt; parsing obb file name:&#39;</span>
-	obbFilePath <span style="color:#f92672">=</span> path
-	<span style="color:#66d9ef">if</span> obbFilePath <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>:
-		print <span style="color:#e6db74">&#39;you should input a obb file\&#39;</span>s path !<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">		exit()
-</span><span style="color:#e6db74">	obbSubDirs = obbFilePath.split(&#39;</span>/<span style="color:#e6db74">&#39;)
-</span><span style="color:#e6db74">	# index  = len(obbSubDirs) - 1
-</span><span style="color:#e6db74">	obbFileName = obbSubDirs[-1]
-</span><span style="color:#e6db74">	print obbFileName
-</span><span style="color:#e6db74">	if obbFileName == &#39;&#39; or obbFileName.find(&#39;</span>.obb<span style="color:#e6db74">&#39;) == -1:
-</span><span style="color:#e6db74">		print &#39;</span>can not find a obb file in the path !<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">		exit()
-</span><span style="color:#e6db74">	
-</span><span style="color:#e6db74">	# tmpPackageName = obbFileName.split(&#39;</span>.<span style="color:#e6db74">&#39;)
-</span><span style="color:#e6db74">	# print  &#39;</span>  <span style="color:#f92672">(</span>2<span style="color:#f92672">)===================</span>&gt; parsing result: <span style="color:#e6db74">&#39; 
-</span><span style="color:#e6db74">	# print tmpPackageName
-</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">	# packageName = &#39;&#39;
-</span><span style="color:#e6db74">	# for com in tmpPackageName[2:-2]:
-</span><span style="color:#e6db74">	# 	print com
-</span><span style="color:#e6db74">	# 	if com == tmpPackageName[-2]:
-</span><span style="color:#e6db74">	# 	 	packageName += com
-</span><span style="color:#e6db74">	# 	else:
-</span><span style="color:#e6db74">	# 	 	packageName += com + &#34;.&#34; 
-</span><span style="color:#e6db74">	# packageName = &#39;</span>.<span style="color:#e6db74">&#39;.join(tmpPackageName[2:-1])
-</span><span style="color:#e6db74">	# print &#39;</span>    get package name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; + packageName
-</span><span style="color:#e6db74">	print &#39;</span>    get package name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; + package
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    #os.system(&#39;</span>adb shell mount -o remount -o rw /system<span style="color:#e6db74">&#39;)
-</span><span style="color:#e6db74">    
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">	print &#39;</span>  <span style="color:#f92672">(</span>3<span style="color:#f92672">)===============</span>&gt; adb shell mkdir :<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">	obbDestPath = &#39;</span>sdcard/Android/obb/<span style="color:#e6db74">&#39; + package
-</span><span style="color:#e6db74">	subDir = &#39;&#39;
-</span><span style="color:#e6db74">	subDirs = obbDestPath.split(&#39;</span>/<span style="color:#e6db74">&#39;)
-</span><span style="color:#e6db74">	for dir in subDirs:
-</span><span style="color:#e6db74">	 	subDir += &#39;</span>/<span style="color:#e6db74">&#39; + dir
-</span><span style="color:#e6db74">	 	# print subDir 
-</span><span style="color:#e6db74">	 	os.system(&#39;</span>adb shell mkdir <span style="color:#e6db74">&#39; + subDir)
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">	print &#39;</span>  <span style="color:#f92672">(</span>4<span style="color:#f92672">)===============</span>&gt; adb push obb file to device :<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">	pushCmd = &#39;</span>adb push <span style="color:#e6db74">&#39; + obbFilePath.replace(&#39;</span> <span style="color:#e6db74">&#39;,&#39;</span><span style="color:#ae81ff">\\</span> <span style="color:#e6db74">&#39;)+ &#39;</span> /<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; 
-</span><span style="color:#e6db74">	# print pushCmd
-</span><span style="color:#e6db74">	os.system(pushCmd)
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">	print &#39;</span>  <span style="color:#f92672">(</span>5<span style="color:#f92672">)===============</span>&gt; adb push rename obb file:<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">	newObbFileName = &#34;main.&#34;+ obbVersion+&#34;.&#34; + package + &#34;.obb&#34;
-</span><span style="color:#e6db74">	oldFileFullPath = &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; + obbFileName 
-</span><span style="color:#e6db74">	newFileFullPath = &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; + newObbFileName
-</span><span style="color:#e6db74">	print &#39;</span>  old:<span style="color:#e6db74">&#39; + oldFileFullPath
-</span><span style="color:#e6db74">	reameCmd = &#39;</span>adb shell mv <span style="color:#e6db74">&#39; + oldFileFullPath + &#34; &#34; + newFileFullPath
-</span><span style="color:#e6db74">	os.system(reameCmd)
-</span><span style="color:#e6db74">	print &#39;</span>  new:<span style="color:#e6db74">&#39; + newFileFullPath
-</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">	print &#39;</span>  <span style="color:#f92672">(</span>6<span style="color:#f92672">)===============</span>&gt; Completed!!!<span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-	exit<span style="color:#f92672">()</span>
-</code></pre></div><ul>
+	print <span style="color:#d14">&#39;Start to copy obb file &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; &#39;</span>
+	print <span style="color:#d14">&#39;  (1)===============&gt; parsing obb file name:&#39;</span>
+	<span style="color:#008080">obbFilePath</span> <span style="color:#000;font-weight:bold">=</span> path
+	<span style="color:#000;font-weight:bold">if</span> <span style="color:#008080">obbFilePath</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;&#39;</span>:
+		print <span style="color:#d14">&#39;you should input a obb file\&#39;</span>s path !<span style="color:#d14">&#39;
+</span><span style="color:#d14">		exit()
+</span><span style="color:#d14">	obbSubDirs = obbFilePath.split(&#39;</span>/<span style="color:#d14">&#39;)
+</span><span style="color:#d14">	# index  = len(obbSubDirs) - 1
+</span><span style="color:#d14">	obbFileName = obbSubDirs[-1]
+</span><span style="color:#d14">	print obbFileName
+</span><span style="color:#d14">	if obbFileName == &#39;&#39; or obbFileName.find(&#39;</span>.obb<span style="color:#d14">&#39;) == -1:
+</span><span style="color:#d14">		print &#39;</span>can not find a obb file in the path !<span style="color:#d14">&#39;
+</span><span style="color:#d14">		exit()
+</span><span style="color:#d14">	
+</span><span style="color:#d14">	# tmpPackageName = obbFileName.split(&#39;</span>.<span style="color:#d14">&#39;)
+</span><span style="color:#d14">	# print  &#39;</span>  <span style="color:#000;font-weight:bold">(</span>2<span style="color:#000;font-weight:bold">)===================</span>&gt; parsing result: <span style="color:#d14">&#39; 
+</span><span style="color:#d14">	# print tmpPackageName
+</span><span style="color:#d14">	print &#39;</span><span style="color:#d14">\n</span><span style="color:#d14">&#39;
+</span><span style="color:#d14">
+</span><span style="color:#d14">
+</span><span style="color:#d14">	# packageName = &#39;&#39;
+</span><span style="color:#d14">	# for com in tmpPackageName[2:-2]:
+</span><span style="color:#d14">	# 	print com
+</span><span style="color:#d14">	# 	if com == tmpPackageName[-2]:
+</span><span style="color:#d14">	# 	 	packageName += com
+</span><span style="color:#d14">	# 	else:
+</span><span style="color:#d14">	# 	 	packageName += com + &#34;.&#34; 
+</span><span style="color:#d14">	# packageName = &#39;</span>.<span style="color:#d14">&#39;.join(tmpPackageName[2:-1])
+</span><span style="color:#d14">	# print &#39;</span>    get package <span style="color:#008080">name</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39; + packageName
+</span><span style="color:#d14">	print &#39;</span>    get package <span style="color:#008080">name</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39; + package
+</span><span style="color:#d14">
+</span><span style="color:#d14">    #os.system(&#39;</span>adb shell mount -o remount -o rw /system<span style="color:#d14">&#39;)
+</span><span style="color:#d14">    
+</span><span style="color:#d14">
+</span><span style="color:#d14">	print &#39;</span><span style="color:#d14">\n</span><span style="color:#d14">&#39;
+</span><span style="color:#d14">	print &#39;</span>  <span style="color:#000;font-weight:bold">(</span>3<span style="color:#000;font-weight:bold">)===============</span>&gt; adb shell mkdir :<span style="color:#d14">&#39;
+</span><span style="color:#d14">	obbDestPath = &#39;</span>sdcard/Android/obb/<span style="color:#d14">&#39; + package
+</span><span style="color:#d14">	subDir = &#39;&#39;
+</span><span style="color:#d14">	subDirs = obbDestPath.split(&#39;</span>/<span style="color:#d14">&#39;)
+</span><span style="color:#d14">	for dir in subDirs:
+</span><span style="color:#d14">	 	subDir += &#39;</span>/<span style="color:#d14">&#39; + dir
+</span><span style="color:#d14">	 	# print subDir 
+</span><span style="color:#d14">	 	os.system(&#39;</span>adb shell mkdir <span style="color:#d14">&#39; + subDir)
+</span><span style="color:#d14">
+</span><span style="color:#d14">	print &#39;</span><span style="color:#d14">\n</span><span style="color:#d14">&#39;
+</span><span style="color:#d14">	print &#39;</span>  <span style="color:#000;font-weight:bold">(</span>4<span style="color:#000;font-weight:bold">)===============</span>&gt; adb push obb file to device :<span style="color:#d14">&#39;
+</span><span style="color:#d14">	pushCmd = &#39;</span>adb push <span style="color:#d14">&#39; + obbFilePath.replace(&#39;</span> <span style="color:#d14">&#39;,&#39;</span><span style="color:#d14">\\</span> <span style="color:#d14">&#39;)+ &#39;</span> /<span style="color:#d14">&#39; + obbDestPath + &#39;</span>/<span style="color:#d14">&#39; 
+</span><span style="color:#d14">	# print pushCmd
+</span><span style="color:#d14">	os.system(pushCmd)
+</span><span style="color:#d14">
+</span><span style="color:#d14">	print &#39;</span><span style="color:#d14">\n</span><span style="color:#d14">&#39;
+</span><span style="color:#d14">	print &#39;</span>  <span style="color:#000;font-weight:bold">(</span>5<span style="color:#000;font-weight:bold">)===============</span>&gt; adb push rename obb file:<span style="color:#d14">&#39;
+</span><span style="color:#d14">	newObbFileName = &#34;main.&#34;+ obbVersion+&#34;.&#34; + package + &#34;.obb&#34;
+</span><span style="color:#d14">	oldFileFullPath = &#39;</span>/<span style="color:#d14">&#39; + obbDestPath + &#39;</span>/<span style="color:#d14">&#39; + obbFileName 
+</span><span style="color:#d14">	newFileFullPath = &#39;</span>/<span style="color:#d14">&#39; + obbDestPath + &#39;</span>/<span style="color:#d14">&#39; + newObbFileName
+</span><span style="color:#d14">	print &#39;</span>  old:<span style="color:#d14">&#39; + oldFileFullPath
+</span><span style="color:#d14">	reameCmd = &#39;</span>adb shell mv <span style="color:#d14">&#39; + oldFileFullPath + &#34; &#34; + newFileFullPath
+</span><span style="color:#d14">	os.system(reameCmd)
+</span><span style="color:#d14">	print &#39;</span>  new:<span style="color:#d14">&#39; + newFileFullPath
+</span><span style="color:#d14">	print &#39;</span><span style="color:#d14">\n</span><span style="color:#d14">&#39;
+</span><span style="color:#d14">	print &#39;</span>  <span style="color:#000;font-weight:bold">(</span>6<span style="color:#000;font-weight:bold">)===============</span>&gt; Completed!!!<span style="color:#d14">&#39;
+</span><span style="color:#d14">	print &#39;</span><span style="color:#d14">\n</span><span style="color:#a61717;background-color:#e3d2d2">&#39;</span>
+	exit<span style="color:#000;font-weight:bold">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>使用方法，执行命令 :</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> python &lt;/path/obb_push.py&gt; -p &lt;app package name &gt; -f &lt;/path/of/obbfile&gt; -v &lt;app version code&gt;
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> python &lt;/path/obb_push.py&gt; -p &lt;app package name &gt; -f &lt;/path/of/obbfile&gt; -v &lt;app version code&gt;
  
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
         </div>
 
         

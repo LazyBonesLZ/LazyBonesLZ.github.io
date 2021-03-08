@@ -22,7 +22,7 @@
       <pubDate>Thu, 18 Apr 2019 10:12:15 +0800</pubDate>
       
       <guid>https://www.harddone.com/post/python_adb/</guid>
-      <description>说明 本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令： //example cmd = &amp;#39;adb shell&amp;#39; os.system(cmd) 1.uninstall_clean_app.py 根据app bundle id 卸载应用，并且删除该应用在sdcard目录下生成的文件夹等。当前脚本中所删除的目录是写死</description>
+      <description>说明 本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令： 1 2 3 //example cmd = &amp;#39;adb shell&amp;#39; os.system(cmd) 1.uninstall_clean_app.py 根据app bundle id 卸载应用，并且删除该应用在sdcard目录下生成的文件夹等。当前脚本中所删除的目录</description>
     </item>
     
   </channel>

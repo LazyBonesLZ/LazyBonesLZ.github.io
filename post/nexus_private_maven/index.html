@@ -126,64 +126,127 @@
 <h3 id="14-mylibrary-module下进行同样的步骤参见上一步23">1.4 <code>mylibrary module</code>下进行同样的步骤，参见上一步2.3.</h3>
 <h3 id="15-创建上传aar的gradle文件实现上传的task">1.5 创建上传aar的<code>gradle</code>文件，实现上传的task.</h3>
 <p>在project级目录下，新建mvn_push.gradle文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apply plugin: <span style="color:#e6db74">&#39;maven&#39;</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apply plugin: <span style="color:#d14">&#39;maven&#39;</span>
 
-def getRepositoryUsername<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+def getRepositoryUsername<span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
 
-    <span style="color:#66d9ef">return</span> hasProperty<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;NEXUS_USERNAME&#39;</span><span style="color:#f92672">)</span> ? NEXUS_USERNAME : <span style="color:#e6db74">&#34;&#34;</span>
+    <span style="color:#000;font-weight:bold">return</span> hasProperty<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;NEXUS_USERNAME&#39;</span><span style="color:#000;font-weight:bold">)</span> ? NEXUS_USERNAME : <span style="color:#d14">&#34;&#34;</span>
 
-<span style="color:#f92672">}</span>
+<span style="color:#000;font-weight:bold">}</span>
 
-def getRepositoryPassword<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+def getRepositoryPassword<span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
 
-    <span style="color:#66d9ef">return</span> hasProperty<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;NEXUS_PASSWORD&#39;</span><span style="color:#f92672">)</span> ? NEXUS_PASSWORD : <span style="color:#e6db74">&#34;&#34;</span>
+    <span style="color:#000;font-weight:bold">return</span> hasProperty<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;NEXUS_PASSWORD&#39;</span><span style="color:#000;font-weight:bold">)</span> ? NEXUS_PASSWORD : <span style="color:#d14">&#34;&#34;</span>
 
-<span style="color:#f92672">}</span>
+<span style="color:#000;font-weight:bold">}</span>
 
-uploadArchives <span style="color:#f92672">{</span>
+uploadArchives <span style="color:#000;font-weight:bold">{</span>
 
-    configuration <span style="color:#f92672">=</span> configurations.archives
+    <span style="color:#008080">configuration</span> <span style="color:#000;font-weight:bold">=</span> configurations.archives
 
-    repositories <span style="color:#f92672">{</span>
+    repositories <span style="color:#000;font-weight:bold">{</span>
 
-        mavenDeployer <span style="color:#f92672">{</span>
+        mavenDeployer <span style="color:#000;font-weight:bold">{</span>
 
-            repository<span style="color:#f92672">(</span>url: NEXUS_URL<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            repository<span style="color:#000;font-weight:bold">(</span>url: NEXUS_URL<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
 
-                authentication<span style="color:#f92672">(</span>userName: getRepositoryUsername<span style="color:#f92672">()</span>, password: getRepositoryPassword<span style="color:#f92672">())</span>
+                authentication<span style="color:#000;font-weight:bold">(</span>userName: getRepositoryUsername<span style="color:#000;font-weight:bold">()</span>, password: getRepositoryPassword<span style="color:#000;font-weight:bold">())</span>
 
-                pom.groupId <span style="color:#f92672">=</span> GROUP_ID
+                pom.groupId <span style="color:#000;font-weight:bold">=</span> GROUP_ID
 
-                pom.artifactId <span style="color:#f92672">=</span> ARTIFACT_ID
+                pom.artifactId <span style="color:#000;font-weight:bold">=</span> ARTIFACT_ID
 
-                pom.version <span style="color:#f92672">=</span> VERSION
+                pom.version <span style="color:#000;font-weight:bold">=</span> VERSION
 
-            <span style="color:#f92672">}</span>
+            <span style="color:#000;font-weight:bold">}</span>
 
-            pom.whenConfigured <span style="color:#f92672">{</span> pom -&gt;
+            pom.whenConfigured <span style="color:#000;font-weight:bold">{</span> pom -&gt;
 
-                pom.dependencies.forEach <span style="color:#f92672">{</span> dep -&gt;
+                pom.dependencies.forEach <span style="color:#000;font-weight:bold">{</span> dep -&gt;
 
-                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>dep.getVersion<span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;unspecified&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>dep.getVersion<span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;unspecified&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
 
-                        println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;--modify the dependenies module in pom.xml---&gt;&gt;&#34;</span> + dep.getArtifactId<span style="color:#f92672">())</span>
+                        println<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;--modify the dependenies module in pom.xml---&gt;&gt;&#34;</span> + dep.getArtifactId<span style="color:#000;font-weight:bold">())</span>
 
-                        dep.setGroupId<span style="color:#f92672">(</span>GROUP_ID<span style="color:#f92672">)</span>
+                        dep.setGroupId<span style="color:#000;font-weight:bold">(</span>GROUP_ID<span style="color:#000;font-weight:bold">)</span>
 
-                        dep.setVersion<span style="color:#f92672">(</span>VERSION<span style="color:#f92672">)</span>
+                        dep.setVersion<span style="color:#000;font-weight:bold">(</span>VERSION<span style="color:#000;font-weight:bold">)</span>
 
-                    <span style="color:#f92672">}</span>
+                    <span style="color:#000;font-weight:bold">}</span>
 
-                <span style="color:#f92672">}</span>
+                <span style="color:#000;font-weight:bold">}</span>
 
-            <span style="color:#f92672">}</span>
+            <span style="color:#000;font-weight:bold">}</span>
 
-        <span style="color:#f92672">}</span>
+        <span style="color:#000;font-weight:bold">}</span>
 
-    <span style="color:#f92672">}</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
-<span style="color:#f92672">}</span>
-</code></pre></div><h3 id="16-引用mvp_pushgradle">1.6 引用mvp_push.gradle</h3>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="16-引用mvp_pushgradle">1.6 引用mvp_push.gradle</h3>
 <p>分别在common 和 mylibrary 的build.gradle中添加如下代码：</p>
 <pre><code>apply from:'../mvn_push.gradle'
 
@@ -201,26 +264,51 @@ uploadArchives <span style="color:#f92672">{</span>
 <h3 id="31-在project的buildgradle中添加如下配置该url即nexus仓库的位置">3.1 在project的build.gradle中添加如下配置，该url即nexus仓库的位置：</h3>
 <pre><code>maven { url&quot;http://localhost:8081/repository/android/&quot; }
 </code></pre><h3 id="32-在app的buildgradle中添加依赖">3.2 在app的build.gradle中添加依赖</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#000;font-weight:bold">{</span>
 
-     implementation fileTree<span style="color:#f92672">(</span>dir:<span style="color:#e6db74">&#39;libs&#39;</span>,include: <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;*.jar&#39;</span><span style="color:#f92672">])</span>
+     implementation fileTree<span style="color:#000;font-weight:bold">(</span>dir:<span style="color:#d14">&#39;libs&#39;</span>,include: <span style="color:#000;font-weight:bold">[</span><span style="color:#d14">&#39;*.jar&#39;</span><span style="color:#000;font-weight:bold">])</span>
 
-    implementation<span style="color:#e6db74">&#39;com.android.support:appcompat-v7:27.1.1&#39;</span>
+    implementation<span style="color:#d14">&#39;com.android.support:appcompat-v7:27.1.1&#39;</span>
 
-    implementation<span style="color:#e6db74">&#39;com.android.support.constraint:constraint-layout:1.1.2&#39;</span>
+    implementation<span style="color:#d14">&#39;com.android.support.constraint:constraint-layout:1.1.2&#39;</span>
 
-    testImplementation<span style="color:#e6db74">&#39;junit:junit:4.12&#39;</span>
+    testImplementation<span style="color:#d14">&#39;junit:junit:4.12&#39;</span>
 
-    androidTestImplementation<span style="color:#e6db74">&#39;com.android.support.test:runner:1.0.2&#39;</span>
+    androidTestImplementation<span style="color:#d14">&#39;com.android.support.test:runner:1.0.2&#39;</span>
 
-    androidTestImplementation<span style="color:#e6db74">&#39;com.android.support.test.espresso:espresso-core:3.0.2&#39;</span>
+    androidTestImplementation<span style="color:#d14">&#39;com.android.support.test.espresso:espresso-core:3.0.2&#39;</span>
 
-    implementation<span style="color:#e6db74">&#39;test.com.ssc.libs:mylibrary:1.0.0&#39;</span>
+    implementation<span style="color:#d14">&#39;test.com.ssc.libs:mylibrary:1.0.0&#39;</span>
 
-    implementation<span style="color:#e6db74">&#39;test.com.ssc.libs:common:1.0.0&#39;</span>
+    implementation<span style="color:#d14">&#39;test.com.ssc.libs:common:1.0.0&#39;</span>
 
-<span style="color:#f92672">}</span>
-</code></pre></div><p>以上。</p>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>以上。</p>
 <p>源码地址：<a href="https://github.com/LazyBonesLZ/NexusTest">https://github.com/LazyBonesLZ/NexusTest</a>，demo中配置的nexus仓库url是我本地服务地址，请改成你创建好的nexus仓库地址。</p>
 <p>参考：</p>
 <ul>

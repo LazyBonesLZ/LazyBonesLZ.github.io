@@ -126,26 +126,51 @@
 <p>接下来，依次执行下列命令行，详细解释参考注释。</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># git 初始化</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># git 初始化</span>
 git init
 
-<span style="color:#75715e"># 将主题ananke作为外链加入的本地仓库</span>
+<span style="color:#998;font-style:italic"># 将主题ananke作为外链加入的本地仓库</span>
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
 
-<span style="color:#75715e"># 修改hugo 配置文件，应用刚才下载的博客主题</span>
-echo <span style="color:#e6db74">&#39;theme = &#34;ananke&#34;&#39;</span> &gt;&gt; config.toml
+<span style="color:#998;font-style:italic"># 修改hugo 配置文件，应用刚才下载的博客主题</span>
+<span style="color:#0086b3">echo</span> <span style="color:#d14">&#39;theme = &#34;ananke&#34;&#39;</span> &gt;&gt; config.toml
 
-<span style="color:#75715e"># 将public 作为外链加入到本地仓库，请注意换成你自己在GitHub所持创建的仓库地址</span>
+<span style="color:#998;font-style:italic"># 将public 作为外链加入到本地仓库，请注意换成你自己在GitHub所持创建的仓库地址</span>
 git submodule add -b master https://github.com/LazyBonesLZ/LazyBonesLZ.github.io.git public
 
-<span style="color:#75715e"># 本地仓库跟你创建的网站源码GitHub仓库关联</span>
+<span style="color:#998;font-style:italic"># 本地仓库跟你创建的网站源码GitHub仓库关联</span>
 git remote add origin https://github.comazyBonesLZ/BlogTest.git
 
-<span style="color:#75715e"># 添加你的第一篇博客</span>
+<span style="color:#998;font-style:italic"># 添加你的第一篇博客</span>
 hugo new post/firstblog.md
-<span style="color:#75715e"># 创建的第一篇博客在content/post目录下，用熟悉的编辑工具打开该目录下的firstblog.md</span>
+<span style="color:#998;font-style:italic"># 创建的第一篇博客在content/post目录下，用熟悉的编辑工具打开该目录下的firstblog.md</span>
 open content/post
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>
 <p>编辑你的第一篇博客内容，跟普通的markdown风格文件操作一样。需要注意的地方如示例截图所示：
 
@@ -156,11 +181,21 @@ open content/post
 <p>保存文本内容后，然后执行hugo提供的调试命令查看效果，检查博客文档效果是否生效：</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server -D
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server -D
 
-<span style="color:#75715e"># 然后在浏览器访问</span>
+<span style="color:#998;font-style:italic"># 然后在浏览器访问</span>
 http://localhost:1313/
-</code></pre></div><h2 id="3正式生成用以发布的网站文件">3.正式生成用以发布的网站文件</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3正式生成用以发布的网站文件">3.正式生成用以发布的网站文件</h2>
 <p>上一步中的 <code>hugo server -D</code> 是用以调试的命令，不会在<code>public</code>目录下生成文件。要生成用以发布的文件，我们需要先配置好hugo 配置文件。</p>
 <ul>
 <li>打开<code>config.toml</code>文件</li>
@@ -176,35 +211,74 @@ theme = &quot;ananke&quot;
 <p>配置发布脚本
 在完成Hugo网站配置文件后，直接执行<code>hugo</code>命令就可以生成<code>public</code> 文件夹下的静态网站资源内容。直接发布到服务器就完成了一个静态网站的部署。</p>
 <p>记得我们在第一篇提到，public下的内容会被push到GitHub做一个备份，然后服务器通过git 来抓取完成博客的更新。所以为了操作方便，我们把这一系列的操作写成可执行脚本，自动化。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># cd  到项目根目录</span>
-cd xx/xx/BlogTest
-<span style="color:#75715e"># 新建脚本文件 deploy.sh</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># cd  到项目根目录</span>
+<span style="color:#0086b3">cd</span> xx/xx/BlogTest
+<span style="color:#998;font-style:italic"># 新建脚本文件 deploy.sh</span>
 vim deploy.sh
-</code></pre></div><p>保存以下脚本内容：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    echo -e <span style="color:#e6db74">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>保存以下脚本内容：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    <span style="color:#0086b3">echo</span> -e <span style="color:#d14">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
 
-    <span style="color:#75715e"># Build the project.</span>
-    hugo <span style="color:#75715e"># if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`</span>
+    <span style="color:#998;font-style:italic"># Build the project.</span>
+    hugo <span style="color:#998;font-style:italic"># if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`</span>
 
-    <span style="color:#75715e"># Go To Public folder</span>
-    cd public
-    <span style="color:#75715e"># Add changes to git.</span>
+    <span style="color:#998;font-style:italic"># Go To Public folder</span>
+    <span style="color:#0086b3">cd</span> public
+    <span style="color:#998;font-style:italic"># Add changes to git.</span>
     git add .
 
-    <span style="color:#75715e"># Commit changes.</span>
-    msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site `date`&#34;</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
-    <span style="color:#66d9ef">then</span> msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
-    <span style="color:#66d9ef">fi</span>
-    git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
+    <span style="color:#998;font-style:italic"># Commit changes.</span>
+    <span style="color:#008080">msg</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;rebuilding site `date`&#34;</span>
+    <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">[</span> <span style="color:#008080">$#</span> -eq <span style="color:#099">1</span> <span style="color:#000;font-weight:bold">]</span>
+    <span style="color:#000;font-weight:bold">then</span> <span style="color:#008080">msg</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;</span><span style="color:#008080">$1</span><span style="color:#d14">&#34;</span>
+    <span style="color:#000;font-weight:bold">fi</span>
+    git commit -m <span style="color:#d14">&#34;</span><span style="color:#008080">$msg</span><span style="color:#d14">&#34;</span>
 
-    <span style="color:#75715e"># Push source and build repos.</span>
+    <span style="color:#998;font-style:italic"># Push source and build repos.</span>
     git push origin master
 
-    <span style="color:#75715e"># Come Back up to the Project Root</span>
-    cd ..
+    <span style="color:#998;font-style:italic"># Come Back up to the Project Root</span>
+    <span style="color:#0086b3">cd</span> ..
 
-</code></pre></div></li>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <p>然后在更新博客后，直接在终端执行:</p>
 <pre><code>./deploy.sh &quot;这里填写提交git的log&quot;
@@ -212,33 +286,73 @@ vim deploy.sh
 <p>接下来，服务器还需要一些配置，才能达到我们在第一篇文章中设置的目标：自动化部署。</p>
 <h1 id="服务器配置">服务器配置</h1>
 <h2 id="1-网站根目录">1. 网站根目录</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#  创建网站根目录</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic">#  创建网站根目录</span>
 mkdir blog2
 
-<span style="color:#75715e"># cd 到目录blog2</span>
-cd blog2
+<span style="color:#998;font-style:italic"># cd 到目录blog2</span>
+<span style="color:#0086b3">cd</span> blog2
 
-<span style="color:#75715e"># git 初始化</span>
+<span style="color:#998;font-style:italic"># git 初始化</span>
 git init
 git remote add origin https://github.com/LazyBonesLZ/LazyBonesLZ.github.io.git
 
-<span style="color:#75715e"># 从 Github第一次抓取</span>
+<span style="color:#998;font-style:italic"># 从 Github第一次抓取</span>
 git pull origin master
-</code></pre></div><h2 id="2webhook服务">2.webhook服务</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2webhook服务">2.webhook服务</h2>
 <p>利用Github提供的webhook功能，我们需要在服务器端启动一个webhook的服务，用以监听来自<code>LazyBonesLZ.github.io</code>仓库的push event。每当收到这样的消息，我们就可以在服务器执行脚本，从该仓库抓取最新资源，达到博客内容实时更新的目的。</p>
 <h3 id="21-创建webhook目录创建脚本git_pullsh">2.1 创建webhook目录,创建脚本git_pull.sh</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#创建目录</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic">#创建目录</span>
 mkdir webhook
-<span style="color:#75715e">#进入目录</span>
-cd webhook
-<span style="color:#75715e"># 创建脚本</span>
+<span style="color:#998;font-style:italic">#进入目录</span>
+<span style="color:#0086b3">cd</span> webhook
+<span style="color:#998;font-style:italic"># 创建脚本</span>
 vim git_pull.sh
 
-</code></pre></div><p>在脚本中保存以下内容：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /root/blog2
+</code></pre></td></tr></table>
+</div>
+</div><p>在脚本中保存以下内容：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">cd</span> /root/blog2
 git pull origin master
-exit <span style="color:#ae81ff">0</span>
-</code></pre></div><h3 id="22-github_webhookjs脚本">2.2 github_webhook.js脚本</h3>
+<span style="color:#0086b3">exit</span> <span style="color:#099">0</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="22-github_webhookjs脚本">2.2 github_webhook.js脚本</h3>
 <ul>
 <li>
 <p>我们需要用到nodejs来监听来自GitHub的消息，需要用到中间件 <a href="https://github.com/rvagg/github-webhook-handler">github-webhook-handler</a>, 我们使用npm 来安装：</p>
@@ -249,32 +363,63 @@ exit <span style="color:#ae81ff">0</span>
 该脚本主要参考<a href="https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/">https://www.xxxlbox.com/posts/2018/hugo-deployment-webhook/</a>，但是我们用到是GitHub仓库而非Gitlab,所以做了细微改动。</p>
 <pre><code>  vim github_webhook.js
 </code></pre><p>写入以下脚本内容：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">var http <span style="color:#f92672">=</span> require<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;http&#39;</span><span style="color:#f92672">)</span>
-var exec <span style="color:#f92672">=</span> require<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;child_process&#39;</span><span style="color:#f92672">)</span>.exec
-var createHandler <span style="color:#f92672">=</span> require<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;github-webhook-handler&#39;</span><span style="color:#f92672">)</span>
-var handler <span style="color:#f92672">=</span> createHandler<span style="color:#f92672">({</span> path: <span style="color:#e6db74">&#39;/webhook&#39;</span>, secret: <span style="color:#e6db74">&#39;myxxxxx&#39;</span> <span style="color:#f92672">})</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">var <span style="color:#008080">http</span> <span style="color:#000;font-weight:bold">=</span> require<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;http&#39;</span><span style="color:#000;font-weight:bold">)</span>
+var <span style="color:#0086b3">exec</span> <span style="color:#000;font-weight:bold">=</span> require<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;child_process&#39;</span><span style="color:#000;font-weight:bold">)</span>.exec
+var <span style="color:#008080">createHandler</span> <span style="color:#000;font-weight:bold">=</span> require<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;github-webhook-handler&#39;</span><span style="color:#000;font-weight:bold">)</span>
+var <span style="color:#008080">handler</span> <span style="color:#000;font-weight:bold">=</span> createHandler<span style="color:#000;font-weight:bold">({</span> path: <span style="color:#d14">&#39;/webhook&#39;</span>, secret: <span style="color:#d14">&#39;myxxxxx&#39;</span> <span style="color:#000;font-weight:bold">})</span>
 
-http.createServer<span style="color:#f92672">(</span><span style="color:#66d9ef">function</span> <span style="color:#f92672">(</span>req, res<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-handler<span style="color:#f92672">(</span>req, res, <span style="color:#66d9ef">function</span> <span style="color:#f92672">(</span>err<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    res.statusCode <span style="color:#f92672">=</span> <span style="color:#ae81ff">404</span>
-    res.end<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;no such location&#39;</span><span style="color:#f92672">)</span>
-  <span style="color:#f92672">})</span>
-<span style="color:#f92672">})</span>.listen<span style="color:#f92672">(</span>7777<span style="color:#f92672">)</span>
+http.createServer<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">(</span>req, res<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+handler<span style="color:#000;font-weight:bold">(</span>req, res, <span style="color:#000;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">(</span>err<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    res.statusCode <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">404</span>
+    res.end<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;no such location&#39;</span><span style="color:#000;font-weight:bold">)</span>
+  <span style="color:#000;font-weight:bold">})</span>
+<span style="color:#000;font-weight:bold">})</span>.listen<span style="color:#000;font-weight:bold">(</span>7777<span style="color:#000;font-weight:bold">)</span>
 
-handler.on<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;push&#39;</span>, <span style="color:#66d9ef">function</span> <span style="color:#f92672">(</span>event<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    let currentTime <span style="color:#f92672">=</span> new Date<span style="color:#f92672">()</span>;
-    console.log<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;\n--&gt; &#39;</span> + currentTime.toLocaleString<span style="color:#f92672">())</span>;
-    console.log<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Received a push event for %s to %s&#39;</span>, event.payload.repository.name, event.payload.ref<span style="color:#f92672">)</span>;
-    exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;sh ./webhook/git_pull.sh&#39;</span>, <span style="color:#66d9ef">function</span> <span style="color:#f92672">(</span>error, stdout, stderr<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>error<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            console.error<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;error:\n&#39;</span> + error<span style="color:#f92672">)</span>;
-            <span style="color:#66d9ef">return</span>;
-        <span style="color:#f92672">}</span>
-        console.log<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;stdout:\n&#39;</span> + stdout<span style="color:#f92672">)</span>;
-        console.log<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;stderr:\n&#39;</span> + stderr<span style="color:#f92672">)</span>;
-    <span style="color:#f92672">})</span>;
-<span style="color:#f92672">})</span>
-</code></pre></div><p>这个脚本利用的是Node.js的<code>child_process</code>模块来执行<code>shell</code>脚本。对上述代码简要说明：</p>
+handler.on<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;push&#39;</span>, <span style="color:#000;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">(</span>event<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#0086b3">let</span> <span style="color:#008080">currentTime</span> <span style="color:#000;font-weight:bold">=</span> new Date<span style="color:#000;font-weight:bold">()</span>;
+    console.log<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;\n--&gt; &#39;</span> + currentTime.toLocaleString<span style="color:#000;font-weight:bold">())</span>;
+    console.log<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;Received a push event for %s to %s&#39;</span>, event.payload.repository.name, event.payload.ref<span style="color:#000;font-weight:bold">)</span>;
+    exec<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sh ./webhook/git_pull.sh&#39;</span>, <span style="color:#000;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">(</span>error, stdout, stderr<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span>error<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+            console.error<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;error:\n&#39;</span> + error<span style="color:#000;font-weight:bold">)</span>;
+            <span style="color:#000;font-weight:bold">return</span>;
+        <span style="color:#000;font-weight:bold">}</span>
+        console.log<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;stdout:\n&#39;</span> + stdout<span style="color:#000;font-weight:bold">)</span>;
+        console.log<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;stderr:\n&#39;</span> + stderr<span style="color:#000;font-weight:bold">)</span>;
+    <span style="color:#000;font-weight:bold">})</span>;
+<span style="color:#000;font-weight:bold">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个脚本利用的是Node.js的<code>child_process</code>模块来执行<code>shell</code>脚本。对上述代码简要说明：</p>
 <ul>
 <li><code>path: '/webhook'</code>：你可以任意设置；</li>
 <li><code>secret_key</code>：<code>myxxxxx</code>，设置github webhooks时需要用到。</li>
@@ -292,70 +437,139 @@ handler.on<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;p
 <li>default.conf</li>
 </ul>
 <pre><code>vim /etc/nginx/conf.d/default.conf
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#</span>
-<span style="color:#75715e"># The default server</span>
-<span style="color:#75715e">#</span>
+</code></pre><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic">#</span>
+<span style="color:#998;font-style:italic"># The default server</span>
+<span style="color:#998;font-style:italic">#</span>
 
-server <span style="color:#f92672">{</span>
-<span style="color:#75715e">#    listen       80 default_server;</span>
-<span style="color:#75715e">#   listen       [::]:80 default_server;</span>
+server <span style="color:#000;font-weight:bold">{</span>
+<span style="color:#998;font-style:italic">#    listen       80 default_server;</span>
+<span style="color:#998;font-style:italic">#   listen       [::]:80 default_server;</span>
   listen       80;
   server_name  _;
     root         /usr/share/nginx/html;
 
-    <span style="color:#75715e"># Load configuration files for the default server block.</span>
+    <span style="color:#998;font-style:italic"># Load configuration files for the default server block.</span>
     include /etc/nginx/default.d/*.conf;
 
-    location / <span style="color:#f92672">{</span>
+    location / <span style="color:#000;font-weight:bold">{</span>
 
-    <span style="color:#f92672">}</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
-    error_page <span style="color:#ae81ff">404</span> /404.html;
-        location <span style="color:#f92672">=</span> /40x.html <span style="color:#f92672">{</span>
-    <span style="color:#f92672">}</span>
+    error_page <span style="color:#099">404</span> /404.html;
+        <span style="color:#008080">location</span> <span style="color:#000;font-weight:bold">=</span> /40x.html <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
-    error_page <span style="color:#ae81ff">500</span> <span style="color:#ae81ff">502</span> <span style="color:#ae81ff">503</span> <span style="color:#ae81ff">504</span> /50x.html;
-        location <span style="color:#f92672">=</span> /50x.html <span style="color:#f92672">{</span>
-    <span style="color:#f92672">}</span>
+    error_page <span style="color:#099">500</span> <span style="color:#099">502</span> <span style="color:#099">503</span> <span style="color:#099">504</span> /50x.html;
+        <span style="color:#008080">location</span> <span style="color:#000;font-weight:bold">=</span> /50x.html <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
-<span style="color:#f92672">}</span>
+<span style="color:#000;font-weight:bold">}</span>
 
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>blog.conf
 新建blog.conf,重新指定nginx 根目录，否则网站很可能出现404.</li>
 </ul>
 <pre><code>cd /etc/nginx/conf.d/
 vim blog.conf
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">server <span style="color:#f92672">{</span>
-<span style="color:#75715e">#    listen       80 default_server;</span>
-<span style="color:#75715e">#   listen       [::]:80 default_server;</span>
+</code></pre><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">server <span style="color:#000;font-weight:bold">{</span>
+<span style="color:#998;font-style:italic">#    listen       80 default_server;</span>
+<span style="color:#998;font-style:italic">#   listen       [::]:80 default_server;</span>
     listen     80;
     server_name  blog.harddone.com;
-    root         /root/blog2; <span style="color:#75715e"># 重新指定根目录</span>
+    root         /root/blog2; <span style="color:#998;font-style:italic"># 重新指定根目录</span>
 
-    <span style="color:#75715e"># Load configuration files for the default server block.</span>
-    <span style="color:#75715e"># include /etc/nginx/default.d/*.conf;</span>
+    <span style="color:#998;font-style:italic"># Load configuration files for the default server block.</span>
+    <span style="color:#998;font-style:italic"># include /etc/nginx/default.d/*.conf;</span>
 
-    location / <span style="color:#f92672">{</span>
+    location / <span style="color:#000;font-weight:bold">{</span>
        index index.html index.htm index.php;
        autoindex on;
-    <span style="color:#f92672">}</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
-    <span style="color:#75715e"># NodeJS 将 Web 服务跑在了 7777 端口，我们可以用 Nginx 反向代理到 80 端口</span>
-    location /webhook <span style="color:#f92672">{</span>
-      alias /root/webhook;
+    <span style="color:#998;font-style:italic"># NodeJS 将 Web 服务跑在了 7777 端口，我们可以用 Nginx 反向代理到 80 端口</span>
+    location /webhook <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#0086b3">alias</span> /root/webhook;
       proxy_pass http://127.0.0.1:7777;  
-    <span style="color:#f92672">}</span>
-    error_page <span style="color:#ae81ff">404</span> /404.html;
-        location <span style="color:#f92672">=</span> /40x.html <span style="color:#f92672">{</span>
-    <span style="color:#f92672">}</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    error_page <span style="color:#099">404</span> /404.html;
+        <span style="color:#008080">location</span> <span style="color:#000;font-weight:bold">=</span> /40x.html <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
-    error_page <span style="color:#ae81ff">500</span> <span style="color:#ae81ff">502</span> <span style="color:#ae81ff">503</span> <span style="color:#ae81ff">504</span> /50x.html;
-        location <span style="color:#f92672">=</span> /50x.html <span style="color:#f92672">{</span>
-    <span style="color:#f92672">}</span>
+    error_page <span style="color:#099">500</span> <span style="color:#099">502</span> <span style="color:#099">503</span> <span style="color:#099">504</span> /50x.html;
+        <span style="color:#008080">location</span> <span style="color:#000;font-weight:bold">=</span> /50x.html <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>403 Forbidden
 由于我的启动用户和nginx工作用户不一致。
 解决方案：参考<a href="https://blog.csdn.net/reblue520/article/details/52799500">https://blog.csdn.net/reblue520/article/details/52799500</a></li>
@@ -379,34 +593,70 @@ user root;
         <img class="mx-auto" alt="hugo_1_14.png" src="/img/10_hugo_server/13.png" />   
     </p>
 <p>注意事项：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">第2步：<span style="color:#e6db74">&#39;webhook&#39;</span>即 ‘github_webhook.js’ 中配置的path，如果你配置了cloundflare代理来实现https请求，那这里最好设置成<span style="color:#e6db74">`</span>http://<span style="color:#f92672">[</span>ip<span style="color:#f92672">]</span>:<span style="color:#f92672">[</span>port<span style="color:#f92672">]</span>/webhook<span style="color:#e6db74">`</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">第2步：<span style="color:#d14">&#39;webhook&#39;</span>即 ‘github_webhook.js’ 中配置的path，如果你配置了cloundflare代理来实现https请求，那这里最好设置成<span style="color:#d14">`</span>http://<span style="color:#000;font-weight:bold">[</span>ip<span style="color:#000;font-weight:bold">]</span>:<span style="color:#000;font-weight:bold">[</span>port<span style="color:#000;font-weight:bold">]</span>/webhook<span style="color:#d14">`</span>
 
 第3步：必须选择‘application/json’,否则不起作用
 
 第4步：‘Secret’即 ‘github_webhook.js’中配置的‘ secret_key’
 一定要和脚本中设置一致，否则，你懂的！
 
-</code></pre></div><p>好了，到目前为止，配置工作都已完成。
+</code></pre></td></tr></table>
+</div>
+</div><p>好了，到目前为止，配置工作都已完成。
 剩下的只是我们日常的简单操作了，如果我们某天又心血来潮，想写篇博客消遣消遣，该怎么做呢？
 辛苦这么久的配置，就是为了这个时刻。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /xxx/xxx/BlogTest
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">cd</span> /xxx/xxx/BlogTest
 hugo new post/MySecondBlog.md
-<span style="color:#75715e"># 呃～～编辑博客：想用什么编辑工具都可以， Markdown语法</span>
-<span style="color:#75715e"># 编辑完了？嗯！</span>
+<span style="color:#998;font-style:italic"># 呃～～编辑博客：想用什么编辑工具都可以， Markdown语法</span>
+<span style="color:#998;font-style:italic"># 编辑完了？嗯！</span>
 ./deploy.sh
-<span style="color:#75715e"># 执行完后，不出意外的话，服务器已经已经更新了！ 完美！</span>
+<span style="color:#998;font-style:italic"># 执行完后，不出意外的话，服务器已经已经更新了！ 完美！</span>
 
-<span style="color:#75715e"># ------------------</span>
-<span style="color:#75715e"># 这样就完了？ ～～</span>
-<span style="color:#75715e"># nooooo~~</span>
-<span style="color:#75715e"># 细心的你肯定已经发现，我们的脚本只是把网站相关的东西push到了xxx.github.io这个仓库</span>
-<span style="color:#75715e"># 源码还没提交备份呢？！！！</span>
+<span style="color:#998;font-style:italic"># ------------------</span>
+<span style="color:#998;font-style:italic"># 这样就完了？ ～～</span>
+<span style="color:#998;font-style:italic"># nooooo~~</span>
+<span style="color:#998;font-style:italic"># 细心的你肯定已经发现，我们的脚本只是把网站相关的东西push到了xxx.github.io这个仓库</span>
+<span style="color:#998;font-style:italic"># 源码还没提交备份呢？！！！</span>
 git add .
-git commit -m <span style="color:#e6db74">&#39;备注：要提交源码啊！&#39;</span>
+git commit -m <span style="color:#d14">&#39;备注：要提交源码啊！&#39;</span>
 git push -u origin master
-<span style="color:#75715e"># ALL DONE, 这下服务器也更新了，github源码也提交了，新更新的内容也备份到另一个github仓库。</span>
-<span style="color:#75715e">#再也不怕了。</span>
-</code></pre></div><h1 id="总结一下">总结一下</h1>
+<span style="color:#998;font-style:italic"># ALL DONE, 这下服务器也更新了，github源码也提交了，新更新的内容也备份到另一个github仓库。</span>
+<span style="color:#998;font-style:italic">#再也不怕了。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="总结一下">总结一下</h1>
 <p>其实我们根本就不用这么麻烦的，人家github pages就可以搭建博客的啊。</p>
 <p>感谢：</p>
 <ul>

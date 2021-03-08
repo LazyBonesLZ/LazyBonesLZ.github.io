@@ -99,33 +99,76 @@
         <div class="post-content">
             <p>Unity开发过程中，如果要调用Android端的java方法，恰巧该方法的参数是可变参数或者数组，使用unity的AndroidJavaObject提供的call方法直接传递c#数组，是需要对数组参数做一下处理。举例说明：</p>
 <p>java方法如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">public void addList<span style="color:#f92672">(</span>String... values<span style="color:#f92672">){</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">public void addList<span style="color:#000;font-weight:bold">(</span>String... values<span style="color:#000;font-weight:bold">){</span>
 
-<span style="color:#f92672">}</span>
-</code></pre></div><p>unity c#调用时，需要把传入的参数数组转化成一个AndroidJavaObject，然后再调用AndroidJavaObject提供的call方法。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">public void add<span style="color:#f92672">(</span>string<span style="color:#f92672">[]</span> values<span style="color:#f92672">){</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>unity c#调用时，需要把传入的参数数组转化成一个AndroidJavaObject，然后再调用AndroidJavaObject提供的call方法。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">public void add<span style="color:#000;font-weight:bold">(</span>string<span style="color:#000;font-weight:bold">[]</span> values<span style="color:#000;font-weight:bold">){</span>
 
-        AndroidHelper.getIapManagerAndroidObject<span style="color:#f92672">()</span>.Call <span style="color:#f92672">(</span>_javaMethodName,javaArrayFromCS<span style="color:#f92672">(</span>values<span style="color:#f92672">))</span>;
+        AndroidHelper.getIapManagerAndroidObject<span style="color:#000;font-weight:bold">()</span>.Call <span style="color:#000;font-weight:bold">(</span>_javaMethodName,javaArrayFromCS<span style="color:#000;font-weight:bold">(</span>values<span style="color:#000;font-weight:bold">))</span>;
 
-	<span style="color:#f92672">}</span>
+	<span style="color:#000;font-weight:bold">}</span>
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">private AndroidJavaObject javaArrayFromCS<span style="color:#f92672">(</span>string<span style="color:#f92672">[]</span> values<span style="color:#f92672">){</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">private AndroidJavaObject javaArrayFromCS<span style="color:#000;font-weight:bold">(</span>string<span style="color:#000;font-weight:bold">[]</span> values<span style="color:#000;font-weight:bold">){</span>
 
-	AndroidJavaClass arrayClass  <span style="color:#f92672">=</span> new AndroidJavaClass<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.reflect.Array&#34;</span><span style="color:#f92672">)</span>;
+	AndroidJavaClass <span style="color:#008080">arrayClass</span>  <span style="color:#000;font-weight:bold">=</span> new AndroidJavaClass<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;java.lang.reflect.Array&#34;</span><span style="color:#000;font-weight:bold">)</span>;
 
-	AndroidJavaObject arrayObject <span style="color:#f92672">=</span> arrayClass.CallStatic<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;newInstance&#34;</span>,new AndroidJavaClass<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.String&#34;</span><span style="color:#f92672">)</span>, values.Count<span style="color:#f92672">())</span>;
+	AndroidJavaObject <span style="color:#008080">arrayObject</span> <span style="color:#000;font-weight:bold">=</span> arrayClass.CallStatic<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;newInstance&#34;</span>,new AndroidJavaClass<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;java.lang.String&#34;</span><span style="color:#000;font-weight:bold">)</span>, values.Count<span style="color:#000;font-weight:bold">())</span>;
 
-	<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>int i<span style="color:#f92672">=</span>0; i &lt; values.Count<span style="color:#f92672">()</span>; ++i<span style="color:#f92672">){</span>
+	<span style="color:#000;font-weight:bold">for</span><span style="color:#000;font-weight:bold">(</span>int <span style="color:#008080">i</span><span style="color:#000;font-weight:bold">=</span>0; i &lt; values.Count<span style="color:#000;font-weight:bold">()</span>; ++i<span style="color:#000;font-weight:bold">){</span>
 
-		arrayClass.CallStatic<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;set&#34;</span>, arrayObject, i,newAndroidJavaObject<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.String&#34;</span>, values<span style="color:#f92672">[</span>i<span style="color:#f92672">]))</span>;
+		arrayClass.CallStatic<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;set&#34;</span>, arrayObject, i,newAndroidJavaObject<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;java.lang.String&#34;</span>, values<span style="color:#000;font-weight:bold">[</span>i<span style="color:#000;font-weight:bold">]))</span>;
 
-	<span style="color:#f92672">}</span>
+	<span style="color:#000;font-weight:bold">}</span>
 
-	<span style="color:#66d9ef">return</span> arrayObject;
+	<span style="color:#000;font-weight:bold">return</span> arrayObject;
 
-	<span style="color:#f92672">}</span>
+	<span style="color:#000;font-weight:bold">}</span>
 
-</code></pre></div><p>参考：
+</code></pre></td></tr></table>
+</div>
+</div><p>参考：
 <a href="https://stackoverflow.com/questions/42681410/androidjavaobject-call-array-passing-error-unity-for-android">https://stackoverflow.com/questions/42681410/androidjavaobject-call-array-passing-error-unity-for-android</a></p>
 
         </div>

@@ -104,38 +104,80 @@ Error:Execution failed for task':app:processDebugManifest'
 
 </code></pre><p>但是，如果直接在library module的gradle文件中定义这些占位符的值，那么在编译出SDK的<code>AndroidManifest</code>中就会包含有默认的<code>meta-data</code>值。虽然在项目的gradle可以再次定义占位符对应的值来替换library module中的默认值，但是，如果在具体项目中重新定义的某一个占位符为空值，根据Android Studio合并<code>Manifest</code>的优先级规则，该占位符在最终编译合并生成的<code>AndroidManifest.xml</code>中肯定会使用library module中配置的默认值：或空或非空。这就不符合我们的预期了。</p>
 <p>所以最终的解决方案：在library module的gradle中也要定义占位符,注意配置中的单引号：<code>''</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android <span style="color:#f92672">{</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android <span style="color:#000;font-weight:bold">{</span>
    //...
 
-    defaultConfig <span style="color:#f92672">{</span>
+    defaultConfig <span style="color:#000;font-weight:bold">{</span>
      //...
         //fake placeholder
 
-        manifestPlaceholders <span style="color:#f92672">=</span>
-                <span style="color:#f92672">[</span>CustomValue1           : <span style="color:#e6db74">&#39;${CustomValue1}&#39;</span>,
-                 CustomValue2           : <span style="color:#e6db74">&#39;${CustomValue2}&#39;</span>
-                <span style="color:#f92672">]</span>
-    <span style="color:#f92672">}</span>
+        <span style="color:#008080">manifestPlaceholders</span> <span style="color:#000;font-weight:bold">=</span>
+                <span style="color:#000;font-weight:bold">[</span>CustomValue1           : <span style="color:#d14">&#39;${CustomValue1}&#39;</span>,
+                 CustomValue2           : <span style="color:#d14">&#39;${CustomValue2}&#39;</span>
+                <span style="color:#000;font-weight:bold">]</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
    //...
-<span style="color:#f92672">}</span>
-</code></pre></div><p>然后在main module的gradle中要定义占位符真正要用到的值：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android <span style="color:#f92672">{</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后在main module的gradle中要定义占位符真正要用到的值：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android <span style="color:#000;font-weight:bold">{</span>
    //...
 
-    defaultConfig <span style="color:#f92672">{</span>
+    defaultConfig <span style="color:#000;font-weight:bold">{</span>
      //...
         //real placeholder
 
-        manifestPlaceholders <span style="color:#f92672">=</span>
-                <span style="color:#f92672">[</span>CustomValue1           : <span style="color:#e6db74">&#34;Real Value1&#34;</span>,
-                 CustomValue2           : <span style="color:#e6db74">&#34;Real Value2&#34;</span>
-                <span style="color:#f92672">]</span>
-    <span style="color:#f92672">}</span>
+        <span style="color:#008080">manifestPlaceholders</span> <span style="color:#000;font-weight:bold">=</span>
+                <span style="color:#000;font-weight:bold">[</span>CustomValue1           : <span style="color:#d14">&#34;Real Value1&#34;</span>,
+                 CustomValue2           : <span style="color:#d14">&#34;Real Value2&#34;</span>
+                <span style="color:#000;font-weight:bold">]</span>
+    <span style="color:#000;font-weight:bold">}</span>
 
    //...
-<span style="color:#f92672">}</span>
-</code></pre></div><p>参考链接：<a href="https://stackoverflow.com/questions/35150388/android-studio-is-it-possible-to-define-library-module-manifest-placeholders-in">https://stackoverflow.com/questions/35150388/android-studio-is-it-possible-to-define-library-module-manifest-placeholders-in</a></p>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>参考链接：<a href="https://stackoverflow.com/questions/35150388/android-studio-is-it-possible-to-define-library-module-manifest-placeholders-in">https://stackoverflow.com/questions/35150388/android-studio-is-it-possible-to-define-library-module-manifest-placeholders-in</a></p>
 
         </div>
 

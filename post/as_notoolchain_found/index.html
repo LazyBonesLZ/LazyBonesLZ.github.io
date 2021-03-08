@@ -102,16 +102,36 @@
 </code></pre><p>突然就懵逼了。这是个什么错误？
 无从下手的情况下，只好开启Google大法。</p>
 <p>因为本地安装的 AS版本是3.2，但是百度demo中配置的是gradle 2.2.3</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
-    classpath <span style="color:#e6db74">&#39;com.android.tools.build:gradle:2.2.3&#39;</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#000;font-weight:bold">{</span>
+    classpath <span style="color:#d14">&#39;com.android.tools.build:gradle:2.2.3&#39;</span>
 
-<span style="color:#f92672">}</span>
-</code></pre></div><p>最直接的解决方案就是改成gradle3.2.1</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
-    classpath <span style="color:#e6db74">&#39;com.android.tools.build:gradle:3.2.1&#39;</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>最直接的解决方案就是改成gradle3.2.1</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#000;font-weight:bold">{</span>
+    classpath <span style="color:#d14">&#39;com.android.tools.build:gradle:3.2.1&#39;</span>
 
-<span style="color:#f92672">}</span>
-</code></pre></div><p>作为开发经验简单记录一下。最根本的原因应该是本地的ndk-bundle中toolchain安装不全导致。。。详细的分析和解决方案：<a href="https://medium.com/@ivancse.58/how-to-resolve-no-toolchains-found-in-the-ndk-toolchains-folder-for-abi-with-prefix-b37086380193">点我吧！！</a></p>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>作为开发经验简单记录一下。最根本的原因应该是本地的ndk-bundle中toolchain安装不全导致。。。详细的分析和解决方案：<a href="https://medium.com/@ivancse.58/how-to-resolve-no-toolchains-found-in-the-ndk-toolchains-folder-for-abi-with-prefix-b37086380193">点我吧！！</a></p>
 
         </div>
 

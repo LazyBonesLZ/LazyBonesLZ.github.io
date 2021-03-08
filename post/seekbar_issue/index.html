@@ -124,86 +124,193 @@ UI设计样式如图：宽度填满父view</p>
 </code></pre><ul>
 <li>在设置padding，在android5.0之前，修改paddingLeft 和 paddingRight就够了，但是android5.0之后，还需要加上paddingStart和paddingEnd</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android:paddingLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-android:paddingRight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-android:paddingStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-</code></pre></div><p>这样就把这三个问题解决。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android:paddingLeft<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span>
+android:paddingRight<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span>
+android:paddingStart<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span>
+android:paddingEnd<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样就把这三个问题解决。</p>
 <ul>
 <li>最终的代码</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;SeekBar
-            android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/bottom_seek_progress&#34;</span>
-            android:layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-            android:layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-            android:layout_gravity<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center_vertical&#34;</span>
-            android:max<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100&#34;</span>
-            android:maxHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span>
-            android:minHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1dp&#34;</span>
-            android:paddingLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-            android:paddingRight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-            android:paddingStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-            android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-            android:progressDrawable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_bottom_seek_progress&#34;</span>
-            android:splitTrack<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>
-            android:thumb<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_bottom_seek_thumb&#34;</span>
-            android:thumbOffset<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span> /&gt;
-</code></pre></div><p>1.进度条的三层背景：<code>jz_bottom_seek_progress.xml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
-&lt;layer-list xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>&gt;
-    &lt;item android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@android:id/background&#34;</span>&gt;
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;SeekBar
+            android:id<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@+id/bottom_seek_progress&#34;</span>
+            android:layout_width<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;match_parent&#34;</span>
+            android:layout_height<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;wrap_content&#34;</span>
+            android:layout_gravity<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;center_vertical&#34;</span>
+            android:max<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;100&#34;</span>
+            android:maxHeight<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;6dp&#34;</span>
+            android:minHeight<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;1dp&#34;</span>
+            android:paddingLeft<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span>
+            android:paddingRight<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span>
+            android:paddingStart<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span>
+            android:paddingEnd<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span>
+            android:progressDrawable<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@drawable/jz_bottom_seek_progress&#34;</span>
+            android:splitTrack<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;false&#34;</span>
+            android:thumb<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@drawable/jz_bottom_seek_thumb&#34;</span>
+            android:thumbOffset<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;0dp&#34;</span> /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>1.进度条的三层背景：<code>jz_bottom_seek_progress.xml</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml <span style="color:#008080">version</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;1.0&#34;</span> <span style="color:#008080">encoding</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;utf-8&#34;</span>?&gt;
+&lt;layer-list xmlns:android<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;http://schemas.android.com/apk/res/android&#34;</span>&gt;
+    &lt;item android:id<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@android:id/background&#34;</span>&gt;
         &lt;shape&gt;
-            &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#a5ffffff&#34;</span> /&gt;
-            &lt;size android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span> /&gt;
-            &lt;corners android:radius<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9dip&#34;</span> /&gt;
+            &lt;solid android:color<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;#a5ffffff&#34;</span> /&gt;
+            &lt;size android:height<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;6dp&#34;</span> /&gt;
+            &lt;corners android:radius<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;9dip&#34;</span> /&gt;
         &lt;/shape&gt;
     &lt;/item&gt;
-    &lt;item android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@android:id/secondaryProgress&#34;</span>&gt;
+    &lt;item android:id<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@android:id/secondaryProgress&#34;</span>&gt;
         &lt;clip&gt;
             &lt;shape&gt;
-                &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#1F551CA5&#34;</span> /&gt;
-                &lt;size android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span> /&gt;
-                &lt;corners android:radius<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9dip&#34;</span> /&gt;
+                &lt;solid android:color<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;#1F551CA5&#34;</span> /&gt;
+                &lt;size android:height<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;6dp&#34;</span> /&gt;
+                &lt;corners android:radius<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;9dip&#34;</span> /&gt;
             &lt;/shape&gt;
         &lt;/clip&gt;
     &lt;/item&gt;
-    &lt;item android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@android:id/progress&#34;</span>&gt;
+    &lt;item android:id<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@android:id/progress&#34;</span>&gt;
         &lt;clip&gt;
             &lt;shape&gt;
-                &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#551CA5&#34;</span> /&gt;
-                &lt;size android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span> /&gt;
-                &lt;corners android:radius<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9dip&#34;</span> /&gt;
+                &lt;solid android:color<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;#551CA5&#34;</span> /&gt;
+                &lt;size android:height<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;6dp&#34;</span> /&gt;
+                &lt;corners android:radius<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;9dip&#34;</span> /&gt;
             &lt;/shape&gt;
         &lt;/clip&gt;
     &lt;/item&gt;
 &lt;/layer-list&gt;
-</code></pre></div><p>2.thumb的背景：<code>jz_bottom_seek_thumb.xml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
-&lt;selector xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>&gt;
-    &lt;item android:drawable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_seek_thumb_pressed&#34;</span> android:state_pressed<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> /&gt;
-    &lt;item android:drawable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_seek_thumb_normal&#34;</span> /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>2.thumb的背景：<code>jz_bottom_seek_thumb.xml</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml <span style="color:#008080">version</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;1.0&#34;</span> <span style="color:#008080">encoding</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;utf-8&#34;</span>?&gt;
+&lt;selector xmlns:android<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;http://schemas.android.com/apk/res/android&#34;</span>&gt;
+    &lt;item android:drawable<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@drawable/jz_seek_thumb_pressed&#34;</span> android:state_pressed<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;true&#34;</span> /&gt;
+    &lt;item android:drawable<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;@drawable/jz_seek_thumb_normal&#34;</span> /&gt;
 &lt;/selector&gt;
-</code></pre></div><p>3.thumb按下状态的背景：<code>jz_seek_thumb_pressed.xml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
-&lt;shape xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    android:shape<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;oval&#34;</span>&gt;
-    &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#ffffffff&#34;</span> /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>3.thumb按下状态的背景：<code>jz_seek_thumb_pressed.xml</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml <span style="color:#008080">version</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;1.0&#34;</span> <span style="color:#008080">encoding</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;utf-8&#34;</span>?&gt;
+&lt;shape xmlns:android<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    android:shape<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;oval&#34;</span>&gt;
+    &lt;solid android:color<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;#ffffffff&#34;</span> /&gt;
     &lt;size
-        android:width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span>
-        android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span> /&gt;
+        android:width<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;20dp&#34;</span>
+        android:height<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;20dp&#34;</span> /&gt;
 &lt;/shape&gt;
-</code></pre></div><p>4.thumb正常状态的背景：<code>jz_seek_thumb_normal.xml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
-&lt;shape xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    android:shape<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;oval&#34;</span>&gt;
-    &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#fff0f0f0&#34;</span> /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>4.thumb正常状态的背景：<code>jz_seek_thumb_normal.xml</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml <span style="color:#008080">version</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;1.0&#34;</span> <span style="color:#008080">encoding</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;utf-8&#34;</span>?&gt;
+&lt;shape xmlns:android<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    android:shape<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;oval&#34;</span>&gt;
+    &lt;solid android:color<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;#fff0f0f0&#34;</span> /&gt;
     &lt;size
-        android:width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span>
-        android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span> /&gt;
-    &lt;stroke android:width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span>
-        android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#551CA5&#34;</span>/&gt;
+        android:width<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;20dp&#34;</span>
+        android:height<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;20dp&#34;</span> /&gt;
+    &lt;stroke android:width<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;6dp&#34;</span>
+        android:color<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;#551CA5&#34;</span>/&gt;
 &lt;/shape&gt;
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
         </div>
 
         

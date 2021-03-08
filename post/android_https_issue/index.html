@@ -99,22 +99,43 @@
         <div class="post-content">
             <p>项目中一直有https的请求，没有用到第三方的SDK,都是使用HttpUrlConnec tion去实现的请求。一直相安无事，突然测试人员报告说出现证书验证问题。网上各种查看资料解决，方案无非是加入自定义证书到工程或者是用信任所有证书的方式解决。但是，我们并没有用到自定义证书，如果用信任所有证书的方式，对于自身app的安全又无法保障了。</p>
 <p>仔细分析每次https请求的异常log,提示证书不可用：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">W/System.err: javax.net.ssl.SSLHandshakeException: Chain validation failed
-W/System.err:     at com.android.org.conscrypt.OpenSSLSocketImpl.startHandshake<span style="color:#f92672">(</span>OpenSSLSocketImpl.java:368<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.Connection.connectTls<span style="color:#f92672">(</span>Connection.java:1510<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.Connection.connectSocket<span style="color:#f92672">(</span>Connection.java:1458<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.Connection.connect<span style="color:#f92672">(</span>Connection.java:1413<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.Connection.connectAndSetOwner<span style="color:#f92672">(</span>Connection.java:1700<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.OkHttpClient$1.connectAndSetOwner<span style="color:#f92672">(</span>OkHttpClient.java:133<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.internal.http.HttpEngine.connect<span style="color:#f92672">(</span>HttpEngine.java:466<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.internal.http.HttpEngine.sendRequest<span style="color:#f92672">(</span>HttpEngine.java:371<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute<span style="color:#f92672">(</span>HttpURLConnectionImpl.java:503<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse<span style="color:#f92672">(</span>HttpURLConnectionImpl.java:438<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode<span style="color:#f92672">(</span>HttpURLConnectionImpl.java:567<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.internal.huc.DelegatingHttpsURLConnection.getResponseCode<span style="color:#f92672">(</span>DelegatingHttpsURLConnection.java:105<span style="color:#f92672">)</span>
-W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getResponseCode<span style="color:#f92672">(</span>HttpsURLConnectionImpl.java<span style="color:#f92672">)</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">W/System.err: javax.net.ssl.SSLHandshakeException: Chain validation failed
+W/System.err:     at com.android.org.conscrypt.OpenSSLSocketImpl.startHandshake<span style="color:#000;font-weight:bold">(</span>OpenSSLSocketImpl.java:368<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.Connection.connectTls<span style="color:#000;font-weight:bold">(</span>Connection.java:1510<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.Connection.connectSocket<span style="color:#000;font-weight:bold">(</span>Connection.java:1458<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.Connection.connect<span style="color:#000;font-weight:bold">(</span>Connection.java:1413<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.Connection.connectAndSetOwner<span style="color:#000;font-weight:bold">(</span>Connection.java:1700<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.OkHttpClient<span style="color:#008080">$1</span>.connectAndSetOwner<span style="color:#000;font-weight:bold">(</span>OkHttpClient.java:133<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.internal.http.HttpEngine.connect<span style="color:#000;font-weight:bold">(</span>HttpEngine.java:466<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.internal.http.HttpEngine.sendRequest<span style="color:#000;font-weight:bold">(</span>HttpEngine.java:371<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute<span style="color:#000;font-weight:bold">(</span>HttpURLConnectionImpl.java:503<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse<span style="color:#000;font-weight:bold">(</span>HttpURLConnectionImpl.java:438<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode<span style="color:#000;font-weight:bold">(</span>HttpURLConnectionImpl.java:567<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.internal.huc.DelegatingHttpsURLConnection.getResponseCode<span style="color:#000;font-weight:bold">(</span>DelegatingHttpsURLConnection.java:105<span style="color:#000;font-weight:bold">)</span>
+W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getResponseCode<span style="color:#000;font-weight:bold">(</span>HttpsURLConnectionImpl.java<span style="color:#000;font-weight:bold">)</span>
 
-</code></pre></div><p>是否跟证书的有效期限有关系呢?</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>是否跟证书的有效期限有关系呢?</p>
 <p>果然，去查看系统的时间设置是否正常，发现原来测试人员由于测试需要，改变了系统的日期和时间的设置。</p>
 <p>解决方案：</p>
 <p>修改系统时间，打开“自动设置日期和时间”开关，让系统时间恢复当前正常时间。</p>

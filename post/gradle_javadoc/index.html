@@ -98,58 +98,118 @@
         
         <div class="post-content">
             <p>Android Studio编译，运行遇到  <code>Execution failed for task ':customviews:compileDebugJavaWithJavac'</code>, 一大堆的错误log，却找不到问题所在，无从下手。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Caused by: org.gradle.api.tasks.TaskExecutionException: Execution failed <span style="color:#66d9ef">for</span> task <span style="color:#e6db74">&#39;:customviews:compileDebugJavaWithJavac&#39;</span>.
-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute<span style="color:#f92672">(</span>ExecuteActionsTaskExecuter.java:95<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.ResolveTaskOutputCachingStateExecuter.execute<span style="color:#f92672">(</span>ResolveTaskOutputCachingStateExecuter.java:91<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute<span style="color:#f92672">(</span>ValidatingTaskExecuter.java:57<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute<span style="color:#f92672">(</span>SkipEmptySourceFilesTaskExecuter.java:119<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.ResolvePreviousStateExecuter.execute<span style="color:#f92672">(</span>ResolvePreviousStateExecuter.java:43<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute<span style="color:#f92672">(</span>CleanupStaleOutputsExecuter.java:93<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute<span style="color:#f92672">(</span>FinalizePropertiesTaskExecuter.java:45<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.ResolveTaskArtifactStateTaskExecuter.execute<span style="color:#f92672">(</span>ResolveTaskArtifactStateTaskExecuter.java:94<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute<span style="color:#f92672">(</span>SkipTaskWithNoActionsExecuter.java:56<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute<span style="color:#f92672">(</span>SkipOnlyIfTaskExecuter.java:55<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute<span style="color:#f92672">(</span>CatchExceptionTaskExecuter.java:36<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask<span style="color:#f92672">(</span>EventFiringTaskExecuter.java:67<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call<span style="color:#f92672">(</span>EventFiringTaskExecuter.java:52<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call<span style="color:#f92672">(</span>EventFiringTaskExecuter.java:49<span style="color:#f92672">)</span>
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor$CallableBuildOperationWorker.execute<span style="color:#f92672">(</span>DefaultBuildOperationExecutor.java:315<span style="color:#f92672">)</span>
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor$CallableBuildOperationWorker.execute<span style="color:#f92672">(</span>DefaultBuildOperationExecutor.java:305<span style="color:#f92672">)</span>
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor.execute<span style="color:#f92672">(</span>DefaultBuildOperationExecutor.java:175<span style="color:#f92672">)</span>
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call<span style="color:#f92672">(</span>DefaultBuildOperationExecutor.java:101<span style="color:#f92672">)</span>
-	at org.gradle.internal.operations.DelegatingBuildOperationExecutor.call<span style="color:#f92672">(</span>DelegatingBuildOperationExecutor.java:36<span style="color:#f92672">)</span>
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute<span style="color:#f92672">(</span>EventFiringTaskExecuter.java:49<span style="color:#f92672">)</span>
-	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute<span style="color:#f92672">(</span>LocalTaskNodeExecutor.java:43<span style="color:#f92672">)</span>
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute<span style="color:#f92672">(</span>DefaultTaskExecutionGraph.java:355<span style="color:#f92672">)</span>
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute<span style="color:#f92672">(</span>DefaultTaskExecutionGraph.java:343<span style="color:#f92672">)</span>
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute<span style="color:#f92672">(</span>DefaultTaskExecutionGraph.java:336<span style="color:#f92672">)</span>
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute<span style="color:#f92672">(</span>DefaultTaskExecutionGraph.java:322<span style="color:#f92672">)</span>
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker$1.execute<span style="color:#f92672">(</span>DefaultPlanExecutor.java:134<span style="color:#f92672">)</span>
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker$1.execute<span style="color:#f92672">(</span>DefaultPlanExecutor.java:129<span style="color:#f92672">)</span>
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute<span style="color:#f92672">(</span>DefaultPlanExecutor.java:202<span style="color:#f92672">)</span>
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.executeNextNode<span style="color:#f92672">(</span>DefaultPlanExecutor.java:193<span style="color:#f92672">)</span>
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run<span style="color:#f92672">(</span>DefaultPlanExecutor.java:129<span style="color:#f92672">)</span>
-	... <span style="color:#ae81ff">6</span> more
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Caused by: org.gradle.api.tasks.TaskExecutionException: Execution failed <span style="color:#000;font-weight:bold">for</span> task <span style="color:#d14">&#39;:customviews:compileDebugJavaWithJavac&#39;</span>.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute<span style="color:#000;font-weight:bold">(</span>ExecuteActionsTaskExecuter.java:95<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.ResolveTaskOutputCachingStateExecuter.execute<span style="color:#000;font-weight:bold">(</span>ResolveTaskOutputCachingStateExecuter.java:91<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute<span style="color:#000;font-weight:bold">(</span>ValidatingTaskExecuter.java:57<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute<span style="color:#000;font-weight:bold">(</span>SkipEmptySourceFilesTaskExecuter.java:119<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.ResolvePreviousStateExecuter.execute<span style="color:#000;font-weight:bold">(</span>ResolvePreviousStateExecuter.java:43<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute<span style="color:#000;font-weight:bold">(</span>CleanupStaleOutputsExecuter.java:93<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute<span style="color:#000;font-weight:bold">(</span>FinalizePropertiesTaskExecuter.java:45<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.ResolveTaskArtifactStateTaskExecuter.execute<span style="color:#000;font-weight:bold">(</span>ResolveTaskArtifactStateTaskExecuter.java:94<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute<span style="color:#000;font-weight:bold">(</span>SkipTaskWithNoActionsExecuter.java:56<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute<span style="color:#000;font-weight:bold">(</span>SkipOnlyIfTaskExecuter.java:55<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute<span style="color:#000;font-weight:bold">(</span>CatchExceptionTaskExecuter.java:36<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter<span style="color:#008080">$1</span>.executeTask<span style="color:#000;font-weight:bold">(</span>EventFiringTaskExecuter.java:67<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter<span style="color:#008080">$1</span>.call<span style="color:#000;font-weight:bold">(</span>EventFiringTaskExecuter.java:52<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter<span style="color:#008080">$1</span>.call<span style="color:#000;font-weight:bold">(</span>EventFiringTaskExecuter.java:49<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor<span style="color:#008080">$CallableBuildOperationWorker</span>.execute<span style="color:#000;font-weight:bold">(</span>DefaultBuildOperationExecutor.java:315<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor<span style="color:#008080">$CallableBuildOperationWorker</span>.execute<span style="color:#000;font-weight:bold">(</span>DefaultBuildOperationExecutor.java:305<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.execute<span style="color:#000;font-weight:bold">(</span>DefaultBuildOperationExecutor.java:175<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call<span style="color:#000;font-weight:bold">(</span>DefaultBuildOperationExecutor.java:101<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.internal.operations.DelegatingBuildOperationExecutor.call<span style="color:#000;font-weight:bold">(</span>DelegatingBuildOperationExecutor.java:36<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute<span style="color:#000;font-weight:bold">(</span>EventFiringTaskExecuter.java:49<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute<span style="color:#000;font-weight:bold">(</span>LocalTaskNodeExecutor.java:43<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph<span style="color:#008080">$InvokeNodeExecutorsAction</span>.execute<span style="color:#000;font-weight:bold">(</span>DefaultTaskExecutionGraph.java:355<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph<span style="color:#008080">$InvokeNodeExecutorsAction</span>.execute<span style="color:#000;font-weight:bold">(</span>DefaultTaskExecutionGraph.java:343<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph<span style="color:#008080">$BuildOperationAwareExecutionAction</span>.execute<span style="color:#000;font-weight:bold">(</span>DefaultTaskExecutionGraph.java:336<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph<span style="color:#008080">$BuildOperationAwareExecutionAction</span>.execute<span style="color:#000;font-weight:bold">(</span>DefaultTaskExecutionGraph.java:322<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.plan.DefaultPlanExecutor<span style="color:#008080">$ExecutorWorker$1</span>.execute<span style="color:#000;font-weight:bold">(</span>DefaultPlanExecutor.java:134<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.plan.DefaultPlanExecutor<span style="color:#008080">$ExecutorWorker$1</span>.execute<span style="color:#000;font-weight:bold">(</span>DefaultPlanExecutor.java:129<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.plan.DefaultPlanExecutor<span style="color:#008080">$ExecutorWorker</span>.execute<span style="color:#000;font-weight:bold">(</span>DefaultPlanExecutor.java:202<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.plan.DefaultPlanExecutor<span style="color:#008080">$ExecutorWorker</span>.executeNextNode<span style="color:#000;font-weight:bold">(</span>DefaultPlanExecutor.java:193<span style="color:#000;font-weight:bold">)</span>
+	at org.gradle.execution.plan.DefaultPlanExecutor<span style="color:#008080">$ExecutorWorker</span>.run<span style="color:#000;font-weight:bold">(</span>DefaultPlanExecutor.java:129<span style="color:#000;font-weight:bold">)</span>
+	... <span style="color:#099">6</span> more
 
-</code></pre></div><p>可以在 <code>Terminal</code>执行</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以在 <code>Terminal</code>执行</p>
 <pre><code>./gradlew compileDebugJavaWithJavac
 </code></pre><p>很快就能从执行结果中找到问题所在：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ./gradlew compileDebugJavaWithJavac
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ./gradlew compileDebugJavaWithJavac
 
 &gt; Task :customviews:compileDebugJavaWithJavac FAILED
 /Users/WorkInfos/999-TJL/99-Demo/03/LazySDK/customviews/src/main/java/com/lazy/customviews/bookflipview/baselib/FoldBackVertexProgram.java:61: 错误: 程序包R不存在
                    R.raw.fold_back_vertex_shader,
                     ^
 /Users/WorkInfos/999-TJL/99-Demo/03/LazySDK/customviews/src/main/java/com/lazy/customviews/bookflipview/baselib/FoldBackVertexProgram.java:62: 错误: 程序包R不存在
-                   R.raw.fold_back_fragment_shader<span style="color:#f92672">)</span>;
+                   R.raw.fold_back_fragment_shader<span style="color:#000;font-weight:bold">)</span>;
                     ^
-<span style="color:#ae81ff">2</span> 个错误
+<span style="color:#099">2</span> 个错误
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-Execution failed <span style="color:#66d9ef">for</span> task <span style="color:#e6db74">&#39;:customviews:compileDebugJavaWithJavac&#39;</span>.
-</code></pre></div><p>扩展一下，是不是执行gradle task出现的编译错误，都可以用这种方式来定位问题呢？
+Execution failed <span style="color:#000;font-weight:bold">for</span> task <span style="color:#d14">&#39;:customviews:compileDebugJavaWithJavac&#39;</span>.
+</code></pre></td></tr></table>
+</div>
+</div><p>扩展一下，是不是执行gradle task出现的编译错误，都可以用这种方式来定位问题呢？
 有机会遇到了再验证一下。</p>
         </div>
 
