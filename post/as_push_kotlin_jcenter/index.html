@@ -85,7 +85,7 @@
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/android'>Android</a></span>
+            <span class="meta-category"><a href='/categories/Android'>Android</a></span>
             
         </div>
         
@@ -138,9 +138,9 @@
     </p>
 <p>第一步：配置upload脚本</p>
 <p>（1）在project build.gradle文件中配置dependencies:</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -155,26 +155,26 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#000;font-weight:bold">{</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
 
-    classpath <span style="color:#d14">&#39;com.android.tools.build:gradle:3.3.2&#39;</span>
+    classpath <span style="color:#e6db74">&#39;com.android.tools.build:gradle:3.3.2&#39;</span>
 
-    classpath <span style="color:#d14">&#34;org.jetbrains.kotlin:kotlin-gradle-plugin:</span><span style="color:#008080">$kotlin_version</span><span style="color:#d14">&#34;</span>
+    classpath <span style="color:#e6db74">&#34;org.jetbrains.kotlin:kotlin-gradle-plugin:</span>$kotlin_version<span style="color:#e6db74">&#34;</span>
 
-    classpath <span style="color:#d14">&#39;com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4&#39;</span>
+    classpath <span style="color:#e6db74">&#39;com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4&#39;</span>
 
-    classpath <span style="color:#d14">&#39;com.github.dcendents:android-maven-gradle-plugin:2.1&#39;</span>
+    classpath <span style="color:#e6db74">&#39;com.github.dcendents:android-maven-gradle-plugin:2.1&#39;</span>
 
-    classpath <span style="color:#d14">&#39;org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18&#39;</span>
+    classpath <span style="color:#e6db74">&#39;org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18&#39;</span>
 
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#f92672">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>(2)在project目录下创建:  <a href="https://github.com/LazyBonesLZ/LazySDK/blob/master/jcenter_push.gradle">jcenter_push.gradle</a></p>
 <p>(3)在library moudle builde.gradle中引用 jcenter_push.gradle, 首先在ext中配置 jcenter_push.gradle需要用到的变量值，这个样做的目的是如果以后工程依赖多个module的时候，先在各自的build.gradle中定义跟自己相关的仓库名称等信息，然后共用一个jcenter_push.gradle. （未验证）</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -212,41 +212,41 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ext <span style="color:#000;font-weight:bold">{</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ext <span style="color:#f92672">{</span>
 
-    <span style="color:#008080">bintrayRepo</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;LazySDK&#39;</span>
+    bintrayRepo <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;LazySDK&#39;</span>
 
-    <span style="color:#008080">bintrayName</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;customviews&#39;</span>
+    bintrayName <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;customviews&#39;</span>
 
-    <span style="color:#008080">publishedGroupId</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;com.lazy.sdk&#39;</span>
+    publishedGroupId <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;com.lazy.sdk&#39;</span>
 
-    <span style="color:#008080">libraryName</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;customviews&#39;</span>
+    libraryName <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;customviews&#39;</span>
 
-    <span style="color:#008080">artifact</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;customviews&#39;</span>
+    artifact <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;customviews&#39;</span>
 
-    <span style="color:#008080">libraryDescription</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;Custom vies on Android&#39;</span>
+    libraryDescription <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Custom vies on Android&#39;</span>
 
-    <span style="color:#008080">siteUrl</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;https://github.com/LazyBonesLZ/LazySDK.git&#39;</span>
+    siteUrl <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://github.com/LazyBonesLZ/LazySDK.git&#39;</span>
 
-    <span style="color:#008080">gitUrl</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;https://github.com/LazyBonesLZ/LazySDK.git&#39;</span>
+    gitUrl <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://github.com/LazyBonesLZ/LazySDK.git&#39;</span>
 
-    <span style="color:#008080">libraryVersion</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;0.0.1&#39;</span>
+    libraryVersion <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;0.0.1&#39;</span>
 
-    <span style="color:#008080">developerId</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;lazyboneslz&#39;</span>
+    developerId <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lazyboneslz&#39;</span>
 
-    <span style="color:#008080">developerName</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;TJL&#39;</span>
+    developerName <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;TJL&#39;</span>
 
-    <span style="color:#008080">developerEmail</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;lazybonestjl@gmail.com&#39;</span>
+    developerEmail <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lazybonestjl@gmail.com&#39;</span>
 
-    <span style="color:#008080">licenseName</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;The Apache Software License, Version 2.0&#39;</span>
+    licenseName <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;The Apache Software License, Version 2.0&#39;</span>
 
-    <span style="color:#008080">licenseUrl</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;http://www.apache.org/licenses/LICENSE-2.0.txt&#39;</span>
+    licenseUrl <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://www.apache.org/licenses/LICENSE-2.0.txt&#39;</span>
 
-    <span style="color:#008080">allLicenses</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#d14">&#34;Apache-2.0&#34;</span><span style="color:#000;font-weight:bold">]</span>
+    allLicenses <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;Apache-2.0&#34;</span><span style="color:#f92672">]</span>
 
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#f92672">}</span>
 
-apply from: <span style="color:#d14">&#39;../jcenter_push.gradle&#39;</span>
+apply from: <span style="color:#e6db74">&#39;../jcenter_push.gradle&#39;</span>
 
 </code></pre></td></tr></table>
 </div>
@@ -255,9 +255,9 @@ apply from: <span style="color:#d14">&#39;../jcenter_push.gradle&#39;</span>
 <p>(2) 然后执行： <code>./gradlew bintrayUpload</code>，如果一切顺利，你会看到 Build Successful</p>
 <h1 id="五add-to-jcenter">五、Add to Jcenter</h1>
 <p>到目前为止，上传的SDK还没有正式发布到Jcenter，只在你自己的Bintray的Maven仓库。你可以在project 的<code>build.gradle</code>中指定repository url来使用。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -272,28 +272,28 @@ apply from: <span style="color:#d14">&#39;../jcenter_push.gradle&#39;</span>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">repositories <span style="color:#000;font-weight:bold">{</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">repositories <span style="color:#f92672">{</span>
 
-     maven<span style="color:#000;font-weight:bold">{</span>
+     maven<span style="color:#f92672">{</span>
 
-        url <span style="color:#d14">&#39;https://dl.bintray.com/lazyboneslz/LazySDK/&#39;</span>
+        url <span style="color:#e6db74">&#39;https://dl.bintray.com/lazyboneslz/LazySDK/&#39;</span>
 
-      <span style="color:#000;font-weight:bold">}</span>
+      <span style="color:#f92672">}</span>
 
-        google<span style="color:#000;font-weight:bold">()</span>
+        google<span style="color:#f92672">()</span>
 
-        jcenter<span style="color:#000;font-weight:bold">()</span>
+        jcenter<span style="color:#f92672">()</span>
 
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#f92672">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>然后在app build.gradle添加<code>dependencies</code></p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">implementation com.lazy.sdk:customviews:0.0.1<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">implementation com.lazy.sdk:customviews:0.0.1<span style="color:#960050;background-color:#1e0010">&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>这种通过配置repository url来引用的方式，不是最好的方式，我们不可能有10个仓库，就配置10个URL吧？ 所以，需要把sdk发送到Jcenter服务器，这样我们就可以不用配置自定义的repository url了。</p>
@@ -321,9 +321,9 @@ apply from: <span style="color:#d14">&#39;../jcenter_push.gradle&#39;</span>
 </ol>
 <p>本项目是kotlin开发，在配置中如下配置：</p>
 <p>(1) 在project build.gradle文件中配置<code>dependencies</code>:</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -332,19 +332,19 @@ apply from: <span style="color:#d14">&#39;../jcenter_push.gradle&#39;</span>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#000;font-weight:bold">{</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
 
    ........
 
-    classpath <span style="color:#d14">&#39;org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18&#39;</span>
+    classpath <span style="color:#e6db74">&#39;org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18&#39;</span>
 
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#f92672">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>(2) 在<code>jcenter_push.gradle</code>中加入：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -399,66 +399,66 @@ apply from: <span style="color:#d14">&#39;../jcenter_push.gradle&#39;</span>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>project.hasProperty<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;kotlin&#34;</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>//Kotlin libraries
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>project.hasProperty<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;kotlin&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>//Kotlin libraries
 
-    task sourcesJar<span style="color:#000;font-weight:bold">(</span>type: Jar<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    task sourcesJar<span style="color:#f92672">(</span>type: Jar<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-       <span style="color:#008080">classifier</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;sources&#39;</span>
-
-        from android.sourceSets.main.java.srcDirs
-
-<span style="color:#000;font-weight:bold">}</span>
-
-task javadoc<span style="color:#000;font-weight:bold">(</span>type: Javadoc,dependsOn: dokka<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-
-<span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>project.hasProperty<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;android&#34;</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>// Android libraries
-
-    task sourcesJar<span style="color:#000;font-weight:bold">(</span>type: Jar<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-
-<span style="color:#008080">classifier</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;sources&#39;</span>
+       classifier <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sources&#39;</span>
 
         from android.sourceSets.main.java.srcDirs
 
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#f92672">}</span>
 
-task javadoc<span style="color:#000;font-weight:bold">(</span>type: Javadoc<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+task javadoc<span style="color:#f92672">(</span>type: Javadoc,dependsOn: dokka<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-<span style="color:#0086b3">source</span> <span style="color:#000;font-weight:bold">=</span> android.sourceSets.main.java.srcDirs
+<span style="color:#f92672">}</span>
 
-<span style="color:#008080">classpath</span> <span style="color:#000;font-weight:bold">+=</span>project.files<span style="color:#000;font-weight:bold">(</span>android.getBootClasspath<span style="color:#000;font-weight:bold">()</span>.join<span style="color:#000;font-weight:bold">(</span>File.pathSeparator<span style="color:#000;font-weight:bold">))</span>
+<span style="color:#f92672">}</span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>project.hasProperty<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;android&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>// Android libraries
 
-<span style="color:#000;font-weight:bold">}</span>
+    task sourcesJar<span style="color:#f92672">(</span>type: Jar<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>// Java libraries
+classifier <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sources&#39;</span>
 
-    task sourcesJar<span style="color:#000;font-weight:bold">(</span>type: Jar,dependsOn: classes<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        from android.sourceSets.main.java.srcDirs
 
-<span style="color:#008080">classifier</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;sources&#39;</span>
+<span style="color:#f92672">}</span>
+
+task javadoc<span style="color:#f92672">(</span>type: Javadoc<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+source <span style="color:#f92672">=</span> android.sourceSets.main.java.srcDirs
+
+classpath <span style="color:#f92672">+=</span>project.files<span style="color:#f92672">(</span>android.getBootClasspath<span style="color:#f92672">()</span>.join<span style="color:#f92672">(</span>File.pathSeparator<span style="color:#f92672">))</span>
+
+<span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span><span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>// Java libraries
+
+    task sourcesJar<span style="color:#f92672">(</span>type: Jar,dependsOn: classes<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+classifier <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sources&#39;</span>
 
         fromsourceSets.main.allSource
 
-    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#f92672">}</span>
 
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#f92672">}</span>
 
 //解决kotlin javadoc.options抱错
 
-dokka <span style="color:#000;font-weight:bold">{</span>
+dokka <span style="color:#f92672">{</span>
 
-<span style="color:#008080">outputFormat</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;html&#39;</span>
+outputFormat <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;html&#39;</span>
 
-    <span style="color:#008080">outputDirectory</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;</span><span style="color:#008080">$buildDir</span><span style="color:#d14">/javadoc&#34;</span>
+    outputDirectory <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$buildDir<span style="color:#e6db74">/javadoc&#34;</span>
 
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#f92672">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>2 . Unable to upload files: Maven group, artifact or version defined in the pom file do not match the file path &lsquo;xx/xxxxx.pom&rsquo;</p>
 <p>这个错误困扰了我很久，在网上都各种research，发现大多都是说工程中的module名称必须和artifactid一致，我按照提示改成一致以后问题依然存在，百思不得琪姐。最后去[https://github.com/bintray/gradle-bintray-plugin] (<a href="https://github.com/bintray/gradle-bintray-plugin">https://github.com/bintray/gradle-bintray-plugin</a>) 查解释，也没发现什么特别需要的注意的地方。后来仔细对比官方demo的gradle，发现它还声明了group的值，而我是参看博文中的脚本来做，却没有group的相关声明，最后加上去，完美上传。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -466,48 +466,48 @@ dokka <span style="color:#000;font-weight:bold">{</span>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#008080">version</span> <span style="color:#000;font-weight:bold">=</span> libraryVersion
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">version <span style="color:#f92672">=</span> libraryVersion
 
 
-//important, <span style="color:#000;font-weight:bold">if</span> null, will issue: Maven group, artifact or version not match ...
+//important, <span style="color:#66d9ef">if</span> null, will issue: Maven group, artifact or version not match ...
 
-<span style="color:#008080">group</span> <span style="color:#000;font-weight:bold">=</span> publishedGroupId
+group <span style="color:#f92672">=</span> publishedGroupId
 </code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>JCenter审核通过前，配置repository url引用sdk失败，原因是配置的URL错误，不能直接拷贝Bintray的仓库地址</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    maven<span style="color:#000;font-weight:bold">{</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    maven<span style="color:#f92672">{</span>
 
-       url <span style="color:#d14">&#39;https://bintray.com/lazyboneslz/LazySDK/customviews&#39;</span>
+       url <span style="color:#e6db74">&#39;https://bintray.com/lazyboneslz/LazySDK/customviews&#39;</span>
 
-    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#f92672">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>正确的地址是：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">maven<span style="color:#000;font-weight:bold">{</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">maven<span style="color:#f92672">{</span>
 
-       url <span style="color:#d14">&#39;https://dl.bintray.com/lazyboneslz/LazySDK/customviews&#39;</span>
+       url <span style="color:#e6db74">&#39;https://dl.bintray.com/lazyboneslz/LazySDK/customviews&#39;</span>
 
-    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#f92672">}</span>
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -540,13 +540,13 @@ dokka <span style="color:#000;font-weight:bold">{</span>
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/android'>Android</a></li>
+                <li><a href='/tags/Android'>Android</a></li>
                 
-                <li><a href='/tags/android-studio3.3.2'>Android Studio3.3.2</a></li>
+                <li><a href='/tags/Android-Studio3.3.2'>Android Studio3.3.2</a></li>
                 
-                <li><a href='/tags/kotlin'>Kotlin</a></li>
+                <li><a href='/tags/Kotlin'>Kotlin</a></li>
                 
-                <li><a href='/tags/push-to-jcenter'>Push to JCenter</a></li>
+                <li><a href='/tags/Push-to-JCenter'>Push to JCenter</a></li>
                 
             </ul>
             
@@ -666,7 +666,7 @@ if (!doNotTrack) {
     </li>
     
     <li>
-        <a href="https://www.harddone.com/post/fiam_triggerevent/" title="Firebase In-App Messaging:triggerEvent not working">Firebase In-App Messaging:triggerEvent not working</a>
+        <a href="https://www.harddone.com/post/FIAM_triggerEvent/" title="Firebase In-App Messaging:triggerEvent not working">Firebase In-App Messaging:triggerEvent not working</a>
     </li>
     
     <li>
@@ -717,17 +717,17 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li><a href="https://www.harddone.com/categories/android/">Android (22)</a></li>
+    <li><a href="https://www.harddone.com/categories/Android/">Android (22)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/git/">Git (1)</a></li>
+    <li><a href="https://www.harddone.com/categories/Git/">Git (1)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/lua/">Lua (1)</a></li>
+    <li><a href="https://www.harddone.com/categories/Lua/">Lua (1)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/python/">Python (2)</a></li>
+    <li><a href="https://www.harddone.com/categories/Python/">Python (2)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/unity/">Unity (2)</a></li>
+    <li><a href="https://www.harddone.com/categories/Unity/">Unity (2)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/website/">Website (3)</a></li>
+    <li><a href="https://www.harddone.com/categories/Website/">Website (3)</a></li>
     
 </ul>
     </section>
@@ -736,121 +736,125 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.harddone.com/tags/adb/">adb</a>
+    <a href="https://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata Test</a>
     
-    <a href="https://www.harddone.com/tags/alpha/bata-test/">Alpha/Bata Test</a>
+    <a href="https://www.harddone.com/tags/Android/">Android</a>
     
-    <a href="https://www.harddone.com/tags/android/">Android</a>
+    <a href="https://www.harddone.com/tags/Android-Studio/">Android Studio</a>
     
-    <a href="https://www.harddone.com/tags/android-app-bundle-tool/">Android app bundle tool</a>
+    <a href="https://www.harddone.com/tags/Android-Studio-3.5/">Android Studio 3.5</a>
     
-    <a href="https://www.harddone.com/tags/android-studio/">Android Studio</a>
+    <a href="https://www.harddone.com/tags/Android-Studio3.3.2/">Android Studio3.3.2</a>
     
-    <a href="https://www.harddone.com/tags/android-studio-3.5/">Android Studio 3.5</a>
+    <a href="https://www.harddone.com/tags/Android-app-bundle-tool/">Android app bundle tool</a>
     
-    <a href="https://www.harddone.com/tags/android-studio3.3.2/">Android Studio3.3.2</a>
+    <a href="https://www.harddone.com/tags/Apk%E5%A4%A7%E5%B0%8F/">Apk大小</a>
     
-    <a href="https://www.harddone.com/tags/apk%E5%A4%A7%E5%B0%8F/">Apk大小</a>
+    <a href="https://www.harddone.com/tags/Array-Params/">Array Params</a>
     
-    <a href="https://www.harddone.com/tags/array-params/">Array Params</a>
+    <a href="https://www.harddone.com/tags/Billing/">Billing</a>
     
-    <a href="https://www.harddone.com/tags/billing/">Billing</a>
+    <a href="https://www.harddone.com/tags/CentOS/">CentOS</a>
     
-    <a href="https://www.harddone.com/tags/centos/">CentOS</a>
+    <a href="https://www.harddone.com/tags/Certificate-verification-failed/">Certificate verification failed</a>
     
-    <a href="https://www.harddone.com/tags/certificate-verification-failed/">Certificate verification failed</a>
+    <a href="https://www.harddone.com/tags/Chrome-Extension/">Chrome Extension</a>
     
-    <a href="https://www.harddone.com/tags/chrome-extension/">Chrome Extension</a>
+    <a href="https://www.harddone.com/tags/Copy-File/">Copy File</a>
     
-    <a href="https://www.harddone.com/tags/compiledebugjavawithjavac/">compileDebugJavaWithJavac</a>
+    <a href="https://www.harddone.com/tags/Editor-Screenshot/">Editor Screenshot</a>
     
-    <a href="https://www.harddone.com/tags/copy-file/">Copy File</a>
+    <a href="https://www.harddone.com/tags/Firebase/">Firebase</a>
     
-    <a href="https://www.harddone.com/tags/editor-screenshot/">Editor Screenshot</a>
+    <a href="https://www.harddone.com/tags/GP/">GP</a>
     
-    <a href="https://www.harddone.com/tags/firebase/">Firebase</a>
-    
-    <a href="https://www.harddone.com/tags/git/">git</a>
-    
-    <a href="https://www.harddone.com/tags/github/">Github</a>
-    
-    <a href="https://www.harddone.com/tags/google-iap/">google iap</a>
-    
-    <a href="https://www.harddone.com/tags/gp/">GP</a>
+    <a href="https://www.harddone.com/tags/Github/">Github</a>
     
     <a href="https://www.harddone.com/tags/gradle/">gradle</a>
     
-    <a href="https://www.harddone.com/tags/gradle3.3/">Gradle3.3</a>
+    <a href="https://www.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
     
-    <a href="https://www.harddone.com/tags/https/">Https</a>
+    <a href="https://www.harddone.com/tags/Https/">Https</a>
     
-    <a href="https://www.harddone.com/tags/iap/">IAP</a>
+    <a href="https://www.harddone.com/tags/IAP/">IAP</a>
     
-    <a href="https://www.harddone.com/tags/in-app-messaging-not-working/">In-App Messaging not working</a>
+    <a href="https://www.harddone.com/tags/In-App-Messaging-not-working/">In-App Messaging not working</a>
     
-    <a href="https://www.harddone.com/tags/invoke-customs/">Invoke-customs</a>
+    <a href="https://www.harddone.com/tags/Invoke-customs/">Invoke-customs</a>
     
-    <a href="https://www.harddone.com/tags/java/">java</a>
+    <a href="https://www.harddone.com/tags/JDK1.8/">JDK1.8</a>
     
-    <a href="https://www.harddone.com/tags/jdk1.8/">JDK1.8</a>
+    <a href="https://www.harddone.com/tags/Kotlin/">Kotlin</a>
     
-    <a href="https://www.harddone.com/tags/kotlin/">Kotlin</a>
+    <a href="https://www.harddone.com/tags/Library-module/">Library module</a>
     
-    <a href="https://www.harddone.com/tags/library-module/">Library module</a>
+    <a href="https://www.harddone.com/tags/Lua/">Lua</a>
     
-    <a href="https://www.harddone.com/tags/lua/">Lua</a>
+    <a href="https://www.harddone.com/tags/Mac/">Mac</a>
     
-    <a href="https://www.harddone.com/tags/mac/">Mac</a>
+    <a href="https://www.harddone.com/tags/Main-module/">Main module</a>
     
-    <a href="https://www.harddone.com/tags/main-module/">Main module</a>
+    <a href="https://www.harddone.com/tags/Method/">Method</a>
     
-    <a href="https://www.harddone.com/tags/method/">Method</a>
+    <a href="https://www.harddone.com/tags/Multiple-Module-Dependencies/">Multiple Module Dependencies</a>
     
-    <a href="https://www.harddone.com/tags/mips64el-linux-android/">mips64el-linux-android</a>
+    <a href="https://www.harddone.com/tags/Nexus/">Nexus</a>
     
-    <a href="https://www.harddone.com/tags/multiple-module-dependencies/">Multiple Module Dependencies</a>
+    <a href="https://www.harddone.com/tags/Nginx/">Nginx</a>
     
-    <a href="https://www.harddone.com/tags/nexus/">Nexus</a>
+    <a href="https://www.harddone.com/tags/No-toolchains-found/">No toolchains found</a>
     
-    <a href="https://www.harddone.com/tags/nginx/">Nginx</a>
+    <a href="https://www.harddone.com/tags/Not-find-method-classpath/">Not find method classpath()</a>
     
-    <a href="https://www.harddone.com/tags/no-toolchains-found/">No toolchains found</a>
+    <a href="https://www.harddone.com/tags/Placeholders/">Placeholders</a>
     
-    <a href="https://www.harddone.com/tags/not-find-method-classpath/">Not find method classpath()</a>
+    <a href="https://www.harddone.com/tags/Private-Maven/">Private Maven</a>
     
-    <a href="https://www.harddone.com/tags/override/">override</a>
-    
-    <a href="https://www.harddone.com/tags/placeholders/">Placeholders</a>
-    
-    <a href="https://www.harddone.com/tags/private-maven/">Private Maven</a>
-    
-    <a href="https://www.harddone.com/tags/push-to-jcenter/">Push to JCenter</a>
+    <a href="https://www.harddone.com/tags/Push-to-JCenter/">Push to JCenter</a>
     
     <a href="https://www.harddone.com/tags/python/">python</a>
     
-    <a href="https://www.harddone.com/tags/screen-overlay-deteched/">Screen Overlay Deteched</a>
+    <a href="https://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen Overlay Deteched</a>
     
-    <a href="https://www.harddone.com/tags/seekbar/">Seekbar</a>
+    <a href="https://www.harddone.com/tags/Seekbar/">Seekbar</a>
     
-    <a href="https://www.harddone.com/tags/unity/">Unity</a>
+    <a href="https://www.harddone.com/tags/Unity/">Unity</a>
     
-    <a href="https://www.harddone.com/tags/unity-lua/">Unity-Lua</a>
+    <a href="https://www.harddone.com/tags/Unity-Lua/">Unity-Lua</a>
     
-    <a href="https://www.harddone.com/tags/unity3d/">Unity3d</a>
+    <a href="https://www.harddone.com/tags/Unity3d/">Unity3d</a>
     
-    <a href="https://www.harddone.com/tags/upload-aar-manually/">upload AAR manually</a>
+    <a href="https://www.harddone.com/tags/Vysor-pro-2.1.7_0/">Vysor pro 2.1.7_0</a>
     
-    <a href="https://www.harddone.com/tags/vysor-pro-2.1.7_0/">Vysor pro 2.1.7_0</a>
+    <a href="https://www.harddone.com/tags/Web/">Web</a>
     
-    <a href="https://www.harddone.com/tags/web/">Web</a>
+    <a href="https://www.harddone.com/tags/Webhook/">Webhook</a>
     
-    <a href="https://www.harddone.com/tags/webhook/">Webhook</a>
+    <a href="https://www.harddone.com/tags/Website/">Website</a>
     
-    <a href="https://www.harddone.com/tags/website/">Website</a>
+    <a href="https://www.harddone.com/tags/ZXing/">ZXing</a>
     
-    <a href="https://www.harddone.com/tags/zbar/">Zbar</a>
+    <a href="https://www.harddone.com/tags/Zbar/">Zbar</a>
     
-    <a href="https://www.harddone.com/tags/zxing/">ZXing</a>
+    <a href="https://www.harddone.com/tags/adb/">adb</a>
+    
+    <a href="https://www.harddone.com/tags/compileDebugJavaWithJavac/">compileDebugJavaWithJavac</a>
+    
+    <a href="https://www.harddone.com/tags/git/">git</a>
+    
+    <a href="https://www.harddone.com/tags/google-iap/">google iap</a>
+    
+    <a href="https://www.harddone.com/tags/gradle/">gradle</a>
+    
+    <a href="https://www.harddone.com/tags/java/">java</a>
+    
+    <a href="https://www.harddone.com/tags/mips64el-linux-android/">mips64el-linux-android</a>
+    
+    <a href="https://www.harddone.com/tags/override/">override</a>
+    
+    <a href="https://www.harddone.com/tags/python/">python</a>
+    
+    <a href="https://www.harddone.com/tags/upload-AAR-manually/">upload AAR manually</a>
     
     <a href="https://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
@@ -876,7 +880,7 @@ if (!doNotTrack) {
     
     <a href="https://www.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">自动部署</a>
     
-    <a href="https://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89button/">自定义Button</a>
+    <a href="https://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button/">自定义Button</a>
     
     <a href="https://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1/">自定义进度条</a>
     

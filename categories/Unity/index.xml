@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unity on ColorfulDark Blog</title>
-    <link>https://www.harddone.com/categories/unity/</link>
+    <link>https://www.harddone.com/categories/Unity/</link>
     <description>Recent content in Unity on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 23 Apr 2020 15:01:15 +0800</lastBuildDate><atom:link href="https://www.harddone.com/categories/unity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Apr 2020 15:01:15 +0800</lastBuildDate><atom:link href="https://www.harddone.com/categories/Unity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unity ScreenCapture</title>
       <link>https://www.harddone.com/post/unity_capture/</link>

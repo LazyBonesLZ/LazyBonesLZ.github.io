@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on ColorfulDark Blog</title>
-    <link>https://www.harddone.com/tags/android/</link>
+    <link>https://www.harddone.com/tags/Android/</link>
     <description>Recent content in Android on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 23 Apr 2020 16:00:24 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Apr 2020 16:00:24 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/Android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android ps查询进程线程信息</title>
       <link>https://www.harddone.com/post/android_ps/</link>

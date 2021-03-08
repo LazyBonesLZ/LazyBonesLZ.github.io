@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Copy File on ColorfulDark Blog</title>
-    <link>https://www.harddone.com/tags/copy-file/</link>
+    <link>https://www.harddone.com/tags/Copy-File/</link>
     <description>Recent content in Copy File on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 16 Aug 2019 10:59:48 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/copy-file/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Aug 2019 10:59:48 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/Copy-File/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gradle Copy File</title>
       <link>https://www.harddone.com/post/gradle_copy_file/</link>

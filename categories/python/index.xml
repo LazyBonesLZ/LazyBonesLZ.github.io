@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on ColorfulDark Blog</title>
-    <link>https://www.harddone.com/categories/python/</link>
+    <link>https://www.harddone.com/categories/Python/</link>
     <description>Recent content in Python on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate><atom:link href="https://www.harddone.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate><atom:link href="https://www.harddone.com/categories/Python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android app bundle tool for Mac</title>
       <link>https://www.harddone.com/post/aabtool_for_mac/</link>

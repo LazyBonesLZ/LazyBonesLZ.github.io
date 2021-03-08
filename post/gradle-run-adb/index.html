@@ -85,7 +85,7 @@
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/android'>Android</a></span>
+            <span class="meta-category"><a href='/categories/Android'>Android</a></span>
             
         </div>
         
@@ -105,9 +105,9 @@
 <li>不需要<code>python</code>环境</li>
 </ul>
 <p>想要实现<code>gradle task</code> 执行 <code>adb</code>, 可以通过执行<code>gradle</code>的 <code>Command Line</code>。参见<a href="https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Exec.html#org.gradle.api.tasks.Exec">Exec</a></p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -126,23 +126,23 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">task stopTomcat<span style="color:#000;font-weight:bold">(</span>type:Exec<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-  workingDir <span style="color:#d14">&#39;../tomcat/bin&#39;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">task stopTomcat<span style="color:#f92672">(</span>type:Exec<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  workingDir <span style="color:#e6db74">&#39;../tomcat/bin&#39;</span>
 
   //on windows:
-  commandLine <span style="color:#d14">&#39;cmd&#39;</span>, <span style="color:#d14">&#39;/c&#39;</span>, <span style="color:#d14">&#39;stop.bat&#39;</span>
+  commandLine <span style="color:#e6db74">&#39;cmd&#39;</span>, <span style="color:#e6db74">&#39;/c&#39;</span>, <span style="color:#e6db74">&#39;stop.bat&#39;</span>
 
   //on linux
-  commandLine <span style="color:#d14">&#39;./stop.sh&#39;</span>
+  commandLine <span style="color:#e6db74">&#39;./stop.sh&#39;</span>
 
   //store the output instead of printing to the console:
-  <span style="color:#008080">standardOutput</span> <span style="color:#000;font-weight:bold">=</span> new ByteArrayOutputStream<span style="color:#000;font-weight:bold">()</span>
+  standardOutput <span style="color:#f92672">=</span> new ByteArrayOutputStream<span style="color:#f92672">()</span>
 
-  //extension method stopTomcat.output<span style="color:#000;font-weight:bold">()</span> can be used to obtain the output:
-  ext.output <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000;font-weight:bold">return</span> standardOutput.toString<span style="color:#000;font-weight:bold">()</span>
-  <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
+  //extension method stopTomcat.output<span style="color:#f92672">()</span> can be used to obtain the output:
+  ext.output <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> standardOutput.toString<span style="color:#f92672">()</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>理论上，可以直接执行我们之前的<code>obb_push.py</code>脚本，但是在实际测试过程发现，python脚本里的逻辑其实是多任务的执行，简单的执行脚本根本无法得到正确的结果。所以，将该python脚本的任务分解为多个<code>gradle task</code>,分别执行对应的<code>adb</code>命令。</p>
@@ -154,9 +154,9 @@
 <li>gradle task 动态参数传入</li>
 </ul>
 <p>直接上脚本<code>copyobb.gradle</code>:</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -226,73 +226,73 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/**
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/**
  * How to use task: pushObb?
  * 1. open a terminal in Android Studio;
  * 2. input the command:
- * ./gradlew -PobbPath<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
+ * ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
  *
- * <span style="color:#000;font-weight:bold">[[</span>For example<span style="color:#000;font-weight:bold">]]</span>:
- * ./gradlew -PobbPath<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;/Users/ColorfulDark/tmp/BSG0030/BSG0030.main.obb&#34;</span> pushObb
+ * <span style="color:#f92672">[[</span>For example<span style="color:#f92672">]]</span>:
+ * ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/ColorfulDark/tmp/BSG0030/BSG0030.main.obb&#34;</span> pushObb
  *
  *
  */
 
-task mkdirs<span style="color:#000;font-weight:bold">(</span>type:Exec<span style="color:#000;font-weight:bold">){</span>
-    workingDir <span style="color:#d14">&#39;./&#39;</span>
-    String <span style="color:#008080">packageName</span> <span style="color:#000;font-weight:bold">=</span> project.AppBundleId
-    println <span style="color:#d14">&#39;get package name = &#39;</span> + packageName
+task mkdirs<span style="color:#f92672">(</span>type:Exec<span style="color:#f92672">){</span>
+    workingDir <span style="color:#e6db74">&#39;./&#39;</span>
+    String packageName <span style="color:#f92672">=</span> project.AppBundleId
+    println <span style="color:#e6db74">&#39;get package name = &#39;</span> + packageName
 
-    println <span style="color:#d14">&#39;  (1)===============&gt;Preparing dirs...&#39;</span>
-    String <span style="color:#008080">obbDestPath</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;sdcard/Android/obb/&#39;</span> + packageName
-    commandLine <span style="color:#d14">&#39;adb&#39;</span>, <span style="color:#d14">&#39;shell&#39;</span>, <span style="color:#d14">&#39;mkdir&#39;</span>,<span style="color:#d14">&#39;-p&#39;</span>, obbDestPath //递归创建文件夹
-<span style="color:#000;font-weight:bold">}</span>
+    println <span style="color:#e6db74">&#39;  (1)===============&gt;Preparing dirs...&#39;</span>
+    String obbDestPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sdcard/Android/obb/&#39;</span> + packageName
+    commandLine <span style="color:#e6db74">&#39;adb&#39;</span>, <span style="color:#e6db74">&#39;shell&#39;</span>, <span style="color:#e6db74">&#39;mkdir&#39;</span>,<span style="color:#e6db74">&#39;-p&#39;</span>, obbDestPath //递归创建文件夹
+<span style="color:#f92672">}</span>
 
 //必须在设备上创建好目标路径之后，才能push file,所以利用dependsOn
-task pushObb<span style="color:#000;font-weight:bold">(</span>type: Exec,dependsOn:mkdirs<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    workingDir <span style="color:#d14">&#39;./&#39;</span>
-    String <span style="color:#008080">packageName</span> <span style="color:#000;font-weight:bold">=</span> project.AppBundleId
-    String <span style="color:#008080">version</span> <span style="color:#000;font-weight:bold">=</span> project.AppVersionCode
-    String <span style="color:#008080">obbFilePath</span> <span style="color:#000;font-weight:bold">=</span> project.hasProperty<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;obbPath&#34;</span><span style="color:#000;font-weight:bold">)</span> ? obbPath : null
+task pushObb<span style="color:#f92672">(</span>type: Exec,dependsOn:mkdirs<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    workingDir <span style="color:#e6db74">&#39;./&#39;</span>
+    String packageName <span style="color:#f92672">=</span> project.AppBundleId
+    String version <span style="color:#f92672">=</span> project.AppVersionCode
+    String obbFilePath <span style="color:#f92672">=</span> project.hasProperty<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;obbPath&#34;</span><span style="color:#f92672">)</span> ? obbPath : null
 
-    println <span style="color:#d14">&#39;  (2)===============&gt; parsing obb file name...&#39;</span>
-    <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#008080">obbFilePath</span> <span style="color:#000;font-weight:bold">==</span> null <span style="color:#000;font-weight:bold">||</span> <span style="color:#008080">obbFilePath</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        println <span style="color:#d14">&#39;you should input a obb file\&#39;</span>s path !<span style="color:#d14">&#39;
-</span><span style="color:#d14">        return
-</span><span style="color:#d14">    }
-</span><span style="color:#d14">
-</span><span style="color:#d14">    String[] obbSubDirs = obbFilePath.split(&#39;</span>/<span style="color:#d14">&#39;)
-</span><span style="color:#d14">    String obbFileName = obbSubDirs[obbSubDirs.length - 1]
-</span><span style="color:#d14">
-</span><span style="color:#d14">    if (obbFileName == null || !obbFileName.contains(&#39;</span>.obb<span style="color:#d14">&#39;)) {
-</span><span style="color:#d14">        println &#39;</span>can not find a obb file in the path !<span style="color:#d14">&#39;
-</span><span style="color:#d14">        return
-</span><span style="color:#d14">
-</span><span style="color:#d14">    } else
-</span><span style="color:#d14">        println &#34;  &#34; + obbFileName
-</span><span style="color:#d14">
-</span><span style="color:#d14">    println &#39;</span>  <span style="color:#000;font-weight:bold">(</span>3<span style="color:#000;font-weight:bold">)===============</span>&gt; adb push obb file to device...<span style="color:#d14">&#39;
-</span><span style="color:#d14">    String obbDestPath = &#39;</span>sdcard/Android/obb/<span style="color:#d14">&#39; + packageName
-</span><span style="color:#d14">    commandLine &#39;</span>adb<span style="color:#d14">&#39;, &#39;</span>push<span style="color:#d14">&#39;, obbFilePath.replace(&#39;</span> <span style="color:#d14">&#39;, &#39;</span><span style="color:#d14">\\</span> <span style="color:#d14">&#39;), &#39;</span>/<span style="color:#d14">&#39; + obbDestPath + &#39;</span>/<span style="color:#d14">&#39;
-</span><span style="color:#d14">
-</span><span style="color:#d14">//必须等到上传完成之后，才能执行重命名任务
-</span><span style="color:#d14">    doLast {
-</span><span style="color:#d14">        exec {
-</span><span style="color:#d14">            println &#39;</span>  <span style="color:#000;font-weight:bold">(</span>4<span style="color:#000;font-weight:bold">)===============</span>&gt; adb rename obb file...<span style="color:#d14">&#39;
-</span><span style="color:#d14">            String newObbFileName = &#34;main.&#34; + version + &#34;.&#34; + packageName + &#34;.obb&#34;
-</span><span style="color:#d14">            String oldFileFullPath = &#39;</span>/<span style="color:#d14">&#39; + obbDestPath + &#39;</span>/<span style="color:#d14">&#39; + obbFileName
-</span><span style="color:#d14">            String newFileFullPath = &#39;</span>/<span style="color:#d14">&#39; + obbDestPath + &#39;</span>/<span style="color:#d14">&#39; + newObbFileName
-</span><span style="color:#d14">            println &#39;</span>  old name:<span style="color:#d14">&#39; + oldFileFullPath
-</span><span style="color:#d14">            commandLine &#39;</span>adb<span style="color:#d14">&#39;, &#39;</span>shell<span style="color:#d14">&#39;, &#39;</span>mv<span style="color:#d14">&#39;, oldFileFullPath, newFileFullPath
-</span><span style="color:#d14">            println &#39;</span>  new name:<span style="color:#d14">&#39; + newFileFullPath
-</span><span style="color:#d14">
-</span><span style="color:#d14">            println &#39;</span>  <span style="color:#000;font-weight:bold">(</span>5<span style="color:#000;font-weight:bold">)===============</span>&gt; Completed!!!<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>
-        <span style="color:#000;font-weight:bold">}</span>
+    println <span style="color:#e6db74">&#39;  (2)===============&gt; parsing obb file name...&#39;</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>obbFilePath <span style="color:#f92672">==</span> null <span style="color:#f92672">||</span> obbFilePath <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        println <span style="color:#e6db74">&#39;you should input a obb file\&#39;</span>s path !<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">        return
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    String[] obbSubDirs = obbFilePath.split(&#39;</span>/<span style="color:#e6db74">&#39;)
+</span><span style="color:#e6db74">    String obbFileName = obbSubDirs[obbSubDirs.length - 1]
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    if (obbFileName == null || !obbFileName.contains(&#39;</span>.obb<span style="color:#e6db74">&#39;)) {
+</span><span style="color:#e6db74">        println &#39;</span>can not find a obb file in the path !<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">        return
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    } else
+</span><span style="color:#e6db74">        println &#34;  &#34; + obbFileName
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    println &#39;</span>  <span style="color:#f92672">(</span>3<span style="color:#f92672">)===============</span>&gt; adb push obb file to device...<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    String obbDestPath = &#39;</span>sdcard/Android/obb/<span style="color:#e6db74">&#39; + packageName
+</span><span style="color:#e6db74">    commandLine &#39;</span>adb<span style="color:#e6db74">&#39;, &#39;</span>push<span style="color:#e6db74">&#39;, obbFilePath.replace(&#39;</span> <span style="color:#e6db74">&#39;, &#39;</span><span style="color:#ae81ff">\\</span> <span style="color:#e6db74">&#39;), &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">//必须等到上传完成之后，才能执行重命名任务
+</span><span style="color:#e6db74">    doLast {
+</span><span style="color:#e6db74">        exec {
+</span><span style="color:#e6db74">            println &#39;</span>  <span style="color:#f92672">(</span>4<span style="color:#f92672">)===============</span>&gt; adb rename obb file...<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">            String newObbFileName = &#34;main.&#34; + version + &#34;.&#34; + packageName + &#34;.obb&#34;
+</span><span style="color:#e6db74">            String oldFileFullPath = &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; + obbFileName
+</span><span style="color:#e6db74">            String newFileFullPath = &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; + newObbFileName
+</span><span style="color:#e6db74">            println &#39;</span>  old name:<span style="color:#e6db74">&#39; + oldFileFullPath
+</span><span style="color:#e6db74">            commandLine &#39;</span>adb<span style="color:#e6db74">&#39;, &#39;</span>shell<span style="color:#e6db74">&#39;, &#39;</span>mv<span style="color:#e6db74">&#39;, oldFileFullPath, newFileFullPath
+</span><span style="color:#e6db74">            println &#39;</span>  new name:<span style="color:#e6db74">&#39; + newFileFullPath
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">            println &#39;</span>  <span style="color:#f92672">(</span>5<span style="color:#f92672">)===============</span>&gt; Completed!!!<span style="color:#960050;background-color:#1e0010">&#39;</span>
+        <span style="color:#f92672">}</span>
 
 
-    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#f92672">}</span>
 
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#f92672">}</span>
 
 </code></pre></td></tr></table>
 </div>
@@ -302,19 +302,19 @@ task pushObb<span style="color:#000;font-weight:bold">(</span>type: Exec,depends
 <li>Open a terminal in Android Studio;</li>
 <li>Input the command and pass parameter with <code>-P</code>:</li>
 </ul>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  ./gradlew -PobbPath<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
 
-  <span style="color:#000;font-weight:bold">[[</span>For example<span style="color:#000;font-weight:bold">]]</span>:
-  ./gradlew -PobbPath<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;/Users/ColorfulDark/tmp/BSG0030/BSG0030.main.obb&#34;</span> pushObb
+  <span style="color:#f92672">[[</span>For example<span style="color:#f92672">]]</span>:
+  ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/ColorfulDark/tmp/BSG0030/BSG0030.main.obb&#34;</span> pushObb
 
 </code></pre></td></tr></table>
 </div>
@@ -334,7 +334,7 @@ task pushObb<span style="color:#000;font-weight:bold">(</span>type: Exec,depends
         
         <li><a href="/post/min-api-26-bug/">Invoke-customs are only supported starting with android 0 --min-api 26</a></li>
         
-        <li><a href="/post/fiam_triggerevent/">Firebase In-App Messaging:triggerEvent not working</a></li>
+        <li><a href="/post/FIAM_triggerEvent/">Firebase In-App Messaging:triggerEvent not working</a></li>
         
         <li><a href="/post/3rd_part_aar_to_nexus/">Nexus:Upload AAR files Manully</a></li>
         
@@ -470,7 +470,7 @@ if (!doNotTrack) {
     </li>
     
     <li>
-        <a href="https://www.harddone.com/post/fiam_triggerevent/" title="Firebase In-App Messaging:triggerEvent not working">Firebase In-App Messaging:triggerEvent not working</a>
+        <a href="https://www.harddone.com/post/FIAM_triggerEvent/" title="Firebase In-App Messaging:triggerEvent not working">Firebase In-App Messaging:triggerEvent not working</a>
     </li>
     
     <li>
@@ -521,17 +521,17 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li><a href="https://www.harddone.com/categories/android/">Android (22)</a></li>
+    <li><a href="https://www.harddone.com/categories/Android/">Android (22)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/git/">Git (1)</a></li>
+    <li><a href="https://www.harddone.com/categories/Git/">Git (1)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/lua/">Lua (1)</a></li>
+    <li><a href="https://www.harddone.com/categories/Lua/">Lua (1)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/python/">Python (2)</a></li>
+    <li><a href="https://www.harddone.com/categories/Python/">Python (2)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/unity/">Unity (2)</a></li>
+    <li><a href="https://www.harddone.com/categories/Unity/">Unity (2)</a></li>
     
-    <li><a href="https://www.harddone.com/categories/website/">Website (3)</a></li>
+    <li><a href="https://www.harddone.com/categories/Website/">Website (3)</a></li>
     
 </ul>
     </section>
@@ -540,121 +540,125 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.harddone.com/tags/adb/">adb</a>
+    <a href="https://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata Test</a>
     
-    <a href="https://www.harddone.com/tags/alpha/bata-test/">Alpha/Bata Test</a>
+    <a href="https://www.harddone.com/tags/Android/">Android</a>
     
-    <a href="https://www.harddone.com/tags/android/">Android</a>
+    <a href="https://www.harddone.com/tags/Android-Studio/">Android Studio</a>
     
-    <a href="https://www.harddone.com/tags/android-app-bundle-tool/">Android app bundle tool</a>
+    <a href="https://www.harddone.com/tags/Android-Studio-3.5/">Android Studio 3.5</a>
     
-    <a href="https://www.harddone.com/tags/android-studio/">Android Studio</a>
+    <a href="https://www.harddone.com/tags/Android-Studio3.3.2/">Android Studio3.3.2</a>
     
-    <a href="https://www.harddone.com/tags/android-studio-3.5/">Android Studio 3.5</a>
+    <a href="https://www.harddone.com/tags/Android-app-bundle-tool/">Android app bundle tool</a>
     
-    <a href="https://www.harddone.com/tags/android-studio3.3.2/">Android Studio3.3.2</a>
+    <a href="https://www.harddone.com/tags/Apk%E5%A4%A7%E5%B0%8F/">Apk大小</a>
     
-    <a href="https://www.harddone.com/tags/apk%E5%A4%A7%E5%B0%8F/">Apk大小</a>
+    <a href="https://www.harddone.com/tags/Array-Params/">Array Params</a>
     
-    <a href="https://www.harddone.com/tags/array-params/">Array Params</a>
+    <a href="https://www.harddone.com/tags/Billing/">Billing</a>
     
-    <a href="https://www.harddone.com/tags/billing/">Billing</a>
+    <a href="https://www.harddone.com/tags/CentOS/">CentOS</a>
     
-    <a href="https://www.harddone.com/tags/centos/">CentOS</a>
+    <a href="https://www.harddone.com/tags/Certificate-verification-failed/">Certificate verification failed</a>
     
-    <a href="https://www.harddone.com/tags/certificate-verification-failed/">Certificate verification failed</a>
+    <a href="https://www.harddone.com/tags/Chrome-Extension/">Chrome Extension</a>
     
-    <a href="https://www.harddone.com/tags/chrome-extension/">Chrome Extension</a>
+    <a href="https://www.harddone.com/tags/Copy-File/">Copy File</a>
     
-    <a href="https://www.harddone.com/tags/compiledebugjavawithjavac/">compileDebugJavaWithJavac</a>
+    <a href="https://www.harddone.com/tags/Editor-Screenshot/">Editor Screenshot</a>
     
-    <a href="https://www.harddone.com/tags/copy-file/">Copy File</a>
+    <a href="https://www.harddone.com/tags/Firebase/">Firebase</a>
     
-    <a href="https://www.harddone.com/tags/editor-screenshot/">Editor Screenshot</a>
+    <a href="https://www.harddone.com/tags/GP/">GP</a>
     
-    <a href="https://www.harddone.com/tags/firebase/">Firebase</a>
-    
-    <a href="https://www.harddone.com/tags/git/">git</a>
-    
-    <a href="https://www.harddone.com/tags/github/">Github</a>
-    
-    <a href="https://www.harddone.com/tags/google-iap/">google iap</a>
-    
-    <a href="https://www.harddone.com/tags/gp/">GP</a>
+    <a href="https://www.harddone.com/tags/Github/">Github</a>
     
     <a href="https://www.harddone.com/tags/gradle/">gradle</a>
     
-    <a href="https://www.harddone.com/tags/gradle3.3/">Gradle3.3</a>
+    <a href="https://www.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
     
-    <a href="https://www.harddone.com/tags/https/">Https</a>
+    <a href="https://www.harddone.com/tags/Https/">Https</a>
     
-    <a href="https://www.harddone.com/tags/iap/">IAP</a>
+    <a href="https://www.harddone.com/tags/IAP/">IAP</a>
     
-    <a href="https://www.harddone.com/tags/in-app-messaging-not-working/">In-App Messaging not working</a>
+    <a href="https://www.harddone.com/tags/In-App-Messaging-not-working/">In-App Messaging not working</a>
     
-    <a href="https://www.harddone.com/tags/invoke-customs/">Invoke-customs</a>
+    <a href="https://www.harddone.com/tags/Invoke-customs/">Invoke-customs</a>
     
-    <a href="https://www.harddone.com/tags/java/">java</a>
+    <a href="https://www.harddone.com/tags/JDK1.8/">JDK1.8</a>
     
-    <a href="https://www.harddone.com/tags/jdk1.8/">JDK1.8</a>
+    <a href="https://www.harddone.com/tags/Kotlin/">Kotlin</a>
     
-    <a href="https://www.harddone.com/tags/kotlin/">Kotlin</a>
+    <a href="https://www.harddone.com/tags/Library-module/">Library module</a>
     
-    <a href="https://www.harddone.com/tags/library-module/">Library module</a>
+    <a href="https://www.harddone.com/tags/Lua/">Lua</a>
     
-    <a href="https://www.harddone.com/tags/lua/">Lua</a>
+    <a href="https://www.harddone.com/tags/Mac/">Mac</a>
     
-    <a href="https://www.harddone.com/tags/mac/">Mac</a>
+    <a href="https://www.harddone.com/tags/Main-module/">Main module</a>
     
-    <a href="https://www.harddone.com/tags/main-module/">Main module</a>
+    <a href="https://www.harddone.com/tags/Method/">Method</a>
     
-    <a href="https://www.harddone.com/tags/method/">Method</a>
+    <a href="https://www.harddone.com/tags/Multiple-Module-Dependencies/">Multiple Module Dependencies</a>
     
-    <a href="https://www.harddone.com/tags/mips64el-linux-android/">mips64el-linux-android</a>
+    <a href="https://www.harddone.com/tags/Nexus/">Nexus</a>
     
-    <a href="https://www.harddone.com/tags/multiple-module-dependencies/">Multiple Module Dependencies</a>
+    <a href="https://www.harddone.com/tags/Nginx/">Nginx</a>
     
-    <a href="https://www.harddone.com/tags/nexus/">Nexus</a>
+    <a href="https://www.harddone.com/tags/No-toolchains-found/">No toolchains found</a>
     
-    <a href="https://www.harddone.com/tags/nginx/">Nginx</a>
+    <a href="https://www.harddone.com/tags/Not-find-method-classpath/">Not find method classpath()</a>
     
-    <a href="https://www.harddone.com/tags/no-toolchains-found/">No toolchains found</a>
+    <a href="https://www.harddone.com/tags/Placeholders/">Placeholders</a>
     
-    <a href="https://www.harddone.com/tags/not-find-method-classpath/">Not find method classpath()</a>
+    <a href="https://www.harddone.com/tags/Private-Maven/">Private Maven</a>
     
-    <a href="https://www.harddone.com/tags/override/">override</a>
-    
-    <a href="https://www.harddone.com/tags/placeholders/">Placeholders</a>
-    
-    <a href="https://www.harddone.com/tags/private-maven/">Private Maven</a>
-    
-    <a href="https://www.harddone.com/tags/push-to-jcenter/">Push to JCenter</a>
+    <a href="https://www.harddone.com/tags/Push-to-JCenter/">Push to JCenter</a>
     
     <a href="https://www.harddone.com/tags/python/">python</a>
     
-    <a href="https://www.harddone.com/tags/screen-overlay-deteched/">Screen Overlay Deteched</a>
+    <a href="https://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen Overlay Deteched</a>
     
-    <a href="https://www.harddone.com/tags/seekbar/">Seekbar</a>
+    <a href="https://www.harddone.com/tags/Seekbar/">Seekbar</a>
     
-    <a href="https://www.harddone.com/tags/unity/">Unity</a>
+    <a href="https://www.harddone.com/tags/Unity/">Unity</a>
     
-    <a href="https://www.harddone.com/tags/unity-lua/">Unity-Lua</a>
+    <a href="https://www.harddone.com/tags/Unity-Lua/">Unity-Lua</a>
     
-    <a href="https://www.harddone.com/tags/unity3d/">Unity3d</a>
+    <a href="https://www.harddone.com/tags/Unity3d/">Unity3d</a>
     
-    <a href="https://www.harddone.com/tags/upload-aar-manually/">upload AAR manually</a>
+    <a href="https://www.harddone.com/tags/Vysor-pro-2.1.7_0/">Vysor pro 2.1.7_0</a>
     
-    <a href="https://www.harddone.com/tags/vysor-pro-2.1.7_0/">Vysor pro 2.1.7_0</a>
+    <a href="https://www.harddone.com/tags/Web/">Web</a>
     
-    <a href="https://www.harddone.com/tags/web/">Web</a>
+    <a href="https://www.harddone.com/tags/Webhook/">Webhook</a>
     
-    <a href="https://www.harddone.com/tags/webhook/">Webhook</a>
+    <a href="https://www.harddone.com/tags/Website/">Website</a>
     
-    <a href="https://www.harddone.com/tags/website/">Website</a>
+    <a href="https://www.harddone.com/tags/ZXing/">ZXing</a>
     
-    <a href="https://www.harddone.com/tags/zbar/">Zbar</a>
+    <a href="https://www.harddone.com/tags/Zbar/">Zbar</a>
     
-    <a href="https://www.harddone.com/tags/zxing/">ZXing</a>
+    <a href="https://www.harddone.com/tags/adb/">adb</a>
+    
+    <a href="https://www.harddone.com/tags/compileDebugJavaWithJavac/">compileDebugJavaWithJavac</a>
+    
+    <a href="https://www.harddone.com/tags/git/">git</a>
+    
+    <a href="https://www.harddone.com/tags/google-iap/">google iap</a>
+    
+    <a href="https://www.harddone.com/tags/gradle/">gradle</a>
+    
+    <a href="https://www.harddone.com/tags/java/">java</a>
+    
+    <a href="https://www.harddone.com/tags/mips64el-linux-android/">mips64el-linux-android</a>
+    
+    <a href="https://www.harddone.com/tags/override/">override</a>
+    
+    <a href="https://www.harddone.com/tags/python/">python</a>
+    
+    <a href="https://www.harddone.com/tags/upload-AAR-manually/">upload AAR manually</a>
     
     <a href="https://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
@@ -680,7 +684,7 @@ if (!doNotTrack) {
     
     <a href="https://www.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">自动部署</a>
     
-    <a href="https://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89button/">自定义Button</a>
+    <a href="https://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button/">自定义Button</a>
     
     <a href="https://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1/">自定义进度条</a>
     
