@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ColorfulDark Blog</title>
@@ -6,10 +6,15 @@
     <description>Recent content in Categories on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 23 Apr 2020 16:00:24 +0800</lastBuildDate>
-    
-	<atom:link href="http://www.harddone.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate><atom:link href="http://www.harddone.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>http://www.harddone.com/categories/Python/</link>
+      <pubDate>Fri, 22 May 2020 10:14:27 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/categories/Python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Android</title>
@@ -17,33 +22,6 @@
       <pubDate>Thu, 23 Apr 2020 16:00:24 +0800</pubDate>
       
       <guid>http://www.harddone.com/categories/Android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>http://www.harddone.com/categories/Git/</link>
-      <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
-      
-      <guid>http://www.harddone.com/categories/Git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lua</title>
-      <link>http://www.harddone.com/categories/Lua/</link>
-      <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
-      
-      <guid>http://www.harddone.com/categories/Lua/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>http://www.harddone.com/categories/Python/</link>
-      <pubDate>Fri, 22 May 2020 10:14:27 +0800</pubDate>
-      
-      <guid>http://www.harddone.com/categories/Python/</guid>
       <description></description>
     </item>
     
@@ -57,11 +35,29 @@
     </item>
     
     <item>
+      <title>Git</title>
+      <link>http://www.harddone.com/categories/Git/</link>
+      <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/categories/Git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Website</title>
       <link>http://www.harddone.com/categories/Website/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
       <guid>http://www.harddone.com/categories/Website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lua</title>
+      <link>http://www.harddone.com/categories/Lua/</link>
+      <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
+      
+      <guid>http://www.harddone.com/categories/Lua/</guid>
       <description></description>
     </item>
     

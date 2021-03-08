@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>文件目录 on ColorfulDark Blog</title>
@@ -6,11 +6,7 @@
     <description>Recent content in 文件目录 on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 30 Apr 2019 14:33:57 +0800</lastBuildDate>
-    
-	<atom:link href="http://www.harddone.com/tags/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 30 Apr 2019 14:33:57 +0800</lastBuildDate><atom:link href="http://www.harddone.com/tags/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>git : remove directories tracked</title>
       <link>http://www.harddone.com/post/git_untrack_dir/</link>

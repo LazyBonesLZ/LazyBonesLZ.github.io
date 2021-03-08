@@ -3,51 +3,46 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>Python执行Android adb 命令 | ColorfulDark Blog</title>
     <meta property="og:title" content="Python执行Android adb 命令 - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-04-18T10:12:15&#43;08:00">
+    <meta property="article:published_time" content='2019-04-18T10:12:15&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2019-04-18T10:12:15&#43;08:00">
+    <meta property="article:modified_time" content='2019-04-18T10:12:15&#43;08:00'>
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
     <meta name="description" content="Python执行Android adb 命令">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/python_adb/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5294048051542592",
-        enable_page_level_ads: true
-    });
-    </script>
+    <script data-ad-client="ca-pub-5294048051542592" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
-
-
+    
+    
+    
     
     
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -60,7 +55,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">Home</a>
+                    <a class="current" href="http://www.harddone.com/">首页</a>
                     
                     <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
@@ -72,279 +67,260 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-  
-  <amp-auto-ads type="adsense"
-    data-ad-client="ca-pub-5294048051542592">
-  </amp-auto-ads>
-  
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Python执行Android adb 命令</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            
-                            2019-04-18
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Python">Python</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            
-
-<h1 id="说明">说明</h1>
-
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Python执行Android adb 命令</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年4月18日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Python'>Python</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="说明">说明</h1>
 <p>本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令：</p>
-
-<pre><code class="language-shell">//example
-cmd = 'adb shell' 
-os.system(cmd)
-</code></pre>
-
-<h1 id="1-uninstall-clean-app-py">1.<code>uninstall_clean_app.py</code></h1>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">//example
+cmd <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;adb shell&#39;</span> 
+os.system<span style="color:#f92672">(</span>cmd<span style="color:#f92672">)</span>
+</code></pre></div><h1 id="1uninstall_clean_apppy">1.<code>uninstall_clean_app.py</code></h1>
 <p>根据app bundle id 卸载应用，并且删除该应用在sdcard目录下生成的文件夹等。当前脚本中所删除的目录是写死的，可以根据需要自己修改。</p>
-
-<pre><code class="language-shell">#!/usr/bin/python
-import subprocess
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/usr/bin/python
+</span><span style="color:#75715e"></span>import subprocess
 import os, sys
 import getopt
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR <span style="color:#f92672">=</span> os.path.dirname<span style="color:#f92672">(</span>os.path.dirname<span style="color:#f92672">(</span>__file__<span style="color:#f92672">))</span>
 
 
-if __name__ == '__main__':
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
 
-	&quot;&quot;&quot; change commands and add shell&quot;&quot;&quot;
+	<span style="color:#e6db74">&#34;&#34;&#34; change commands and add shell&#34;&#34;&#34;</span>
 
-	tag = ''
+	tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
 
 	try:
-		opt, args = getopt.getopt(sys.argv[1:], &quot;ht:&quot;, ['pkg', 'help'])
-		for op, value in opt:
-			if op in (&quot;-t&quot;, &quot;--pkg&quot;):
-				tag = value
-			if op in (&quot;-h&quot;, &quot;--help&quot;):
-				print &quot;Usage: main_app_clean.py -t APP_PKG_NAME&quot;
-				print &quot;Options:&quot;
-				print &quot;  -t  APP_PKG_NAME should be a bundle id !&quot;
-				print &quot;&quot;
-				print &quot;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&quot;
-				print &quot;&quot;
-				sys.exit()
+		opt, args <span style="color:#f92672">=</span> getopt.getopt<span style="color:#f92672">(</span>sys.argv<span style="color:#f92672">[</span>1:<span style="color:#f92672">]</span>, <span style="color:#e6db74">&#34;ht:&#34;</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;pkg&#39;</span>, <span style="color:#e6db74">&#39;help&#39;</span><span style="color:#f92672">])</span>
+		<span style="color:#66d9ef">for</span> op, value in opt:
+			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-t&#34;</span>, <span style="color:#e6db74">&#34;--pkg&#34;</span><span style="color:#f92672">)</span>:
+				tag <span style="color:#f92672">=</span> value
+			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-h&#34;</span>, <span style="color:#e6db74">&#34;--help&#34;</span><span style="color:#f92672">)</span>:
+				print <span style="color:#e6db74">&#34;Usage: main_app_clean.py -t APP_PKG_NAME&#34;</span>
+				print <span style="color:#e6db74">&#34;Options:&#34;</span>
+				print <span style="color:#e6db74">&#34;  -t  APP_PKG_NAME should be a bundle id !&#34;</span>
+				print <span style="color:#e6db74">&#34;&#34;</span>
+				print <span style="color:#e6db74">&#34;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&#34;</span>
+				print <span style="color:#e6db74">&#34;&#34;</span>
+				sys.exit<span style="color:#f92672">()</span>
 	except getopt.GetoptError:  
-            print &quot;Error: Could not find the args.&quot;
-            print &quot;Usage: main_app_clean.py -t APP_PKG_NAME&quot;
-    	    print &quot;Options:&quot;
-    	    print &quot;  -t  APP_PKG_NAME should be a bundle id !&quot;
-    	    print &quot;&quot;
-    	    print &quot;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&quot;
-    	    print &quot;&quot;
-    	    sys.exit()
+            print <span style="color:#e6db74">&#34;Error: Could not find the args.&#34;</span>
+            print <span style="color:#e6db74">&#34;Usage: main_app_clean.py -t APP_PKG_NAME&#34;</span>
+    	    print <span style="color:#e6db74">&#34;Options:&#34;</span>
+    	    print <span style="color:#e6db74">&#34;  -t  APP_PKG_NAME should be a bundle id !&#34;</span>
+    	    print <span style="color:#e6db74">&#34;&#34;</span>
+    	    print <span style="color:#e6db74">&#34;Sample : ./main_app_clean.py -t &lt;bundle id&gt;&#34;</span>
+    	    print <span style="color:#e6db74">&#34;&#34;</span>
+    	    sys.exit<span style="color:#f92672">()</span>
 
 	
-	if tag == '':
-		print &quot;you should input a bundle id  !&quot;
-		exit()
-	pkg = tag
+	<span style="color:#66d9ef">if</span> tag <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>:
+		print <span style="color:#e6db74">&#34;you should input a bundle id  !&#34;</span>
+		exit<span style="color:#f92672">()</span>
+	pkg <span style="color:#f92672">=</span> tag
 
-	print ''
-	print '1) uninstalling ' + pkg +' ...'
-	unInstallCmd = 'adb uninstall  ' + pkg 
-	os.system(unInstallCmd)
+	print <span style="color:#e6db74">&#39;&#39;</span>
+	print <span style="color:#e6db74">&#39;1) uninstalling &#39;</span> + pkg +<span style="color:#e6db74">&#39; ...&#39;</span>
+	unInstallCmd <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;adb uninstall  &#39;</span> + pkg 
+	os.system<span style="color:#f92672">(</span>unInstallCmd<span style="color:#f92672">)</span>
 
-	print ''
-	print '2) cleaning the cached file...'
-	cleanCmd1 = 'adb shell rm -fR /sdcard/.DataBackupTest'
-	os.system(cleanCmd1)
-	cleanCmd2 = 'adb shell rm -fR /sdcard/.DataBackup'
-	os.system(cleanCmd2)
-	print ''
-	print '	All done !^_^!'
-	print ''
+	print <span style="color:#e6db74">&#39;&#39;</span>
+	print <span style="color:#e6db74">&#39;2) cleaning the cached file...&#39;</span>
+	cleanCmd1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;adb shell rm -fR /sdcard/.DataBackupTest&#39;</span>
+	os.system<span style="color:#f92672">(</span>cleanCmd1<span style="color:#f92672">)</span>
+	cleanCmd2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;adb shell rm -fR /sdcard/.DataBackup&#39;</span>
+	os.system<span style="color:#f92672">(</span>cleanCmd2<span style="color:#f92672">)</span>
+	print <span style="color:#e6db74">&#39;&#39;</span>
+	print <span style="color:#e6db74">&#39;	All done !^_^!&#39;</span>
+	print <span style="color:#e6db74">&#39;&#39;</span>
 
-	exit()
+	exit<span style="color:#f92672">()</span>
 
-</code></pre>
-
-<ul>
-<li><p>使用方法</p>
-
+</code></pre></div><ul>
+<li>
+<p>使用方法</p>
 <ul>
 <li>下载脚本到指定目录</li>
 <li>打开terminal，执行cd命令到脚本所在目录</li>
-<li>执行python命令 <code>python ./uninstall_clean_app.py -t com.xxx.app</code></li>
+<li>执行python命令 <code> python ./uninstall_clean_app.py -t com.xxx.app</code></li>
 </ul>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/6174818-f6c015ef98358a93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="01.png" /></p></li>
+<p>
+        <img class="mx-auto" alt="01.png" src="https://upload-images.jianshu.io/upload_images/6174818-f6c015ef98358a93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" />   
+    </p>
+</li>
 </ul>
-
-<h1 id="2-obb-push-py">2.<code>obb_push.py</code></h1>
-
+<h1 id="2obb_pushpy">2.<code>obb_push.py</code></h1>
 <p>该脚本作用是根据传入的obb文件完整路径，解析出app bundle id,然后将obb文件push到android设备上，减少出错机会和烦人的拷贝工作，执行该脚本可有快速完成。</p>
-
-<pre><code class="language-shell">#!/usr/bin/python
-import subprocess
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/usr/bin/python
+</span><span style="color:#75715e"></span>import subprocess
 import os, sys
 import getopt
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR <span style="color:#f92672">=</span> os.path.dirname<span style="color:#f92672">(</span>os.path.dirname<span style="color:#f92672">(</span>__file__<span style="color:#f92672">))</span>
 
 
-if __name__ == '__main__':
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
 
-	&quot;&quot;&quot; change commands and add shell&quot;&quot;&quot;
+	<span style="color:#e6db74">&#34;&#34;&#34; change commands and add shell&#34;&#34;&#34;</span>
 
-	path = ''
-	package = ''
-	obbVersion = ''
-# see: https://blog.csdn.net/chengxuyuanyonghu/article/details/54972854
+	path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+	package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+	obbVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#75715e"># see: https://blog.csdn.net/chengxuyuanyonghu/article/details/54972854</span>
 	try:
-		opt, args = getopt.getopt(sys.argv[1:], &quot;hf:p:v:&quot;, ['file=', 'package=','obbVersion=','help'])
-		for op, value in opt:
-			if op in (&quot;-f&quot;, &quot;--file&quot;):
-				path = value
-			if op in (&quot;-p&quot;, &quot;--package&quot;):
-				package = value
-			if op in (&quot;-v&quot;, &quot;--obbVersion&quot;):
-				obbVersion = value
-			if op in (&quot;-h&quot;, &quot;--help&quot;):
-				print &quot;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&quot;
-				print &quot;Options:&quot;
-				print &quot;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&quot;
-				print &quot;&quot;
-				print &quot;OR: &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &quot;
-				print &quot;&quot;
-				print &quot;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&quot;
-				print &quot;&quot;
-				print &quot;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&quot;
-				print &quot;&quot;
-				sys.exit()
+		opt, args <span style="color:#f92672">=</span> getopt.getopt<span style="color:#f92672">(</span>sys.argv<span style="color:#f92672">[</span>1:<span style="color:#f92672">]</span>, <span style="color:#e6db74">&#34;hf:p:v:&#34;</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;file=&#39;</span>, <span style="color:#e6db74">&#39;package=&#39;</span>,<span style="color:#e6db74">&#39;obbVersion=&#39;</span>,<span style="color:#e6db74">&#39;help&#39;</span><span style="color:#f92672">])</span>
+		<span style="color:#66d9ef">for</span> op, value in opt:
+			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-f&#34;</span>, <span style="color:#e6db74">&#34;--file&#34;</span><span style="color:#f92672">)</span>:
+				path <span style="color:#f92672">=</span> value
+			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-p&#34;</span>, <span style="color:#e6db74">&#34;--package&#34;</span><span style="color:#f92672">)</span>:
+				package <span style="color:#f92672">=</span> value
+			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-v&#34;</span>, <span style="color:#e6db74">&#34;--obbVersion&#34;</span><span style="color:#f92672">)</span>:
+				obbVersion <span style="color:#f92672">=</span> value
+			<span style="color:#66d9ef">if</span> op in <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-h&#34;</span>, <span style="color:#e6db74">&#34;--help&#34;</span><span style="color:#f92672">)</span>:
+				print <span style="color:#e6db74">&#34;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&#34;</span>
+				print <span style="color:#e6db74">&#34;Options:&#34;</span>
+				print <span style="color:#e6db74">&#34;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&#34;</span>
+				print <span style="color:#e6db74">&#34;&#34;</span>
+				print <span style="color:#e6db74">&#34;OR: &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &#34;</span>
+				print <span style="color:#e6db74">&#34;&#34;</span>
+				print <span style="color:#e6db74">&#34;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&#34;</span>
+				print <span style="color:#e6db74">&#34;&#34;</span>
+				print <span style="color:#e6db74">&#34;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&#34;</span>
+				print <span style="color:#e6db74">&#34;&#34;</span>
+				sys.exit<span style="color:#f92672">()</span>
 		
 
 	except getopt.GetoptError:  
-           print &quot;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&quot;
-           print &quot;Options:&quot;
-           print &quot;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&quot;
-           print &quot;OR:&quot;
-           print &quot; &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &quot;
-           print &quot;&quot;
-           print &quot;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&quot;
-           print &quot;&quot;
-           print &quot;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&quot;
-           print &quot;&quot;
-           sys.exit()
+           print <span style="color:#e6db74">&#34;Usage: obb_push.py -f obb/file/full/path -p com.example.app.bundleid -v app_vesion&#34;</span>
+           print <span style="color:#e6db74">&#34;Options:&#34;</span>
+           print <span style="color:#e6db74">&#34;  &lt;-f&gt; &lt;-p&gt; &lt;-v&gt; should not be null !&#34;</span>
+           print <span style="color:#e6db74">&#34;OR:&#34;</span>
+           print <span style="color:#e6db74">&#34; &lt;--file=&gt; &lt;--package=&gt; &lt;-obbVersion=&gt; should not be null &#34;</span>
+           print <span style="color:#e6db74">&#34;&#34;</span>
+           print <span style="color:#e6db74">&#34;Sample : ./obb_push.py  -f obb/file/full/path.obb -p &lt;com.example.app.bundleid&gt; -v 15&#34;</span>
+           print <span style="color:#e6db74">&#34;&#34;</span>
+           print <span style="color:#e6db74">&#34;OR : ./obb_push.py --file=obb/file/full/path.obb --package=com.example.app.bundleid --obbVersion=15&#34;</span>
+           print <span style="color:#e6db74">&#34;&#34;</span>
+           sys.exit<span style="color:#f92672">()</span>
 
 	
-	if path == '':
-		print &quot;you should input a obb file\'s path !&quot;
-		exit()
+	<span style="color:#66d9ef">if</span> path <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>:
+		print <span style="color:#e6db74">&#34;you should input a obb file\&#39;s path !&#34;</span>
+		exit<span style="color:#f92672">()</span>
 
-	print '\n'
-	print '||--------------------------------------------------------------||'
-	print '\n'
-	print 'NOTICE:'
-	print 'obb file name rule: [main.bundleVersionCode.bundleID.obb]'
-	print '\n'
-	print '||--------------------------------------------------------------||'
-	print '\n'
+	print <span style="color:#e6db74">&#39;\n&#39;</span>
+	print <span style="color:#e6db74">&#39;||--------------------------------------------------------------||&#39;</span>
+	print <span style="color:#e6db74">&#39;\n&#39;</span>
+	print <span style="color:#e6db74">&#39;NOTICE:&#39;</span>
+	print <span style="color:#e6db74">&#39;obb file name rule: [main.bundleVersionCode.bundleID.obb]&#39;</span>
+	print <span style="color:#e6db74">&#39;\n&#39;</span>
+	print <span style="color:#e6db74">&#39;||--------------------------------------------------------------||&#39;</span>
+	print <span style="color:#e6db74">&#39;\n&#39;</span>
 
-	print 'Start to copy obb file &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; '
-	print '  (1)===============&gt; parsing obb file name:'
-	obbFilePath = path
-	if obbFilePath == '':
-		print 'you should input a obb file\'s path !'
-		exit()
-	obbSubDirs = obbFilePath.split('/')
-	# index  = len(obbSubDirs) - 1
-	obbFileName = obbSubDirs[-1]
-	print obbFileName
-	if obbFileName == '' or obbFileName.find('.obb') == -1:
-		print 'can not find a obb file in the path !'
-		exit()
-	
-	# tmpPackageName = obbFileName.split('.')
-	# print  '  (2)===================&gt; parsing result: ' 
-	# print tmpPackageName
-	print '\n'
-
-
-	# packageName = ''
-	# for com in tmpPackageName[2:-2]:
-	# 	print com
-	# 	if com == tmpPackageName[-2]:
-	# 	 	packageName += com
-	# 	else:
-	# 	 	packageName += com + &quot;.&quot; 
-	# packageName = '.'.join(tmpPackageName[2:-1])
-	# print '    get package name = ' + packageName
-	print '    get package name = ' + package
-
-    #os.system('adb shell mount -o remount -o rw /system')
-    
-
-	print '\n'
-	print '  (3)===============&gt; adb shell mkdir :'
-	obbDestPath = 'sdcard/Android/obb/' + package
-	subDir = ''
-	subDirs = obbDestPath.split('/')
-	for dir in subDirs:
-	 	subDir += '/' + dir
-	 	# print subDir 
-	 	os.system('adb shell mkdir ' + subDir)
-
-	print '\n'
-	print '  (4)===============&gt; adb push obb file to device :'
-	pushCmd = 'adb push ' + obbFilePath.replace(' ','\\ ')+ ' /' + obbDestPath + '/' 
-	# print pushCmd
-	os.system(pushCmd)
-
-	print '\n'
-	print '  (5)===============&gt; adb push rename obb file:'
-	newObbFileName = &quot;main.&quot;+ obbVersion+&quot;.&quot; + package + &quot;.obb&quot;
-	oldFileFullPath = '/' + obbDestPath + '/' + obbFileName 
-	newFileFullPath = '/' + obbDestPath + '/' + newObbFileName
-	print '  old:' + oldFileFullPath
-	reameCmd = 'adb shell mv ' + oldFileFullPath + &quot; &quot; + newFileFullPath
-	os.system(reameCmd)
-	print '  new:' + newFileFullPath
-	print '\n'
-	print '  (6)===============&gt; Completed!!!'
-	print '\n'
-	exit()
-</code></pre>
-
-<ul>
+	print <span style="color:#e6db74">&#39;Start to copy obb file &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; &#39;</span>
+	print <span style="color:#e6db74">&#39;  (1)===============&gt; parsing obb file name:&#39;</span>
+	obbFilePath <span style="color:#f92672">=</span> path
+	<span style="color:#66d9ef">if</span> obbFilePath <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>:
+		print <span style="color:#e6db74">&#39;you should input a obb file\&#39;</span>s path !<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">		exit()
+</span><span style="color:#e6db74">	obbSubDirs = obbFilePath.split(&#39;</span>/<span style="color:#e6db74">&#39;)
+</span><span style="color:#e6db74">	# index  = len(obbSubDirs) - 1
+</span><span style="color:#e6db74">	obbFileName = obbSubDirs[-1]
+</span><span style="color:#e6db74">	print obbFileName
+</span><span style="color:#e6db74">	if obbFileName == &#39;&#39; or obbFileName.find(&#39;</span>.obb<span style="color:#e6db74">&#39;) == -1:
+</span><span style="color:#e6db74">		print &#39;</span>can not find a obb file in the path !<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">		exit()
+</span><span style="color:#e6db74">	
+</span><span style="color:#e6db74">	# tmpPackageName = obbFileName.split(&#39;</span>.<span style="color:#e6db74">&#39;)
+</span><span style="color:#e6db74">	# print  &#39;</span>  <span style="color:#f92672">(</span>2<span style="color:#f92672">)===================</span>&gt; parsing result: <span style="color:#e6db74">&#39; 
+</span><span style="color:#e6db74">	# print tmpPackageName
+</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	# packageName = &#39;&#39;
+</span><span style="color:#e6db74">	# for com in tmpPackageName[2:-2]:
+</span><span style="color:#e6db74">	# 	print com
+</span><span style="color:#e6db74">	# 	if com == tmpPackageName[-2]:
+</span><span style="color:#e6db74">	# 	 	packageName += com
+</span><span style="color:#e6db74">	# 	else:
+</span><span style="color:#e6db74">	# 	 	packageName += com + &#34;.&#34; 
+</span><span style="color:#e6db74">	# packageName = &#39;</span>.<span style="color:#e6db74">&#39;.join(tmpPackageName[2:-1])
+</span><span style="color:#e6db74">	# print &#39;</span>    get package name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; + packageName
+</span><span style="color:#e6db74">	print &#39;</span>    get package name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; + package
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    #os.system(&#39;</span>adb shell mount -o remount -o rw /system<span style="color:#e6db74">&#39;)
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">	print &#39;</span>  <span style="color:#f92672">(</span>3<span style="color:#f92672">)===============</span>&gt; adb shell mkdir :<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">	obbDestPath = &#39;</span>sdcard/Android/obb/<span style="color:#e6db74">&#39; + package
+</span><span style="color:#e6db74">	subDir = &#39;&#39;
+</span><span style="color:#e6db74">	subDirs = obbDestPath.split(&#39;</span>/<span style="color:#e6db74">&#39;)
+</span><span style="color:#e6db74">	for dir in subDirs:
+</span><span style="color:#e6db74">	 	subDir += &#39;</span>/<span style="color:#e6db74">&#39; + dir
+</span><span style="color:#e6db74">	 	# print subDir 
+</span><span style="color:#e6db74">	 	os.system(&#39;</span>adb shell mkdir <span style="color:#e6db74">&#39; + subDir)
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">	print &#39;</span>  <span style="color:#f92672">(</span>4<span style="color:#f92672">)===============</span>&gt; adb push obb file to device :<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">	pushCmd = &#39;</span>adb push <span style="color:#e6db74">&#39; + obbFilePath.replace(&#39;</span> <span style="color:#e6db74">&#39;,&#39;</span><span style="color:#ae81ff">\\</span> <span style="color:#e6db74">&#39;)+ &#39;</span> /<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; 
+</span><span style="color:#e6db74">	# print pushCmd
+</span><span style="color:#e6db74">	os.system(pushCmd)
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">	print &#39;</span>  <span style="color:#f92672">(</span>5<span style="color:#f92672">)===============</span>&gt; adb push rename obb file:<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">	newObbFileName = &#34;main.&#34;+ obbVersion+&#34;.&#34; + package + &#34;.obb&#34;
+</span><span style="color:#e6db74">	oldFileFullPath = &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; + obbFileName 
+</span><span style="color:#e6db74">	newFileFullPath = &#39;</span>/<span style="color:#e6db74">&#39; + obbDestPath + &#39;</span>/<span style="color:#e6db74">&#39; + newObbFileName
+</span><span style="color:#e6db74">	print &#39;</span>  old:<span style="color:#e6db74">&#39; + oldFileFullPath
+</span><span style="color:#e6db74">	reameCmd = &#39;</span>adb shell mv <span style="color:#e6db74">&#39; + oldFileFullPath + &#34; &#34; + newFileFullPath
+</span><span style="color:#e6db74">	os.system(reameCmd)
+</span><span style="color:#e6db74">	print &#39;</span>  new:<span style="color:#e6db74">&#39; + newFileFullPath
+</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">	print &#39;</span>  <span style="color:#f92672">(</span>6<span style="color:#f92672">)===============</span>&gt; Completed!!!<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">	print &#39;</span><span style="color:#ae81ff">\n</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	exit<span style="color:#f92672">()</span>
+</code></pre></div><ul>
 <li>使用方法，执行命令 :</li>
 </ul>
-
-<pre><code class="language-shell"> python &lt;/path/obb_push.py&gt; -p &lt;app package name &gt; -f &lt;/path/of/obbfile&gt; -v &lt;app version code&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> python &lt;/path/obb_push.py&gt; -p &lt;app package name &gt; -f &lt;/path/of/obbfile&gt; -v &lt;app version code&gt;
  
-</code></pre>
+</code></pre></div>
+        </div>
 
-                        </div>
-
-                        
+        
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -364,19 +340,19 @@ if __name__ == '__main__':
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://www.harddone.com/tags/Python">Python</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/adb">adb</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Python'>Python</a></li>
+                
+                <li><a href='/tags/adb'>adb</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -391,20 +367,74 @@ if __name__ == '__main__':
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-139304185-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://www.harddone.com/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-
+    
     <section class="widget">
-        <h3 class="widget-title">Recent articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
     
     <li>
@@ -448,7 +478,6 @@ if __name__ == '__main__':
     </li>
     
 </ul>
-
     </section>
 
     
@@ -485,39 +514,26 @@ if __name__ == '__main__':
 
 
     <section class="widget">
-        <h3 class="widget-title">Categories</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://www.harddone.com/categories/Android/">Android(22)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Android/">Android (22)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Git/">Git(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Git/">Git (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Lua/">Lua(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Lua/">Lua (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Python/">Python(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Python/">Python (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Unity/">Unity(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Unity/">Unity (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Website/">Website(3)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Website/">Website (3)</a></li>
     
 </ul>
-
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Tags</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata Test</a>
@@ -554,7 +570,7 @@ if __name__ == '__main__':
     
     <a href="http://www.harddone.com/tags/Github/">Github</a>
     
-    <a href="http://www.harddone.com/tags/Gradle/">Gradle</a>
+    <a href="http://www.harddone.com/tags/gradle/">gradle</a>
     
     <a href="http://www.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
     
@@ -596,7 +612,7 @@ if __name__ == '__main__':
     
     <a href="http://www.harddone.com/tags/Push-to-JCenter/">Push to JCenter</a>
     
-    <a href="http://www.harddone.com/tags/Python/">Python</a>
+    <a href="http://www.harddone.com/tags/python/">python</a>
     
     <a href="http://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen Overlay Deteched</a>
     
@@ -673,12 +689,11 @@ if __name__ == '__main__':
     <a href="http://www.harddone.com/tags/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E4%BF%A1%E6%81%AF/">进程线程信息</a>
     
 </div>
-
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
@@ -697,64 +712,16 @@ if __name__ == '__main__':
 </section>
 
 
-
     <section class="widget">
-        <h3 class="widget-title">Others</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
-
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-139304185-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>

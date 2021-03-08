@@ -3,51 +3,46 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>Kotlin 自定义带点击效果的Button | ColorfulDark Blog</title>
     <meta property="og:title" content="Kotlin 自定义带点击效果的Button - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-04-19T11:10:07&#43;08:00">
+    <meta property="article:published_time" content='2019-04-19T11:10:07&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2019-04-19T11:10:07&#43;08:00">
+    <meta property="article:modified_time" content='2019-04-19T11:10:07&#43;08:00'>
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
     <meta name="description" content="Kotlin 自定义带点击效果的Button">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/kotlin_custom_btn/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5294048051542592",
-        enable_page_level_ads: true
-    });
-    </script>
+    <script data-ad-client="ca-pub-5294048051542592" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
-
-
+    
+    
+    
     
     
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -60,7 +55,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">Home</a>
+                    <a class="current" href="http://www.harddone.com/">首页</a>
                     
                     <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
@@ -72,182 +67,142 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-  
-  <amp-auto-ads type="adsense"
-    data-ad-client="ca-pub-5294048051542592">
-  </amp-auto-ads>
-  
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Kotlin 自定义带点击效果的Button</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            
-                            2019-04-19
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Android">Android</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            
-
-<h3 id="mainbutton">MainButton</h3>
-
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Kotlin 自定义带点击效果的Button</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年4月19日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Android'>Android</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h3 id="mainbutton">MainButton</h3>
 <p>自定义button，可以在xml中设置点击效果，但是如果每个button都要按下效果的话，重复添加xml文件烦不胜烦，所以自定义一个MainButton,设置好Button的颜色后，按下效果是对其背景色加深处理，达到点击的效果，感觉世界一下清爽了许多。</p>
-
 <h3 id="效果预览">效果预览</h3>
-
-<p><img src="/img/11_custom_btns/01.gif" alt="show.gif" /></p>
-
+<p>
+        <img class="mx-auto" alt="show.gif" src="/img/11_custom_btns/01.gif" />   
+    </p>
 <h3 id="使用说明">使用说明</h3>
-
 <ul>
 <li>添加依赖</li>
 </ul>
-
 <pre><code>implemention 'com.lazy.sdk:customviews:0.0.1'
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>示例</li>
 </ul>
-
-<pre><code class="language-shell">    &lt;androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView android:layout_width=&quot;wrap_content&quot;
-                  android:layout_height=&quot;wrap_content&quot;
-                  app:layout_constraintLeft_toLeftOf=&quot;parent&quot;
-                  app:layout_constraintTop_toTopOf=&quot;parent&quot;
-                  app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
-                  android:layout_marginLeft=&quot;20dp&quot;
-                  android:text=&quot;带图标的矩形：\n文本右下角对齐&quot;/&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    &lt;androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+            android:layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>&gt;
+        &lt;TextView android:layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+                  android:layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+                  app:layout_constraintLeft_toLeftOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+                  app:layout_constraintTop_toTopOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+                  app:layout_constraintBottom_toBottomOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+                  android:layout_marginLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span>
+                  android:text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;带图标的矩形：\n文本右下角对齐&#34;</span>/&gt;
         &lt;com.lazy.customviews.MainButton
-                android:id=&quot;@+id/btnRect&quot;
-                android:layout_width=&quot;108dp&quot;
-                android:layout_height=&quot;108dp&quot;
-                app:mainBtnBgColor=&quot;#FFDE6D&quot;
-                app:mainBtnIcon=&quot;@mipmap/ic_launcher&quot;
-                app:mainBtnIconRate=&quot;4.0&quot;
-                app:mainBtnRadius=&quot;0dp&quot;
-                app:mainBtnText=&quot;矩形&quot;
-                app:mainBtnTextSize=&quot;15sp&quot;
-                app:mainBtnTextColor=&quot;@android:color/holo_red_dark&quot;
-                app:mainBtnTextAlign=&quot;right_bottom&quot;
-                app:layout_constraintRight_toRightOf=&quot;parent&quot;
-                app:layout_constraintLeft_toLeftOf=&quot;parent&quot;
-                app:layout_constraintTop_toTopOf=&quot;parent&quot;
-                android:layout_marginStart=&quot;10dp&quot;
-                android:layout_marginLeft=&quot;10dp&quot;
-                android:layout_marginTop=&quot;10dp&quot;/&gt;
+                android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/btnRect&#34;</span>
+                android:layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;108dp&#34;</span>
+                android:layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;108dp&#34;</span>
+                app:mainBtnBgColor<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#FFDE6D&#34;</span>
+                app:mainBtnIcon<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher&#34;</span>
+                app:mainBtnIconRate<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4.0&#34;</span>
+                app:mainBtnRadius<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+                app:mainBtnText<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;矩形&#34;</span>
+                app:mainBtnTextSize<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;15sp&#34;</span>
+                app:mainBtnTextColor<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@android:color/holo_red_dark&#34;</span>
+                app:mainBtnTextAlign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right_bottom&#34;</span>
+                app:layout_constraintRight_toRightOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+                app:layout_constraintLeft_toLeftOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+                app:layout_constraintTop_toTopOf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+                android:layout_marginStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10dp&#34;</span>
+                android:layout_marginLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10dp&#34;</span>
+                android:layout_marginTop<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10dp&#34;</span>/&gt;
     &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
 
-</code></pre>
-
-<ul>
-<li><p>自定义参数说明</p>
-
+</code></pre></div><ul>
+<li>
+<p>自定义参数说明</p>
 <ul>
 <li>app:mainBtnBgColor</li>
-</ul></li>
 </ul>
-
-<pre><code>  按钮背景色：#FFDE6D 或@color/colorRed
-</code></pre>
-
-<ul>
+<pre><code>按钮背景色：#FFDE6D 或@color/colorRed
+</code></pre><ul>
 <li>app:mainBtnIcon</li>
 </ul>
-
-<pre><code>  按钮图标：&quot;@mipmap/ic_launcher&quot;，如果不需要，不设置该参数
-</code></pre>
-
-<ul>
+<pre><code>按钮图标：&quot;@mipmap/ic_launcher&quot;，如果不需要，不设置该参数
+</code></pre><ul>
 <li>app:mainBtnIconRate</li>
 </ul>
-
-<pre><code>  按钮图标比例：float型，表示图标占整个按钮的几分之几，4.0 表示 1/4.0
-</code></pre>
-
-<ul>
+<pre><code>按钮图标比例：float型，表示图标占整个按钮的几分之几，4.0 表示 1/4.0
+</code></pre><ul>
 <li>app:mainBtnRadius</li>
 </ul>
-
-<pre><code>  按钮圆角弧度：单位dp
-</code></pre>
-
-<ul>
+<pre><code>按钮圆角弧度：单位dp
+</code></pre><ul>
 <li>app:mainBtnText</li>
 </ul>
-
-<pre><code>  按钮title
-</code></pre>
-
-<ul>
+<pre><code>按钮title
+</code></pre><ul>
 <li>app:mainBtnTextSize</li>
 </ul>
-
-<pre><code>  按钮title字体大小：单位sp
-</code></pre>
-
-<ul>
+<pre><code>按钮title字体大小：单位sp
+</code></pre><ul>
 <li>app:mainBtnTextColor</li>
 </ul>
-
-<pre><code>  按钮文本颜色：#FFDE6D 或者 @android:color/red
-</code></pre>
-
-<ul>
+<pre><code>按钮文本颜色：#FFDE6D 或者 @android:color/red
+</code></pre><ul>
 <li>app:mainBtnTextAlign</li>
 </ul>
-
-<pre><code>  按钮文本对齐方式：
-  left_bottom: 左下角对齐
-  bottom：底部居中对齐
-  right_bottom: 右下角对齐
-  center: 居中，在没有icon的情况设置该值
-</code></pre>
-
+<pre><code>按钮文本对齐方式：
+left_bottom: 左下角对齐
+bottom：底部居中对齐
+right_bottom: 右下角对齐
+center: 居中，在没有icon的情况设置该值
+</code></pre></li>
+<li>
+<p>注意事项</p>
+<p>MainButton点击效果是对背景色做颜色加深处理，为了响应touch事件，需要设置OnClickListener才能生效。</p>
 <ul>
-<li>注意事项</li>
+<li>Kotlin</li>
+</ul>
+<pre><code>btnRect.setOnClickListener{
+
+}
+</code></pre></li>
+<li>
+<p><a href="https://github.com/LazyBonesLZ/LazySDK.git">Github 源码</a></p>
+</li>
 </ul>
 
-<p>MainButton点击效果是对背景色做颜色加深处理，为了响应touch事件，需要设置OnClickListener才能生效。
-  * Kotlin</p>
+        </div>
 
-<pre><code>  btnRect.setOnClickListener{
-
-  }
-</code></pre>
-
-<ul>
-<li><a href="https://github.com/LazyBonesLZ/LazySDK.git">Github 源码</a></li>
-</ul>
-
-                        </div>
-
-                        
+        
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -267,21 +222,21 @@
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://www.harddone.com/tags/Android">Android</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/Kotlin">Kotlin</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button">自定义Button</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Android'>Android</a></li>
+                
+                <li><a href='/tags/Kotlin'>Kotlin</a></li>
+                
+                <li><a href='/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Button'>自定义Button</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -296,20 +251,74 @@
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-139304185-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://www.harddone.com/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-
+    
     <section class="widget">
-        <h3 class="widget-title">Recent articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
     
     <li>
@@ -353,7 +362,6 @@
     </li>
     
 </ul>
-
     </section>
 
     
@@ -390,39 +398,26 @@
 
 
     <section class="widget">
-        <h3 class="widget-title">Categories</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://www.harddone.com/categories/Android/">Android(22)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Android/">Android (22)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Git/">Git(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Git/">Git (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Lua/">Lua(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Lua/">Lua (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Python/">Python(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Python/">Python (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Unity/">Unity(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Unity/">Unity (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Website/">Website(3)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Website/">Website (3)</a></li>
     
 </ul>
-
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Tags</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata Test</a>
@@ -459,7 +454,7 @@
     
     <a href="http://www.harddone.com/tags/Github/">Github</a>
     
-    <a href="http://www.harddone.com/tags/Gradle/">Gradle</a>
+    <a href="http://www.harddone.com/tags/gradle/">gradle</a>
     
     <a href="http://www.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
     
@@ -501,7 +496,7 @@
     
     <a href="http://www.harddone.com/tags/Push-to-JCenter/">Push to JCenter</a>
     
-    <a href="http://www.harddone.com/tags/Python/">Python</a>
+    <a href="http://www.harddone.com/tags/python/">python</a>
     
     <a href="http://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen Overlay Deteched</a>
     
@@ -578,12 +573,11 @@
     <a href="http://www.harddone.com/tags/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E4%BF%A1%E6%81%AF/">进程线程信息</a>
     
 </div>
-
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
@@ -602,64 +596,16 @@
 </section>
 
 
-
     <section class="widget">
-        <h3 class="widget-title">Others</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
-
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-139304185-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>

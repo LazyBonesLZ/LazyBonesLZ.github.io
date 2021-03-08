@@ -3,51 +3,46 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>Google play billing Alpha / Beta 测试 | ColorfulDark Blog</title>
     <meta property="og:title" content="Google play billing Alpha / Beta 测试 - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2018-07-11T15:29:05&#43;08:00">
+    <meta property="article:published_time" content='2018-07-11T15:29:05&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2018-07-11T15:29:05&#43;08:00">
+    <meta property="article:modified_time" content='2018-07-11T15:29:05&#43;08:00'>
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
     <meta name="description" content="Google play billing Alpha / Beta 测试">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/gp_billing/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5294048051542592",
-        enable_page_level_ads: true
-    });
-    </script>
+    <script data-ad-client="ca-pub-5294048051542592" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
-
-
+    
+    
+    
     
     
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -60,7 +55,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">Home</a>
+                    <a class="current" href="http://www.harddone.com/">首页</a>
                     
                     <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
@@ -72,192 +67,199 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-  
-  <amp-auto-ads type="adsense"
-    data-ad-client="ca-pub-5294048051542592">
-  </amp-auto-ads>
-  
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Google play billing Alpha / Beta 测试</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            
-                            2018-07-11
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Android">Android</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            
-
-<p>本文假设你已经集成Google play billing SDK ，根据google官方提供的<a href="https://developer.android.com/google/play/billing/billing_testing">文档说明</a>，提供了几种验证应用内购买逻辑的方式。</p>
-
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Google play billing Alpha / Beta 测试</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年7月11日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Android'>Android</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>本文假设你已经集成Google play billing SDK ，根据google官方提供的<a href="https://developer.android.com/google/play/billing/billing_testing">文档说明</a>，提供了几种验证应用内购买逻辑的方式。</p>
 <p>本文记录的是alpha或beta测试的一些操作细节。供参考。</p>
-
 <p><strong>！！！！！前方多图预警！！！！！！</strong></p>
-
 <h1 id="一-前提">一 前提</h1>
-
 <p>1.已注册Google play console账号；</p>
-
 <p>2.已注册Google账号：gmail账号或其他；</p>
-
 <p>3.签名打包apk，备用。</p>
-
 <h1 id="二-具体步骤">二 具体步骤</h1>
-
-<p>1.登陆 [Google play console]().</p>
-
+<p>1.登陆 <a href="">Google play console</a>.</p>
 <p>2.创建App</p>
-
 <p>2.1 Create application</p>
-
-<h2 id="img-03-gp-billing-00-png"><img src="/img/03_gp_billing/00.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-01-png"><img src="/img/03_gp_billing/01.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing00png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/00.png" />   
+    </h2>
+<h2 id="img03_gp_billing01png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/01.png" />   
+    </h2>
 <p>2.2 完善App的其他信息</p>
-
-<h2 id="img-03-gp-billing-02-png"><img src="/img/03_gp_billing/02.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing02png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/02.png" />   
+    </h2>
 <p>2.3 上传app的截图和资源</p>
-
-<h2 id="img-03-gp-billing-03-png"><img src="/img/03_gp_billing/03.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing03png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/03.png" />   
+    </h2>
 <p>2.4 App的其他信息</p>
-
-<h2 id="img-03-gp-billing-04-png"><img src="/img/03_gp_billing/04.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-05-png"><img src="/img/03_gp_billing/05.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing04png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/04.png" />   
+    </h2>
+<h2 id="img03_gp_billing05png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/05.png" />   
+    </h2>
 <p>3 发布apk到alpha渠道，后续几道步骤，需要在该步骤上传完apk后方可继续。操作步骤相见截图：</p>
-
-<h2 id="img-03-gp-billing-06-png"><img src="/img/03_gp_billing/06.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-07-png"><img src="/img/03_gp_billing/07.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-08-png"><img src="/img/03_gp_billing/08.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-09-png"><img src="/img/03_gp_billing/09.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-10-png"><img src="/img/03_gp_billing/10.png" alt="" /></h2>
-
-<ol>
+<h2 id="img03_gp_billing06png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/06.png" />   
+    </h2>
+<h2 id="img03_gp_billing07png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/07.png" />   
+    </h2>
+<h2 id="img03_gp_billing08png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/08.png" />   
+    </h2>
+<h2 id="img03_gp_billing09png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/09.png" />   
+    </h2>
+<h2 id="img03_gp_billing10png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/10.png" />   
+    </h2>
+<ol start="4">
 <li>完善 Content rating信息</li>
 </ol>
-
-<h2 id="img-03-gp-billing-11-png"><img src="/img/03_gp_billing/11.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-12-png"><img src="/img/03_gp_billing/12.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-13-png"><img src="/img/03_gp_billing/13.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-14-png"><img src="/img/03_gp_billing/14.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-15-png"><img src="/img/03_gp_billing/15.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing11png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/11.png" />   
+    </h2>
+<h2 id="img03_gp_billing12png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/12.png" />   
+    </h2>
+<h2 id="img03_gp_billing13png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/13.png" />   
+    </h2>
+<h2 id="img03_gp_billing14png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/14.png" />   
+    </h2>
+<h2 id="img03_gp_billing15png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/15.png" />   
+    </h2>
 <p>5.设置App付费信息</p>
-
-<h2 id="img-03-gp-billing-16-png"><img src="/img/03_gp_billing/16.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-17-png"><img src="/img/03_gp_billing/17.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-18-png"><img src="/img/03_gp_billing/18.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-19-png"><img src="/img/03_gp_billing/19.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing16png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/16.png" />   
+    </h2>
+<h2 id="img03_gp_billing17png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/17.png" />   
+    </h2>
+<h2 id="img03_gp_billing18png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/18.png" />   
+    </h2>
+<h2 id="img03_gp_billing19png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/19.png" />   
+    </h2>
 <p>6.完成以上步骤后，如果没有问题，则app的配置信息就完成了。如下图所示，则表示所有配置都完成。</p>
-
-<h2 id="img-03-gp-billing-20-png"><img src="/img/03_gp_billing/20.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing20png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/20.png" />   
+    </h2>
 <p>7.配置应用内购买的商品信息和订阅信息</p>
-
 <p>7.1 配置Managed商品信息</p>
-
 <p>7.1.1 创建Managed Products</p>
-
-<h2 id="img-03-gp-billing-21-png"><img src="/img/03_gp_billing/21.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing21png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/21.png" />   
+    </h2>
 <p>7.1.2 设置Managed Product</p>
-
-<h2 id="img-03-gp-billing-22-png"><img src="/img/03_gp_billing/22.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-23-png"><img src="/img/03_gp_billing/23.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-24-png"><img src="/img/03_gp_billing/24.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-25-png"><img src="/img/03_gp_billing/25.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing22png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/22.png" />   
+    </h2>
+<h2 id="img03_gp_billing23png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/23.png" />   
+    </h2>
+<h2 id="img03_gp_billing24png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/24.png" />   
+    </h2>
+<h2 id="img03_gp_billing25png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/25.png" />   
+    </h2>
 <p>7.2 创建Subscription</p>
-
-<h2 id="img-03-gp-billing-26-png"><img src="/img/03_gp_billing/26.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-27-png"><img src="/img/03_gp_billing/27.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-28-png"><img src="/img/03_gp_billing/28.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-29-png"><img src="/img/03_gp_billing/29.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-30-png"><img src="/img/03_gp_billing/30.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing26png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/26.png" />   
+    </h2>
+<h2 id="img03_gp_billing27png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/27.png" />   
+    </h2>
+<h2 id="img03_gp_billing28png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/28.png" />   
+    </h2>
+<h2 id="img03_gp_billing29png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/29.png" />   
+    </h2>
+<h2 id="img03_gp_billing30png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/30.png" />   
+    </h2>
 <p>8.添加测试者账号
 将你申请作为测试的Google账号添加为测试者。</p>
-
-<h2 id="img-03-gp-billing-31-png"><img src="/img/03_gp_billing/31.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-32-png"><img src="/img/03_gp_billing/32.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-33-png"><img src="/img/03_gp_billing/33.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-34-png"><img src="/img/03_gp_billing/34.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-35-png"><img src="/img/03_gp_billing/35.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-36-png"><img src="/img/03_gp_billing/36.png" alt="" /></h2>
-
+<h2 id="img03_gp_billing31png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/31.png" />   
+    </h2>
+<h2 id="img03_gp_billing32png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/32.png" />   
+    </h2>
+<h2 id="img03_gp_billing33png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/33.png" />   
+    </h2>
+<h2 id="img03_gp_billing34png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/34.png" />   
+    </h2>
+<h2 id="img03_gp_billing35png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/35.png" />   
+    </h2>
+<h2 id="img03_gp_billing36png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/36.png" />   
+    </h2>
 <p>9.完成tester账号设置后，就可以将app推出，等待google的审核。</p>
+<h2 id="img03_gp_billing37png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/37.png" />   
+    </h2>
+<h2 id="img03_gp_billing38png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/38.png" />   
+    </h2>
+<h2 id="img03_gp_billing39png">
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/39.png" />   
+    </h2>
+<h2 id="img03_gp_billing40png">10.等待审核
 
-<h2 id="img-03-gp-billing-37-png"><img src="/img/03_gp_billing/37.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-38-png"><img src="/img/03_gp_billing/38.png" alt="" /></h2>
-
-<h2 id="img-03-gp-billing-39-png"><img src="/img/03_gp_billing/39.png" alt="" /></h2>
-
-<p>10.等待审核</p>
-
-<h2 id="img-03-gp-billing-40-png"><img src="/img/03_gp_billing/40.png" alt="" /></h2>
-
+        <img class="mx-auto" alt="" src="/img/03_gp_billing/40.png" />   
+    </h2>
 <p>一切顺利的话，就可以等待Google的审核了，通常这个过程会花费2-3个小时不等。审核通过后，在Android 设备Google play store上登陆你的测试者账号，就可以搜索你上传的的app了，之后就可以发起正常的购买流程，不需要绑定银行卡，因为不会真正的付费。</p>
-
 <p>在测试购买的过程中，有可能发现bug了，改了之后需要再上传apk么？不用，直接像开发其他功能一样，直接连着IDE开发调试，购买流程完全不受影响，前提：设备上需要在google play store登陆测试者账号。</p>
-
 <p>以上。</p>
 
-                        </div>
+        </div>
 
-                        
+        
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -275,25 +277,25 @@
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://www.harddone.com/tags/Android">Android</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/GP">GP</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/Billing">Billing</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/IAP">IAP</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/Alpha/Bata-Test">Alpha/Bata Test</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Android'>Android</a></li>
+                
+                <li><a href='/tags/GP'>GP</a></li>
+                
+                <li><a href='/tags/Billing'>Billing</a></li>
+                
+                <li><a href='/tags/IAP'>IAP</a></li>
+                
+                <li><a href='/tags/Alpha/Bata-Test'>Alpha/Bata Test</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -308,20 +310,74 @@
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-139304185-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://www.harddone.com/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-
+    
     <section class="widget">
-        <h3 class="widget-title">Recent articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
     
     <li>
@@ -365,7 +421,6 @@
     </li>
     
 </ul>
-
     </section>
 
     
@@ -402,39 +457,26 @@
 
 
     <section class="widget">
-        <h3 class="widget-title">Categories</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://www.harddone.com/categories/Android/">Android(22)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Android/">Android (22)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Git/">Git(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Git/">Git (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Lua/">Lua(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Lua/">Lua (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Python/">Python(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Python/">Python (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Unity/">Unity(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Unity/">Unity (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Website/">Website(3)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Website/">Website (3)</a></li>
     
 </ul>
-
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Tags</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata Test</a>
@@ -471,7 +513,7 @@
     
     <a href="http://www.harddone.com/tags/Github/">Github</a>
     
-    <a href="http://www.harddone.com/tags/Gradle/">Gradle</a>
+    <a href="http://www.harddone.com/tags/gradle/">gradle</a>
     
     <a href="http://www.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
     
@@ -513,7 +555,7 @@
     
     <a href="http://www.harddone.com/tags/Push-to-JCenter/">Push to JCenter</a>
     
-    <a href="http://www.harddone.com/tags/Python/">Python</a>
+    <a href="http://www.harddone.com/tags/python/">python</a>
     
     <a href="http://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen Overlay Deteched</a>
     
@@ -590,12 +632,11 @@
     <a href="http://www.harddone.com/tags/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E4%BF%A1%E6%81%AF/">进程线程信息</a>
     
 </div>
-
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
@@ -614,64 +655,16 @@
 </section>
 
 
-
     <section class="widget">
-        <h3 class="widget-title">Others</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
-
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-139304185-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>

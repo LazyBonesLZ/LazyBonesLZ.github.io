@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>数组 on ColorfulDark Blog</title>
@@ -6,11 +6,7 @@
     <description>Recent content in 数组 on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 11 Jul 2018 01:59:34 +0800</lastBuildDate>
-    
-	<atom:link href="http://www.harddone.com/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 11 Jul 2018 01:59:34 +0800</lastBuildDate><atom:link href="http://www.harddone.com/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unity Call Android native method with array parameters</title>
       <link>http://www.harddone.com/post/unit_call_android_arr/</link>

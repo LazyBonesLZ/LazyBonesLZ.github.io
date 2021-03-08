@@ -3,51 +3,46 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二） | ColorfulDark Blog</title>
     <meta property="og:title" content="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二） - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-04-25T05:13:24&#43;08:00">
+    <meta property="article:published_time" content='2019-04-25T05:13:24&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2019-04-25T05:13:24&#43;08:00">
+    <meta property="article:modified_time" content='2019-04-25T05:13:24&#43;08:00'>
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
     <meta name="description" content="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/hugo_nginx_2/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5294048051542592",
-        enable_page_level_ads: true
-    });
-    </script>
+    <script data-ad-client="ca-pub-5294048051542592" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
-
-
+    
+    
+    
     
     
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -60,7 +55,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">Home</a>
+                    <a class="current" href="http://www.harddone.com/">首页</a>
                     
                     <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
@@ -72,149 +67,104 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-  
-  <amp-auto-ads type="adsense"
-    data-ad-client="ca-pub-5294048051542592">
-  </amp-auto-ads>
-  
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            
-                            2019-04-25
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Website">Website</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            
-
-<h1 id="前篇提要">前篇提要</h1>
-
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年4月25日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Website'>Website</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="前篇提要">前篇提要</h1>
 <p>在上一篇文章，我们详细记录了如何购买阿里云服务器的步骤和搭建博客网站的部分准备工作。本文将继续记录安装服务器环境的步骤。</p>
-
 <h1 id="服务器软件环境安装">服务器软件环境安装</h1>
-
 <h2 id="1-安装git">1. 安装git</h2>
-
 <pre><code>sudo yum install git
-</code></pre>
-
-<h2 id="2-安装nginx-https-blog-csdn-net-hanshileiai-article-details-54571028"><a href="https://blog.csdn.net/hanshileiai/article/details/54571028">2. 安装Nginx</a></h2>
-
+</code></pre><h2 id="2-安装nginxhttpsblogcsdnnethanshileiaiarticledetails54571028"><a href="https://blog.csdn.net/hanshileiai/article/details/54571028">2. 安装Nginx</a></h2>
 <p>Nginx是一个高性能的web服务器软件。它是一个比apache更灵活和轻量级的程序。</p>
-
 <ul>
-<li>第一步 - 安装EPEL
-EPEL代表企业Linux的额外包。因为yum作为软件包管理器不在其默认存储库中包括nginx的最新版本，安    装EPEL将确保CentOS上的nginx保持最新。</li>
-</ul>
-
+<li>
+<p>第一步 - 安装EPEL
+EPEL代表企业Linux的额外包。因为yum作为软件包管理器不在其默认存储库中包括nginx的最新版本，安    装EPEL将确保CentOS上的nginx保持最新。</p>
 <p>要安装EPEL，请打开终端并输入：</p>
-
-<pre><code>  sudo yum install epel-release
-</code></pre>
-
-<ul>
-<li>第二步 - 安装nginx
-要安装nginx，打开终端并输入：
-<br /></li>
+<pre><code>sudo yum install epel-release
+</code></pre></li>
+<li>
+<p>第二步 - 安装nginx
+要安装nginx，打开终端并输入：</p>
+<pre><code>sudo yum install nginx
+</code></pre><p>在您对提示两次回答yes（第一次涉及导入EPEL gpg-key）后，nginx将在您的虚拟专用服务器上完成安装。</p>
+</li>
+<li>
+<p>第三步 - 启动nginx
+nginx不会自己启动。要运行nginx，请输入：</p>
+<pre><code>sudo /etc/init.d/nginx start
+</code></pre><p>您可以通过将浏览器定向到您的IP地址来确认nginx已安装在您的VPS上。</p>
+<pre><code>http://xxx.xxx.xxx.xxx
+</code></pre><p>在页面上，您将看到单词“Welcome to nginx”。
+恭喜！你现在已经安装了nginx。</p>
+</li>
+<li>
+<p>如果你看到的是如下错误信息，请移步查看Troubleshoting</p>
+</li>
 </ul>
-
-<pre><code>  sudo yum install nginx
-</code></pre>
-
-<p>在您对提示两次回答yes（第一次涉及导入EPEL gpg-key）后，nginx将在您的虚拟专用服务器上完成安装。</p>
-
-<ul>
-<li>第三步 - 启动nginx
-nginx不会自己启动。要运行nginx，请输入：
-<br /></li>
-</ul>
-
-<pre><code>  sudo /etc/init.d/nginx start
-</code></pre>
-
-<p>您可以通过将浏览器定向到您的IP地址来确认nginx已安装在您的VPS上。</p>
-
-<pre><code>  http://xxx.xxx.xxx.xxx
-</code></pre>
-
-<p>在页面上，您将看到单词“Welcome to nginx”。
-  恭喜！你现在已经安装了nginx。
- * 如果你看到的是如下错误信息，请移步查看Troubleshoting</p>
-
 <pre><code>nginx: [emerg] socket() [::]:80 failed (97: Address family not supported by protocol)
-</code></pre>
-
-<h1 id="3-安装nodejs-和-npm-https-tecadmin-net-install-latest-nodejs-and-npm-on-centos">3. <a href="https://tecadmin.net/install-latest-nodejs-and-npm-on-centos/">安装Nodejs 和 npm</a></h1>
-
+</code></pre><h1 id="3-安装nodejs-和-npmhttpstecadminnetinstall-latest-nodejs-and-npm-on-centos">3. <a href="https://tecadmin.net/install-latest-nodejs-and-npm-on-centos/">安装Nodejs 和 npm</a></h1>
 <p>由于我们之后在服务器上需要启动一个监听Gihtub的push事件Js脚本服务，所以需要nodejs支持。</p>
-
 <p>npm是什么东东？npm其实是Node.js的包管理工具（package manager）。</p>
-
 <p>为啥我们需要一个包管理工具呢？因为我们在Node.js上开发时，会用到很多别人写的JavaScript代码。如果我们要使用别人写的某个包，每次都根据名称搜索一下官方网站，下载代码，解压，再使用，非常繁琐。于是一个集中管理的工具应运而生：大家都把自己开发的模块打包后放到npm官网上，如果要使用，直接通过npm安装就可以直接用，不用管代码存在哪，应该从哪下载。</p>
-
 <p>更重要的是，如果我们要使用模块A，而模块A又依赖于模块B，模块B又依赖于模块X和模块Y，npm可以根据依赖关系，把所有依赖的包都下载下来并管理起来。否则，靠我们自己手动管理，肯定既麻烦又容易出错。</p>
-
 <p>讲了这么多，npm究竟在哪？</p>
-
-<p>其实npm已经在Node.js安装的时候顺带装好了。所以，我们只需要安装nodejs就行，然后检查一下各自的版本号确认是否安装成功。
-* 添加NodeJs Yum Repository</p>
-
+<p>其实npm已经在Node.js安装的时候顺带装好了。所以，我们只需要安装nodejs就行，然后检查一下各自的版本号确认是否安装成功。</p>
+<ul>
+<li>添加NodeJs Yum Repository</li>
+</ul>
 <pre><code>yum install -y gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>安装NodeJs</li>
 </ul>
-
 <pre><code>sudo yum install nodejs
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>检查nodejs和npm 版本</li>
 </ul>
-
 <pre><code>node -v
 npm -v
-</code></pre>
-
-<h1 id="4-安装pm2">4.安装pm2</h1>
-
+</code></pre><h1 id="4安装pm2">4.安装pm2</h1>
 <p>pm2是一个很好用的Node应用的进程管理器，具有守护进程，监控，日志等一整套完整的功能，用它可以非常方便地启动、重启Node应用，并且可以实现Node应用的开机启动。用npm安装pm2：</p>
-
 <pre><code>npm install pm2@latest -g
-</code></pre>
-
-<p>至此，服务器端的软件配置基本完成。我们将在下一篇详细说明如何在本地利用hugo生成静态网站文件以及自动上传等脚本的配置。</p>
-
+</code></pre><p>至此，服务器端的软件配置基本完成。我们将在下一篇详细说明如何在本地利用hugo生成静态网站文件以及自动上传等脚本的配置。</p>
 <h1 id="troubleshoting">Troubleshoting</h1>
-
 <ul>
-<li>1. nginx: [emerg] socket() [::]:80 failed (97: Address family not supported by protocol)</li>
+<li>
+<ol>
+<li>nginx: [emerg] socket() [::]:80 failed (97: Address family not supported by protocol)</li>
+</ol>
+</li>
 </ul>
-
 <pre><code>centos6.5环境
 
 修改nginx配置文件后，重启报错：
@@ -242,13 +192,12 @@ listen       80;
    sudo /etc/init.d/nginx start
 
 </code></pre>
+        </div>
 
-                        </div>
-
-                        
+        
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -268,27 +217,27 @@ listen       80;
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://www.harddone.com/tags/Web">Web</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/Nginx">Nginx</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/CentOS">CentOS</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/Github">Github</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/Webhook">Webhook</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2">自动部署</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Web'>Web</a></li>
+                
+                <li><a href='/tags/Nginx'>Nginx</a></li>
+                
+                <li><a href='/tags/CentOS'>CentOS</a></li>
+                
+                <li><a href='/tags/Github'>Github</a></li>
+                
+                <li><a href='/tags/Webhook'>Webhook</a></li>
+                
+                <li><a href='/tags/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2'>自动部署</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -303,20 +252,74 @@ listen       80;
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-139304185-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://www.harddone.com/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-
+    
     <section class="widget">
-        <h3 class="widget-title">Recent articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
     
     <li>
@@ -360,7 +363,6 @@ listen       80;
     </li>
     
 </ul>
-
     </section>
 
     
@@ -397,39 +399,26 @@ listen       80;
 
 
     <section class="widget">
-        <h3 class="widget-title">Categories</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://www.harddone.com/categories/Android/">Android(22)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Android/">Android (22)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Git/">Git(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Git/">Git (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Lua/">Lua(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Lua/">Lua (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Python/">Python(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Python/">Python (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Unity/">Unity(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Unity/">Unity (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Website/">Website(3)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Website/">Website (3)</a></li>
     
 </ul>
-
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Tags</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata Test</a>
@@ -466,7 +455,7 @@ listen       80;
     
     <a href="http://www.harddone.com/tags/Github/">Github</a>
     
-    <a href="http://www.harddone.com/tags/Gradle/">Gradle</a>
+    <a href="http://www.harddone.com/tags/gradle/">gradle</a>
     
     <a href="http://www.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
     
@@ -508,7 +497,7 @@ listen       80;
     
     <a href="http://www.harddone.com/tags/Push-to-JCenter/">Push to JCenter</a>
     
-    <a href="http://www.harddone.com/tags/Python/">Python</a>
+    <a href="http://www.harddone.com/tags/python/">python</a>
     
     <a href="http://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen Overlay Deteched</a>
     
@@ -585,12 +574,11 @@ listen       80;
     <a href="http://www.harddone.com/tags/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E4%BF%A1%E6%81%AF/">进程线程信息</a>
     
 </div>
-
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
@@ -609,64 +597,16 @@ listen       80;
 </section>
 
 
-
     <section class="widget">
-        <h3 class="widget-title">Others</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
-
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-139304185-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>

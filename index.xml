@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ColorfulDark Blog</title>
@@ -6,11 +6,7 @@
     <description>Recent content on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate>
-    
-	<atom:link href="http://www.harddone.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate><atom:link href="http://www.harddone.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android app bundle tool for Mac</title>
       <link>http://www.harddone.com/post/aabtool_for_mac/</link>
@@ -144,7 +140,6 @@
       
       <guid>http://www.harddone.com/post/gp_issue/</guid>
       <description>&lt;p&gt;Google IAP一直是项目测试组的噩梦。各种莫名其妙的无法购买，每当项目已更新，涉及IAP的测试都会要去梳理一遍代码逻辑，结果大多数情况都是非代码逻辑导致。&lt;/p&gt;
-
 &lt;p&gt;所以，把遇到的问题做一个梳理，备忘，或许可以帮到别人。&lt;/p&gt;</description>
     </item>
     
@@ -191,7 +186,7 @@ Email:lazybonestjl@gmail.com</description>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/hugo_nginx_3/</guid>
-      <description>前篇提要 在上一篇中，我们主要介绍了服务器的环境安装。在本文中，我们将就具体的操作步骤加以说明并截图展示。 利用 Hugo 生成静态网站 1. 创建项目目录 在您本地合适的目录下创建一个空文件夹，命名为BlogTest, 为了方便之后的命令行演示，我们假设刚才创建的目录完整路径为： /xxx/xxx/xxx/BlogTest 2. 新建网站 打开终端执</description>
+      <description>前篇提要 在上一篇中，我们主要介绍了服务器的环境安装。在本文中，我们将就具体的操作步骤加以说明并截图展示。 利用 Hugo 生成静态网站 1. 创建项目目录 在您本地合适的目录下创建一个空文件夹，命名为 BlogTest, 为了方便之后的命令行演示，我们假设刚才创建的目录完整路径为： /xxx/xxx/xxx/BlogTest 2. 新建网站 打开终端执行Hugo命令，</description>
     </item>
     
     <item>
@@ -227,7 +222,7 @@ Email:lazybonestjl@gmail.com</description>
       <pubDate>Thu, 18 Apr 2019 10:12:15 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/python_adb/</guid>
-      <description>说明 本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令： //example cmd = &#39;adb shell&#39; os.system(cmd) 1.uninstall_clean_app.py 根据app bundle id 卸载应用，并且删除该应用在sdcard目录下生成的文件夹等。当前脚本中所删除的目录是写死</description>
+      <description>说明 本文以具体的python脚本为例进行说明，两个脚本都是根据开发过程中的业务需求而开发，并不具备通用性。但是其核心代码都是通过python的api执行adb命令： //example cmd = &amp;#39;adb shell&amp;#39; os.system(cmd) 1.uninstall_clean_app.py 根据app bundle id 卸载应用，并且删除该应用在sdcard目录下生成的文件夹等。当前脚本中所删除的目录是写死</description>
     </item>
     
     <item>
@@ -272,7 +267,7 @@ Email:lazybonestjl@gmail.com</description>
       <pubDate>Thu, 12 Jul 2018 14:35:36 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/nexus_private_maven/</guid>
-      <description>很多时候，Android Studio中所创建的工程，会依赖一个或多个Module。Module 生成的AAR库，可以上传到maven或者私服Nexus作为公用的SDK。Gradle子工程之间通过 compile/implementation project(&amp;rdquo;:XXX&amp;rdquo;)这种方式依赖是非常便利的，但是这</description>
+      <description>很多时候，Android Studio中所创建的工程，会依赖一个或多个Module。Module 生成的AAR库，可以上传到maven或者私服Nexus作为公用的SDK。Gradle子工程之间通过 compile/implementation project(&amp;quot;:XXX&amp;quot;)这种方式依赖是非常便利的，但是这样的</description>
     </item>
     
     <item>

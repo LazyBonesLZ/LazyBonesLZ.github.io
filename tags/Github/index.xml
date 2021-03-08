@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on ColorfulDark Blog</title>
@@ -6,18 +6,14 @@
     <description>Recent content in Github on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 25 Apr 2019 11:13:24 +0800</lastBuildDate>
-    
-	<atom:link href="http://www.harddone.com/tags/Github/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Apr 2019 11:13:24 +0800</lastBuildDate><atom:link href="http://www.harddone.com/tags/Github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）</title>
       <link>http://www.harddone.com/post/hugo_nginx_3/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/hugo_nginx_3/</guid>
-      <description>前篇提要 在上一篇中，我们主要介绍了服务器的环境安装。在本文中，我们将就具体的操作步骤加以说明并截图展示。 利用 Hugo 生成静态网站 1. 创建项目目录 在您本地合适的目录下创建一个空文件夹，命名为BlogTest, 为了方便之后的命令行演示，我们假设刚才创建的目录完整路径为： /xxx/xxx/xxx/BlogTest 2. 新建网站 打开终端执</description>
+      <description>前篇提要 在上一篇中，我们主要介绍了服务器的环境安装。在本文中，我们将就具体的操作步骤加以说明并截图展示。 利用 Hugo 生成静态网站 1. 创建项目目录 在您本地合适的目录下创建一个空文件夹，命名为 BlogTest, 为了方便之后的命令行演示，我们假设刚才创建的目录完整路径为： /xxx/xxx/xxx/BlogTest 2. 新建网站 打开终端执行Hugo命令，</description>
     </item>
     
     <item>

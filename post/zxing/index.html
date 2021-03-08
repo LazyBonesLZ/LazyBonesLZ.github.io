@@ -3,51 +3,46 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>Android:Zbar 解码、ZXing 管理相机的补充（Zbar支持64位） | ColorfulDark Blog</title>
     <meta property="og:title" content="Android:Zbar 解码、ZXing 管理相机的补充（Zbar支持64位） - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2015-09-24T16:22:52&#43;08:00">
+    <meta property="article:published_time" content='2015-09-24T16:22:52&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2015-09-24T16:22:52&#43;08:00">
+    <meta property="article:modified_time" content='2015-09-24T16:22:52&#43;08:00'>
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
     <meta name="description" content="Android:Zbar 解码、ZXing 管理相机的补充（Zbar支持64位）">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/zxing/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5294048051542592",
-        enable_page_level_ads: true
-    });
-    </script>
+    <script data-ad-client="ca-pub-5294048051542592" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
-
-
+    
+    
+    
     
     
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -60,7 +55,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">Home</a>
+                    <a class="current" href="http://www.harddone.com/">首页</a>
                     
                     <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
@@ -72,103 +67,86 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-  
-  <amp-auto-ads type="adsense"
-    data-ad-client="ca-pub-5294048051542592">
-  </amp-auto-ads>
-  
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Android:Zbar 解码、ZXing 管理相机的补充（Zbar支持64位）</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            
-                            2015-09-24
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Android">Android</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            
-
-<h1 id="一-前言">一. 前言</h1>
-
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Android:Zbar 解码、ZXing 管理相机的补充（Zbar支持64位）</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2015年9月24日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Android'>Android</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="一-前言">一. 前言</h1>
 <p>      最近公司项目用到了扫描的功能，参考网上的博文解决大部分的问题（<a href="http://blog.csdn.net/b2259909/article/details/43273231">http://blog.csdn.net/b2259909/article/details/43273231</a>（对原文作者表示感谢）），但是后来APK在客户的64位设备上运行时，出现了崩溃的问题，联调时因为参考上述文章的资料，只有32位的so库。
      
 为了备忘和帮助像我遇到同样问题的同学，特写此文。</p>
-
 <h1 id="二-编译">二 编译</h1>
-
 <p>    原文作者已经提供了足够的资源，现在我们主要是对Zbar的源码重新编译一下，生成支持64位设备的so库。</p>
-
 <p>1.NDK安装：</p>
-
 <p>   （1）操作系统：Win10，64位。</p>
-
 <p>   （2）下载最新的NDK，我下载的是android-ndk-r10d ，直接网上找到的exe安装包，点击下载<a href="https://download.csdn.net/download/guangzhen87/8500163">android-ndk-r10d-windows-x86_64.exe</a>，安装完成后，配置NDK环境变量。</p>
-
 <p>　1) 添加两个系统环境变量：</p>
-
 <p>　　NDK_ROOT 你的文件位置:F:\01_Android\02_Cocos2dx\android-ndk-r10d</p>
-
 <p>　　PATH 添加一条%NDK_ROOT%;</p>
-
 <p>         </p>
-
 <p>    2)管理员命令提示符输入：ndk-build -version，如下表示配置成功</p>
-
-<p><img src="/img/04_zxing/01.png" alt="" /></p>
-
-<ol>
+<p>
+        <img class="mx-auto" alt="" src="/img/04_zxing/01.png" />   
+    </p>
+<ol start="2">
 <li>下载Zbar  NDK 工程（修改后的）
 ，<a href="https://download.csdn.net/download/long1216/9136757">点击下载</a></li>
 </ol>
-
 <p>原文作者也有提供该工程的下载连接，但是下载后不能编译，需要稍微修改一下jni文件夹下的Android.mk和Application.mk,(原工程Android.mk配置的路径需要重新修改），使得工程可编译通过且支持64位的android设备。</p>
-
-<ol>
+<ol start="3">
 <li>编译工程</li>
 </ol>
-
 <p>（1）进入下载解压后的工程目录，shift +右键，打开命令窗口，执行ndk-build命令，如图所示</p>
-
-<p>     <img src="/img/04_zxing/02.png" alt="" /></p>
-
-<p>     <img src="/img/04_zxing/03.png" alt="" /></p>
-
+<p>     
+        <img class="mx-auto" alt="" src="/img/04_zxing/02.png" />   
+    </p>
+<p>     
+        <img class="mx-auto" alt="" src="/img/04_zxing/03.png" />   
+    </p>
 <p>（2） 等待执行编译结束，如下图所示
  
-    <img src="/img/04_zxing/04.png" alt="" />
+
+        <img class="mx-auto" alt="" src="/img/04_zxing/04.png" />   
+    
      </p>
-
 <p>（3）编译结束后，在工程根目录/libs下，就生成了对应的的so库，如图所示，拷贝到android工程中，就可以使用了。</p>
+<p>
+        <img class="mx-auto" alt="" src="/img/04_zxing/05.png" />   
+    </p>
 
-<p><img src="/img/04_zxing/05.png" alt="" /></p>
+        </div>
 
-                        </div>
-
-                        
+        
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -180,23 +158,23 @@
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://www.harddone.com/tags/Android">Android</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/ZXing">ZXing</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/Zbar">Zbar</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81">扫描解码</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Android'>Android</a></li>
+                
+                <li><a href='/tags/ZXing'>ZXing</a></li>
+                
+                <li><a href='/tags/Zbar'>Zbar</a></li>
+                
+                <li><a href='/tags/%E6%89%AB%E6%8F%8F%E8%A7%A3%E7%A0%81'>扫描解码</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -211,20 +189,74 @@
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-139304185-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://www.harddone.com/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-
+    
     <section class="widget">
-        <h3 class="widget-title">Recent articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
     
     <li>
@@ -268,7 +300,6 @@
     </li>
     
 </ul>
-
     </section>
 
     
@@ -305,39 +336,26 @@
 
 
     <section class="widget">
-        <h3 class="widget-title">Categories</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://www.harddone.com/categories/Android/">Android(22)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Android/">Android (22)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Git/">Git(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Git/">Git (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Lua/">Lua(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Lua/">Lua (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Python/">Python(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Python/">Python (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Unity/">Unity(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Unity/">Unity (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Website/">Website(3)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Website/">Website (3)</a></li>
     
 </ul>
-
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Tags</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata Test</a>
@@ -374,7 +392,7 @@
     
     <a href="http://www.harddone.com/tags/Github/">Github</a>
     
-    <a href="http://www.harddone.com/tags/Gradle/">Gradle</a>
+    <a href="http://www.harddone.com/tags/gradle/">gradle</a>
     
     <a href="http://www.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
     
@@ -416,7 +434,7 @@
     
     <a href="http://www.harddone.com/tags/Push-to-JCenter/">Push to JCenter</a>
     
-    <a href="http://www.harddone.com/tags/Python/">Python</a>
+    <a href="http://www.harddone.com/tags/python/">python</a>
     
     <a href="http://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen Overlay Deteched</a>
     
@@ -493,12 +511,11 @@
     <a href="http://www.harddone.com/tags/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E4%BF%A1%E6%81%AF/">进程线程信息</a>
     
 </div>
-
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
@@ -517,64 +534,16 @@
 </section>
 
 
-
     <section class="widget">
-        <h3 class="widget-title">Others</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
-
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-139304185-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>

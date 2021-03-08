@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on ColorfulDark Blog</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Web on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 25 Apr 2019 05:13:24 +0800</lastBuildDate>
-    
-	<atom:link href="http://www.harddone.com/tags/Web/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Apr 2019 05:13:24 +0800</lastBuildDate><atom:link href="http://www.harddone.com/tags/Web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（二）</title>
       <link>http://www.harddone.com/post/hugo_nginx_2/</link>

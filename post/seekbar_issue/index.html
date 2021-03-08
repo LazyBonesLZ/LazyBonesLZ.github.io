@@ -3,51 +3,46 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>自定义seekbar遇到的问题 | ColorfulDark Blog</title>
     <meta property="og:title" content="自定义seekbar遇到的问题 - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2018-11-07T15:00:47&#43;08:00">
+    <meta property="article:published_time" content='2018-11-07T15:00:47&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2018-11-07T15:00:47&#43;08:00">
+    <meta property="article:modified_time" content='2018-11-07T15:00:47&#43;08:00'>
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
     <meta name="description" content="自定义seekbar遇到的问题">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="http://www.harddone.com/post/seekbar_issue/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5294048051542592",
-        enable_page_level_ads: true
-    });
-    </script>
+    <script data-ad-client="ca-pub-5294048051542592" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
-
-
+    
+    
+    
     
     
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -60,7 +55,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://www.harddone.com/">Home</a>
+                    <a class="current" href="http://www.harddone.com/">首页</a>
                     
                     <a  href="http://www.harddone.com/archives/" title="Archives">Archives</a>
                     
@@ -72,174 +67,150 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-  
-  <amp-auto-ads type="adsense"
-    data-ad-client="ca-pub-5294048051542592">
-  </amp-auto-ads>
-  
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">自定义seekbar遇到的问题</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            
-                            2018-11-07
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://www.harddone.com/categories/Android">Android</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Readers</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            <p>项目需要自定义seekbar样式，记录一下这个过程中的问题和解决方案。
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">自定义seekbar遇到的问题</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年11月7日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Android'>Android</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>项目需要自定义seekbar样式，记录一下这个过程中的问题和解决方案。
 UI设计样式如图：宽度填满父view</p>
-
-<p><img src="/img/12_seekbar/01.png" alt="tmp4ddd6566.png" /></p>
-
+<p>
+        <img class="mx-auto" alt="tmp4ddd6566.png" src="/img/12_seekbar/01.png" />   
+    </p>
 <p>在实现的过程中出现过一些问题：</p>
-
 <p>1.thumb在滑动的过程中，出现了压缩</p>
-
-<p><img src="/img/12_seekbar/02.png" alt="tmp47659cb3.png" /></p>
-
+<p>
+        <img class="mx-auto" alt="tmp47659cb3.png" src="/img/12_seekbar/02.png" />   
+    </p>
 <p>2.thumb在起点和终点只显示来一半</p>
-
-<p><img src="/img/12_seekbar/03.png" alt="tmp6edf23a5.png" /></p>
-
+<p>
+        <img class="mx-auto" alt="tmp6edf23a5.png" src="/img/12_seekbar/03.png" />   
+    </p>
 <p>3.seekbar宽度并未填充满父view,而是在左右两侧保留了默认的间距。</p>
-
-<p><img src="/img/12_seekbar/04.png" alt="tmp22ee10af.png" /></p>
-
-<p>解决问题:
-*  由于thumb设置了“press”的效果，发现按下时的资源尺寸和正常时的尺寸不一样导致压缩。
-* 设置</p>
-
-<pre><code>android:thumbOffset=&quot;0dp&quot;
-</code></pre>
-
+<p>
+        <img class="mx-auto" alt="tmp22ee10af.png" src="/img/12_seekbar/04.png" />   
+    </p>
+<p>解决问题:</p>
 <ul>
+<li>由于thumb设置了“press”的效果，发现按下时的资源尺寸和正常时的尺寸不一样导致压缩。</li>
+<li>设置</li>
+</ul>
+<pre><code>android:thumbOffset=&quot;0dp&quot;
+</code></pre><ul>
 <li>在设置padding，在android5.0之前，修改paddingLeft 和 paddingRight就够了，但是android5.0之后，还需要加上paddingStart和paddingEnd</li>
 </ul>
-
-<pre><code class="language-shell">android:paddingLeft=&quot;0dp&quot;
-android:paddingRight=&quot;0dp&quot;
-android:paddingStart=&quot;0dp&quot;
-android:paddingEnd=&quot;0dp&quot;
-</code></pre>
-
-<p>这样就把这三个问题解决。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android:paddingLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+android:paddingRight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+android:paddingStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+</code></pre></div><p>这样就把这三个问题解决。</p>
 <ul>
 <li>最终的代码</li>
 </ul>
-
-<pre><code class="language-shell">&lt;SeekBar
-            android:id=&quot;@+id/bottom_seek_progress&quot;
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_gravity=&quot;center_vertical&quot;
-            android:max=&quot;100&quot;
-            android:maxHeight=&quot;6dp&quot;
-            android:minHeight=&quot;1dp&quot;
-            android:paddingLeft=&quot;0dp&quot;
-            android:paddingRight=&quot;0dp&quot;
-            android:paddingStart=&quot;0dp&quot;
-            android:paddingEnd=&quot;0dp&quot;
-            android:progressDrawable=&quot;@drawable/jz_bottom_seek_progress&quot;
-            android:splitTrack=&quot;false&quot;
-            android:thumb=&quot;@drawable/jz_bottom_seek_thumb&quot;
-            android:thumbOffset=&quot;0dp&quot; /&gt;
-</code></pre>
-
-<p>1.进度条的三层背景：<code>jz_bottom_seek_progress.xml</code></p>
-
-<pre><code class="language-shell">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-    &lt;item android:id=&quot;@android:id/background&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;SeekBar
+            android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/bottom_seek_progress&#34;</span>
+            android:layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+            android:layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+            android:layout_gravity<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center_vertical&#34;</span>
+            android:max<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100&#34;</span>
+            android:maxHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span>
+            android:minHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1dp&#34;</span>
+            android:paddingLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+            android:paddingRight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+            android:paddingStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+            android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+            android:progressDrawable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_bottom_seek_progress&#34;</span>
+            android:splitTrack<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>
+            android:thumb<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_bottom_seek_thumb&#34;</span>
+            android:thumbOffset<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span> /&gt;
+</code></pre></div><p>1.进度条的三层背景：<code>jz_bottom_seek_progress.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
+&lt;layer-list xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>&gt;
+    &lt;item android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@android:id/background&#34;</span>&gt;
         &lt;shape&gt;
-            &lt;solid android:color=&quot;#a5ffffff&quot; /&gt;
-            &lt;size android:height=&quot;6dp&quot; /&gt;
-            &lt;corners android:radius=&quot;9dip&quot; /&gt;
+            &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#a5ffffff&#34;</span> /&gt;
+            &lt;size android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span> /&gt;
+            &lt;corners android:radius<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9dip&#34;</span> /&gt;
         &lt;/shape&gt;
     &lt;/item&gt;
-    &lt;item android:id=&quot;@android:id/secondaryProgress&quot;&gt;
+    &lt;item android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@android:id/secondaryProgress&#34;</span>&gt;
         &lt;clip&gt;
             &lt;shape&gt;
-                &lt;solid android:color=&quot;#1F551CA5&quot; /&gt;
-                &lt;size android:height=&quot;6dp&quot; /&gt;
-                &lt;corners android:radius=&quot;9dip&quot; /&gt;
+                &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#1F551CA5&#34;</span> /&gt;
+                &lt;size android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span> /&gt;
+                &lt;corners android:radius<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9dip&#34;</span> /&gt;
             &lt;/shape&gt;
         &lt;/clip&gt;
     &lt;/item&gt;
-    &lt;item android:id=&quot;@android:id/progress&quot;&gt;
+    &lt;item android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@android:id/progress&#34;</span>&gt;
         &lt;clip&gt;
             &lt;shape&gt;
-                &lt;solid android:color=&quot;#551CA5&quot; /&gt;
-                &lt;size android:height=&quot;6dp&quot; /&gt;
-                &lt;corners android:radius=&quot;9dip&quot; /&gt;
+                &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#551CA5&#34;</span> /&gt;
+                &lt;size android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span> /&gt;
+                &lt;corners android:radius<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9dip&#34;</span> /&gt;
             &lt;/shape&gt;
         &lt;/clip&gt;
     &lt;/item&gt;
 &lt;/layer-list&gt;
-</code></pre>
-
-<p>2.thumb的背景：<code>jz_bottom_seek_thumb.xml</code></p>
-
-<pre><code class="language-shell">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-    &lt;item android:drawable=&quot;@drawable/jz_seek_thumb_pressed&quot; android:state_pressed=&quot;true&quot; /&gt;
-    &lt;item android:drawable=&quot;@drawable/jz_seek_thumb_normal&quot; /&gt;
+</code></pre></div><p>2.thumb的背景：<code>jz_bottom_seek_thumb.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
+&lt;selector xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>&gt;
+    &lt;item android:drawable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_seek_thumb_pressed&#34;</span> android:state_pressed<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> /&gt;
+    &lt;item android:drawable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_seek_thumb_normal&#34;</span> /&gt;
 &lt;/selector&gt;
-</code></pre>
-
-<p>3.thumb按下状态的背景：<code>jz_seek_thumb_pressed.xml</code></p>
-
-<pre><code class="language-shell">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:shape=&quot;oval&quot;&gt;
-    &lt;solid android:color=&quot;#ffffffff&quot; /&gt;
+</code></pre></div><p>3.thumb按下状态的背景：<code>jz_seek_thumb_pressed.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
+&lt;shape xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    android:shape<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;oval&#34;</span>&gt;
+    &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#ffffffff&#34;</span> /&gt;
     &lt;size
-        android:width=&quot;20dp&quot;
-        android:height=&quot;20dp&quot; /&gt;
+        android:width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span>
+        android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span> /&gt;
 &lt;/shape&gt;
-</code></pre>
-
-<p>4.thumb正常状态的背景：<code>jz_seek_thumb_normal.xml</code></p>
-
-<pre><code class="language-shell">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:shape=&quot;oval&quot;&gt;
-    &lt;solid android:color=&quot;#fff0f0f0&quot; /&gt;
+</code></pre></div><p>4.thumb正常状态的背景：<code>jz_seek_thumb_normal.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
+&lt;shape xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    android:shape<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;oval&#34;</span>&gt;
+    &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#fff0f0f0&#34;</span> /&gt;
     &lt;size
-        android:width=&quot;20dp&quot;
-        android:height=&quot;20dp&quot; /&gt;
-    &lt;stroke android:width=&quot;6dp&quot;
-        android:color=&quot;#551CA5&quot;/&gt;
+        android:width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span>
+        android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span> /&gt;
+    &lt;stroke android:width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6dp&#34;</span>
+        android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#551CA5&#34;</span>/&gt;
 &lt;/shape&gt;
-</code></pre>
+</code></pre></div>
+        </div>
 
-                        </div>
-
-                        
+        
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -259,21 +230,21 @@ android:paddingEnd=&quot;0dp&quot;
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://www.harddone.com/tags/Android">Android</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/Seekbar">Seekbar</a></li>
-                                
-                                <li><a href="http://www.harddone.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1">自定义进度条</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Android'>Android</a></li>
+                
+                <li><a href='/tags/Seekbar'>Seekbar</a></li>
+                
+                <li><a href='/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1'>自定义进度条</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -288,20 +259,74 @@ android:paddingEnd=&quot;0dp&quot;
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-139304185-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://www.harddone.com/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-
+    
     <section class="widget">
-        <h3 class="widget-title">Recent articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
     
     <li>
@@ -345,7 +370,6 @@ android:paddingEnd=&quot;0dp&quot;
     </li>
     
 </ul>
-
     </section>
 
     
@@ -382,39 +406,26 @@ android:paddingEnd=&quot;0dp&quot;
 
 
     <section class="widget">
-        <h3 class="widget-title">Categories</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://www.harddone.com/categories/Android/">Android(22)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Android/">Android (22)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Git/">Git(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Git/">Git (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Lua/">Lua(1)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Lua/">Lua (1)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Python/">Python(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Python/">Python (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Unity/">Unity(2)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Unity/">Unity (2)</a></li>
     
-    <li>
-        <a href="http://www.harddone.com/categories/Website/">Website(3)</a>
-    </li>
+    <li><a href="http://www.harddone.com/categories/Website/">Website (3)</a></li>
     
 </ul>
-
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Tags</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata Test</a>
@@ -451,7 +462,7 @@ android:paddingEnd=&quot;0dp&quot;
     
     <a href="http://www.harddone.com/tags/Github/">Github</a>
     
-    <a href="http://www.harddone.com/tags/Gradle/">Gradle</a>
+    <a href="http://www.harddone.com/tags/gradle/">gradle</a>
     
     <a href="http://www.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
     
@@ -493,7 +504,7 @@ android:paddingEnd=&quot;0dp&quot;
     
     <a href="http://www.harddone.com/tags/Push-to-JCenter/">Push to JCenter</a>
     
-    <a href="http://www.harddone.com/tags/Python/">Python</a>
+    <a href="http://www.harddone.com/tags/python/">python</a>
     
     <a href="http://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen Overlay Deteched</a>
     
@@ -570,12 +581,11 @@ android:paddingEnd=&quot;0dp&quot;
     <a href="http://www.harddone.com/tags/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E4%BF%A1%E6%81%AF/">进程线程信息</a>
     
 </div>
-
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
@@ -594,64 +604,16 @@ android:paddingEnd=&quot;0dp&quot;
 </section>
 
 
-
     <section class="widget">
-        <h3 class="widget-title">Others</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
             <li><a href="http://www.harddone.com/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
-
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-139304185-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>
