@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on ColorfulDark Blog</title>
-    <link>http://www.harddone.com/tags/git/</link>
+    <link>https://lazyboneslz.github.io/tags/git/</link>
     <description>Recent content in git on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 30 Apr 2019 14:33:57 +0800</lastBuildDate><atom:link href="http://www.harddone.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Apr 2019 14:33:57 +0800</lastBuildDate><atom:link href="https://lazyboneslz.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>git : remove directories tracked</title>
-      <link>http://www.harddone.com/post/git_untrack_dir/</link>
+      <link>https://lazyboneslz.github.io/post/git_untrack_dir/</link>
       <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
       
-      <guid>http://www.harddone.com/post/git_untrack_dir/</guid>
+      <guid>https://lazyboneslz.github.io/post/git_untrack_dir/</guid>
       <description>如果文件和目录已经被提交到git仓库，是可以通过git 命令来取消文件和目录的跟踪。 我们常用的sourcetree也提供了该功能，如果是某目录下已经有文件被提交过了，那么就不能再改工具中直接对文件夹取消跟踪，只能对显示有更改的文件一个一个取消，UI操作还要等刷新，费时费力。 为了防止</description>
     </item>
     
