@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Not find method classpath() on ColorfulDark Blog</title>
-    <link>https://www.harddone.com/tags/Not-find-method-classpath/</link>
+    <link>https://www.harddone.com/tags/not-find-method-classpath/</link>
     <description>Recent content in Not find method classpath() on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 23 Oct 2019 15:12:26 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/Not-find-method-classpath/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Oct 2019 15:12:26 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/not-find-method-classpath/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android Studio: Could not find method classpath() for arguments</title>
       <link>https://www.harddone.com/post/gradle_dsl/</link>

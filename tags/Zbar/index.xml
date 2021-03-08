@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zbar on ColorfulDark Blog</title>
-    <link>https://www.harddone.com/tags/Zbar/</link>
+    <link>https://www.harddone.com/tags/zbar/</link>
     <description>Recent content in Zbar on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 24 Sep 2015 16:22:52 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/Zbar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Sep 2015 16:22:52 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/zbar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android:Zbar 解码、ZXing 管理相机的补充（Zbar支持64位）</title>
       <link>https://www.harddone.com/post/zxing/</link>
