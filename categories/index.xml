@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ColorfulDark Blog</title>
-    <link>https://lazyboneslz.github.io/categories/</link>
+    <link>https://www.harddone.com/categories/</link>
     <description>Recent content in Categories on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate><atom:link href="https://lazyboneslz.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate><atom:link href="https://www.harddone.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python</title>
-      <link>https://lazyboneslz.github.io/categories/Python/</link>
+      <link>https://www.harddone.com/categories/Python/</link>
       <pubDate>Fri, 22 May 2020 10:14:27 +0800</pubDate>
       
-      <guid>https://lazyboneslz.github.io/categories/Python/</guid>
+      <guid>https://www.harddone.com/categories/Python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android</title>
-      <link>https://lazyboneslz.github.io/categories/Android/</link>
+      <link>https://www.harddone.com/categories/Android/</link>
       <pubDate>Thu, 23 Apr 2020 16:00:24 +0800</pubDate>
       
-      <guid>https://lazyboneslz.github.io/categories/Android/</guid>
+      <guid>https://www.harddone.com/categories/Android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unity</title>
-      <link>https://lazyboneslz.github.io/categories/Unity/</link>
+      <link>https://www.harddone.com/categories/Unity/</link>
       <pubDate>Thu, 23 Apr 2020 15:01:15 +0800</pubDate>
       
-      <guid>https://lazyboneslz.github.io/categories/Unity/</guid>
+      <guid>https://www.harddone.com/categories/Unity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://lazyboneslz.github.io/categories/Git/</link>
+      <link>https://www.harddone.com/categories/Git/</link>
       <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
       
-      <guid>https://lazyboneslz.github.io/categories/Git/</guid>
+      <guid>https://www.harddone.com/categories/Git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Website</title>
-      <link>https://lazyboneslz.github.io/categories/Website/</link>
+      <link>https://www.harddone.com/categories/Website/</link>
       <pubDate>Thu, 25 Apr 2019 11:13:24 +0800</pubDate>
       
-      <guid>https://lazyboneslz.github.io/categories/Website/</guid>
+      <guid>https://www.harddone.com/categories/Website/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lua</title>
-      <link>https://lazyboneslz.github.io/categories/Lua/</link>
+      <link>https://www.harddone.com/categories/Lua/</link>
       <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
       
-      <guid>https://lazyboneslz.github.io/categories/Lua/</guid>
+      <guid>https://www.harddone.com/categories/Lua/</guid>
       <description></description>
     </item>
     
