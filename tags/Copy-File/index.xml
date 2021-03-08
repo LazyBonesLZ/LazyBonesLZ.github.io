@@ -17,7 +17,7 @@
       <pubDate>Fri, 16 Aug 2019 10:59:48 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/gradle_copy_file/</guid>
-      <description>&lt;p&gt;Android Studio Before the Build project, if you want to copy some application configuration files to the assets directory, you can customize the task and execute it before the build.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Android Studio 在Build工程之前，如果要将一些应用必须的配置文件拷贝到assets目录下，可以自定义task,在build之前先执行。&lt;/p&gt;</description>
     </item>
     
   </channel>

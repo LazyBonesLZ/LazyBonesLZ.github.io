@@ -17,8 +17,7 @@
       <pubDate>Thu, 18 Apr 2019 10:01:05 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/lua_override/</guid>
-      <description>&lt;p&gt;Recently, in updating a Lua project, many places call the same method. How do you implement the new method logic without changing the calling logic without changing the calling logic?
-We can override this method directly, but only if the ** is called before the first call to the method.&lt;/p&gt;</description>
+      <description>最近在更新一个Lua项目中，很多地方调用了同一个方法，想在不改动调用逻辑的情况下，如何不执行原来的方法逻辑，而执行新的方法逻辑呢？ 我们可以直接重载该方法，但是前提是必须在第一次调用该方法前就完成了重载。 请注意这种方式的前提：一定是要在该方法第一次被调用前完成你的重载，否则无效。 举</description>
     </item>
     
   </channel>

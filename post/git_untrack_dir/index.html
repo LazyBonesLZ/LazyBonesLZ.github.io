@@ -107,30 +107,7 @@
                         
                         
                         <div class="post-content">
-                            <p>If files and directories have already been submitted to the git repository, you can use the git command to untrack files and directories.</p>
-
-<p>Our commonly used sourcetree also provides this function. If there is already a file submitted in a directory, then you can&rsquo;t change the folder directly in the tool. You can only cancel the file with the changed one. UI The operation has to wait for the refresh, which is time consuming and laborious.</p>
-
-<p>To prevent misuse, first list the files that need to be tracked:</p>
-
-<pre><code>Git rm -r -n --cached &lt;file or dir&gt;
-
-# -r indicates recursion
-# -n means not deleting first, just listing files
-
-</code></pre>
-
-<p>After confirming the error, cancel the trace file or directory:</p>
-
-<pre><code>Git rm -r --cached &lt;file or dir&gt;
-</code></pre>
-
-<p>Add the canceled file or directory to <code>.gitignore</code>,
-Then submit all the changes to the repository.</p>
-
-<h2 id="中文">===中文===</h2>
-
-<p>如果文件和目录已经被提交到git仓库，是可以通过git 命令来取消文件和目录的跟踪。</p>
+                            <p>如果文件和目录已经被提交到git仓库，是可以通过git 命令来取消文件和目录的跟踪。</p>
 
 <p>我们常用的sourcetree也提供了该功能，如果是某目录下已经有文件被提交过了，那么就不能再改工具中直接对文件夹取消跟踪，只能对显示有更改的文件一个一个取消，UI操作还要等刷新，费时费力。</p>
 
@@ -150,6 +127,7 @@ Then submit all the changes to the repository.</p>
 
 <p>将已经取消的文件或目录加到 <code>.gitignore</code>,
 然后将所有的改动提交仓库。</p>
+
                         </div>
 
                         
@@ -524,7 +502,7 @@ Then submit all the changes to the repository.</p>
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2020 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
+        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

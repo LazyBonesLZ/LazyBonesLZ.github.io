@@ -17,9 +17,9 @@
       <pubDate>Mon, 13 May 2019 11:02:03 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/gp_issue/</guid>
-      <description>&lt;p&gt;Google IAP has been a nightmare for the project test team. All kinds of inexplicable can not be purchased, whenever the project has been updated, the test involving IAP will have to sort through the code logic, and most of the cases are caused by non-code logic.&lt;/p&gt;
+      <description>&lt;p&gt;Google IAP一直是项目测试组的噩梦。各种莫名其妙的无法购买，每当项目已更新，涉及IAP的测试都会要去梳理一遍代码逻辑，结果大多数情况都是非代码逻辑导致。&lt;/p&gt;
 
-&lt;p&gt;Therefore, to sort out the problems encountered, memo, may help others.&lt;/p&gt;</description>
+&lt;p&gt;所以，把遇到的问题做一个梳理，备忘，或许可以帮到别人。&lt;/p&gt;</description>
     </item>
     
   </channel>

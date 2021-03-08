@@ -17,7 +17,7 @@
       <pubDate>Tue, 24 Sep 2019 15:34:44 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/placeholders_in_submodule/</guid>
-      <description>&lt;p&gt;Android Studio projects have multiple modules that are dependent on each other. The most common way is that the app moudule depends on the library module. If the dependent library module will eventually be used as a public SDK for other projects, and some of the internal uses require different values ​​depending on the specific project configuration, you need to use the manifest in the library moudule&amp;rsquo;s &lt;code&gt;AndroidManifest.xml&lt;/code&gt; Placehodlers placeholder.&lt;/p&gt;</description>
+      <description>Android Studio 工程有多个module组成，相互工程依赖。最常见的方式是app moudule 依赖于 library module。如果所依赖的library module 最终还会作为一个公共SDK供其他项目使用的话，而内部用到的一些又需要根据具体项目配置的不同值时，就需要在library moudule的AndroidManifes</description>
     </item>
     
   </channel>

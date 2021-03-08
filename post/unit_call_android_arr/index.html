@@ -107,48 +107,7 @@
                         
                         
                         <div class="post-content">
-                            <p>In the Unity development process, if you want to call the java method of the Android side, the parameters of the method are variable parameters or arrays. The call method provided by the AndroidJavaObject of unity directly passes the c# array. It is necessary to do some processing on the array parameters.</p>
-
-<p>for example:</p>
-
-<p>The java method is as follows:</p>
-
-<pre><code class="language-shell">Public void addList(String... values){
-
-}
-</code></pre>
-
-<p>When unity c# is called, you need to convert the passed parameter array into an AndroidJavaObject, and then call the call method provided by AndroidJavaObject.</p>
-
-<pre><code class="language-shell">Public void add(string[] values){
-
-        AndroidHelper.getIapManagerAndroidObject().Call (_javaMethodName,javaArrayFromCS(values));
-
-}
-
-</code></pre>
-
-<pre><code class="language-shell">Private AndroidJavaObject javaArrayFromCS(string[] values){
-
-AndroidJavaClass arrayClass = new AndroidJavaClass(&quot;java.lang.reflect.Array&quot;);
-
-AndroidJavaObject arrayObject = arrayClass.CallStatic(&quot;newInstance&quot;,new AndroidJavaClass(&quot;java.lang.String&quot;), values.Count());
-
-For(int i=0; i &lt; values.Count(); ++i){
-
-arrayClass.CallStatic(&quot;set&quot;, arrayObject, i,newAndroidJavaObject(&quot;java.lang.String&quot;, values[i]));
-
-}
-
-Return arrayObject;
-
-}
-
-</code></pre>
-
-<h2 id="中文">===中文===</h2>
-
-<p>Unity开发过程中，如果要调用Android端的java方法，恰巧该方法的参数是可变参数或者数组，使用unity的AndroidJavaObject提供的call方法直接传递c#数组，是需要对数组参数做一下处理。举例说明：</p>
+                            <p>Unity开发过程中，如果要调用Android端的java方法，恰巧该方法的参数是可变参数或者数组，使用unity的AndroidJavaObject提供的call方法直接传递c#数组，是需要对数组参数做一下处理。举例说明：</p>
 
 <p>java方法如下：</p>
 
@@ -187,6 +146,7 @@ Return arrayObject;
 
 <p>参考：
 <a href="https://stackoverflow.com/questions/42681410/androidjavaobject-call-array-passing-error-unity-for-android">https://stackoverflow.com/questions/42681410/androidjavaobject-call-array-passing-error-unity-for-android</a></p>
+
                         </div>
 
                         
@@ -563,7 +523,7 @@ Return arrayObject;
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2020 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
+        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

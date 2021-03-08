@@ -17,9 +17,7 @@
       <pubDate>Sun, 12 Nov 2017 16:45:46 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/mac_as_jdk/</guid>
-      <description>&lt;ol&gt;
-&lt;li&gt;The project structure setting interface sets the jdk path to be jdk1.7 or above: &lt;code&gt;File-&amp;gt;Project Structure-&amp;gt;SDK Location&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>1.project structure设置界面中设置jdk路径是jdk1.7或以上的版本:File-&amp;gt;Project Structure-&amp;gt;SDK Location 2.修改AS置默认的jdk版本。 (如果是jdk1.8版本的话还需要修改/Application/Android Studio/Contents/info.plist) 如何找到该路径？ Android Studio.app -&amp;gt; 右键 -&amp;gt; 显示包内容 修改前： &amp;lt;key&amp;gt;JVMVersion&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;1.6*,1.7+&amp;lt;/string&amp;gt; 修改后： &amp;lt;key&amp;gt;JVMVersion&amp;lt;/key&amp;gt;</description>
     </item>
     
   </channel>

@@ -148,7 +148,7 @@
                             </div>
                             
                             <div class="post-content">
-                                <p>Android Studio projects have multiple modules that are dependent on each other. The most common way is that the app moudule depends on the library module. If the dependent library module will eventually be used as a public SDK for other projects, and some of the internal uses require different values ​​depending on the specific project configuration, you need to use the manifest in the library moudule&rsquo;s <code>AndroidManifest.xml</code> Placehodlers placeholder.</p>……
+                                Android Studio 工程有多个module组成，相互工程依赖。最常见的方式是app moudule 依赖于 library module。如果所依赖的library module 最终还会作为一个公共SDK供其他项目使用的话，而内部用到的一些又需要根据具体项目配置的不同值时，就需要在library moudule的AndroidManifes……
                                 <p class="readmore"><a href="http://www.harddone.com/post/placeholders_in_submodule/">阅读全文</a></p>
                             </div>
                         </article>
@@ -171,7 +171,7 @@
                             </div>
                             
                             <div class="post-content">
-                                <p>I wrote an article about <a href="https://www.harddone.com/post/python_adb/">python executing the adb command</a>. The main function is to create a folder on the device and then upload the file to the created directory. The business requirement is to upload the obb file to the device, but to execute the python script, you need to pass in too many parameters: obb path, app package name, and version number. Too many parameters lead to inconvenience, and you forget it for a long time.</p>……
+                                之前写过一篇关于python执行adb命令的文章,主要功能是在设备上创建文件夹，然后向创建的目录下上传文件。业务需求是上传obb文件到设备上，但是执行该python脚本，需要传入太多的参数：obb路径，app package name, 以及版本号等等。参数过多导致使用不便，且时间久了自己也就忘了。 所以，……
                                 <p class="readmore"><a href="http://www.harddone.com/post/gradle-run-adb/">阅读全文</a></p>
                             </div>
                         </article>
@@ -194,7 +194,7 @@
                             </div>
                             
                             <div class="post-content">
-                                <p>Android Studio upgrade to 3.5, the project has an error during compilation</p>……
+                                Android Studio升级到3.5，工程在编译时出现错误： Invoke-customs are only supported starting with android 0 --min-api 26 解决方案： android{ //... compileOptions { sourceCompatibility JavaVersion.VERSION_1_8 targetCompatibility JavaVersion.VERSION_1_8 } //... } JavaVersion请根据您开发环境中实际的版本设置。 参考链接： https://stackoverflow.com/questions/49891730/invoke-customs-are-only-supported-starting-with-android-0-min-api-26……
                                 <p class="readmore"><a href="http://www.harddone.com/post/min-api-26-bug/">阅读全文</a></p>
                             </div>
                         </article>
@@ -217,9 +217,7 @@
                             </div>
                             
                             <div class="post-content">
-                                <h4 id="what-is-firebase-in-app-messaging">What is Firebase In-App Messaging?</h4>
-
-<p>Official explanation:</p>……
+                                什么是Firebase In-App Messaging？ 官方解释： Firebase In-App Messaging helps you engage your app&rsquo;s active users by sending them targeted, contextual messages that encourage them to use key app features. For example, you could send an in-app message to get users to subscribe, watch a video, complete a level, or buy an item. You can customize messages as cards, banners, modals, or images, and set up triggers so that they appear exactly when they&rsquo;d benefit your users most. Use Firebase In-App Messaging to encourage exploration and discovery: highlight a sale or coupon in your ecommerce app, give clues or tips in your game, or prompt a like or share in your social media app. 集成 Firebase In-App Messaging……
                                 <p class="readmore"><a href="http://www.harddone.com/post/FIAM_triggerEvent/">阅读全文</a></p>
                             </div>
                         </article>
@@ -242,7 +240,7 @@
                             </div>
                             
                             <div class="post-content">
-                                <p>As a private or private SDK for the company, Nexus can not only upload the generated aar format SDK through the gradle script, but also integrate it quickly in android studio. You can also manually upload some individual aar files.</p>……
+                                Nexus作为公司内部或个人的SDK私有仓库，不仅可以通过gradle脚本上传生成的aar格式SDK,以便在android studio中快速集成，还可以手动上传一些单个的aar文件。 比如，如果遇到这样的使用场景：第三方的SDK,并没有上传到jcenter 或maven仓库，但是给开……
                                 <p class="readmore"><a href="http://www.harddone.com/post/3rd_part_aar_to_nexus/">阅读全文</a></p>
                             </div>
                         </article>
@@ -265,7 +263,7 @@
                             </div>
                             
                             <div class="post-content">
-                                <p>Android Studio Before the Build project, if you want to copy some application configuration files to the assets directory, you can customize the task and execute it before the build.</p>……
+                                <p>Android Studio 在Build工程之前，如果要将一些应用必须的配置文件拷贝到assets目录下，可以自定义task,在build之前先执行。</p>……
                                 <p class="readmore"><a href="http://www.harddone.com/post/gradle_copy_file/">阅读全文</a></p>
                             </div>
                         </article>
@@ -288,8 +286,7 @@
                             </div>
                             
                             <div class="post-content">
-                                <p>Gossip less, talk directly to the problem.
-On the Samsung Tablet T710 device, the system version is Android 6.0.1. The game developed by the Unity engine will pop up a &ldquo;screen overlay detection&rdquo; prompt dialog when applying for Android dangerous permissions.</p>……
+                                闲话少说，直接来看问题。 在三星平板T710设备上，系统版本为Android 6.0.1。Unity引擎开发的游戏在申请Android危险权限时，会弹出“屏幕重叠层检测”的提示对话框。如图所示： 遇到这种毫无头绪的情况都是直接开启Google大法。按照网上最多的说法都是根据提示，去Se……
                                 <p class="readmore"><a href="http://www.harddone.com/post/screenoverlay/">阅读全文</a></p>
                             </div>
                         </article>
@@ -669,7 +666,7 @@ On the Samsung Tablet T710 device, the system version is Android 6.0.1. The game
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2020 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
+        &copy; 2021 <a href="http://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

@@ -17,9 +17,7 @@
       <pubDate>Wed, 18 Sep 2019 14:55:36 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/FIAM_triggerEvent/</guid>
-      <description>&lt;h4 id=&#34;what-is-firebase-in-app-messaging&#34;&gt;What is Firebase In-App Messaging?&lt;/h4&gt;
-
-&lt;p&gt;Official explanation:&lt;/p&gt;</description>
+      <description>什么是Firebase In-App Messaging？ 官方解释： Firebase In-App Messaging helps you engage your app&amp;rsquo;s active users by sending them targeted, contextual messages that encourage them to use key app features. For example, you could send an in-app message to get users to subscribe, watch a video, complete a level, or buy an item. You can customize messages as cards, banners, modals, or images, and set up triggers so that they appear exactly when they&amp;rsquo;d benefit your users most. Use Firebase In-App Messaging to encourage exploration and discovery: highlight a sale or coupon in your ecommerce app, give clues or tips in your game, or prompt a like or share in your social media app. 集成 Firebase In-App Messaging</description>
     </item>
     
   </channel>

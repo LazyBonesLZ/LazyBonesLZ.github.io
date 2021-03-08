@@ -26,9 +26,7 @@
       <pubDate>Fri, 14 Jun 2019 16:54:06 +0800</pubDate>
       
       <guid>http://www.harddone.com/post/unity_apk_reduce/</guid>
-      <description>&lt;h1 id=&#34;background&#34;&gt;background&lt;/h1&gt;
-
-&lt;p&gt;Due to my non-professional game developers, this article does not discuss how to professionally deal with game resources and project configuration to reduce the size of the installation package. Just record how to reduce the apk when packaging.&lt;/p&gt;</description>
+      <description>问题背景 由于本人非专业游戏开发者，本文不讨论如何专业的处理游戏资源和工程配置来减小安装包大小问题。只简单记录一下如何在打包时减小apk。 Unity项目,Lua开发子游戏逻辑。Unity中如何使用Lua开发不展开说明，我也不会。该问题的背景是老板要求我们将lua开发的子app提出来</description>
     </item>
     
   </channel>
