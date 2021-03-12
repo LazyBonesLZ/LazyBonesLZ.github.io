@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -99,7 +101,7 @@
         <div class="post-content">
             <p>项目中一直有https的请求，没有用到第三方的SDK,都是使用HttpUrlConnec tion去实现的请求。一直相安无事，突然测试人员报告说出现证书验证问题。网上各种查看资料解决，方案无非是加入自定义证书到工程或者是用信任所有证书的方式解决。但是，我们并没有用到自定义证书，如果用信任所有证书的方式，对于自身app的安全又无法保障了。</p>
 <p>仔细分析每次https请求的异常log,提示证书不可用：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">W/System.err: javax.net.ssl.SSLHandshakeException: Chain validation failed
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">W/System.err: javax.net.ssl.SSLHandshakeException: Chain validation failed
 W/System.err:     at com.android.org.conscrypt.OpenSSLSocketImpl.startHandshake<span style="color:#f92672">(</span>OpenSSLSocketImpl.java:368<span style="color:#f92672">)</span>
 W/System.err:     at com.android.okhttp.Connection.connectTls<span style="color:#f92672">(</span>Connection.java:1510<span style="color:#f92672">)</span>
 W/System.err:     at com.android.okhttp.Connection.connectSocket<span style="color:#f92672">(</span>Connection.java:1458<span style="color:#f92672">)</span>
@@ -206,7 +208,7 @@ W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getR
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

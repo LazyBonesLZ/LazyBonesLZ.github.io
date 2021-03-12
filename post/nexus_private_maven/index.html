@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -99,7 +101,11 @@
         <div class="post-content">
             <p>很多时候，Android Studio中所创建的工程，会依赖一个或多个Module。Module 生成的AAR库，可以上传到maven或者私服Nexus作为公用的SDK。Gradle子工程之间通过 compile/implementation project(&quot;:XXX&quot;)这种方式依赖是非常便利的，但是这样的时候，如果用uploadArchives上传AAR到Maven，生成的pom.xml是不正确的,以致于在工程中依赖我们上传的库时，无法找到它如下图所示：</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/02_nexus/01.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/01.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/01.png" />
+        </a>
     </p>
 <!-- raw HTML omitted -->
 <p>所以本文记录在这种情况下，如何上传AAR到Maven或<a href="https://www.sonatype.com/download-oss-sonatype">Nexus</a>.</p>
@@ -108,25 +114,37 @@
 <h1 id="二-具体步骤">二. 具体步骤</h1>
 <p>我们以测试demo的创建过程进行详细说明。工程结构如图所示：其中mylibrary依赖于common库</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/02_nexus/03.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/03.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/03.png" />
+        </a>
     </p>
 <!-- raw HTML omitted -->
 <h2 id="1-创建工程">1 创建工程</h2>
 <h3 id="11-创建android工程新建modulecommon和mylibrary">1.1 创建Android工程，新建module：common和mylibrary</h3>
 <h3 id="12-配置project级-gradleproperties">1.2 配置project级 <code>gradle.properties</code>:</h3>
 <p>
-        <img class="mx-auto" alt="" src="/img/02_nexus/03.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/03.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/03.png" />
+        </a>
     </p>
 <!-- raw HTML omitted -->
 <h3 id="13-在common-module下新建gradleproperties文件用来声明该module的名称和版本号">1.3 在<code>common module</code>下，新建<code>gradle.properties</code>文件，用来声明该module的名称和版本号。</h3>
 <p>
-        <img class="mx-auto" alt="" src="/img/02_nexus/04.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/04.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/04.png" />
+        </a>
     </p>
 <!-- raw HTML omitted -->
 <h3 id="14-mylibrary-module下进行同样的步骤参见上一步23">1.4 <code>mylibrary module</code>下进行同样的步骤，参见上一步2.3.</h3>
 <h3 id="15-创建上传aar的gradle文件实现上传的task">1.5 创建上传aar的<code>gradle</code>文件，实现上传的task.</h3>
 <p>在project级目录下，新建mvn_push.gradle文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apply plugin: <span style="color:#e6db74">&#39;maven&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">apply plugin: <span style="color:#e6db74">&#39;maven&#39;</span>
 
 def getRepositoryUsername<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 
@@ -189,19 +207,27 @@ uploadArchives <span style="color:#f92672">{</span>
 
 </code></pre><p>如图所示：</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/02_nexus/05.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/05.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/05.png" />
+        </a>
     </p>
 <h2 id="2-上传common库和mylibrary库">2. 上传common库和mylibrary库</h2>
 <p>执行 <code>gradlew upload</code> 或者 分别执行<code>uploadArchives task</code>,完成后即可在nexus仓库中查看。</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/02_nexus/06.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/06.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/02_nexus/06.png" />
+        </a>
     </p>
 <!-- raw HTML omitted -->
 <h2 id="3引用上传的库">3.引用上传的库</h2>
 <h3 id="31-在project的buildgradle中添加如下配置该url即nexus仓库的位置">3.1 在project的build.gradle中添加如下配置，该url即nexus仓库的位置：</h3>
 <pre><code>maven { url&quot;http://localhost:8081/repository/android/&quot; }
 </code></pre><h3 id="32-在app的buildgradle中添加依赖">3.2 在app的build.gradle中添加依赖</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
 
      implementation fileTree<span style="color:#f92672">(</span>dir:<span style="color:#e6db74">&#39;libs&#39;</span>,include: <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;*.jar&#39;</span><span style="color:#f92672">])</span>
 
@@ -319,7 +345,7 @@ uploadArchives <span style="color:#f92672">{</span>
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

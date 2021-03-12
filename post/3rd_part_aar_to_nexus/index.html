@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -101,21 +103,41 @@
 比如，如果遇到这样的使用场景：第三方的SDK,并没有上传到jcenter 或maven仓库，但是给开发者提供了下载链接。直接将aar内置在工程中也可以，但是如果工程有多个module的话，这种直接内置的方式就不太友好。所以，我们可以将其上传到nexus,然后像集成jcenter或maven仓库的sdk一样，在工程的dependices中直接使用。</p>
 <p>管理员登录nexus,创建仓库：</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/09_nexus_aar_upload/01.jpg" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/01.jpg">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/01.jpg" />
+        </a>
     </p>
 <p>上传AAR</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/09_nexus_aar_upload/02.jpg" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/02.jpg">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/02.jpg" />
+        </a>
     </p>
 <p>
-        <img class="mx-auto" alt="" src="/img/09_nexus_aar_upload/03.jpg" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/03.jpg">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/03.jpg" />
+        </a>
     </p>
 <p>查看是否上传成功</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/09_nexus_aar_upload/04.jpg" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/04.jpg">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/04.jpg" />
+        </a>
     </p>
 <p>
-        <img class="mx-auto" alt="" src="/img/09_nexus_aar_upload/05.jpg" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/05.jpg">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/09_nexus_aar_upload/05.jpg" />
+        </a>
     </p>
 <p>Android Studio 集成
 如果按照上图所示的方式样集成的话，android studio是无法编译通过的，会提示找不到相应的文件，正确的使用方式是在版本号之后加上“@aar”:</p>
@@ -204,7 +226,7 @@
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -105,16 +107,28 @@
 <p>项目A只有两个场景:LaunchScene 和 MainScene; 要顺利发布lua项目，第一个启动场景需要完成所有assetbundle和lua资源的加载以及加载动画的展示，所以第一个场景时必须要导出的；而主场景的加载则是在此之后lua的逻辑来控制了，其资源当然就是从预先加载好的assetbundle获取到的。</p>
 <p>如果在导出的时候，我们勾选了所有的场景：</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/06_unity_apk/01.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/06_unity_apk/01.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/06_unity_apk/01.png" />
+        </a>
     </p>
 <p>通过解压apk我们可以看到：</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/06_unity_apk/02.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/06_unity_apk/02.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/06_unity_apk/02.png" />
+        </a>
     </p>
 <p><code>level0 </code>和 <code>level1</code> 分别对应两个场景，对应的还有<code>sharedassets0.assets</code>和<code>sharedassets1.assets</code>文件，截图中以<code>sharedassetsXXX.assets.splitXXX</code>分包的方式存在，这些都是unity自带跟场景相关的资源，非常大。对apk的大小影响非常明显。</p>
 <p>当我们不勾选MainScene导出，</p>
 <p>
-        <img class="mx-auto" alt="" src="/img/06_unity_apk/03.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/06_unity_apk/03.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/06_unity_apk/03.png" />
+        </a>
     </p>
 <p>解压发现文件名为<code>sharedassets1.asstes.splitXXX</code>和 <code>level1</code>的文件都不见了，且apk减少将近15M。</p>
 <p>本文仅记录而已，解释不对的地方请鄙视。希望能对您减小apk时有所帮助。</p>
@@ -204,7 +218,7 @@
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

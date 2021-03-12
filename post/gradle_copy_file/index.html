@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -98,7 +100,7 @@
         
         <div class="post-content">
             <p>Android Studio 在Build工程之前，如果要将一些应用必须的配置文件拷贝到assets目录下，可以自定义task,在build之前先执行。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">task copyFile<span style="color:#f92672">(</span>type: Copy<span style="color:#f92672">){</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">task copyFile<span style="color:#f92672">(</span>type: Copy<span style="color:#f92672">){</span>
     println <span style="color:#e6db74">&#39;copy file...&#39;</span>
     //读取工程根目录下的文件‘file.json’
     String fileName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;file.json&#39;</span>
@@ -204,7 +206,7 @@ project.afterEvaluate <span style="color:#f92672">{</span>
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

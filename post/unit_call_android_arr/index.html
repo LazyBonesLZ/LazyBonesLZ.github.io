@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -99,17 +101,17 @@
         <div class="post-content">
             <p>Unity开发过程中，如果要调用Android端的java方法，恰巧该方法的参数是可变参数或者数组，使用unity的AndroidJavaObject提供的call方法直接传递c#数组，是需要对数组参数做一下处理。举例说明：</p>
 <p>java方法如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">public void addList<span style="color:#f92672">(</span>String... values<span style="color:#f92672">){</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">public void addList<span style="color:#f92672">(</span>String... values<span style="color:#f92672">){</span>
 
 <span style="color:#f92672">}</span>
 </code></pre></div><p>unity c#调用时，需要把传入的参数数组转化成一个AndroidJavaObject，然后再调用AndroidJavaObject提供的call方法。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">public void add<span style="color:#f92672">(</span>string<span style="color:#f92672">[]</span> values<span style="color:#f92672">){</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">public void add<span style="color:#f92672">(</span>string<span style="color:#f92672">[]</span> values<span style="color:#f92672">){</span>
 
         AndroidHelper.getIapManagerAndroidObject<span style="color:#f92672">()</span>.Call <span style="color:#f92672">(</span>_javaMethodName,javaArrayFromCS<span style="color:#f92672">(</span>values<span style="color:#f92672">))</span>;
 
 	<span style="color:#f92672">}</span>
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">private AndroidJavaObject javaArrayFromCS<span style="color:#f92672">(</span>string<span style="color:#f92672">[]</span> values<span style="color:#f92672">){</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">private AndroidJavaObject javaArrayFromCS<span style="color:#f92672">(</span>string<span style="color:#f92672">[]</span> values<span style="color:#f92672">){</span>
 
 	AndroidJavaClass arrayClass  <span style="color:#f92672">=</span> new AndroidJavaClass<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.reflect.Array&#34;</span><span style="color:#f92672">)</span>;
 
@@ -215,7 +217,7 @@
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -100,20 +102,36 @@
             <p>项目需要自定义seekbar样式，记录一下这个过程中的问题和解决方案。
 UI设计样式如图：宽度填满父view</p>
 <p>
-        <img class="mx-auto" alt="tmp4ddd6566.png" src="/img/12_seekbar/01.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/12_seekbar/01.png">
+            <img class="mx-auto" alt="tmp4ddd6566.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/12_seekbar/01.png" />
+        </a>
     </p>
 <p>在实现的过程中出现过一些问题：</p>
 <p>1.thumb在滑动的过程中，出现了压缩</p>
 <p>
-        <img class="mx-auto" alt="tmp47659cb3.png" src="/img/12_seekbar/02.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/12_seekbar/02.png">
+            <img class="mx-auto" alt="tmp47659cb3.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/12_seekbar/02.png" />
+        </a>
     </p>
 <p>2.thumb在起点和终点只显示来一半</p>
 <p>
-        <img class="mx-auto" alt="tmp6edf23a5.png" src="/img/12_seekbar/03.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/12_seekbar/03.png">
+            <img class="mx-auto" alt="tmp6edf23a5.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/12_seekbar/03.png" />
+        </a>
     </p>
 <p>3.seekbar宽度并未填充满父view,而是在左右两侧保留了默认的间距。</p>
 <p>
-        <img class="mx-auto" alt="tmp22ee10af.png" src="/img/12_seekbar/04.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/12_seekbar/04.png">
+            <img class="mx-auto" alt="tmp22ee10af.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/12_seekbar/04.png" />
+        </a>
     </p>
 <p>解决问题:</p>
 <ul>
@@ -124,7 +142,7 @@ UI设计样式如图：宽度填满父view</p>
 </code></pre><ul>
 <li>在设置padding，在android5.0之前，修改paddingLeft 和 paddingRight就够了，但是android5.0之后，还需要加上paddingStart和paddingEnd</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android:paddingLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">android:paddingLeft<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
 android:paddingRight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
 android:paddingStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
 android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
@@ -132,7 +150,7 @@ android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74
 <ul>
 <li>最终的代码</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;SeekBar
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">&lt;SeekBar
             android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/bottom_seek_progress&#34;</span>
             android:layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
             android:layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
@@ -149,7 +167,7 @@ android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74
             android:thumb<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_bottom_seek_thumb&#34;</span>
             android:thumbOffset<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0dp&#34;</span> /&gt;
 </code></pre></div><p>1.进度条的三层背景：<code>jz_bottom_seek_progress.xml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
 &lt;layer-list xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>&gt;
     &lt;item android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@android:id/background&#34;</span>&gt;
         &lt;shape&gt;
@@ -178,13 +196,13 @@ android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74
     &lt;/item&gt;
 &lt;/layer-list&gt;
 </code></pre></div><p>2.thumb的背景：<code>jz_bottom_seek_thumb.xml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
 &lt;selector xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>&gt;
     &lt;item android:drawable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_seek_thumb_pressed&#34;</span> android:state_pressed<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> /&gt;
     &lt;item android:drawable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@drawable/jz_seek_thumb_normal&#34;</span> /&gt;
 &lt;/selector&gt;
 </code></pre></div><p>3.thumb按下状态的背景：<code>jz_seek_thumb_pressed.xml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
 &lt;shape xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
     android:shape<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;oval&#34;</span>&gt;
     &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#ffffffff&#34;</span> /&gt;
@@ -193,7 +211,7 @@ android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74
         android:height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20dp&#34;</span> /&gt;
 &lt;/shape&gt;
 </code></pre></div><p>4.thumb正常状态的背景：<code>jz_seek_thumb_normal.xml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>?&gt;
 &lt;shape xmlns:android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
     android:shape<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;oval&#34;</span>&gt;
     &lt;solid android:color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#fff0f0f0&#34;</span> /&gt;
@@ -289,7 +307,7 @@ android:paddingEnd<span style="color:#f92672">=</span><span style="color:#e6db74
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

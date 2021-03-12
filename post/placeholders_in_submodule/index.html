@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -104,7 +106,7 @@ Error:Execution failed for task':app:processDebugManifest'
 
 </code></pre><p>但是，如果直接在library module的gradle文件中定义这些占位符的值，那么在编译出SDK的<code>AndroidManifest</code>中就会包含有默认的<code>meta-data</code>值。虽然在项目的gradle可以再次定义占位符对应的值来替换library module中的默认值，但是，如果在具体项目中重新定义的某一个占位符为空值，根据Android Studio合并<code>Manifest</code>的优先级规则，该占位符在最终编译合并生成的<code>AndroidManifest.xml</code>中肯定会使用library module中配置的默认值：或空或非空。这就不符合我们的预期了。</p>
 <p>所以最终的解决方案：在library module的gradle中也要定义占位符,注意配置中的单引号：<code>''</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android <span style="color:#f92672">{</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">android <span style="color:#f92672">{</span>
    //...
 
     defaultConfig <span style="color:#f92672">{</span>
@@ -120,7 +122,7 @@ Error:Execution failed for task':app:processDebugManifest'
    //...
 <span style="color:#f92672">}</span>
 </code></pre></div><p>然后在main module的gradle中要定义占位符真正要用到的值：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">android <span style="color:#f92672">{</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">android <span style="color:#f92672">{</span>
    //...
 
     defaultConfig <span style="color:#f92672">{</span>
@@ -222,7 +224,7 @@ Error:Execution failed for task':app:processDebugManifest'
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -100,13 +102,21 @@
             <h1 id="概述">概述</h1>
 <p>最近心血来潮想捣腾一下服务器方面的东西，一冲动在阿里云买了一台小小云服务器(HongKong)<a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=lpl70fmt">(推荐链接)</a>（5年，算下来真是比买一个国外的VPS划算得太多，关键是响应速度超级完美，看图），想来搭个博文网站练（zhuang)练(zhuang)手(bi)，也是不错的。
 
-        <img class="mx-auto" alt="hugo_1_2.png" src="/img/10_hugo_server/01.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/01.png">
+            <img class="mx-auto" alt="hugo_1_2.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/01.png" />
+        </a>
     </p>
 <p>既然练练手，搭个小小的静态博文网站再合适不过了。接下来就是选择什么样的博客框架来的快。作为菜鸟中的战斗鸡，也就不用去对比wordpress, hexo,ghost这些框架了，查看大量的博文后觉得Hugo最适合自己，简单直接。</p>
 <p>既然想要捣腾服务器，就选nginx。咱也不太懂也不敢问，就是八百年前被赶鸭子上架接触一两天这个玩意儿，别的也不清楚。</p>
 <p>好了，画个示意图来描述一下要干事儿。
 
-        <img class="mx-auto" alt="hugo_1_1.png" src="/img/10_hugo_server/02.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/02.png">
+            <img class="mx-auto" alt="hugo_1_1.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/02.png" />
+        </a>
     </p>
 <p>示意图解释：</p>
 <ul>
@@ -183,19 +193,31 @@
 <li>
 <p>选择基础配置,请注意地域是选择： <code>香港</code></p>
 <p>
-        <img class="mx-auto" alt="hugo_1_3.png" src="/img/10_hugo_server/03.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/03.png">
+            <img class="mx-auto" alt="hugo_1_3.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/03.png" />
+        </a>
     </p>
 </li>
 <li>
 <p>选择操作系统和存储空间：如果没有太多的空间需求，可以考虑稍微选择小一点，比如20G，还能省下不少钱。
 
-        <img class="mx-auto" alt="hugo_1_4.png" src="/img/10_hugo_server/04.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/04.png">
+            <img class="mx-auto" alt="hugo_1_4.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/04.png" />
+        </a>
     </p>
 </li>
 <li>
 <p>网络：请注意我选择的是网络带宽是“按照使用流量”
 
-        <img class="mx-auto" alt="hugo_1_5.png" src="/img/10_hugo_server/05.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/05.png">
+            <img class="mx-auto" alt="hugo_1_5.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/05.png" />
+        </a>
     </p>
 </li>
 <li>
@@ -204,13 +226,21 @@
 第3步：添加的是监听 Github的 push event的service所在的端口:7777；
 第4步：0.0.0.0/0 表示授权接收所有ip的访问。
 </code></pre><p>
-        <img class="mx-auto" alt="hugo_1_7.png" src="/img/10_hugo_server/06.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/06.png">
+            <img class="mx-auto" alt="hugo_1_7.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/06.png" />
+        </a>
     </p>
 </li>
 <li>
 <p>配置登录用户名和密码，然后直接确认订单。付款。
 
-        <img class="mx-auto" alt="hugo_1_8.png" src="/img/10_hugo_server/07.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/07.png">
+            <img class="mx-auto" alt="hugo_1_8.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/07.png" />
+        </a>
     </p>
 </li>
 <li>
@@ -227,7 +257,11 @@ RSA key fingerprint is SHA256:dfjkdjgdjgdjgjldjgflajgljdkljglkdjgljldjggj.
 Are you sure you want to continue connecting (yes/no)?
 </code></pre><p>直接输入<code>yes</code>,表示同意。在终端输入正确的登录密码，完成ssh登录。</p>
 <p>
-        <img class="mx-auto" alt="hugo_1_9.png" src="/img/10_hugo_server/08.png" />   
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/08.png">
+            <img class="mx-auto" alt="hugo_1_9.png" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/10_hugo_server/08.png" />
+        </a>
     </p>
 </li>
 </ul>
@@ -324,7 +358,7 @@ Are you sure you want to continue connecting (yes/no)?
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

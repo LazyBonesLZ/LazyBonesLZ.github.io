@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -98,7 +100,7 @@
         
         <div class="post-content">
             <p>Android Studio编译，运行遇到  <code>Execution failed for task ':customviews:compileDebugJavaWithJavac'</code>, 一大堆的错误log，却找不到问题所在，无从下手。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Caused by: org.gradle.api.tasks.TaskExecutionException: Execution failed <span style="color:#66d9ef">for</span> task <span style="color:#e6db74">&#39;:customviews:compileDebugJavaWithJavac&#39;</span>.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">Caused by: org.gradle.api.tasks.TaskExecutionException: Execution failed <span style="color:#66d9ef">for</span> task <span style="color:#e6db74">&#39;:customviews:compileDebugJavaWithJavac&#39;</span>.
 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute<span style="color:#f92672">(</span>ExecuteActionsTaskExecuter.java:95<span style="color:#f92672">)</span>
 	at org.gradle.api.internal.tasks.execution.ResolveTaskOutputCachingStateExecuter.execute<span style="color:#f92672">(</span>ResolveTaskOutputCachingStateExecuter.java:91<span style="color:#f92672">)</span>
 	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute<span style="color:#f92672">(</span>ValidatingTaskExecuter.java:57<span style="color:#f92672">)</span>
@@ -134,7 +136,7 @@
 </code></pre></div><p>可以在 <code>Terminal</code>执行</p>
 <pre><code>./gradlew compileDebugJavaWithJavac
 </code></pre><p>很快就能从执行结果中找到问题所在：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ./gradlew compileDebugJavaWithJavac
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">$ ./gradlew compileDebugJavaWithJavac
 
 &gt; Task :customviews:compileDebugJavaWithJavac FAILED
 /Users/WorkInfos/999-TJL/99-Demo/03/LazySDK/customviews/src/main/java/com/lazy/customviews/bookflipview/baselib/FoldBackVertexProgram.java:61: 错误: 程序包R不存在
@@ -234,7 +236,7 @@ Execution failed <span style="color:#66d9ef">for</span> task <span style="color:
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

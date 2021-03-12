@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -105,7 +107,7 @@
 <li>不需要<code>python</code>环境</li>
 </ul>
 <p>想要实现<code>gradle task</code> 执行 <code>adb</code>, 可以通过执行<code>gradle</code>的 <code>Command Line</code>。参见<a href="https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Exec.html#org.gradle.api.tasks.Exec">Exec</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">task stopTomcat<span style="color:#f92672">(</span>type:Exec<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">task stopTomcat<span style="color:#f92672">(</span>type:Exec<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
   workingDir <span style="color:#e6db74">&#39;../tomcat/bin&#39;</span>
 
   //on windows:
@@ -131,7 +133,7 @@
 <li>gradle task 动态参数传入</li>
 </ul>
 <p>直接上脚本<code>copyobb.gradle</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/**
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">/**
  * How to use task: pushObb?
  * 1. open a terminal in Android Studio;
  * 2. input the command:
@@ -205,7 +207,7 @@ task pushObb<span style="color:#f92672">(</span>type: Exec,dependsOn:mkdirs<span
 <li>Open a terminal in Android Studio;</li>
 <li>Input the command and pass parameter with <code>-P</code>:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">  ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;the obb file path on your mac which exported from unity&#34;</span> pushObb
 
   <span style="color:#f92672">[[</span>For example<span style="color:#f92672">]]</span>:
   ./gradlew -PobbPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/ColorfulDark/tmp/BSG0030/BSG0030.main.obb&#34;</span> pushObb
@@ -294,7 +296,7 @@ task pushObb<span style="color:#f92672">(</span>type: Exec,dependsOn:mkdirs<span
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

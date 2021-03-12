@@ -34,6 +34,8 @@
     
     
     
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
     
     
     
@@ -102,12 +104,12 @@
 </code></pre><p>突然就懵逼了。这是个什么错误？
 无从下手的情况下，只好开启Google大法。</p>
 <p>因为本地安装的 AS版本是3.2，但是百度demo中配置的是gradle 2.2.3</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
     classpath <span style="color:#e6db74">&#39;com.android.tools.build:gradle:2.2.3&#39;</span>
 
 <span style="color:#f92672">}</span>
 </code></pre></div><p>最直接的解决方案就是改成gradle3.2.1</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">dependencies <span style="color:#f92672">{</span>
     classpath <span style="color:#e6db74">&#39;com.android.tools.build:gradle:3.2.1&#39;</span>
 
 <span style="color:#f92672">}</span>
@@ -198,7 +200,7 @@
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
