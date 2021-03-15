@@ -2,6 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.harddone.com/categories/Android/</loc>
+    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/tags/Android-vitals/</loc>
+    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/tags/ANR/</loc>
+    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/categories/</loc>
+    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/</loc>
+    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/tags/Google-play-console/</loc>
+    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/post/google_play_anr/</loc>
+    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/post/</loc>
+    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/tags/</loc>
+    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/categories/Git/</loc>
+    <lastmod>2021-03-15T11:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/tags/git/</loc>
+    <lastmod>2021-03-15T11:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/post/git_big_file_err/</loc>
+    <lastmod>2021-03-15T11:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/tags/%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%8A%A5%E9%94%99/</loc>
+    <lastmod>2021-03-15T11:08:08+08:00</lastmod>
+  </url><url>
     <loc>https://www.harddone.com/tags/adb/</loc>
     <lastmod>2020-05-22T10:14:27+08:00</lastmod>
   </url><url>
@@ -11,16 +50,7 @@
     <loc>https://www.harddone.com/post/aabtool_for_mac/</loc>
     <lastmod>2020-05-22T10:14:27+08:00</lastmod>
   </url><url>
-    <loc>https://www.harddone.com/categories/</loc>
-    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
-  </url><url>
-    <loc>https://www.harddone.com/</loc>
-    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
-  </url><url>
     <loc>https://www.harddone.com/tags/java/</loc>
-    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
-  </url><url>
-    <loc>https://www.harddone.com/post/</loc>
     <lastmod>2020-05-22T10:14:27+08:00</lastmod>
   </url><url>
     <loc>https://www.harddone.com/categories/Python/</loc>
@@ -29,13 +59,7 @@
     <loc>https://www.harddone.com/tags/python/</loc>
     <lastmod>2020-05-22T10:14:27+08:00</lastmod>
   </url><url>
-    <loc>https://www.harddone.com/tags/</loc>
-    <lastmod>2020-05-22T10:14:27+08:00</lastmod>
-  </url><url>
     <loc>https://www.harddone.com/tags/Android/</loc>
-    <lastmod>2020-04-23T16:00:24+08:00</lastmod>
-  </url><url>
-    <loc>https://www.harddone.com/categories/Android/</loc>
     <lastmod>2020-04-23T16:00:24+08:00</lastmod>
   </url><url>
     <loc>https://www.harddone.com/post/android_ps/</loc>
@@ -178,12 +202,6 @@
   </url><url>
     <loc>https://www.harddone.com/tags/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/</loc>
     <lastmod>2019-05-10T15:03:34+08:00</lastmod>
-  </url><url>
-    <loc>https://www.harddone.com/categories/Git/</loc>
-    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
-  </url><url>
-    <loc>https://www.harddone.com/tags/git/</loc>
-    <lastmod>2019-04-30T14:33:57+08:00</lastmod>
   </url><url>
     <loc>https://www.harddone.com/post/git_untrack_dir/</loc>
     <lastmod>2019-04-30T14:33:57+08:00</lastmod>

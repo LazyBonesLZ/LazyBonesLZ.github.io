@@ -6,7 +6,25 @@
     <description>Recent content in Categories on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate><atom:link href="https://www.harddone.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Mar 2021 11:52:29 +0800</lastBuildDate><atom:link href="https://www.harddone.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android</title>
+      <link>https://www.harddone.com/categories/Android/</link>
+      <pubDate>Mon, 15 Mar 2021 11:52:29 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/categories/Android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://www.harddone.com/categories/Git/</link>
+      <pubDate>Mon, 15 Mar 2021 11:08:08 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/categories/Git/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Python</title>
       <link>https://www.harddone.com/categories/Python/</link>
@@ -17,29 +35,11 @@
     </item>
     
     <item>
-      <title>Android</title>
-      <link>https://www.harddone.com/categories/Android/</link>
-      <pubDate>Thu, 23 Apr 2020 16:00:24 +0800</pubDate>
-      
-      <guid>https://www.harddone.com/categories/Android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Unity</title>
       <link>https://www.harddone.com/categories/Unity/</link>
       <pubDate>Thu, 23 Apr 2020 15:01:15 +0800</pubDate>
       
       <guid>https://www.harddone.com/categories/Unity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://www.harddone.com/categories/Git/</link>
-      <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
-      
-      <guid>https://www.harddone.com/categories/Git/</guid>
       <description></description>
     </item>
     

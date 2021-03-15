@@ -6,7 +6,25 @@
     <description>Recent content on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate><atom:link href="https://www.harddone.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Mar 2021 11:52:29 +0800</lastBuildDate><atom:link href="https://www.harddone.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Play Console: 如何通过Android Vitals记录的日志来优化App的ANR</title>
+      <link>https://www.harddone.com/post/google_play_anr/</link>
+      <pubDate>Mon, 15 Mar 2021 11:52:29 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/post/google_play_anr/</guid>
+      <description>在Android应用开发中，最令开发人员抓狂的是各种莫名其妙的ANR，出现这种问题时，很少能在自己的测试设备或者开发环境中重现。但是ANR出现的频率过高却又十分影响用户的体验。 Google play console提供了 Android vitals工具，以供开发人员检查应用上线之后的性能表现。其ANR数据记录了用</description>
+    </item>
+    
+    <item>
+      <title>Git：上传大文件报错解决方法</title>
+      <link>https://www.harddone.com/post/git_big_file_err/</link>
+      <pubDate>Mon, 15 Mar 2021 11:08:08 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/post/git_big_file_err/</guid>
+      <description>问题描述： git本地仓库提交之后，向远程仓库推送时报错,提示大文件问题。 error: pack-objects died of signal 13 error: failed to push some refs to &#39;git@github.com:example/example.git&#39; 在stackoverflow,找到解决方案提示是因为文件大小限制导致。 所以就直接到已提交到本地仓库的找到大文件xxx.hrpof，然后删除后立马又提交了本地仓库。但是推送的时候依然</description>
+    </item>
+    
     <item>
       <title>Android app bundle tool for Mac</title>
       <link>https://www.harddone.com/post/aabtool_for_mac/</link>

@@ -6,7 +6,52 @@
     <description>Recent content in Tags on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 May 2020 10:14:27 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Mar 2021 11:52:29 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android vitals</title>
+      <link>https://www.harddone.com/tags/Android-vitals/</link>
+      <pubDate>Mon, 15 Mar 2021 11:52:29 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/tags/Android-vitals/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ANR</title>
+      <link>https://www.harddone.com/tags/ANR/</link>
+      <pubDate>Mon, 15 Mar 2021 11:52:29 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/tags/ANR/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google play console</title>
+      <link>https://www.harddone.com/tags/Google-play-console/</link>
+      <pubDate>Mon, 15 Mar 2021 11:52:29 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/tags/Google-play-console/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://www.harddone.com/tags/git/</link>
+      <pubDate>Mon, 15 Mar 2021 11:08:08 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>大文件上传报错</title>
+      <link>https://www.harddone.com/tags/%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Mon, 15 Mar 2021 11:08:08 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/tags/%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%8A%A5%E9%94%99/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>adb</title>
       <link>https://www.harddone.com/tags/adb/</link>
@@ -328,15 +373,6 @@
       <pubDate>Fri, 10 May 2019 15:03:34 +0800</pubDate>
       
       <guid>https://www.harddone.com/tags/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://www.harddone.com/tags/git/</link>
-      <pubDate>Tue, 30 Apr 2019 14:33:57 +0800</pubDate>
-      
-      <guid>https://www.harddone.com/tags/git/</guid>
       <description></description>
     </item>
     
