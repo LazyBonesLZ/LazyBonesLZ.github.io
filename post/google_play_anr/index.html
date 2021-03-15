@@ -108,7 +108,23 @@
 <p>而我的处理步骤是这样的：</p>
 <h3 id="1strictmodehttpsdeveloperandroidcomreferenceandroidosstrictmode">1.<a href="https://developer.android.com/reference/android/os/StrictMode">StrictMode</a></h3>
 <p>StrictMode是一个开发人员工具，可以检测到您可能偶然执行的操作并将其引起您的注意，以便您可以进行修复。 在应用上线之前，开启改模式可以帮助开发人员找到一些可能引起ANR的问题代码：比如在主线程上调用第三方sdk的网络请求接口、主线程上有耗时计算的逻辑或者在BroadcastRecevier中有耗时的计算等等。</p>
-<p>所以，在开发阶段，我们可以尽可能的早的开启StrictMode. 在Application 或者 Activity的onCreate方法中均可，但是需要注意的是，通过测试发现，如果是在Application开启StrictMode,可能导致无法检测到某些自定义的耗时逻辑：<a href="https://stackoverflow.com/questions/23997448/why-setting-up-strictmode-not-working-in-application-without-handler">点我看这里</a></p>
+<p>StrictMode主要检测两大问题，一个是线程策略，即TreadPolicy，另一个是VM策略，即VmPolicy。</p>
+<h4 id="threadpolicy线程策略检测">ThreadPolicy线程策略检测</h4>
+<ul>
+<li>自定义的耗时调用 使用detectCustomSlowCalls()开启</li>
+<li>磁盘读取操作 使用detectDiskReads()开启</li>
+<li>磁盘写入操作 使用detectDiskWrites()开启</li>
+<li>网络操作 使用detectNetwork()开启</li>
+</ul>
+<h4 id="vmpolicy虚拟机策略检测">VmPolicy虚拟机策略检测</h4>
+<ul>
+<li>Activity泄露 使用detectActivityLeaks()开启</li>
+<li>未关闭的Closable对象泄露 使用detectLeakedClosableObjects()开启</li>
+<li>泄露的Sqlite对象 使用detectLeakedSqlLiteObjects()开启</li>
+<li>检测实例数量 使用setClassInstanceLimit()开启</li>
+</ul>
+<p>所以，在开发阶段，我们可以尽可能的早的开启StrictMode. 在Application 或者 Activity的onCreate方法中均可，但是需要注意的是，通过测试发现，如果是在Application开启StrictMode,可能导致无法检测到某些自定义的耗时逻辑：
+<a href="https://stackoverflow.com/questions/23997448/why-setting-up-strictmode-not-working-in-application-without-handler">点我看这里</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">
 public void onCreate<span style="color:#f92672">(</span>Bundle savedInstanceState<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
      super.onCreate<span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">)</span>;
@@ -132,7 +148,8 @@ public void onCreate<span style="color:#f92672">(</span>Bundle savedInstanceStat
  <span style="color:#f92672">}</span>
 
 </code></pre></div><p>分析StrictMode log,主要是查看网络请求或者I/O操作等是否在主线程上，如果是的话就要优化自己的代码。</p>
-<p>但是要注意的是：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell">adb logcat | grep StrictMode
+</code></pre></div><p>但是要注意的是：</p>
 <ul>
 <li>只在开发阶段启用StrictMode，发布应用或者release版本一定要禁用它。</li>
 <li>严格模式无法监控JNI中的磁盘IO和网络请求。</li>
@@ -147,6 +164,7 @@ public void onCreate<span style="color:#f92672">(</span>Bundle savedInstanceStat
 newSingleThreadExecutor: <a href="https://www.cnblogs.com/zhujiabin/p/5404771.html">https://www.cnblogs.com/zhujiabin/p/5404771.html</a></li>
 <li>StrictMode: <a href="https://developer.android.com/reference/android/os/StrictMode">https://developer.android.com/reference/android/os/StrictMode</a></li>
 <li>ANR: <a href="https://developer.android.com/topic/performance/vitals/anr.html">https://developer.android.com/topic/performance/vitals/anr.html</a></li>
+<li>Android严苛模式StrictMode使用详解 <a href="https://blog.csdn.net/mynameishuangshuai/article/details/51742375">https://blog.csdn.net/mynameishuangshuai/article/details/51742375</a></li>
 </ol>
 
         </div>
