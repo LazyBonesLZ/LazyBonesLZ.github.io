@@ -77,29 +77,6 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://www.harddone.com/post/git_untrack_dir/" title="git : remove directories tracked">git : remove directories tracked</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年4月30日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            如果文件和目录已经被提交到git仓库，是可以通过git 命令来取消文件和目录的跟踪。 我们常用的sourcetree也提供了该功能，如果是某目录下已经有文件被提交过了，那么就不能再改工具中直接对文件夹取消跟踪，只能对显示有更改的文件一个一个取消，UI操作还要等刷新，费时费力。 为了防止……
-        </div>
-        <p class="readmore"><a href="https://www.harddone.com/post/git_untrack_dir/">阅读全文</a></p>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
                 <a href="https://www.harddone.com/post/hugo_nginx_3/" title="Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）">Hugo&#43;Nginx： 利用webhook自动部署静态网站到远程CentOS服务器（三）</a>
             </h1>
         </header>
@@ -304,6 +281,29 @@
         <p class="readmore"><a href="https://www.harddone.com/post/android_https_issue/">阅读全文</a></p>
     </article>
     
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.harddone.com/post/nexus_private_maven/" title="填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven">填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年7月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Android'>Android</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            很多时候，Android Studio中所创建的工程，会依赖一个或多个Module。Module 生成的AAR库，可以上传到maven或者私服Nexus作为公用的SDK。Gradle子工程之间通过 compile/implementation project(&quot;:XXX&quot;)这种方式依赖是非常便利的，但是这样的……
+        </div>
+        <p class="readmore"><a href="https://www.harddone.com/post/nexus_private_maven/">阅读全文</a></p>
+    </article>
+    
     
 
 
@@ -403,10 +403,6 @@ if (!doNotTrack) {
 <ul class="widget-list">
     
     <li>
-        <a href="https://www.harddone.com/post/test.md/" title="Test">Test</a>
-    </li>
-    
-    <li>
         <a href="https://www.harddone.com/post/linux-alias-params/" title="Linux Alias 别名传入参数">Linux Alias 别名传入参数</a>
     </li>
     
@@ -440,6 +436,10 @@ if (!doNotTrack) {
     
     <li>
         <a href="https://www.harddone.com/post/gradle-run-adb/" title="Gradle Run Adb">Gradle Run Adb</a>
+    </li>
+    
+    <li>
+        <a href="https://www.harddone.com/post/min-api-26-bug/" title="Invoke-customs are only supported starting with android 0 --min-api 26">Invoke-customs are only supported starting with android 0 --min-api 26</a>
     </li>
     
 </ul>
