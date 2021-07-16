@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on ColorfulDark Blog</title>
+    <link>https://www.harddone.com/tags/Linux/</link>
+    <description>Recent content in Linux on ColorfulDark Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 09 Jul 2021 18:03:55 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/Linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Alias 别名传入参数</title>
+      <link>https://www.harddone.com/post/linux-alias-params/</link>
+      <pubDate>Fri, 09 Jul 2021 18:03:55 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/post/linux-alias-params/</guid>
+      <description>Linux alias命令用来设置指令的别名，对一些较长的命令进行简化。使用alias时，必须使用单引号将原来的命令包含，防止特殊字符导致错误。 alias 别名=&amp;#39;原命令 -选项/参数&amp;#39; 但是 alias是不能直接接受参数输入。以CocoaPods的pod update 命令为例，其原始命令为： pod update --project-directory=&amp;lt;project path&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

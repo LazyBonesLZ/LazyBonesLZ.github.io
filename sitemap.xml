@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.harddone.com/tags/Alias/</loc>
+    <lastmod>2021-07-09T18:03:55+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/categories/</loc>
+    <lastmod>2021-07-09T18:03:55+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/</loc>
+    <lastmod>2021-07-09T18:03:55+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/tags/Linux/</loc>
+    <lastmod>2021-07-09T18:03:55+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/categories/Linux/</loc>
+    <lastmod>2021-07-09T18:03:55+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/post/linux-alias-params/</loc>
+    <lastmod>2021-07-09T18:03:55+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/tags/Parameters/</loc>
+    <lastmod>2021-07-09T18:03:55+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/post/</loc>
+    <lastmod>2021-07-09T18:03:55+08:00</lastmod>
+  </url><url>
+    <loc>https://www.harddone.com/tags/</loc>
+    <lastmod>2021-07-09T18:03:55+08:00</lastmod>
+  </url><url>
     <loc>https://www.harddone.com/categories/Android/</loc>
     <lastmod>2021-03-15T11:52:29+08:00</lastmod>
   </url><url>
@@ -11,22 +38,10 @@
     <loc>https://www.harddone.com/tags/ANR/</loc>
     <lastmod>2021-03-15T11:52:29+08:00</lastmod>
   </url><url>
-    <loc>https://www.harddone.com/categories/</loc>
-    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
-  </url><url>
-    <loc>https://www.harddone.com/</loc>
-    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
-  </url><url>
     <loc>https://www.harddone.com/tags/Google-play-console/</loc>
     <lastmod>2021-03-15T11:52:29+08:00</lastmod>
   </url><url>
     <loc>https://www.harddone.com/post/google_play_anr/</loc>
-    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
-  </url><url>
-    <loc>https://www.harddone.com/post/</loc>
-    <lastmod>2021-03-15T11:52:29+08:00</lastmod>
-  </url><url>
-    <loc>https://www.harddone.com/tags/</loc>
     <lastmod>2021-03-15T11:52:29+08:00</lastmod>
   </url><url>
     <loc>https://www.harddone.com/categories/Git/</loc>
