@@ -6,47 +6,45 @@
     <meta name="generator" content="Hugo 0.81.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>Google play billing Alpha / Beta 测试 | ColorfulDark Blog</title>
     <meta property="og:title" content="Google play billing Alpha / Beta 测试 - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2018-07-11T15:29:05&#43;08:00">
+    <meta property="article:published_time" content='2018-07-11T15:29:05&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2018-07-11T15:29:05&#43;08:00">
+    <meta property="article:modified_time" content='2018-07-11T15:29:05&#43;08:00'>
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
     <meta name="description" content="Google play billing Alpha / Beta 测试">
         
     <meta name="author" content="ColorfulDark">
     <meta property="og:url" content="https://www.harddone.com/post/gp_billing/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5294048051542592",
-        enable_page_level_ads: true
-    });
-    </script>
+    <script data-ad-client="ca-pub-5294048051542592" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
-
-
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
     
     
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -73,36 +71,38 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Google play billing Alpha / Beta 测试</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            2018年7月11日
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="https://www.harddone.com/categories/Android">Android</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            <p>本文假设你已经集成Google play billing SDK ，根据google官方提供的<a href="https://developer.android.com/google/play/billing/billing_testing">文档说明</a>，提供了几种验证应用内购买逻辑的方式。</p>
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Google play billing Alpha / Beta 测试</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年7月11日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Android'>Android</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>本文假设你已经集成Google play billing SDK ，根据google官方提供的<a href="https://developer.android.com/google/play/billing/billing_testing">文档说明</a>，提供了几种验证应用内购买逻辑的方式。</p>
 <p>本文记录的是alpha或beta测试的一些操作细节。供参考。</p>
 <p><strong>！！！！！前方多图预警！！！！！！</strong></p>
 <h1 id="一-前提">一 前提</h1>
@@ -113,75 +113,321 @@
 <p>1.登陆 <a href="">Google play console</a>.</p>
 <p>2.创建App</p>
 <p>2.1 Create application</p>
-<h2 id="img03_gp_billing00png"><img src="/img/03_gp_billing/00.png" alt=""></h2>
-<h2 id="img03_gp_billing01png"><img src="/img/03_gp_billing/01.png" alt=""></h2>
+<h2 id="img03_gp_billing00png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/00.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/00.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing01png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/01.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/01.png" />
+        </a>
+    </h2>
 <p>2.2 完善App的其他信息</p>
-<h2 id="img03_gp_billing02png"><img src="/img/03_gp_billing/02.png" alt=""></h2>
+<h2 id="img03_gp_billing02png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/02.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/02.png" />
+        </a>
+    </h2>
 <p>2.3 上传app的截图和资源</p>
-<h2 id="img03_gp_billing03png"><img src="/img/03_gp_billing/03.png" alt=""></h2>
+<h2 id="img03_gp_billing03png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/03.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/03.png" />
+        </a>
+    </h2>
 <p>2.4 App的其他信息</p>
-<h2 id="img03_gp_billing04png"><img src="/img/03_gp_billing/04.png" alt=""></h2>
-<h2 id="img03_gp_billing05png"><img src="/img/03_gp_billing/05.png" alt=""></h2>
+<h2 id="img03_gp_billing04png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/04.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/04.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing05png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/05.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/05.png" />
+        </a>
+    </h2>
 <p>3 发布apk到alpha渠道，后续几道步骤，需要在该步骤上传完apk后方可继续。操作步骤相见截图：</p>
-<h2 id="img03_gp_billing06png"><img src="/img/03_gp_billing/06.png" alt=""></h2>
-<h2 id="img03_gp_billing07png"><img src="/img/03_gp_billing/07.png" alt=""></h2>
-<h2 id="img03_gp_billing08png"><img src="/img/03_gp_billing/08.png" alt=""></h2>
-<h2 id="img03_gp_billing09png"><img src="/img/03_gp_billing/09.png" alt=""></h2>
-<h2 id="img03_gp_billing10png"><img src="/img/03_gp_billing/10.png" alt=""></h2>
+<h2 id="img03_gp_billing06png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/06.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/06.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing07png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/07.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/07.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing08png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/08.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/08.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing09png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/09.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/09.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing10png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/10.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/10.png" />
+        </a>
+    </h2>
 <ol start="4">
 <li>完善 Content rating信息</li>
 </ol>
-<h2 id="img03_gp_billing11png"><img src="/img/03_gp_billing/11.png" alt=""></h2>
-<h2 id="img03_gp_billing12png"><img src="/img/03_gp_billing/12.png" alt=""></h2>
-<h2 id="img03_gp_billing13png"><img src="/img/03_gp_billing/13.png" alt=""></h2>
-<h2 id="img03_gp_billing14png"><img src="/img/03_gp_billing/14.png" alt=""></h2>
-<h2 id="img03_gp_billing15png"><img src="/img/03_gp_billing/15.png" alt=""></h2>
+<h2 id="img03_gp_billing11png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/11.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/11.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing12png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/12.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/12.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing13png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/13.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/13.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing14png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/14.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/14.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing15png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/15.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/15.png" />
+        </a>
+    </h2>
 <p>5.设置App付费信息</p>
-<h2 id="img03_gp_billing16png"><img src="/img/03_gp_billing/16.png" alt=""></h2>
-<h2 id="img03_gp_billing17png"><img src="/img/03_gp_billing/17.png" alt=""></h2>
-<h2 id="img03_gp_billing18png"><img src="/img/03_gp_billing/18.png" alt=""></h2>
-<h2 id="img03_gp_billing19png"><img src="/img/03_gp_billing/19.png" alt=""></h2>
+<h2 id="img03_gp_billing16png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/16.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/16.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing17png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/17.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/17.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing18png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/18.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/18.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing19png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/19.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/19.png" />
+        </a>
+    </h2>
 <p>6.完成以上步骤后，如果没有问题，则app的配置信息就完成了。如下图所示，则表示所有配置都完成。</p>
-<h2 id="img03_gp_billing20png"><img src="/img/03_gp_billing/20.png" alt=""></h2>
+<h2 id="img03_gp_billing20png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/20.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/20.png" />
+        </a>
+    </h2>
 <p>7.配置应用内购买的商品信息和订阅信息</p>
 <p>7.1 配置Managed商品信息</p>
 <p>7.1.1 创建Managed Products</p>
-<h2 id="img03_gp_billing21png"><img src="/img/03_gp_billing/21.png" alt=""></h2>
+<h2 id="img03_gp_billing21png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/21.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/21.png" />
+        </a>
+    </h2>
 <p>7.1.2 设置Managed Product</p>
-<h2 id="img03_gp_billing22png"><img src="/img/03_gp_billing/22.png" alt=""></h2>
-<h2 id="img03_gp_billing23png"><img src="/img/03_gp_billing/23.png" alt=""></h2>
-<h2 id="img03_gp_billing24png"><img src="/img/03_gp_billing/24.png" alt=""></h2>
-<h2 id="img03_gp_billing25png"><img src="/img/03_gp_billing/25.png" alt=""></h2>
+<h2 id="img03_gp_billing22png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/22.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/22.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing23png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/23.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/23.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing24png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/24.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/24.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing25png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/25.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/25.png" />
+        </a>
+    </h2>
 <p>7.2 创建Subscription</p>
-<h2 id="img03_gp_billing26png"><img src="/img/03_gp_billing/26.png" alt=""></h2>
-<h2 id="img03_gp_billing27png"><img src="/img/03_gp_billing/27.png" alt=""></h2>
-<h2 id="img03_gp_billing28png"><img src="/img/03_gp_billing/28.png" alt=""></h2>
-<h2 id="img03_gp_billing29png"><img src="/img/03_gp_billing/29.png" alt=""></h2>
-<h2 id="img03_gp_billing30png"><img src="/img/03_gp_billing/30.png" alt=""></h2>
+<h2 id="img03_gp_billing26png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/26.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/26.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing27png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/27.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/27.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing28png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/28.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/28.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing29png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/29.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/29.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing30png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/30.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/30.png" />
+        </a>
+    </h2>
 <p>8.添加测试者账号
 将你申请作为测试的Google账号添加为测试者。</p>
-<h2 id="img03_gp_billing31png"><img src="/img/03_gp_billing/31.png" alt=""></h2>
-<h2 id="img03_gp_billing32png"><img src="/img/03_gp_billing/32.png" alt=""></h2>
-<h2 id="img03_gp_billing33png"><img src="/img/03_gp_billing/33.png" alt=""></h2>
-<h2 id="img03_gp_billing34png"><img src="/img/03_gp_billing/34.png" alt=""></h2>
-<h2 id="img03_gp_billing35png"><img src="/img/03_gp_billing/35.png" alt=""></h2>
-<h2 id="img03_gp_billing36png"><img src="/img/03_gp_billing/36.png" alt=""></h2>
+<h2 id="img03_gp_billing31png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/31.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/31.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing32png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/32.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/32.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing33png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/33.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/33.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing34png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/34.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/34.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing35png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/35.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/35.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing36png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/36.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/36.png" />
+        </a>
+    </h2>
 <p>9.完成tester账号设置后，就可以将app推出，等待google的审核。</p>
-<h2 id="img03_gp_billing37png"><img src="/img/03_gp_billing/37.png" alt=""></h2>
-<h2 id="img03_gp_billing38png"><img src="/img/03_gp_billing/38.png" alt=""></h2>
-<h2 id="img03_gp_billing39png"><img src="/img/03_gp_billing/39.png" alt=""></h2>
+<h2 id="img03_gp_billing37png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/37.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/37.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing38png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/38.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/38.png" />
+        </a>
+    </h2>
+<h2 id="img03_gp_billing39png">
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/39.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/39.png" />
+        </a>
+    </h2>
 <h2 id="img03_gp_billing40png">10.等待审核
-<img src="/img/03_gp_billing/40.png" alt=""></h2>
+
+    
+    
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/40.png">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/lazyboneslz/lazyboneslz.github.io/img/03_gp_billing/40.png" />
+        </a>
+    </h2>
 <p>一切顺利的话，就可以等待Google的审核了，通常这个过程会花费2-3个小时不等。审核通过后，在Android 设备Google play store上登陆你的测试者账号，就可以搜索你上传的的app了，之后就可以发起正常的购买流程，不需要绑定银行卡，因为不会真正的付费。</p>
 <p>在测试购买的过程中，有可能发现bug了，改了之后需要再上传apk么？不用，直接像开发其他功能一样，直接连着IDE开发调试，购买流程完全不受影响，前提：设备上需要在google play store登陆测试者账号。</p>
 <p>以上。</p>
 
-                        </div>
+        </div>
 
-                        
+        
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -199,25 +445,25 @@
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="https://www.harddone.com/tags/Android">Android</a></li>
-                                
-                                <li><a href="https://www.harddone.com/tags/GP">GP</a></li>
-                                
-                                <li><a href="https://www.harddone.com/tags/Billing">Billing</a></li>
-                                
-                                <li><a href="https://www.harddone.com/tags/IAP">IAP</a></li>
-                                
-                                <li><a href="https://www.harddone.com/tags/Alpha/Bata-Test">Alpha/Bata Test</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Android'>Android</a></li>
+                
+                <li><a href='/tags/GP'>GP</a></li>
+                
+                <li><a href='/tags/Billing'>Billing</a></li>
+                
+                <li><a href='/tags/IAP'>IAP</a></li>
+                
+                <li><a href='/tags/Alpha/Bata-Test'>Alpha/Bata Test</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -232,11 +478,65 @@
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-139304185-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="https://www.harddone.com/">
@@ -325,77 +625,63 @@
 
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="https://www.harddone.com/categories/Android/">Android(23)</a>
-    </li>
+    <li><a href="https://www.harddone.com/categories/Android/">Android (23)</a></li>
     
-    <li>
-        <a href="https://www.harddone.com/categories/Git/">Git(2)</a>
-    </li>
+    <li><a href="https://www.harddone.com/categories/Git/">Git (2)</a></li>
     
-    <li>
-        <a href="https://www.harddone.com/categories/Linux/">Linux(1)</a>
-    </li>
+    <li><a href="https://www.harddone.com/categories/Linux/">Linux (1)</a></li>
     
-    <li>
-        <a href="https://www.harddone.com/categories/Lua/">Lua(1)</a>
-    </li>
+    <li><a href="https://www.harddone.com/categories/Lua/">Lua (1)</a></li>
     
-    <li>
-        <a href="https://www.harddone.com/categories/Python/">Python(2)</a>
-    </li>
+    <li><a href="https://www.harddone.com/categories/Python/">Python (2)</a></li>
     
-    <li>
-        <a href="https://www.harddone.com/categories/Unity/">Unity(2)</a>
-    </li>
+    <li><a href="https://www.harddone.com/categories/Unity/">Unity (2)</a></li>
     
-    <li>
-        <a href="https://www.harddone.com/categories/Website/">Website(3)</a>
-    </li>
+    <li><a href="https://www.harddone.com/categories/Website/">Website (3)</a></li>
     
 </ul>
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="https://www.harddone.com/tags/ANR/">ANR</a>
     
     <a href="https://www.harddone.com/tags/Alias/">Alias</a>
     
-    <a href="https://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata-Test</a>
+    <a href="https://www.harddone.com/tags/Alpha/Bata-Test/">Alpha/Bata Test</a>
     
     <a href="https://www.harddone.com/tags/Android/">Android</a>
     
-    <a href="https://www.harddone.com/tags/Android-Studio/">Android-Studio</a>
+    <a href="https://www.harddone.com/tags/Android-Studio/">Android Studio</a>
     
-    <a href="https://www.harddone.com/tags/Android-Studio-3.5/">Android-Studio-3.5</a>
+    <a href="https://www.harddone.com/tags/Android-Studio-3.5/">Android Studio 3.5</a>
     
-    <a href="https://www.harddone.com/tags/Android-Studio3.3.2/">Android-Studio3.3.2</a>
+    <a href="https://www.harddone.com/tags/Android-Studio3.3.2/">Android Studio3.3.2</a>
     
-    <a href="https://www.harddone.com/tags/Android-app-bundle-tool/">Android-app-bundle-tool</a>
+    <a href="https://www.harddone.com/tags/Android-app-bundle-tool/">Android app bundle tool</a>
     
-    <a href="https://www.harddone.com/tags/Android-vitals/">Android-vitals</a>
+    <a href="https://www.harddone.com/tags/Android-vitals/">Android vitals</a>
     
     <a href="https://www.harddone.com/tags/Apk%E5%A4%A7%E5%B0%8F/">Apk大小</a>
     
-    <a href="https://www.harddone.com/tags/Array-Params/">Array-Params</a>
+    <a href="https://www.harddone.com/tags/Array-Params/">Array Params</a>
     
     <a href="https://www.harddone.com/tags/Billing/">Billing</a>
     
     <a href="https://www.harddone.com/tags/CentOS/">CentOS</a>
     
-    <a href="https://www.harddone.com/tags/Certificate-verification-failed/">Certificate-verification-failed</a>
+    <a href="https://www.harddone.com/tags/Certificate-verification-failed/">Certificate verification failed</a>
     
-    <a href="https://www.harddone.com/tags/Chrome-Extension/">Chrome-Extension</a>
+    <a href="https://www.harddone.com/tags/Chrome-Extension/">Chrome Extension</a>
     
-    <a href="https://www.harddone.com/tags/Copy-File/">Copy-File</a>
+    <a href="https://www.harddone.com/tags/Copy-File/">Copy File</a>
     
-    <a href="https://www.harddone.com/tags/Editor-Screenshot/">Editor-Screenshot</a>
+    <a href="https://www.harddone.com/tags/Editor-Screenshot/">Editor Screenshot</a>
     
     <a href="https://www.harddone.com/tags/Firebase/">Firebase</a>
     
@@ -403,9 +689,9 @@
     
     <a href="https://www.harddone.com/tags/Github/">Github</a>
     
-    <a href="https://www.harddone.com/tags/Google-play-console/">Google-play-console</a>
+    <a href="https://www.harddone.com/tags/Google-play-console/">Google play console</a>
     
-    <a href="https://www.harddone.com/tags/Gradle/">Gradle</a>
+    <a href="https://www.harddone.com/tags/gradle/">gradle</a>
     
     <a href="https://www.harddone.com/tags/Gradle3.3/">Gradle3.3</a>
     
@@ -413,7 +699,7 @@
     
     <a href="https://www.harddone.com/tags/IAP/">IAP</a>
     
-    <a href="https://www.harddone.com/tags/In-App-Messaging-not-working/">In-App-Messaging-not-working</a>
+    <a href="https://www.harddone.com/tags/In-App-Messaging-not-working/">In-App Messaging not working</a>
     
     <a href="https://www.harddone.com/tags/Invoke-customs/">Invoke-customs</a>
     
@@ -421,7 +707,7 @@
     
     <a href="https://www.harddone.com/tags/Kotlin/">Kotlin</a>
     
-    <a href="https://www.harddone.com/tags/Library-module/">Library-module</a>
+    <a href="https://www.harddone.com/tags/Library-module/">Library module</a>
     
     <a href="https://www.harddone.com/tags/Linux/">Linux</a>
     
@@ -429,31 +715,31 @@
     
     <a href="https://www.harddone.com/tags/Mac/">Mac</a>
     
-    <a href="https://www.harddone.com/tags/Main-module/">Main-module</a>
+    <a href="https://www.harddone.com/tags/Main-module/">Main module</a>
     
     <a href="https://www.harddone.com/tags/Method/">Method</a>
     
-    <a href="https://www.harddone.com/tags/Multiple-Module-Dependencies/">Multiple-Module-Dependencies</a>
+    <a href="https://www.harddone.com/tags/Multiple-Module-Dependencies/">Multiple Module Dependencies</a>
     
     <a href="https://www.harddone.com/tags/Nexus/">Nexus</a>
     
     <a href="https://www.harddone.com/tags/Nginx/">Nginx</a>
     
-    <a href="https://www.harddone.com/tags/No-toolchains-found/">No-toolchains-found</a>
+    <a href="https://www.harddone.com/tags/No-toolchains-found/">No toolchains found</a>
     
-    <a href="https://www.harddone.com/tags/Not-find-method-classpath/">Not-find-method-classpath</a>
+    <a href="https://www.harddone.com/tags/Not-find-method-classpath/">Not find method classpath()</a>
     
     <a href="https://www.harddone.com/tags/Parameters/">Parameters</a>
     
     <a href="https://www.harddone.com/tags/Placeholders/">Placeholders</a>
     
-    <a href="https://www.harddone.com/tags/Private-Maven/">Private-Maven</a>
+    <a href="https://www.harddone.com/tags/Private-Maven/">Private Maven</a>
     
-    <a href="https://www.harddone.com/tags/Push-to-JCenter/">Push-to-JCenter</a>
+    <a href="https://www.harddone.com/tags/Push-to-JCenter/">Push to JCenter</a>
     
-    <a href="https://www.harddone.com/tags/Python/">Python</a>
+    <a href="https://www.harddone.com/tags/python/">python</a>
     
-    <a href="https://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen-Overlay-Deteched</a>
+    <a href="https://www.harddone.com/tags/Screen-Overlay-Deteched/">Screen Overlay Deteched</a>
     
     <a href="https://www.harddone.com/tags/Seekbar/">Seekbar</a>
     
@@ -463,7 +749,7 @@
     
     <a href="https://www.harddone.com/tags/Unity3d/">Unity3d</a>
     
-    <a href="https://www.harddone.com/tags/Vysor-pro-2.1.7_0/">Vysor-pro-2.1.7_0</a>
+    <a href="https://www.harddone.com/tags/Vysor-pro-2.1.7_0/">Vysor pro 2.1.7_0</a>
     
     <a href="https://www.harddone.com/tags/Web/">Web</a>
     
@@ -481,7 +767,7 @@
     
     <a href="https://www.harddone.com/tags/git/">git</a>
     
-    <a href="https://www.harddone.com/tags/google-iap/">google-iap</a>
+    <a href="https://www.harddone.com/tags/google-iap/">google iap</a>
     
     <a href="https://www.harddone.com/tags/gradle/">gradle</a>
     
@@ -493,7 +779,7 @@
     
     <a href="https://www.harddone.com/tags/python/">python</a>
     
-    <a href="https://www.harddone.com/tags/upload-AAR-manually/">upload-AAR-manually</a>
+    <a href="https://www.harddone.com/tags/upload-AAR-manually/">upload AAR manually</a>
     
     <a href="https://www.harddone.com/tags/%E5%8F%82%E6%95%B0/">参数</a>
     
@@ -560,55 +846,9 @@
         </ul>
     </section>
 </div>
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2021 <a href="https://www.harddone.com/">ColorfulDark Blog By ColorfulDark</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-139304185-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>
