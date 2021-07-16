@@ -80,6 +80,31 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://www.harddone.com/post/min-api-26-bug/" title="Invoke-customs are only supported starting with android 0 --min-api 26">Invoke-customs are only supported starting with android 0 --min-api 26</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年9月18日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Android'>Android</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            Android Studio升级到3.5，工程在编译时出现错误： Invoke-customs are only supported starting with android 0 --min-api 26 解决方案： android{ //... compileOptions { sourceCompatibility JavaVersion.VERSION_1_8 targetCompatibility JavaVersion.VERSION_1_8 } //... } JavaVersion请根据您开发环境中实际的版本设置。 参考链接： https://stackoverflow.com/questions/49891730/invoke-customs-are-only-supported-starting-with-android-0-min-api-26……
+        </div>
+        <p class="readmore"><a href="https://www.harddone.com/post/min-api-26-bug/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://www.harddone.com/post/FIAM_triggerEvent/" title="Firebase In-App Messaging:triggerEvent not working">Firebase In-App Messaging:triggerEvent not working</a>
             </h1>
         </header>
@@ -303,31 +328,6 @@
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.harddone.com/post/git_untrack_dir/" title="git : remove directories tracked">git : remove directories tracked</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年4月30日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            如果文件和目录已经被提交到git仓库，是可以通过git 命令来取消文件和目录的跟踪。 我们常用的sourcetree也提供了该功能，如果是某目录下已经有文件被提交过了，那么就不能再改工具中直接对文件夹取消跟踪，只能对显示有更改的文件一个一个取消，UI操作还要等刷新，费时费力。 为了防止……
-        </div>
-        <p class="readmore"><a href="https://www.harddone.com/post/git_untrack_dir/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -426,6 +426,10 @@ if (!doNotTrack) {
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.harddone.com/post/test.md/" title="Test">Test</a>
+    </li>
+    
+    <li>
         <a href="https://www.harddone.com/post/linux-alias-params/" title="Linux Alias 别名传入参数">Linux Alias 别名传入参数</a>
     </li>
     
@@ -459,10 +463,6 @@ if (!doNotTrack) {
     
     <li>
         <a href="https://www.harddone.com/post/gradle-run-adb/" title="Gradle Run Adb">Gradle Run Adb</a>
-    </li>
-    
-    <li>
-        <a href="https://www.harddone.com/post/min-api-26-bug/" title="Invoke-customs are only supported starting with android 0 --min-api 26">Invoke-customs are only supported starting with android 0 --min-api 26</a>
     </li>
     
 </ul>

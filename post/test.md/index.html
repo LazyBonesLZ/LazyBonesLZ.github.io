@@ -10,20 +10,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>Git：上传大文件报错解决方法 | ColorfulDark Blog</title>
-    <meta property="og:title" content="Git：上传大文件报错解决方法 - ColorfulDark Blog">
+    <title>Test | ColorfulDark Blog</title>
+    <meta property="og:title" content="Test - ColorfulDark Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2021-03-15T11:08:08&#43;08:00'>
+    <meta property="article:published_time" content='2021-07-16T18:06:40&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2021-03-15T11:08:08&#43;08:00'>
+    <meta property="article:modified_time" content='2021-07-16T18:06:40&#43;08:00'>
         
     <meta name="Keywords" content="ColorfulDark,java,android,博客,python">
-    <meta name="description" content="Git：上传大文件报错解决方法">
+    <meta name="description" content="Test">
         
     <meta name="author" content="ColorfulDark">
-    <meta property="og:url" content="https://www.harddone.com/post/git_big_file_err/">
+    <meta property="og:url" content="https://www.harddone.com/post/test.md/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -81,18 +81,11 @@
     
     <article class="post">
         <header>
-            <h1 class="post-title">Git：上传大文件报错解决方法</h1>
+            <h1 class="post-title">Test</h1>
         </header>
         <date class="post-meta meta-date">
-            2021年3月15日
+            2021年7月16日
         </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
-            
-        </div>
         
         
         <div class="post-meta">
@@ -102,32 +95,8 @@
         
         
         <div class="post-content">
-            <p>问题描述：
-git本地仓库提交之后，向远程仓库推送时报错,提示大文件问题。</p>
-<pre><code>error: pack-objects died of signal 13
-error: failed to push some refs to 'git@github.com:example/example.git' 
+            <p>dfsfsdfsdf</p>
 
-</code></pre><p>在<a href="https://stackoverflow.com/questions/18559015/cant-push-to-github-error-pack-objects-died-of-signal-13">stackoverflow</a>,找到解决方案提示是因为文件大小限制导致。
-所以就直接到已提交到本地仓库的找到大文件xxx.hrpof，然后删除后立马又提交了本地仓库。但是推送的时候依然之前的错误。原因是只是删除了文件，但是git仓库还是有大文件的记录，所以应该是先删除大文件的git跟踪，然后再删除大文件，最后提交后再推送。</p>
-<p>所以，我们必须先回退到生产了xxx.hrpof的那个git提交版本，再按照上述步骤操作。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:10;-o-tab-size:10;tab-size:10"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#1. 强制回退到某个git版本</span>
-
- git reset --hard &lt;commit_id&gt;
-
-<span style="color:#75715e">#2. 删除文件跟踪</span>
-  git rm -r --cached &lt;file&gt;
-  <span style="color:#75715e"># Stage our giant file for removal, but leave it on disk</span>
-
-  git commit --amend -CHEAD
-  <span style="color:#75715e"># Amend the previous commit with your change</span>
-  <span style="color:#75715e"># Simply making a new commit won&#39;t work, as you need</span>
-  <span style="color:#75715e"># to remove the file from the unpushed history as well</span>
-
-<span style="color:#75715e">#3. git 推送</span>
-  git push 
-  <span style="color:#75715e"># Push our rewritten, smaller commit</span>
-
-</code></pre></div>
         </div>
 
         
@@ -139,15 +108,15 @@ error: failed to push some refs to 'git@github.com:example/example.git'
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/post/git_untrack_dir/">git : remove directories tracked</a></li>
+        <li><a href="/post/linux-alias-params/">Linux Alias 别名传入参数</a></li>
+        
+        <li><a href="/post/google_play_anr/">Google Play Console: 如何通过Android Vitals记录的日志来优化App的ANR</a></li>
+        
+        <li><a href="/post/git_big_file_err/">Git：上传大文件报错解决方法</a></li>
         
         <li><a href="/post/aabtool_for_mac/">Android app bundle tool for Mac</a></li>
         
         <li><a href="/post/android_ps/">Android ps查询进程线程信息</a></li>
-        
-        <li><a href="/post/unity_capture/">Unity ScreenCapture</a></li>
-        
-        <li><a href="/post/gradle_dsl/">Android Studio: Could not find method classpath() for arguments</a></li>
         
     </ul>
 </div>
@@ -155,13 +124,7 @@ error: failed to push some refs to 'git@github.com:example/example.git'
 
         <div class="post-meta meta-tags">
             
-            <ul class="clearfix">
-                
-                <li><a href='/tags/git'>git</a></li>
-                
-                <li><a href='/tags/%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%8A%A5%E9%94%99'>大文件上传报错</a></li>
-                
-            </ul>
+            没有标签
             
         </div>
     </article>

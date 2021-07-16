@@ -6,7 +6,16 @@
     <description>Recent content on ColorfulDark Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 09 Jul 2021 18:03:55 +0800</lastBuildDate><atom:link href="https://www.harddone.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Jul 2021 18:06:40 +0800</lastBuildDate><atom:link href="https://www.harddone.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://www.harddone.com/post/test.md/</link>
+      <pubDate>Fri, 16 Jul 2021 18:06:40 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/post/test.md/</guid>
+      <description>dfsfsdfsdf</description>
+    </item>
+    
     <item>
       <title>Linux Alias 别名传入参数</title>
       <link>https://www.harddone.com/post/linux-alias-params/</link>
