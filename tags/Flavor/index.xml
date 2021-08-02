@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flavor on ColorfulDark Blog</title>
+    <link>https://www.harddone.com/tags/Flavor/</link>
+    <description>Recent content in Flavor on ColorfulDark Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 02 Aug 2021 15:12:26 +0800</lastBuildDate><atom:link href="https://www.harddone.com/tags/Flavor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flavor与dependencies</title>
+      <link>https://www.harddone.com/post/flavor_dependencies/</link>
+      <pubDate>Mon, 02 Aug 2021 15:12:26 +0800</pubDate>
+      
+      <guid>https://www.harddone.com/post/flavor_dependencies/</guid>
+      <description>build 变体是 Gradle 使用一组特定规则将在 build 类型和产品变种中配置的设置、代码和资源组合在一起所得到的结果。虽然您无法直接配置 build 变体，但可以配置组成它们的 build 类型和产品变种。 创建产品变种与创建 build 类型类似：将其添加到构建配置中的 productFlavors 代码块并添加所需的设置。产品变种支持与 defaultConfig 相同的属性，这是因为，def</description>
+    </item>
+    
+  </channel>
+</rss>
